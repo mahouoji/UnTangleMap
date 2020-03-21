@@ -87,7 +87,7 @@ line {
             .attr('x2', function(d) { return d * w + (opt.height + 2 * h) / Math.sqrt(3); })
             .attr('y2', opt.height + 2 * h);
         // vertex
-        var vertex = svg.append('g').attr('class','grid-vertex');
+        var vertex = grid.append('g').attr('class','grid-vertex');
         vertex.selectAll('.grid-vertex')
             .data(d3.cross(d3.range(-1, opt.width / w + 1), d3.range(-1, opt.height / h + 1)))
             .enter()
@@ -126,7 +126,6 @@ line {
 
     var plot_opts = {
 	    margin: {top:70,left:150,bottom:150,right:150},
-
     }
     UnTangle('#plot', plot_opts);
 </script>
