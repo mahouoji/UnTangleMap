@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="">
+    <title>test</title>
+    <style>
+svg {
+    border: 1px dashed;
+}
+line {
+    stroke: #888;
+    stroke-width: 0.5px;
+    shape-rendering: crispEdges;
+}
+.grid-vertex {
+    fill: white;
+    stroke:#888;
+    stroke-width: 1px;
+}
+    </style>
+</head>
+<div id="plot">
+
+</div>
+
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.js"></script>
+<script src="https://d3js.org/d3-array.v2.min.js"></script>
+
+<script src="./untangle.js"></script>
+<script>
+    var utm = UnTangleMap();
+    var plot_opts = {
+	    margin: {top:70,left:150,bottom:150,right:150},
+    }
+    utm.drawGrids('#plot', plot_opts);
+</script>
