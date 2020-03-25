@@ -9,7 +9,7 @@
 svg {
     border: 1px dashed;
 }
-line {
+.grid-q,.grid-r,.grid-s {
     stroke: #888;
     stroke-width: 0.5px;
     shape-rendering: crispEdges;
@@ -19,9 +19,14 @@ line {
     stroke:#888;
     stroke-width: 1px;
 }
+.label {
+    fill: #088;
+    opacity: 0.5;
+}
     </style>
 </head>
-<div id="plot">
+<div id="untangle-container"></div>
+
 
 </div>
 
@@ -30,9 +35,17 @@ line {
 
 <script src="./untangle.js"></script>
 <script>
-    var utm = UnTangleMap();
-    var plot_opts = {
-	    margin: {top:70,left:150,bottom:150,right:150},
-    }
-    utm.drawGrids('#plot', plot_opts);
+var plot_opts = {
+    margin: {top:70,left:150,bottom:150,right:150},
+}
+var utm = UnTangleMap("#untangle-container", plot_opts);
+utm.plotGrid();
+
+var labels = [
+{'cord': [0, 0], 'label': 'A'},
+{'cord': [0, 1], 'label': 'B'},
+{'cord': [1, 0], 'label': 'C'},
+{'cord': [1, 1], 'label': 'D'},
+];
+utm.plotVertex()
 </script>
