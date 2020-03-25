@@ -85,6 +85,9 @@ UnTangleMap.prototype = {
             // labels
             self.svg.select(".label")
                     .attr("transform", d3.event.transform);
+            // offset
+            self.originOffset[0] = d3.event.transform.x;
+            self.originOffset[1] = d3.event.transform.y;
         }
         self.svg.call(zoom);
     },
@@ -92,27 +95,76 @@ UnTangleMap.prototype = {
     hex2x: function(hexcord) {
         return (hexcord[0] + 0.5 * hexcord[1]) * this.opt.side;
     },
-
     hex2y: function(hexcord) {
         return (Math.sqrt(3) * 0.5 * hexcord[1]) * this.opt.side;
     },
 
+    point2q: function(pcord) {
+        return (pcord[0] - pcord[1] / Math.sqrt(3)) / this.opt.side;
+    },
+    point2r: function(pcord) {
+        return (2.0 * pcord[1] / Math.sqrt(3)) / this.opt.side;
+    },
+
+    round2hex: function(pcord) {
+        //TODO: more efficient implementation
+        var q = this.point2q(pcord);
+        var r = this.point2r(pcord);
+        var s = - q - r;
+
+        var qRound = Math.round(q);
+        var rRound = Math.round(r);
+        var sRound = Math.round(s);
+
+        var qDiff = Math.abs(q - qRound);
+        var rDiff = Math.abs(r - rRound);
+        var sDiff = Math.abs(s - sRound);
+
+        if (qDiff > rDiff && qDiff > sDiff) {
+            qRound = -rRound - sRound;
+        } else if (rDiff > sDiff) {
+            rRound = -qRound - sRound;
+        }
+        return [qRound, rRound];
+    },
+
     plotLabels: function (labelData) {
-        var vertex = this.svg.append('g').attr('class', 'label');
         var self = this;
+        var vertex = self.svg.append('g').attr('class', 'label');
         vertex.selectAll('.labels')
             .data(labelData)
             .enter()
             .append('circle')
             .attr('r', self.opt.labelRaid)
             .attr('cx', function (d) { return self.hex2x(d.cord); })
-            .attr('cy', function (d) { return self.hex2y(d.cord); });
+            .attr('cy', function (d) { return self.hex2y(d.cord); })
+            .call(d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended));
+
+        function dragstarted() {
+            d3.select(this).raise();
+            self.cursor.attr("cursor", "grabbing");
+        }
+
+        function dragged(d) {
+            var hcord = self.round2hex([d3.event.x, d3.event.y]);
+            d3.select(this)
+                .attr("cx", function(d) {return self.hex2x(hcord); })
+                .attr("cy", function(d) {return self.hex2y(hcord); });
+        }
+
+        function dragended() {
+            self.cursor.attr("cursor", "grab");
+        }
     },
     
 };
 
 UnTangleMap.init = function (selector, userOpt) {
     var self = this;
+    self.originOffset = [0, 0];
     //config
     self.opt = {
         margin: { top: 50, left: 50, bottom: 50, right: 50 },
@@ -129,7 +181,10 @@ UnTangleMap.init = function (selector, userOpt) {
     self.svg = d3.select(selector).append('svg')
         .attr('width', self.opt.width)
         .attr('height', self.opt.height);
-
+    //cursor
+    self.cursor = self.svg.append("g")
+        .attr("cursor", "grab");
+    self.plotGrid();
 }
 
 UnTangleMap.init.prototype = UnTangleMap.prototype;
