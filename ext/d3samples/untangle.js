@@ -130,7 +130,7 @@ UnTangleMap.prototype = {
 
     plotLabels: function (labelData) {
         var self = this;
-        var vertex = self.svg.append('g').attr('class', 'label');
+        var vertex = self.svg.append('g').attr('class', 'label').attr('cursor', 'grab');
         vertex.selectAll('.labels')
             .data(labelData)
             .enter()
@@ -145,18 +145,20 @@ UnTangleMap.prototype = {
 
         function dragstarted() {
             d3.select(this).raise();
-            self.cursor.attr("cursor", "grabbing");
+            vertex.attr("cursor", "grabbing");
         }
 
         function dragged(d) {
             var hcord = self.round2hex([d3.event.x, d3.event.y]);
+            // find label item with
+            console.log([d3.event.x, d3.event.y]);
             d3.select(this)
                 .attr("cx", function(d) {return self.hex2x(hcord); })
                 .attr("cy", function(d) {return self.hex2y(hcord); });
         }
 
         function dragended() {
-            self.cursor.attr("cursor", "grab");
+            vertex.attr("cursor", "grab");
         }
     },
     
@@ -181,9 +183,6 @@ UnTangleMap.init = function (selector, userOpt) {
     self.svg = d3.select(selector).append('svg')
         .attr('width', self.opt.width)
         .attr('height', self.opt.height);
-    //cursor
-    self.cursor = self.svg.append("g")
-        .attr("cursor", "grab");
     self.plotGrid();
 }
 
