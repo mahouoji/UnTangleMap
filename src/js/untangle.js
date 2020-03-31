@@ -92,42 +92,6 @@ UnTangleMap.prototype = {
         self.svg.call(zoom);
     },
 
-    hex2x: function(hexcord) {
-        return (hexcord[0] + 0.5 * hexcord[1]) * this.opt.side;
-    },
-    hex2y: function(hexcord) {
-        return (Math.sqrt(3) * 0.5 * hexcord[1]) * this.opt.side;
-    },
-
-    point2q: function(pcord) {
-        return (pcord[0] - pcord[1] / Math.sqrt(3)) / this.opt.side;
-    },
-    point2r: function(pcord) {
-        return (2.0 * pcord[1] / Math.sqrt(3)) / this.opt.side;
-    },
-
-    round2hex: function(pcord) {
-        //TODO: more efficient implementation
-        var q = this.point2q(pcord);
-        var r = this.point2r(pcord);
-        var s = - q - r;
-
-        var qRound = Math.round(q);
-        var rRound = Math.round(r);
-        var sRound = Math.round(s);
-
-        var qDiff = Math.abs(q - qRound);
-        var rDiff = Math.abs(r - rRound);
-        var sDiff = Math.abs(s - sRound);
-
-        if (qDiff > rDiff && qDiff > sDiff) {
-            qRound = -rRound - sRound;
-        } else if (rDiff > sDiff) {
-            rRound = -qRound - sRound;
-        }
-        return [qRound, rRound];
-    },
-
     plotLabels: function (labelData) {
         var self = this;
         var vertex = self.svg.append('g').attr('class', 'label').attr('cursor', 'grab');
@@ -136,8 +100,8 @@ UnTangleMap.prototype = {
             .enter()
             .append('circle')
             .attr('r', self.opt.labelRaid)
-            .attr('cx', function (d) { return self.hex2x(d.cord); })
-            .attr('cy', function (d) { return self.hex2y(d.cord); })
+            .attr('cx', function (d) { return self.Hex.hex2x(d.cord); })
+            .attr('cy', function (d) { return self.Hex.hex2y(d.cord); })
             .call(d3.drag()
                 .on("start", dragstarted)
                 .on("drag", dragged)
@@ -149,13 +113,13 @@ UnTangleMap.prototype = {
         }
 
         function dragged(d) {
-            var hcord = self.round2hex([d3.event.x, d3.event.y]);
+            var hcord = self.Hex.round2hex([d3.event.x, d3.event.y]);
             // find label item with
             //console.log([d3.event.x, d3.event.y]);
             //console.log([hcord[0], hcord[1]]);
             d3.select(this)
-                .attr("cx", function(d) {return self.hex2x(hcord); })
-                .attr("cy", function(d) {return self.hex2y(hcord); });
+                .attr("cx", function(d) {return self.Hex.hex2x(hcord); })
+                .attr("cy", function(d) {return self.Hex.hex2y(hcord); });
         }
 
         function dragended() {
@@ -180,6 +144,8 @@ UnTangleMap.init = function (selector, userOpt) {
     for (var o in userOpt) {
         self.opt[o] = userOpt[o];
     }
+    //hexagon algorithms
+    self.Hex = Hex(self.opt.side);
     //canvas
     self.svg = d3.select(selector).append('svg')
         .attr('width', self.opt.width)

@@ -151,7 +151,8 @@ UnTangleMap.prototype = {
         function dragged(d) {
             var hcord = self.round2hex([d3.event.x, d3.event.y]);
             // find label item with
-            console.log([d3.event.x, d3.event.y]);
+            //console.log([d3.event.x, d3.event.y]);
+            //console.log([hcord[0], hcord[1]]);
             d3.select(this)
                 .attr("cx", function(d) {return self.hex2x(hcord); })
                 .attr("cy", function(d) {return self.hex2y(hcord); });
