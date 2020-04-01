@@ -5,6 +5,10 @@
     var HexCord = function(side) {
         return new HexCord.init(side);
     };
+
+    var neighborOffset = [
+        [1, 0], [0, 1], [-1, 1], [-1, 0], [0, -1], [1, -1]
+    ];
     
     HexCord.init = function(side) {
         var self = this;
@@ -12,6 +16,9 @@
     };
 
     HexCord.prototype = {
+        toString: function(hexcord) {
+            return hexcord[0] + '-' + hexcord[1];
+        },
         // hex coordinates[q, r] to svg coordinates[x, y]
         hex2x: function(hexcord) {
             return (hexcord[0] + 0.5 * hexcord[1]) * this.side;
@@ -48,6 +55,12 @@
             }
             return [qRound, rRound];
         },
+        addHex: function(corda, cordb) {
+            return [corda[0] + cordb[0], corda[1] + cordb[1]];
+        },
+        getNeighbors: function(hexcord) {
+            return neighborOffset.map(o => this.addHex(hexcord, o));
+        }
     };
 
     HexCord.init.prototype = HexCord.prototype;

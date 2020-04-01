@@ -6,6 +6,7 @@ var UnTangleMap = function (selector, userOpt) {
 }
 
 UnTangleMap.prototype = {
+    // plotting svg
     plotGrid: function () {
         //step
         var self = this;
@@ -94,6 +95,7 @@ UnTangleMap.prototype = {
 
     plotLabels: function (labelData) {
         var self = this;
+        labelData = labelData; //TODO
         var vertex = self.svg.append('g').attr('class', 'label').attr('cursor', 'grab');
         vertex.selectAll('.labels')
             .data(labelData)
@@ -126,11 +128,57 @@ UnTangleMap.prototype = {
             vertex.attr("cursor", "grab");
         }
     },
+
+    // controllers
+    updateData: function(data) {
+        var self = this;
+        self.data = data;
+        self.getLabelLayout();
+        self.plotLabels();
+    },
+
+    // label algorithms
+    getLabelLayout: function() {
+        
+    },
+
+    addLable: function() {
+
+    },
+
+    removeLabel: function (labelData) {
+        var self = this;
+        var cord = labelData.cord;
+        let lableKey = self.Hex.toString(cord);
+        if (!(lableKey in self.labelMap.in)) {
+            console.log("removing cord not exist")
+            return;
+        }
+
+        for (ncord in self.Hex.getNeighbors(cord)) {
+            let key = self.Hex.toString(ncord);
+            if (key in self.labelMap.out) {
+                self.labelMap.out[key] -= 1;
+                if (self.labelMap.out[key] == 0) {
+                    delete self.labelMap.out[key];
+                }
+            }
+            if (key in self.labelMap.cand) {
+                self.labelMap.cand[key] -= 1;
+                if (self.labelMap.cand[key] == 0) {
+                    delete self.labelMap.cand[key];
+                }
+            }
+        }
+    },
     
 };
 
 UnTangleMap.init = function (selector, userOpt) {
     var self = this;
+    //data
+    self.data = {};
+
     self.originOffset = [0, 0];
     //config
     self.opt = {
@@ -146,6 +194,13 @@ UnTangleMap.init = function (selector, userOpt) {
     }
     //hexagon algorithms
     self.Hex = Hex(self.opt.side);
+    // label map
+    self.labelMap = {
+        in: {},
+        cand: {},
+        out: {}
+    };
+    self.labels = {};
     //canvas
     self.svg = d3.select(selector).append('svg')
         .attr('width', self.opt.width)
