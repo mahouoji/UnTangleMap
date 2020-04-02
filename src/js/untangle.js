@@ -1,6 +1,7 @@
 (function (global, d3) {
 
 "use strict";
+
 var UnTangleMap = function (selector, userOpt) {
     return new UnTangleMap.init(selector, userOpt);
 }
@@ -133,17 +134,84 @@ UnTangleMap.prototype = {
     updateData: function(data) {
         var self = this;
         self.data = data;
-        self.getLabelLayout();
-        self.plotLabels();
+
+        self.plotLabels(self.getLabelLayout());
     },
 
     // label algorithms
-    getLabelLayout: function() {
-        
+    // layout
+    getLabelLayout: function(center, data) {
+        var self = this;
+        center = center || [0, 0];
+        data = data || self.data;
+
+        //let label = self.getFirstLabel(data.labels);
+        //self.addLabel(label.name, center);
+        let labelNames = data.labels.map(l => l.name);
+        self.addLabel(labelNames[0], center);
+        self.addLabel(labelNames[1], self.Hex.getNeighbors(center)[0]);
+
+        for (let i = 2; i < labelNames.length; i++) {
+            //console.log(self.labelMap.cand);
+            for (let key in self.labelMap.cand) {
+                self.addLabel(labelNames[i],  self.labelMap.cand[key].cord);
+                break;
+            }
+        }
+        /*while(labelNames.length > 0) {
+            name = labelNames
+            Map.addLabel(name, cord);
+            delete labelNames[name];
+
+            for (name in labelNames) {
+                for (cord in self.labelMap.cand) {
+                    Map.addLabel(name, cord);
+                    delete labelNames[name];
+                    break;
+                }
+            }
+        }*/
+        console.log($.map(self.labelMap.in, function(value, key) { return value }));
+        return $.map(self.labelMap.in, function(value, key) { return value });
     },
 
-    addLable: function() {
+    getFirstLabel: function(labels) {
+        return labels[0];
+    },
 
+    addLabel: function(labelName, cord) {
+        var self = this;
+        //TODO: check validity
+        //console.log(cord);
+        let lableKey = self.Hex.toString(cord);
+        if (lableKey in self.labelMap.cand) {
+            delete self.labelMap.cand[lableKey];
+        }
+        self.labelMap.in[lableKey] = {
+            'name': labelName,
+            'cord': cord
+        };
+        //console.log(self.Hex.getNeighbors(cord));
+        let neighbors = self.Hex.getNeighbors(cord);
+        for (let i = 0; i < 6; i++) {
+            let nCord = neighbors[i];
+            let key = self.Hex.toString(nCord);
+            if (key in self.labelMap.cand) {
+                self.labelMap.cand[key].cnt += 1;
+
+            } else if (key in self.labelMap.out) {
+                delete self.labelMap.out[key];
+                self.labelMap.cand[key] = {
+                    'cord': nCord,
+                    'cnt': 2
+                }
+            } else {
+                self.labelMap.out[key] = {
+                    'cord': nCord,
+                }
+            }
+        }
+        //console.log(self.labelMap);
     },
 
     removeLabel: function (labelData) {
@@ -154,21 +222,16 @@ UnTangleMap.prototype = {
             console.log("removing cord not exist")
             return;
         }
-
         for (ncord in self.Hex.getNeighbors(cord)) {
             let key = self.Hex.toString(ncord);
-            if (key in self.labelMap.out) {
-                self.labelMap.out[key] -= 1;
-                if (self.labelMap.out[key] == 0) {
-                    delete self.labelMap.out[key];
-                }
-            }
             if (key in self.labelMap.cand) {
-                self.labelMap.cand[key] -= 1;
-                if (self.labelMap.cand[key] == 0) {
+                self.labelMap.cand[key].cnt -= 1;
+                if (self.labelMap.cand[key].cnt < 2) {
                     delete self.labelMap.cand[key];
                 }
-            }
+            } else if (key in self.labelMap.out) {
+                delete self.labelMap.out[key];
+             }
         }
     },
     
@@ -177,7 +240,7 @@ UnTangleMap.prototype = {
 UnTangleMap.init = function (selector, userOpt) {
     var self = this;
     //data
-    self.data = {};
+    self.data = {labels: [], items: []};
 
     self.originOffset = [0, 0];
     //config

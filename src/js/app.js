@@ -2,7 +2,7 @@ function main(){
 
     var controller = Controller();
     controller.loadStaticData();
-    
+    /*
     console.log(controller.data);
 
     var plot_opts = {
@@ -17,4 +17,5 @@ function main(){
     {'cord': [1, 1], 'label': 'D'},
     ];
     utm.plotLabels(labels);
+    */
 }

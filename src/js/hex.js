@@ -17,7 +17,7 @@
 
     HexCord.prototype = {
         toString: function(hexcord) {
-            return hexcord[0] + '-' + hexcord[1];
+            return hexcord[0] + '_' + hexcord[1];
         },
         // hex coordinates[q, r] to svg coordinates[x, y]
         hex2x: function(hexcord) {
@@ -65,5 +65,5 @@
 
     HexCord.init.prototype = HexCord.prototype;
 
-    global.HexCord = global.Hex = HexCord;
+    global.Hex = HexCord;
 }(window));

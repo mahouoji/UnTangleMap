@@ -19,12 +19,18 @@ Controller.prototype = {
         var self = this;
         self.data = data;
         // UnTangle Map
-        // TODO: compute layout
+        self.unTangleMap.updateData(data);
     }
 };
 
 Controller.init = function() {
-    this.data = {};
+    var self = this;
+    self.data = {};
+
+    var plot_opts = {
+        margin: {top:70,left:150,bottom:150,right:150},
+    }
+    self.unTangleMap = UnTangleMap("#untangle-container", plot_opts);
 }
 
 Controller.init.prototype = Controller.prototype;
