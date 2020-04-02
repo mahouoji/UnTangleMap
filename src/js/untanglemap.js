@@ -6,6 +6,9 @@ var UnTangleMap = function (selector, userOpt) {
     return new UnTangleMap.init(selector, userOpt);
 }
 
+var Hex = global.HexCord(1.0);
+var UnTangle = global.UnTangleMapLayout();
+
 UnTangleMap.prototype = {
     // plotting svg
     plotGrid: function () {
@@ -103,8 +106,8 @@ UnTangleMap.prototype = {
             .enter()
             .append('circle')
             .attr('r', self.opt.labelRaid)
-            .attr('cx', function (d) { return self.Hex.hex2x(d.cord); })
-            .attr('cy', function (d) { return self.Hex.hex2y(d.cord); })
+            .attr('cx', function (d) { return Hex.hex2x(d.cord); })
+            .attr('cy', function (d) { return Hex.hex2y(d.cord); })
             .call(d3.drag()
                 .on("start", dragstarted)
                 .on("drag", dragged)
@@ -116,13 +119,13 @@ UnTangleMap.prototype = {
         }
 
         function dragged(d) {
-            var hcord = self.Hex.round2hex([d3.event.x, d3.event.y]);
+            var hcord = Hex.round2hex([d3.event.x, d3.event.y]);
             // find label item with
             //console.log([d3.event.x, d3.event.y]);
             //console.log([hcord[0], hcord[1]]);
             d3.select(this)
-                .attr("cx", function(d) {return self.Hex.hex2x(hcord); })
-                .attr("cy", function(d) {return self.Hex.hex2y(hcord); });
+                .attr("cx", function(d) {return Hex.hex2x(hcord); })
+                .attr("cy", function(d) {return Hex.hex2y(hcord); });
         }
 
         function dragended() {
@@ -135,106 +138,8 @@ UnTangleMap.prototype = {
         var self = this;
         self.data = data;
 
-        self.plotLabels(self.getLabelLayout());
+        self.plotLabels(UnTangle.getLabelLayout(data));
     },
-
-    // label algorithms
-    // layout
-    getLabelLayout: function(center, data) {
-        var self = this;
-        center = center || [0, 0];
-        data = data || self.data;
-
-        //let label = self.getFirstLabel(data.labels);
-        //self.addLabel(label.name, center);
-        let labelNames = data.labels.map(l => l.name);
-        self.addLabel(labelNames[0], center);
-        self.addLabel(labelNames[1], self.Hex.getNeighbors(center)[0]);
-
-        for (let i = 2; i < labelNames.length; i++) {
-            //console.log(self.labelMap.cand);
-            for (let key in self.labelMap.cand) {
-                self.addLabel(labelNames[i],  self.labelMap.cand[key].cord);
-                break;
-            }
-        }
-        /*while(labelNames.length > 0) {
-            name = labelNames
-            Map.addLabel(name, cord);
-            delete labelNames[name];
-
-            for (name in labelNames) {
-                for (cord in self.labelMap.cand) {
-                    Map.addLabel(name, cord);
-                    delete labelNames[name];
-                    break;
-                }
-            }
-        }*/
-        console.log($.map(self.labelMap.in, function(value, key) { return value }));
-        return $.map(self.labelMap.in, function(value, key) { return value });
-    },
-
-    getFirstLabel: function(labels) {
-        return labels[0];
-    },
-
-    addLabel: function(labelName, cord) {
-        var self = this;
-        //TODO: check validity
-        //console.log(cord);
-        let lableKey = self.Hex.toString(cord);
-        if (lableKey in self.labelMap.cand) {
-            delete self.labelMap.cand[lableKey];
-        }
-        self.labelMap.in[lableKey] = {
-            'name': labelName,
-            'cord': cord
-        };
-        //console.log(self.Hex.getNeighbors(cord));
-        let neighbors = self.Hex.getNeighbors(cord);
-        for (let i = 0; i < 6; i++) {
-            let nCord = neighbors[i];
-            let key = self.Hex.toString(nCord);
-            if (key in self.labelMap.cand) {
-                self.labelMap.cand[key].cnt += 1;
-
-            } else if (key in self.labelMap.out) {
-                delete self.labelMap.out[key];
-                self.labelMap.cand[key] = {
-                    'cord': nCord,
-                    'cnt': 2
-                }
-            } else {
-                self.labelMap.out[key] = {
-                    'cord': nCord,
-                }
-            }
-        }
-        //console.log(self.labelMap);
-    },
-
-    removeLabel: function (labelData) {
-        var self = this;
-        var cord = labelData.cord;
-        let lableKey = self.Hex.toString(cord);
-        if (!(lableKey in self.labelMap.in)) {
-            console.log("removing cord not exist")
-            return;
-        }
-        for (ncord in self.Hex.getNeighbors(cord)) {
-            let key = self.Hex.toString(ncord);
-            if (key in self.labelMap.cand) {
-                self.labelMap.cand[key].cnt -= 1;
-                if (self.labelMap.cand[key].cnt < 2) {
-                    delete self.labelMap.cand[key];
-                }
-            } else if (key in self.labelMap.out) {
-                delete self.labelMap.out[key];
-             }
-        }
-    },
-    
 };
 
 UnTangleMap.init = function (selector, userOpt) {
@@ -256,7 +161,7 @@ UnTangleMap.init = function (selector, userOpt) {
         self.opt[o] = userOpt[o];
     }
     //hexagon algorithms
-    self.Hex = Hex(self.opt.side);
+    Hex.side = self.opt.side;
     // label map
     self.labelMap = {
         in: {},

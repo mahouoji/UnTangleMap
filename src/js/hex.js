@@ -65,5 +65,5 @@
 
     HexCord.init.prototype = HexCord.prototype;
 
-    global.Hex = HexCord;
+    global.HexCord = HexCord;
 }(window));
