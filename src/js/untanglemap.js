@@ -6,8 +6,8 @@ var UnTangleMap = function (selector, userOpt) {
     return new UnTangleMap.init(selector, userOpt);
 }
 
-var Hex = global.HexCord(1.0);
-var UnTangle = global.UnTangleMapLayout();
+var Hex = global.Hex(1.0);
+var Layout = global.UnTangleMapLayout();
 
 UnTangleMap.prototype = {
     // plotting svg
@@ -106,8 +106,8 @@ UnTangleMap.prototype = {
             .enter()
             .append('circle')
             .attr('r', self.opt.labelRaid)
-            .attr('cx', function (d) { return Hex.hex2x(d.cord); })
-            .attr('cy', function (d) { return Hex.hex2y(d.cord); })
+            .attr('cx', function (d) { return Hex.hexToX(d.cord); })
+            .attr('cy', function (d) { return Hex.hexToY(d.cord); })
             .call(d3.drag()
                 .on("start", dragstarted)
                 .on("drag", dragged)
@@ -119,17 +119,24 @@ UnTangleMap.prototype = {
         }
 
         function dragged(d) {
-            var hcord = Hex.round2hex([d3.event.x, d3.event.y]);
+            //var hcord = Hex.round2hex([d3.event.x, d3.event.y]);
             // find label item with
             //console.log([d3.event.x, d3.event.y]);
             //console.log([hcord[0], hcord[1]]);
+            //d3.select(this)
+            //    .attr("cx", function(d) {return Hex.hex2x(hcord); })
+            //    .attr("cy", function(d) {return Hex.hex2y(hcord); });
             d3.select(this)
-                .attr("cx", function(d) {return Hex.hex2x(hcord); })
-                .attr("cy", function(d) {return Hex.hex2y(hcord); });
+                .attr("cx", d3.event.x)
+                .attr("cy", d3.event.y);
         }
 
         function dragended() {
             vertex.attr("cursor", "grab");
+            var hcord = Hex.svgToRoundHex([d3.event.x, d3.event.y]);
+            d3.select(this)
+                .attr("cx", function(d) {return Hex.hexToX(hcord); })
+                .attr("cy", function(d) {return Hex.hexToY(hcord); });
         }
     },
 
@@ -138,7 +145,7 @@ UnTangleMap.prototype = {
         var self = this;
         self.data = data;
 
-        self.plotLabels(UnTangle.getLabelLayout(data));
+        self.plotLabels(Layout.getLabelLayout(data));
     },
 };
 
