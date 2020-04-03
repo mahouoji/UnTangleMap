@@ -15,7 +15,7 @@
     HexCord.init = function(q, r, s) {
         this.q = q;
         this.r = r;
-        this.s = s || -q-r;
+        this.s = s || ((s === 0) ? 0 : 0-q-r);
     };
 
     var neighborOffsets = [

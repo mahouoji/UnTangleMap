@@ -5,8 +5,6 @@
         return new UnTangleMap.init();
     }
 
-    var Hex = global.Hex(1.0);
-    
     UnTangleMap.prototype = {
         // layout
         getLabelLayout: function(data, center) {
@@ -41,42 +39,50 @@
                 }
             }*/
             console.log($.map(self.labelMap.in, function(value, key) { return value }));
+            console.log($.map(self.labelMap.tri, function(value, key) { return value }));
             return $.map(self.labelMap.in, function(value, key) { return value });
         },
 
         addLabel: function(labelName, cord) {
             var self = this;
             //TODO: check validity
-            //console.log(cord);
-            let lableKey = cord.toString();
-            if (lableKey in self.labelMap.cand) {
-                delete self.labelMap.cand[lableKey];
+            let key = cord.toString();
+            if (key in self.labelMap.cand) {
+                delete self.labelMap.cand[key];
             }
-            self.labelMap.in[lableKey] = {
+            // add to map
+            self.labelMap.in[key] = {
                 'name': labelName,
                 'cord': cord
             };
-            //console.log(Hex.getNeighbors(cord));
+            // update neighbors
             let neighbors = cord.getNeighbors();
-            for (let i = 0; i < 6; i++) {
-                let nCord = neighbors[i];
-                let key = nCord.toString();
-                if (key in self.labelMap.cand) {
-                    self.labelMap.cand[key].cnt += 1;
+            let triangles = cord.getTriangles();
+            neighbors.forEach((ncord, i) => {
+                let nkey = ncord.toString();
+                if (nkey in self.labelMap.in) {
+                    let nextNcord = neighbors[(i + 1) % 6];
+                    if (nextNcord.toString() in self.labelMap.in) {
+                        let triCord = triangles[i];
+                        self.labelMap.tri[triCord.toString()] = {
+                            'cord': triCord
+                        }
+                    }
+                } else if(nkey in self.labelMap.cand) {
+                    self.labelMap.cand[nkey].cnt += 1;
     
-                } else if (key in self.labelMap.out) {
-                    delete self.labelMap.out[key];
-                    self.labelMap.cand[key] = {
-                        'cord': nCord,
+                } else if (nkey in self.labelMap.out) {
+                    delete self.labelMap.out[nkey];
+                    self.labelMap.cand[nkey] = {
+                        'cord': ncord,
                         'cnt': 2
                     }
                 } else {
-                    self.labelMap.out[key] = {
-                        'cord': nCord,
+                    self.labelMap.out[nkey] = {
+                        'cord': ncord,
                     }
                 }
-            }
-            //console.log(self.labelMap);
+            });
         },
     
         removeLabel: function (labelData) {
@@ -110,7 +116,8 @@
         self.labelMap = {
             in: {},
             cand: {},
-            out: {}
+            out: {},
+            tri: {}
         };
         self.labels = {};
     }
