@@ -23,7 +23,7 @@
         HexCord(-1, 0), HexCord(0, -1), HexCord(1, -1)
     ];
 
-    var triangleOffests = [
+    var faceOffests = [
         HexCord(0, 0, -1), HexCord(0, 1, 0), HexCord(-1, 0, 0),
         HexCord(0, 0, 1), HexCord(0, -1, 0), HexCord(1, 0, 0)
     ];
@@ -43,9 +43,9 @@
             var sDiff = Math.abs(this.s - sRound);
 
             if (qDiff > rDiff && qDiff > sDiff) {
-                qRound = -rRound - sRound;
+                qRound = 0 - rRound - sRound;
             } else if (rDiff > sDiff) {
-                rRound = -qRound - sRound;
+                rRound = 0 - qRound - sRound;
             }
             return HexCord(qRound, rRound);
         },
@@ -55,8 +55,17 @@
         getNeighbors: function() {
             return neighborOffsets.map(o => this.add(o));
         },
-        getTriangles: function() {
-            return triangleOffests.map(o => this.add(o));
+        getFaces: function() { // from vertex
+            return faceOffests.map(o => this.add(o));
+        },
+        getVertices: function() { // from face
+            let sum = this.q + this.r + this.s;
+            if (sum === 1 || sum === -1) {
+                return [HexCord(this.q - sum, this.r, this.s),
+                    HexCord(this.q, this.r - sum, this.s),
+                    HexCord(this.q, this.r, this.s - sum)];
+            }
+            console.log('Error: not a face coordinate' + this.toString());
         }
     };
 
@@ -69,7 +78,12 @@
             return (Math.sqrt(3) * 0.5 * hexcord.r) * this.side;
         },
         hexToSvg: function(hexcord) {
-            return [this.hexToX(hexcord), ths.hexToY(hexcord)];
+            return [this.hexToX(hexcord), this.hexToY(hexcord)];
+        },
+        faceToSvgPath: function(facecord) {
+            let v = facecord.getVertices().map(hex=>this.hexToSvg(hex));
+            console.log(facecord.getVertices());
+            return `${v[0][0]} ${v[0][1]}, ${v[1][0]} ${v[1][1]}, ${v[2][0]} ${v[2][1]}`
         },
         // svg coordinates[x, y] to hex coordinates[q, r]
         svgToQ: function(pcord) {

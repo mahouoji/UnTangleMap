@@ -7,9 +7,8 @@
 
     UnTangleMap.prototype = {
         // layout
-        getLabelLayout: function(data, center) {
+        initLabelLayout: function(data, center) {
             var self = this;
-            data = data || self.data;
             center = center || HexCord(0, 0);
     
             //let label = self.getFirstLabel(data.labels);
@@ -39,8 +38,15 @@
                 }
             }*/
             console.log($.map(self.labelMap.in, function(value, key) { return value }));
-            console.log($.map(self.labelMap.tri, function(value, key) { return value }));
-            return $.map(self.labelMap.in, function(value, key) { return value });
+            console.log($.map(self.labelMap.faces, function(value, key) { return value }));
+        },
+
+        getLabelLayout: function() {
+            return $.map(this.labelMap.in, function(value, key) { return value });
+        },
+
+        getFaceLayout: function() {
+            return $.map(this.labelMap.faces, function(value, key) { return value });
         },
 
         addLabel: function(labelName, cord) {
@@ -57,14 +63,14 @@
             };
             // update neighbors
             let neighbors = cord.getNeighbors();
-            let triangles = cord.getTriangles();
+            let faces = cord.getFaces();
             neighbors.forEach((ncord, i) => {
                 let nkey = ncord.toString();
                 if (nkey in self.labelMap.in) {
                     let nextNcord = neighbors[(i + 1) % 6];
                     if (nextNcord.toString() in self.labelMap.in) {
-                        let triCord = triangles[i];
-                        self.labelMap.tri[triCord.toString()] = {
+                        let triCord = faces[i];
+                        self.labelMap.faces[triCord.toString()] = {
                             'cord': triCord
                         }
                     }
@@ -102,7 +108,7 @@
                     }
                 } else if (key in self.labelMap.out) {
                     delete self.labelMap.out[key];
-                 }
+                }
             }
         },
         
@@ -117,7 +123,7 @@
             in: {},
             cand: {},
             out: {},
-            tri: {}
+            faces: {}
         };
         self.labels = {};
     }

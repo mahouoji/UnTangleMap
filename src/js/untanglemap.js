@@ -90,6 +90,8 @@ UnTangleMap.prototype = {
             // labels
             self.svg.select(".label")
                     .attr("transform", d3.event.transform);
+            self.svg.select(".face")
+                    .attr("transform", d3.event.transform);
             // offset
             self.originOffset[0] = d3.event.transform.x;
             self.originOffset[1] = d3.event.transform.y;
@@ -135,9 +137,21 @@ UnTangleMap.prototype = {
             vertex.attr("cursor", "grab");
             var hcord = Hex.svgToRoundHex([d3.event.x, d3.event.y]);
             d3.select(this)
-                .attr("cx", function(d) {return Hex.hexToX(hcord); })
-                .attr("cy", function(d) {return Hex.hexToY(hcord); });
+                .attr("cx", Hex.hexToX(hcord))
+                .attr("cy", Hex.hexToY(hcord));
         }
+        return self;
+    },
+
+    plotFaces: function(faceData) {
+        var self = this;
+        var face = self.svg.append('g').attr('class', 'face');
+        face.selectAll('.face')
+            .data(faceData)
+            .enter()
+            .append('polyline')
+            .attr('points', function (f) { return Hex.faceToSvgPath(f.cord); })
+        return self;
     },
 
     // controllers
@@ -145,7 +159,9 @@ UnTangleMap.prototype = {
         var self = this;
         self.data = data;
 
-        self.plotLabels(Layout.getLabelLayout(data));
+        Layout.initLabelLayout(data);
+        self.plotLabels(Layout.getLabelLayout())
+            .plotFaces(Layout.getFaceLayout());
     },
 };
 
