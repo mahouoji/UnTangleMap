@@ -109,6 +109,7 @@ UnTangleMap.prototype = {
             .attr('r', self.opt.labelRaid)
             .attr('cx', function (d) { return Hex.hexToX(d.cord); })
             .attr('cy', function (d) { return Hex.hexToY(d.cord); })
+            .attr('label', d=>d.name)
             .call(d3.drag()
                 .on("start", dragstarted)
                 .on("drag", dragged)
@@ -139,7 +140,10 @@ UnTangleMap.prototype = {
 
         function dragended() {
             vertex.attr("cursor", "grab");
-            var hcord = Hex.svgToRoundHex([d3.event.x, d3.event.y]);
+            let hcord = Hex.svgToRoundHex([d3.event.x, d3.event.y]);
+            let name = d3.select(this).attr('label');
+            Layout.addLabel(name, hcord);
+            self.updateFaces(Layout.getFaceLayout());
             d3.select(this)
                 .attr("cx", Hex.hexToX(hcord))
                 .attr("cy", Hex.hexToY(hcord));
@@ -164,8 +168,9 @@ UnTangleMap.prototype = {
         var face = self.svg.select('.utgmap').select('.face')
             .selectAll('polyline').data(faceData);
         face.exit().remove();
-        face.enter().append('polyline');
-        face.attr('points', function (f) { return Hex.faceToSvgPath(f.cord); })
+        face.enter().append('polyline').merge(face)
+        .attr('points', function (f) { return Hex.faceToSvgPath(f.cord); })
+        console.log(faceData);
         return self;
     },
 

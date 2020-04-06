@@ -55,6 +55,9 @@
             let key = cord.toString();
             if (key in self.labelMap.cand) {
                 delete self.labelMap.cand[key];
+            } else if(Object.keys(self.labelMap.in).length > 2) {
+                console.log('return');
+                return;
             }
             // add to map
             self.labelMap.in[key] = {
@@ -89,6 +92,7 @@
                     }
                 }
             });
+            //console.log(self.labelMap);
         },
     
         removeLabel: function (cord) {
@@ -98,6 +102,8 @@
                 console.log("removing cord not exist")
                 return;
             }
+            delete self.labelMap.in[key];
+
             let neighbors = cord.getNeighbors();
             let faces = cord.getFaces();
             neighbors.forEach(ncord => {
@@ -117,6 +123,7 @@
                     delete self.labelMap.faces[fkey];
                 }
             })
+            //console.log(self.labelMap);
         }
         
     };

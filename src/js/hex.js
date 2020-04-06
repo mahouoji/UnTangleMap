@@ -30,7 +30,7 @@
 
     HexCord.prototype = {
         toString: function(hexcord) {
-            return `${this.q}_${this.r}_${this.s}`;
+            return `${this.q},${this.r},${this.s}`;
         },
         // round to nearest hexagon
         round: function() {
