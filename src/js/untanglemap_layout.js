@@ -91,26 +91,33 @@
             });
         },
     
-        removeLabel: function (labelData) {
+        removeLabel: function (cord) {
             var self = this;
-            var cord = labelData.cord;
-            let lableKey = cord.toString();
-            if (!(lableKey in self.labelMap.in)) {
+            let key = cord.toString();
+            if (!(key in self.labelMap.in)) {
                 console.log("removing cord not exist")
                 return;
             }
-            for (ncord in cord.getNeighbors()) {
-                let key = ncord.toString();
-                if (key in self.labelMap.cand) {
-                    self.labelMap.cand[key].cnt -= 1;
-                    if (self.labelMap.cand[key].cnt < 2) {
-                        delete self.labelMap.cand[key];
+            let neighbors = cord.getNeighbors();
+            let faces = cord.getFaces();
+            neighbors.forEach(ncord => {
+                let nkey = ncord.toString();
+                if (nkey in self.labelMap.cand) {
+                    self.labelMap.cand[nkey].cnt -= 1;
+                    if (self.labelMap.cand[nkey].cnt < 2) {
+                        delete self.labelMap.cand[nkey];
                     }
-                } else if (key in self.labelMap.out) {
-                    delete self.labelMap.out[key];
+                } else if (nkey in self.labelMap.out) {
+                    delete self.labelMap.out[nkey];
                 }
-            }
-        },
+            })
+            faces.forEach(fcord => {
+                let fkey = fcord.toString();
+                if (fkey in self.labelMap.faces) {
+                    delete self.labelMap.faces[fkey];
+                }
+            })
+        }
         
     };
     

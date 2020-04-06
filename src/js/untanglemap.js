@@ -20,7 +20,7 @@ UnTangleMap.prototype = {
         var height = self.opt.height;
 
         //axis
-        var grid = self.svg.append('g').attr('class', 'grid-axes');
+        var grid = self.svg.append('g').attr('class', 'grid');
         var axes_q = grid.append('g').attr('class', 'grid-axes-q');
         var axes_s = grid.append('g').attr('class', 'grid-axes-s');
         var axes_r = grid.append('g').attr('class', 'grid-axes-r');
@@ -63,7 +63,8 @@ UnTangleMap.prototype = {
             .attr('r', this.opt.gridRaid)
             .attr('cx', function (d) { return d[0] * w - (d[1] % 2 ? w / 2 : 0); })
             .attr('cy', function (d) { return d[1] * h; });
-
+        // other parts (labels and data items)
+        var utgmap = self.svg.append('g').attr('class', 'utgmap');
 
         // zoom
         var zoom = d3.zoom().scaleExtent([1, 10])
@@ -87,11 +88,8 @@ UnTangleMap.prototype = {
                 "translate(" + d3.event.transform.x % (w * d3.event.transform.k) + ","
                 + d3.event.transform.y % (2 * h * d3.event.transform.k)
                 + ")scale(" + d3.event.transform.k + ")");
-            // labels
-            self.svg.select(".label")
-                    .attr("transform", d3.event.transform);
-            self.svg.select(".face")
-                    .attr("transform", d3.event.transform);
+            // labels and data items
+            utgmap.attr("transform", d3.event.transform);
             // offset
             self.originOffset[0] = d3.event.transform.x;
             self.originOffset[1] = d3.event.transform.y;
@@ -102,8 +100,9 @@ UnTangleMap.prototype = {
     plotLabels: function (labelData) {
         var self = this;
         labelData = labelData; //TODO
-        var vertex = self.svg.append('g').attr('class', 'label').attr('cursor', 'grab');
-        vertex.selectAll('.labels')
+        var vertex = self.svg.select('.utgmap')
+            .append('g').attr('class', 'label').attr('cursor', 'grab');
+        vertex.selectAll('circle')
             .data(labelData)
             .enter()
             .append('circle')
@@ -116,6 +115,11 @@ UnTangleMap.prototype = {
                 .on("end", dragended));
 
         function dragstarted() {
+            let x = d3.select(this).attr('cx');
+            let y = d3.select(this).attr('cy');
+            let hcord = Hex.svgToRoundHex([x,y]);
+            Layout.removeLabel(hcord);
+            self.updateFaces(Layout.getFaceLayout());
             d3.select(this).raise();
             vertex.attr("cursor", "grabbing");
         }
@@ -145,12 +149,23 @@ UnTangleMap.prototype = {
 
     plotFaces: function(faceData) {
         var self = this;
-        var face = self.svg.append('g').attr('class', 'face');
-        face.selectAll('.face')
+        self.svg.select('.utgmap')
+            .append('g').attr('class', 'face')
+            .selectAll('polyline')
             .data(faceData)
             .enter()
             .append('polyline')
-            .attr('points', function (f) { return Hex.faceToSvgPath(f.cord); })
+            .attr('points', function (f) { return Hex.faceToSvgPath(f.cord); });
+        return self;
+    },
+
+    updateFaces: function(faceData) {
+        var self = this;
+        var face = self.svg.select('.utgmap').select('.face')
+            .selectAll('polyline').data(faceData);
+        face.exit().remove();
+        face.enter().append('polyline');
+        face.attr('points', function (f) { return Hex.faceToSvgPath(f.cord); })
         return self;
     },
 

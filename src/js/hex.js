@@ -82,8 +82,7 @@
         },
         faceToSvgPath: function(facecord) {
             let v = facecord.getVertices().map(hex=>this.hexToSvg(hex));
-            console.log(facecord.getVertices());
-            return `${v[0][0]} ${v[0][1]}, ${v[1][0]} ${v[1][1]}, ${v[2][0]} ${v[2][1]}`
+            return `${v[0][0]} ${v[0][1]},${v[1][0]} ${v[1][1]},${v[2][0]} ${v[2][1]}`
         },
         // svg coordinates[x, y] to hex coordinates[q, r]
         svgToQ: function(pcord) {
