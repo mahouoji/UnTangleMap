@@ -124,6 +124,7 @@ UnTangleMap.prototype = {
             .attr('r', self.opt.gridRaid)
             .attr('cx', function (d) { return Hex.hexToX(d.cord); })
             .attr('cy', function (d) { return Hex.hexToY(d.cord); })
+            .attr('opacity', d=>d.cnt/6.0);
         // drag
         function dragstarted() {
             let x = d3.select(this).attr('cx');
@@ -193,6 +194,7 @@ UnTangleMap.prototype = {
             .attr('r', self.opt.gridRaid)
             .attr('cx', function (d) { return Hex.hexToX(d.cord); })
             .attr('cy', function (d) { return Hex.hexToY(d.cord); })
+            .attr('opacity', d => d.cnt / 6.0);
         return self;
     },
 

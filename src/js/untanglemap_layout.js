@@ -20,8 +20,10 @@
             for (let i = 2; i < labelNames.length; i++) {
                 //console.log(self.labelMap.cand);
                 for (let key in self.labelMap.cand) {
-                    self.addLabel(labelNames[i],  self.labelMap.cand[key].cord);
-                    break;
+                    if (!(key in self.labelMap.in) && self.labelMap.cand[key].cnt >= 2) {
+                        self.addLabel(labelNames[i],  self.labelMap.cand[key].cord);
+                        break;
+                    }
                 }
             }
             /*while(labelNames.length > 0) {
@@ -57,10 +59,10 @@
             var self = this;
             //TODO: check validity
             let key = cord.toString();
-            if (key in self.labelMap.cand) {
-                delete self.labelMap.cand[key];
+            if (key in self.labelMap.cand && self.labelMap.cand[key].cnt >= 2) {
+                //delete self.labelMap.cand[key];
             } else if(Object.keys(self.labelMap.in).length > 2) {
-                console.log('return');
+                console.log('invalid position');
                 return;
             }
             // add to map
@@ -73,6 +75,7 @@
             let faces = cord.getFaces();
             neighbors.forEach((ncord, i) => {
                 let nkey = ncord.toString();
+                // update faces
                 if (nkey in self.labelMap.in) {
                     let nextNcord = neighbors[(i + 1) % 6];
                     if (nextNcord.toString() in self.labelMap.in) {
@@ -81,20 +84,15 @@
                             'cord': triCord
                         }
                     }
-                } else if(nkey in self.labelMap.cand) {
-                    self.labelMap.cand[nkey].cnt += 1;
-    
-                } else if (nkey in self.labelMap.out) {
-                    delete self.labelMap.out[nkey];
+                }
+                // update candidates
+                if (!(nkey in self.labelMap.cand)) {
                     self.labelMap.cand[nkey] = {
                         'cord': ncord,
-                        'cnt': 2
-                    }
-                } else {
-                    self.labelMap.out[nkey] = {
-                        'cord': ncord,
+                        'cnt': 0
                     }
                 }
+                self.labelMap.cand[nkey].cnt += 1;
             });
             console.log(self.labelMap);
         },
@@ -112,13 +110,12 @@
             let faces = cord.getFaces();
             neighbors.forEach(ncord => {
                 let nkey = ncord.toString();
-                if (nkey in self.labelMap.cand) {
-                    self.labelMap.cand[nkey].cnt -= 1;
-                    if (self.labelMap.cand[nkey].cnt < 2) {
-                        delete self.labelMap.cand[nkey];
-                    }
-                } else if (nkey in self.labelMap.out) {
-                    delete self.labelMap.out[nkey];
+                if (!(nkey in self.labelMap.cand)) {
+                    console.log("not in candidate");
+                }
+                self.labelMap.cand[nkey].cnt -= 1;
+                if (self.labelMap.cand[nkey].cnt === 0) {
+                    delete self.labelMap.cand[nkey];
                 }
             })
             faces.forEach(fcord => {
@@ -140,7 +137,6 @@
         self.labelMap = {
             in: {},
             cand: {},
-            out: {},
             faces: {}
         };
         self.labels = {};
