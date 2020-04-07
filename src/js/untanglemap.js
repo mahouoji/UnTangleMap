@@ -100,6 +100,7 @@ UnTangleMap.prototype = {
     plotLabels: function (labelData) {
         var self = this;
         labelData = labelData; //TODO
+        var hints = self.svg.select('.utgmap').append('g').attr('class', 'hint');
         var vertex = self.svg.select('.utgmap')
             .append('g').attr('class', 'label').attr('cursor', 'grab');
         vertex.selectAll('circle')
@@ -114,13 +115,22 @@ UnTangleMap.prototype = {
                 .on("start", dragstarted)
                 .on("drag", dragged)
                 .on("end", dragended));
-
+        //hints
+        var hintData = Layout.getCandidateLayout();
+        hints.selectAll('circle')
+            .data(hintData)
+            .enter()
+            .append('circle')
+            .attr('r', self.opt.gridRaid)
+            .attr('cx', function (d) { return Hex.hexToX(d.cord); })
+            .attr('cy', function (d) { return Hex.hexToY(d.cord); })
+        // drag
         function dragstarted() {
             let x = d3.select(this).attr('cx');
             let y = d3.select(this).attr('cy');
             let hcord = Hex.svgToRoundHex([x,y]);
             Layout.removeLabel(hcord);
-            self.updateFaces(Layout.getFaceLayout());
+            self.updateLayout();
             d3.select(this).raise();
             vertex.attr("cursor", "grabbing");
         }
@@ -143,7 +153,7 @@ UnTangleMap.prototype = {
             let hcord = Hex.svgToRoundHex([d3.event.x, d3.event.y]);
             let name = d3.select(this).attr('label');
             Layout.addLabel(name, hcord);
-            self.updateFaces(Layout.getFaceLayout());
+            self.updateLayout();
             d3.select(this)
                 .attr("cx", Hex.hexToX(hcord))
                 .attr("cy", Hex.hexToY(hcord));
@@ -172,6 +182,23 @@ UnTangleMap.prototype = {
         .attr('points', function (f) { return Hex.faceToSvgPath(f.cord); })
         console.log(faceData);
         return self;
+    },
+
+    updateHints: function(hintData) {
+        var self = this;
+        var hints = self.svg.select('.utgmap').select('.hint')
+            .selectAll('circle').data(hintData);
+        hints.exit().remove();
+        hints.enter().append('circle').merge(hints)
+            .attr('r', self.opt.gridRaid)
+            .attr('cx', function (d) { return Hex.hexToX(d.cord); })
+            .attr('cy', function (d) { return Hex.hexToY(d.cord); })
+        return self;
+    },
+
+    updateLayout: function() {
+        this.updateFaces(Layout.getFaceLayout())
+            .updateHints(Layout.getCandidateLayout());
     },
 
     // controllers

@@ -45,6 +45,10 @@
             return $.map(this.labelMap.in, function(value, key) { return value });
         },
 
+        getCandidateLayout: function() {
+            return $.map(this.labelMap.cand, function(value, key) { return value });
+        },
+
         getFaceLayout: function() {
             return $.map(this.labelMap.faces, function(value, key) { return value });
         },
@@ -92,7 +96,7 @@
                     }
                 }
             });
-            //console.log(self.labelMap);
+            console.log(self.labelMap);
         },
     
         removeLabel: function (cord) {
@@ -123,7 +127,7 @@
                     delete self.labelMap.faces[fkey];
                 }
             })
-            //console.log(self.labelMap);
+            console.log(self.labelMap);
         }
         
     };
