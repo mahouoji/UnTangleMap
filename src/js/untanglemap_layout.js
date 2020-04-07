@@ -63,7 +63,7 @@
                 //delete self.labelMap.cand[key];
             } else if(Object.keys(self.labelMap.in).length > 2) {
                 console.log('invalid position');
-                return;
+                //return;
             }
             // add to map
             self.labelMap.in[key] = {
