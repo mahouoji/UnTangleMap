@@ -19,7 +19,7 @@ Controller.prototype = {
         var self = this;
         self.data = data;
         // UnTangle Map
-        self.unTangleMap.updateData(data);
+        self.unTangleMap.initData(data);
     }
 };
 
