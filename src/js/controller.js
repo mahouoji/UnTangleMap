@@ -15,11 +15,23 @@ Controller.prototype = {
         });
     },
 
+    preprocessData: function (data) {
+        //TODO: check validity
+
+        // hashmap for label to index in label list
+        data.labelIndex = data.labels.reduce(function(map, label, index) {
+            map[label.name] = index;
+            return map;
+        }, {});
+        return data;
+    },
+
     updateData: function(data) {
         var self = this;
-        self.data = data;
+        self.data = self.preprocessData(data);
+        //console.log(self.data);
         // UnTangle Map
-        self.unTangleMap.initData(data);
+        self.unTangleMap.initData(self.data);
     }
 };
 
