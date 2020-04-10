@@ -23,9 +23,14 @@
         HexCord(-1, 0), HexCord(0, -1), HexCord(1, -1)
     ];
 
-    var faceOffests = [
+    var faceOffsets = [
         HexCord(0, 0, -1), HexCord(0, 1, 0), HexCord(-1, 0, 0),
         HexCord(0, 0, 1), HexCord(0, -1, 0), HexCord(1, 0, 0)
+    ];
+
+    var shareEdgeOffsets = [ // vertices sharing one edge with this
+        HexCord(1, 1), HexCord(-1, 2), HexCord(-2, 1),
+        HexCord(-1, -1), HexCord(1, -2), HexCord(2, -1)
     ];
 
     HexCord.prototype = {
@@ -56,7 +61,10 @@
             return neighborOffsets.map(o => this.add(o));
         },
         getFaces: function() { // from vertex
-            return faceOffests.map(o => this.add(o));
+            return faceOffsets.map(o => this.add(o));
+        },
+        getShareEdges: function() { // from vertex
+            return shareEdgeOffsets.map(o => this.add(o));
         },
         getVertices: function() { // from face
             let sum = this.q + this.r + this.s;

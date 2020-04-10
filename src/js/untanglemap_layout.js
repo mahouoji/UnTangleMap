@@ -12,19 +12,21 @@
             center = center || HexCord(0, 0);
             self.data = data;
 
+            let labelNames = self.data.labels.map(l => l.name);
             // TODO: sort labels
             //let label = self.getFirstLabel(data.labels);
-            //self.addLabel(label.name, center);
-            let labelNames = self.data.labels.map(l => l.name);
-            self.addLabel(labelNames[0], center);
-            self.addLabel(labelNames[1], center.getNeighbors()[0]);
-
+            let firstLabel = labelNames[0];
+            let secondLabel = labelNames[1];
+            self.addLabel(firstLabel, center);
+            self.addLabel(secondLabel, center.getNeighbors()[0]);
+            labelNames = labelNames.filter(name=>name !== firstLabel);
+            labelNames = labelNames.filter(name=>name !== secondLabel);
             while (labelNames.length > 0) {
-                let res = self.placeLable(labelNames);
+                let res = self.maximizeUtility(labelNames);
                 self.addLabel(res[0], res[1], res[2]);
                 labelNames = labelNames.filter(name=>name !== res[0]);
             }
-
+            /*
             // without layout algorithm
             for (let i = 2; i < labelNames.length; i++) {
                 res = self.placeLable(labelNames);
@@ -35,9 +37,9 @@
                         break;
                     }
                 }
-            }
-            console.log($.map(self.labelMap.in, function(value, key) { return value }));
-            console.log($.map(self.labelMap.faces, function(value, key) { return value }));
+            }*/
+            //console.log($.map(self.labelMap.in, function(value, key) { return value }));
+            //console.log($.map(self.labelMap.faces, function(value, key) { return value }));
         },
 
         getLabelLayout: function() {
@@ -52,7 +54,7 @@
             return $.map(this.labelMap.faces, function(value, key) { return value });
         },
 
-        placeLable: function(labels) {
+        maximizeUtility: function(labels) {
             var self = this;
             let maxLabel = '';
             let maxCord = Hex(0, 0, 0);
@@ -64,7 +66,7 @@
                 triCnt: 0
             };
             $.each(self.labelMap.cand, function(key, _){
-                if (!(key in self.labelMap.in) && self.labelMap.cand[key].cnt >= 2) {//valid slots
+                if (self.isValidSlot(key)) {//valid slots
                     labels.forEach(name=>{
                         let cord = self.labelMap.cand[key].cord;
                         let util = self.getUpdatedUtility(name, cord);
@@ -81,6 +83,7 @@
                 }
             });
             console.log(maxLabel);
+            console.log(maxCord.toString());
             console.log(maxRec.utility);
             return [maxLabel, maxCord, maxRec];
         },
@@ -130,15 +133,29 @@
             this.utility.triCnt += util.triCnt;
         },
 
+        isValidSlot: function(key) {
+            var self = this;
+            if (key in self.labelMap.in) { return false; }
+            if (!(key in self.labelMap.cand)
+                || self.labelMap.cand[key].cnt < 2) { return false; }
+            // TODO: a more efficient way (with bit?)
+            for(let i = 0; i < 6; i++) {
+                if(self.labelMap.cand[key].ins[i] === 1
+                    && self.labelMap.cand[key].ins[(i + 1) % 6] === 1) {
+                        return true;
+                }
+            }
+            return false;
+        },
+
         addLabel: function(labelName, cord, utility) {
             var self = this;
             //TODO: check validity
             let key = cord.toString();
-            if (key in self.labelMap.cand && self.labelMap.cand[key].cnt >= 2) {
-                //delete self.labelMap.cand[key];
-            } else if(Object.keys(self.labelMap.in).length > 2) {
-                console.log('invalid position');
-                //return;
+            if (key in self.labelMap.in) {
+                console.log('Adding label to used slot');
+            } else if (self.labelMap.in.length >= 2 && !self.isValidSlot(key)) {
+                console.log('Adding label to disconnected slot');
             }
             // update utility
             let util = utility || self.getUpdatedUtility(labelName, cord);
@@ -154,10 +171,10 @@
             let faces = cord.getFaces();
             neighbors.forEach((ncord, i) => {
                 let nkey = ncord.toString();
-                // update faces
                 if (nkey in self.labelMap.in) {
                     let nextNcord = neighbors[(i + 1) % 6];
                     if (nextNcord.toString() in self.labelMap.in) {
+                        // update faces
                         let triCord = faces[i];
                         self.labelMap.faces[triCord.toString()] = {
                             'cord': triCord
@@ -168,10 +185,12 @@
                 if (!(nkey in self.labelMap.cand)) {
                     self.labelMap.cand[nkey] = {
                         'cord': ncord,
-                        'cnt': 0
+                        'cnt': 0,
+                        'ins': [0, 0, 0, 0, 0, 0]
                     }
                 }
                 self.labelMap.cand[nkey].cnt += 1;
+                self.labelMap.cand[nkey].ins[(i + 3) % 6] = 1;
             });
             console.log(self.labelMap);
         },
@@ -187,7 +206,7 @@
 
             let neighbors = cord.getNeighbors();
             let faces = cord.getFaces();
-            neighbors.forEach(ncord => {
+            neighbors.forEach((ncord, i) => {
                 let nkey = ncord.toString();
                 if (!(nkey in self.labelMap.cand)) {
                     console.log("not in candidate");
@@ -196,6 +215,7 @@
                 if (self.labelMap.cand[nkey].cnt === 0) {
                     delete self.labelMap.cand[nkey];
                 }
+                self.labelMap.cand[nkey].ins[(i + 3) % 6] = 0;
             });
             faces.forEach(fcord => {
                 let fkey = fcord.toString();
@@ -226,7 +246,7 @@
             triCorr: 0.0,
             triCnt: 0,
             // settings
-            alpha: 0.5,
+            alpha: 0.0,
             method: 'spearman'
         }
 

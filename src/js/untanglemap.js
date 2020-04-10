@@ -179,7 +179,6 @@ UnTangleMap.prototype = {
         face.exit().remove();
         face.enter().append('polyline').merge(face)
         .attr('points', function (f) { return Hex.faceToSvgPath(f.cord); })
-        console.log(faceData);
         return self;
     },
 
