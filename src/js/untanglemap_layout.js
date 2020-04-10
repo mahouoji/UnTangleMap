@@ -192,7 +192,8 @@
                 self.labelMap.cand[nkey].cnt += 1;
                 self.labelMap.cand[nkey].ins[(i + 3) % 6] = 1;
             });
-            console.log(self.labelMap);
+            //console.log(self.labelMap);
+            console.log(self.utility);
         },
     
         removeLabel: function (cord) {
@@ -202,8 +203,16 @@
                 console.log("removing cord not exist")
                 return;
             }
+            // update utility
+            let util= self.getUpdatedUtility(self.labelMap.in[key].name, cord);
+            util.edgeCorr = -util.edgeCorr;
+            util.edgeCnt = -util.edgeCnt;
+            util.triCorr = -util.triCorr;
+            util.triCnt = -util.triCnt;
+            self.updateUtility(util);
+            // remove from map
             delete self.labelMap.in[key];
-
+            // update neighbors
             let neighbors = cord.getNeighbors();
             let faces = cord.getFaces();
             neighbors.forEach((ncord, i) => {
@@ -214,8 +223,9 @@
                 self.labelMap.cand[nkey].cnt -= 1;
                 if (self.labelMap.cand[nkey].cnt === 0) {
                     delete self.labelMap.cand[nkey];
+                } else {
+                    self.labelMap.cand[nkey].ins[(i + 3) % 6] = 0;
                 }
-                self.labelMap.cand[nkey].ins[(i + 3) % 6] = 0;
             });
             faces.forEach(fcord => {
                 let fkey = fcord.toString();
@@ -223,7 +233,8 @@
                     delete self.labelMap.faces[fkey];
                 }
             });
-            console.log(self.labelMap);
+            //console.log(self.labelMap);
+            console.log(self.utility);
         },
 
     };
@@ -246,7 +257,7 @@
             triCorr: 0.0,
             triCnt: 0,
             // settings
-            alpha: 0.0,
+            alpha: 0.75,
             method: 'spearman'
         }
 
