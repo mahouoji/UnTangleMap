@@ -19,9 +19,15 @@
             self.addLabel(labelNames[0], center);
             self.addLabel(labelNames[1], center.getNeighbors()[0]);
 
+            while (labelNames.length > 0) {
+                let res = self.placeLable(labelNames);
+                self.addLabel(res[0], res[1], res[2]);
+                labelNames = labelNames.filter(name=>name !== res[0]);
+            }
+
             // without layout algorithm
             for (let i = 2; i < labelNames.length; i++) {
-                self.placeLable(labelNames);
+                res = self.placeLable(labelNames);
                 //console.log(self.labelMap.cand);
                 for (let key in self.labelMap.cand) {
                     if (!(key in self.labelMap.in) && self.labelMap.cand[key].cnt >= 2) {
@@ -30,20 +36,6 @@
                     }
                 }
             }
-            // compute layout
-            /*while(labelNames.length > 0) {
-                name = labelNames
-                Map.addLabel(name, cord);
-                delete labelNames[name];
-    
-                for (name in labelNames) {
-                    for (cord in self.labelMap.cand) {
-                        Map.addLabel(name, cord);
-                        delete labelNames[name];
-                        break;
-                    }
-                }
-            }*/
             console.log($.map(self.labelMap.in, function(value, key) { return value }));
             console.log($.map(self.labelMap.faces, function(value, key) { return value }));
         },
@@ -62,24 +54,35 @@
 
         placeLable: function(labels) {
             var self = this;
-            let maxUtil = -10000.0;
             let maxLabel = '';
+            let maxCord = Hex(0, 0, 0);
+            let maxRec = {
+                utility: -10000.0,
+                edgeCorr: 0.0,
+                edgeCnt: 0,
+                triCorr: 0.0,
+                triCnt: 0
+            };
             $.each(self.labelMap.cand, function(key, _){
-                //valid slots
-                if (!(key in self.labelMap.in) && self.labelMap.cand[key].cnt >= 2) {
+                if (!(key in self.labelMap.in) && self.labelMap.cand[key].cnt >= 2) {//valid slots
                     labels.forEach(name=>{
                         let cord = self.labelMap.cand[key].cord;
                         let util = self.getUpdatedUtility(name, cord);
-                        if (maxUtil < util) {
-                            maxUtil = util;
+                        if (maxRec.utility < util.utility) {
                             maxLabel = name;
+                            maxCord = cord;
+                            maxRec.utility = util.utility;
+                            maxRec.edgeCorr = util.edgeCorr;
+                            maxRec.edgeCnt = util.edgeCnt;
+                            maxRec.triCorr = util.triCorr;
+                            maxRec.triCnt = util.triCnt;
                         }
                     })
                 }
             });
             console.log(maxLabel);
-            console.log(maxUtil);
-            return maxLabel;
+            console.log(maxRec.utility);
+            return [maxLabel, maxCord, maxRec];
         },
 
         // compute utility when putting label at cord
@@ -109,11 +112,25 @@
                     }
                 }
             });
-            return self.utility.alpha * (self.utility.edgeCorr + edgeCorr) / (self.utility.edgeCnt + edgeCnt)
-                + (1 - self.utility.alpha) * (self.utility.triCorr + triCorr) / (self.utility.triCnt + triCnt);
+            return {
+                'utility': self.utility.alpha * (self.utility.edgeCorr + edgeCorr) / (self.utility.edgeCnt + edgeCnt)
+                + (1 - self.utility.alpha) * (self.utility.triCorr + triCorr) / (self.utility.triCnt + triCnt),
+                'edgeCorr': edgeCorr,
+                'edgeCnt': edgeCnt,
+                'triCorr': triCorr,
+                'triCnt': triCnt
+            };
         },
 
-        addLabel: function(labelName, cord) {
+        updateUtility: function(util) {
+            this.utility.utility = util.utility;
+            this.utility.edgeCorr += util.edgeCorr;
+            this.utility.edgeCnt += util.edgeCnt;
+            this.utility.triCorr += util.triCorr;
+            this.utility.triCnt += util.triCnt;
+        },
+
+        addLabel: function(labelName, cord, utility) {
             var self = this;
             //TODO: check validity
             let key = cord.toString();
@@ -123,6 +140,9 @@
                 console.log('invalid position');
                 //return;
             }
+            // update utility
+            let util = utility || self.getUpdatedUtility(labelName, cord);
+            self.updateUtility(util);
             // add to map
             self.labelMap.in[key] = {
                 'name': labelName,
@@ -200,6 +220,7 @@
         };
         self.utility = {
             // records
+            utility: 0.0,
             edgeCorr: 0.0,
             edgeCnt: 0,
             triCorr: 0.0,
