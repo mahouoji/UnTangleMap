@@ -139,8 +139,8 @@ UnTangleMap.prototype = {
         function dragstarted() {
             let x = d3.select(this).attr('cx');
             let y = d3.select(this).attr('cy');
-            let hcord = Hex.svgToRoundHex([x,y]);
-            Layout.removeLabel(hcord);
+            self.activeCord = Hex.svgToRoundHex([x,y]);
+            Layout.removeLabel(self.activeCord);
             self.updateLayout();
             d3.select(this).raise();
             vertex.attr("cursor", "grabbing");
@@ -163,11 +163,19 @@ UnTangleMap.prototype = {
             vertex.attr("cursor", "grab");
             let hcord = Hex.svgToRoundHex([d3.event.x, d3.event.y]);
             let name = d3.select(this).attr('label');
-            Layout.addLabel(name, hcord);
-            self.updateLayout();
-            d3.select(this)
-                .attr("cx", Hex.hexToX(hcord))
-                .attr("cy", Hex.hexToY(hcord));
+            if (Layout.isEmptySlot(hcord.toString())) {
+                Layout.addLabel(name, hcord);
+                self.updateLayout();
+                d3.select(this)
+                    .attr("cx", Hex.hexToX(hcord))
+                    .attr("cy", Hex.hexToY(hcord));
+            } else {
+                Layout.addLabel(name, self.activeCord);
+                self.updateLayout();
+                d3.select(this)
+                    .attr("cx", Hex.hexToX(self.activeCord))
+                    .attr("cy", Hex.hexToY(self.activeCord));
+            }
         }
         return self;
     },
@@ -205,7 +213,8 @@ UnTangleMap.prototype = {
         var self = this;
         self.data = data;
 
-        Layout.initLabelLayout(data);
+        let center = Hex.svgToRoundHex([self.opt.width / 2.0, self.opt.height / 2.0]);
+        Layout.initLabelLayout(data, center);
         self.initLabels(Layout.getLabelLayout())
             .updateFaces(Layout.getFaceLayout());
     },
@@ -238,6 +247,7 @@ UnTangleMap.init = function (selector, userOpt) {
         out: {}
     };
     self.labels = {};
+    self.activeCord = HexCord(0, 0);
     //canvas
     self.svg = d3.select(selector).append('svg')
         .attr('width', self.opt.width)

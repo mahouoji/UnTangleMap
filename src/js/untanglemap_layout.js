@@ -133,6 +133,10 @@
             this.utility.triCnt += util.triCnt;
         },
 
+        isEmptySlot: function(key) {
+            return !(key in this.labelMap.in);
+        },
+
         isValidSlot: function(key) {
             var self = this;
             if (key in self.labelMap.in) { return false; }
@@ -154,6 +158,7 @@
             let key = cord.toString();
             if (key in self.labelMap.in) {
                 console.log('Adding label to used slot');
+                return;
             } else if (self.labelMap.in.length >= 2 && !self.isValidSlot(key)) {
                 console.log('Adding label to disconnected slot');
             }
