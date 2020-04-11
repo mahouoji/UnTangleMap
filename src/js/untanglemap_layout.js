@@ -82,9 +82,9 @@
                     })
                 }
             });
-            console.log(maxLabel);
-            console.log(maxCord.toString());
-            console.log(maxRec.utility);
+            //console.log(maxLabel);
+            //console.log(maxCord.toString());
+            //console.log(maxRec.utility);
             return [maxLabel, maxCord, maxRec];
         },
 
@@ -184,7 +184,8 @@
                         // update faces
                         let triCord = faces[i];
                         self.labelMap.faces[triCord.toString()] = {
-                            'cord': triCord
+                            'cord': triCord,
+                            'vertIndex': triCord.getVertices().map(h=>self.data.labelIndex[self.labelMap.in[h].name])
                         }
                     }
                 }
@@ -200,7 +201,7 @@
                 self.labelMap.cand[nkey].ins[(i + 3) % 6] = 1;
             });
             //console.log(self.labelMap);
-            console.log(self.utility);
+            //console.log(self.utility);
         },
     
         removeLabel: function (cord) {

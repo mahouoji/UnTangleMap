@@ -193,8 +193,66 @@ UnTangleMap.prototype = {
         }
         return self;
     },
-    initScatterPlot: function (labelData) {
-
+    initScatterPlot: function (faceData) {
+        var self = this;
+        let scatter = self.svg.select('.utgmap').select('.scatter-plot');
+        let data = []
+        faceData.forEach(face=>{
+        //let face = faceData[2];
+            let ids = face.vertIndex;
+            let pa = self.labelPos[ids[0]];
+            let pb = self.labelPos[ids[1]];
+            let pc = self.labelPos[ids[2]];
+            console.log(ids[0]);
+            console.log(pa);
+            console.log(ids[1]);
+            console.log(pb);
+            console.log(ids[2]);
+            console.log(pc);
+            self.data.items.forEach(item=>{
+                let a = item.vec[ids[0]];
+                let b = item.vec[ids[1]];
+                let c = item.vec[ids[2]];
+                if (a > 0 || b > 0 || c > 0) {
+                    let sum = a + b + c;
+                    a = a/sum;
+                    b = b/sum;
+                    c = c/sum;
+                    data.push([a * pa[0] + b * pb[0] + c * pc[0],
+                        a * pa[1] + b * pb[1] + c * pc[1],
+                        self.data.labels[ids[0]].name,
+                        self.data.labels[ids[1]].name,
+                        self.data.labels[ids[2]].name,
+                        a,
+                        b,
+                        c]);
+                    /*
+                    data.push([a * pa[0] + b * pb[0] + c * pc[0],
+                               a * pa[1] + b * pb[1] + c * pc[1]]);*/
+                }
+            });
+        });
+        console.log(self.labelPos);
+        scatter.selectAll('circle')
+            .data(data)
+            .enter()
+            .append('circle')
+            .attr('cx', d=>d[0])
+            .attr('cy', d=>d[1])
+            .attr('name', d=>d[2] + '-' + d[3] + '-' + d[4] + '=' + d[5] + '-' + d[6] + '-' + d[7])
+            .attr('r', '2px')
+            .attr('opacity', '0.3')
+            .attr('fill', '#088');
+        /*
+        let g = scatter.selectAll('g')
+            .data(faceData);
+        g.exit().remove();
+        g.enter().append('g').merge(g);
+        g.selectAll('circle')
+            .data(self.data.items)
+            .enter()
+            .append('circle');*/
+        return self;
     },
 
     // update plots
@@ -227,9 +285,9 @@ UnTangleMap.prototype = {
     // manage data
     initLabelPos: function(labelData) {
         var self = this;
-        self.labelPos = [];
+        self.labelPos = self.data.labels.map(d=>[0,0]);
         labelData.forEach(rec => {
-            self.labelPos.push(Hex.hexToSvg(rec.cord));
+            self.labelPos[rec.index] = Hex.hexToSvg(rec.cord);
         });
     },
 
@@ -241,9 +299,11 @@ UnTangleMap.prototype = {
         let center = Hex.svgToRoundHex([self.opt.width / 2.0, self.opt.height / 2.0]);
         Layout.initLabelLayout(data, center);
         let labelLayout = Layout.getLabelLayout();
+        let faceLayout = Layout.getFaceLayout();
         self.initLabelPos(labelLayout);
         self.initLabels(labelLayout)
-            .updateFaces(Layout.getFaceLayout());
+            .updateFaces(faceLayout)
+            .initScatterPlot(faceLayout);
     },
 };
 
