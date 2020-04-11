@@ -56,15 +56,15 @@
 
         maximizeUtility: function(labels) {
             var self = this;
-            let maxLabel = '';
-            let maxCord = Hex(0, 0, 0);
-            let maxRec = {
-                utility: -10000.0,
-                edgeCorr: 0.0,
-                edgeCnt: 0,
-                triCorr: 0.0,
-                triCnt: 0
-            };
+            let maxLabel = null,
+                maxCord = null,
+                maxRec = {
+                    utility: -10000.0,
+                    edgeCorr: 0.0,
+                    edgeCnt: 0,
+                    triCorr: 0.0,
+                    triCnt: 0
+                };
             $.each(self.labelMap.cand, function(key, _){
                 if (self.isValidSlot(key)) {//valid slots
                     labels.forEach(name=>{
@@ -140,6 +140,8 @@
         isValidSlot: function(key) {
             var self = this;
             if (key in self.labelMap.in) { return false; }
+            if (self.labelMap.in.lenght === 0) { return true; }
+            if (self.labelMap.in.length === 1 && key in self.labelMap.cand) { return true; }
             if (!(key in self.labelMap.cand)
                 || self.labelMap.cand[key].cnt < 2) { return false; }
             // TODO: a more efficient way (with bit?)
@@ -159,7 +161,7 @@
             if (key in self.labelMap.in) {
                 console.log('Adding label to used slot');
                 return;
-            } else if (self.labelMap.in.length >= 2 && !self.isValidSlot(key)) {
+            } else if (!self.isValidSlot(key)) {
                 console.log('Adding label to disconnected slot');
             }
             // update utility
@@ -262,7 +264,7 @@
             triCorr: 0.0,
             triCnt: 0,
             // settings
-            alpha: 0.75,
+            alpha: 0.0,
             method: 'spearman'
         }
 
