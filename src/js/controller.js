@@ -8,7 +8,7 @@ var Controller = function() {
 Controller.prototype = {
     loadStaticData: function (path) {
         var self = this;
-        path = path || "data/imdb.json";
+        path = path || "data/imdb_mg.json";
         d3.json(path, function(data) {
             self.updateData(data);
             //console.log(self.data);

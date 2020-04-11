@@ -113,18 +113,25 @@ UnTangleMap.prototype = {
         labelData = labelData; //TODO
         var hints = self.svg.select('.utgmap').select('.hint');
         var vertex = self.svg.select('.utgmap').select('.label').attr('cursor', 'grab');
-        vertex.selectAll('circle')
+        var g = vertex.selectAll('g')
             .data(labelData)
             .enter()
-            .append('circle')
+            .append('g');
+        g.append('text')
+            .text(d => d.name)
+            .attr('dx', function (d) { return Hex.hexToX(d.cord); })
+            .attr('dy', function (d) { return Hex.hexToY(d.cord) +  self.opt.labelTextOffset; })
+            .attr('text-anchor','middle')
+        g.append('circle')
             .attr('r', self.opt.labelRaid)
             .attr('cx', function (d) { return Hex.hexToX(d.cord); })
             .attr('cy', function (d) { return Hex.hexToY(d.cord); })
             .attr('label', d=>d.name)
             .call(d3.drag()
-                .on("start", dragstarted)
-                .on("drag", dragged)
-                .on("end", dragended));
+            .on("start", dragstarted)
+            .on("drag", dragged)
+            .on("end", dragended));
+
         //hints
         var hintData = Layout.getCandidateLayout();
         hints.selectAll('circle')
@@ -142,7 +149,7 @@ UnTangleMap.prototype = {
             self.activeCord = Hex.svgToRoundHex([x,y]);
             Layout.removeLabel(self.activeCord);
             self.updateLayout();
-            d3.select(this).raise();
+            d3.select(this.parentNode).raise();
             vertex.attr("cursor", "grabbing");
         }
 
@@ -157,25 +164,28 @@ UnTangleMap.prototype = {
             d3.select(this)
                 .attr("cx", d3.event.x)
                 .attr("cy", d3.event.y);
+            d3.select(this.parentNode).select('text')
+                .attr("dx", d3.event.x)
+                .attr("dy", d3.event.y + self.opt.labelTextOffset);
         }
 
         function dragended() {
             vertex.attr("cursor", "grab");
             let hcord = Hex.svgToRoundHex([d3.event.x, d3.event.y]);
             let name = d3.select(this).attr('label');
-            if (Layout.isEmptySlot(hcord.toString())) {
-                Layout.addLabel(name, hcord);
-                self.updateLayout();
-                d3.select(this)
-                    .attr("cx", Hex.hexToX(hcord))
-                    .attr("cy", Hex.hexToY(hcord));
-            } else {
-                Layout.addLabel(name, self.activeCord);
-                self.updateLayout();
-                d3.select(this)
-                    .attr("cx", Hex.hexToX(self.activeCord))
-                    .attr("cy", Hex.hexToY(self.activeCord));
+            if (!Layout.isEmptySlot(hcord.toString())) {
+                hcord = self.activeCord;
             }
+            Layout.addLabel(name, hcord);
+            self.updateLayout();
+            let x = Hex.hexToX(hcord),
+                y = Hex.hexToY(hcord);
+            d3.select(this)
+                .attr("cx", x)
+                .attr("cy", y);
+            d3.select(this.parentNode).select('text')
+                .attr("dx", x)
+                .attr("dy", y + self.opt.labelTextOffset);
         }
         return self;
     },
@@ -234,6 +244,7 @@ UnTangleMap.init = function (selector, userOpt) {
         side: 40,
         gridRaid: 5,
         labelRaid: 4,
+        labelTextOffset: 15,
     };
     for (var o in userOpt) {
         self.opt[o] = userOpt[o];

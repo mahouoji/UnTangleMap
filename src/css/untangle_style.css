@@ -12,10 +12,14 @@ svg {
     stroke:#888;
     stroke-width: 1px;
 }
-.label {
+.label circle {
     fill: #088;
     opacity: 0.5;
 }
+.label text {
+    font-size: 5.5pt;
+}
+
 .hint {
     fill: #800;
     opacity: 0.5;
