@@ -10,6 +10,7 @@ var Hex = global.Hex(1.0);
 var Layout = global.UnTangleMapLayout();
 
 UnTangleMap.prototype = {
+    // init plots and interactions
     // set up groups
     initLayers: function() {
         var self = this;
@@ -22,6 +23,7 @@ UnTangleMap.prototype = {
         // map
         let utgmap = self.svg.append('g').attr('class', 'utgmap');
         utgmap.append('g').attr('class', 'face');
+        utgmap.append('g').attr('class', 'scatter-plot');
         utgmap.append('g').attr('class', 'hint');
         utgmap.append('g').attr('class', 'label');
         return self
@@ -110,7 +112,6 @@ UnTangleMap.prototype = {
     // set up labels and label dragging
     initLabels: function (labelData) {
         var self = this;
-        labelData = labelData; //TODO
         var hints = self.svg.select('.utgmap').select('.hint');
         var vertex = self.svg.select('.utgmap').select('.label').attr('cursor', 'grab');
         var g = vertex.selectAll('g')
@@ -186,10 +187,17 @@ UnTangleMap.prototype = {
             d3.select(this.parentNode).select('text')
                 .attr("dx", x)
                 .attr("dy", y + self.opt.labelTextOffset);
+            // update position record
+            self.labelPos[self.data.labelIndex[name]] = [x, y];
+            console.log(self.labelPos);
         }
         return self;
     },
+    initScatterPlot: function (labelData) {
 
+    },
+
+    // update plots
     updateFaces: function(faceData) {
         var self = this;
         var face = self.svg.select('.utgmap').select('.face')
@@ -199,7 +207,6 @@ UnTangleMap.prototype = {
         .attr('points', function (f) { return Hex.faceToSvgPath(f.cord); })
         return self;
     },
-
     updateHints: function(hintData) {
         var self = this;
         var hints = self.svg.select('.utgmap').select('.hint')
@@ -212,20 +219,30 @@ UnTangleMap.prototype = {
             .attr('opacity', d => d.cnt / 6.0);
         return self;
     },
-
     updateLayout: function() {
         this.updateFaces(Layout.getFaceLayout())
             .updateHints(Layout.getCandidateLayout());
     },
 
-    // controllers
+    // manage data
+    initLabelPos: function(labelData) {
+        var self = this;
+        self.labelPos = [];
+        labelData.forEach(rec => {
+            self.labelPos.push(Hex.hexToSvg(rec.cord));
+        });
+    },
+
+    // controller
     initData: function(data) {
         var self = this;
         self.data = data;
 
         let center = Hex.svgToRoundHex([self.opt.width / 2.0, self.opt.height / 2.0]);
         Layout.initLabelLayout(data, center);
-        self.initLabels(Layout.getLabelLayout())
+        let labelLayout = Layout.getLabelLayout();
+        self.initLabelPos(labelLayout);
+        self.initLabels(labelLayout)
             .updateFaces(Layout.getFaceLayout());
     },
 };
@@ -257,8 +274,8 @@ UnTangleMap.init = function (selector, userOpt) {
         cand: {},
         out: {}
     };
-    self.labels = {};
     self.activeCord = HexCord(0, 0);
+    self.labelPos = [];//svg coordinates for labels by lableIndex
     //canvas
     self.svg = d3.select(selector).append('svg')
         .attr('width', self.opt.width)

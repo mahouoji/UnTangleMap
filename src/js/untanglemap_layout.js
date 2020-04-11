@@ -267,7 +267,6 @@
             alpha: 0.0,
             method: 'spearman'
         }
-
     }
     
     UnTangleMap.init.prototype = UnTangleMap.prototype;
