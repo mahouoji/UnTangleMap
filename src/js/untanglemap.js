@@ -178,7 +178,6 @@ UnTangleMap.prototype = {
                 hcord = self.activeCord;
             }
             Layout.addLabel(name, hcord);
-            self.updateLayout();
             let x = Hex.hexToX(hcord),
                 y = Hex.hexToY(hcord);
             d3.select(this)
@@ -190,25 +189,30 @@ UnTangleMap.prototype = {
             // update position record
             self.labelPos[self.data.labelIndex[name]] = [x, y];
             console.log(self.labelPos);
+            self.updateLayout();
         }
         return self;
     },
-    initScatterPlot: function (faceData) {
+
+    // update plots
+    updateFaces: function(faceData) {
+        var self = this;
+        var face = self.svg.select('.utgmap').select('.face')
+            .selectAll('polyline').data(faceData);
+        face.exit().remove();
+        face.enter().append('polyline').merge(face)
+        .attr('points', function (f) { return Hex.faceToSvgPath(f.cord); })
+        return self;
+    },
+    updateScatterPlot: function (faceData) {
         var self = this;
         let scatter = self.svg.select('.utgmap').select('.scatter-plot');
         let data = []
         faceData.forEach(face=>{
-        //let face = faceData[2];
             let ids = face.vertIndex;
             let pa = self.labelPos[ids[0]];
             let pb = self.labelPos[ids[1]];
             let pc = self.labelPos[ids[2]];
-            console.log(ids[0]);
-            console.log(pa);
-            console.log(ids[1]);
-            console.log(pb);
-            console.log(ids[2]);
-            console.log(pc);
             self.data.items.forEach(item=>{
                 let a = item.vec[ids[0]];
                 let b = item.vec[ids[1]];
@@ -219,27 +223,17 @@ UnTangleMap.prototype = {
                     b = b/sum;
                     c = c/sum;
                     data.push([a * pa[0] + b * pb[0] + c * pc[0],
-                        a * pa[1] + b * pb[1] + c * pc[1],
-                        self.data.labels[ids[0]].name,
-                        self.data.labels[ids[1]].name,
-                        self.data.labels[ids[2]].name,
-                        a,
-                        b,
-                        c]);
-                    /*
-                    data.push([a * pa[0] + b * pb[0] + c * pc[0],
-                               a * pa[1] + b * pb[1] + c * pc[1]]);*/
+                               a * pa[1] + b * pb[1] + c * pc[1]]);
                 }
             });
         });
         console.log(self.labelPos);
-        scatter.selectAll('circle')
-            .data(data)
-            .enter()
-            .append('circle')
+        let circle = scatter.selectAll('circle')
+            .data(data);
+        circle.exit().remove();
+        circle.enter().append('circle').merge(circle)
             .attr('cx', d=>d[0])
             .attr('cy', d=>d[1])
-            .attr('name', d=>d[2] + '-' + d[3] + '-' + d[4] + '=' + d[5] + '-' + d[6] + '-' + d[7])
             .attr('r', '2px')
             .attr('opacity', '0.3')
             .attr('fill', '#088');
@@ -252,17 +246,6 @@ UnTangleMap.prototype = {
             .data(self.data.items)
             .enter()
             .append('circle');*/
-        return self;
-    },
-
-    // update plots
-    updateFaces: function(faceData) {
-        var self = this;
-        var face = self.svg.select('.utgmap').select('.face')
-            .selectAll('polyline').data(faceData);
-        face.exit().remove();
-        face.enter().append('polyline').merge(face)
-        .attr('points', function (f) { return Hex.faceToSvgPath(f.cord); })
         return self;
     },
     updateHints: function(hintData) {
@@ -279,7 +262,8 @@ UnTangleMap.prototype = {
     },
     updateLayout: function() {
         this.updateFaces(Layout.getFaceLayout())
-            .updateHints(Layout.getCandidateLayout());
+            .updateHints(Layout.getCandidateLayout())
+            .updateScatterPlot(Layout.getFaceLayout());
     },
 
     // manage data
@@ -303,7 +287,7 @@ UnTangleMap.prototype = {
         self.initLabelPos(labelLayout);
         self.initLabels(labelLayout)
             .updateFaces(faceLayout)
-            .initScatterPlot(faceLayout);
+            .updateScatterPlot(faceLayout);
     },
 };
 
