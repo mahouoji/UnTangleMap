@@ -234,9 +234,7 @@ UnTangleMap.prototype = {
         circle.enter().append('circle').merge(circle)
             .attr('cx', d=>d[0])
             .attr('cy', d=>d[1])
-            .attr('r', '2px')
-            .attr('opacity', '0.3')
-            .attr('fill', '#088');
+            .attr('r', self.opt.itemRaid);
         /*
         let g = scatter.selectAll('g')
             .data(faceData);
@@ -305,6 +303,7 @@ UnTangleMap.init = function (selector, userOpt) {
         side: 40,
         gridRaid: 5,
         labelRaid: 4,
+        itemRaid: 2,
         labelTextOffset: 15,
     };
     for (var o in userOpt) {

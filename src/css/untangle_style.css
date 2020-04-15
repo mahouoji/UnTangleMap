@@ -21,10 +21,15 @@ svg {
 }
 
 .hint {
-    fill: #800;
+    fill: #888;
     opacity: 0.5;
 }
 .face {
-    fill: #088;
+    fill: #888;
     opacity: 0.3;
+}
+
+.scatter-plot circle {
+    fill: #088;
+    opacity: 0.2;
 }
