@@ -1,0 +1,5564 @@
+$Image Processing & Computer Vision
+240
+	
+CVPR : IEEE/CVF Conference on Computer Vision and Pattern Recognition
+Jun 16, 2020 - Jun 18, 2020 - Seattle , United States
+http://cvpr2020.thecvf.com/
+137
+	
+ECCV : European Conference on Computer Vision
+Aug 23, 2020 - Aug 28, 2020 - Glasgow , United Kingdom
+https://eccv2020.eu/
+Deadline : to be confirmed
+129
+	
+ICCV : IEEE/CVF International Conference on Computer Vision
+Oct 27, 2019 - Nov 3, 2019 - Seoul , South Korea
+http://iccv2019.thecvf.com/
+58
+	
+IROS : IEEE/RSJ International Conference on Intelligent Robots and Systems
+Oct 25, 2020 - Oct 29, 2020 - Las Vegas , United States
+http://www.iros2020.org
+58
+	
+ACMMM : ACM International Conference on Multimedia
+Oct 12, 2020 - Oct 16, 2020 - Seattle , United States
+https://www.acmmm.org/2020/
+46
+	
+BMVC : British Machine Vision Conference
+Sep 9, 2019 - Sep 12, 2019 - Cardiff , United Kingdom
+https://bmvc2019.org/
+46
+	
+MICCAI : Medical Image Computing and Computer Assisted Intervention
+Oct 4, 2020 - Oct 8, 2020 - Lima , Peru
+https://miccai2020.org/en/
+46
+	
+WACV : Workshop on Applications of Computer Vision
+Mar 2, 2020 - Mar 5, 2020 - Snowmass Village , United States
+http://wacv20.wacv.net/
+45
+	
+ICIP : IEEE International Conference on Image Processing
+Oct 25, 2020 - Oct 28, 2020 - Abu Dhabi , United Arab Emirates
+https://2020.ieeeicip.org/
+38
+	
+ACCV : Asian Conference on Computer Vision (ACCV)
+Nov 30, 2020 - Dec 4, 2020 - Kyoto , Japan
+http://accv2020.kyoto/
+Deadline : Wed 08 Jul 2020
+38
+	
+ICPR : International Conference on Pattern Recognition
+Jan 10, 2021 - Jan 15, 2021 - Milan , Italy
+https://www.icpr2020.it/
+33
+	
+ICMR : ACM International Conference on Multimedia Retrieval
+Jun 8, 2020 - Jun 11, 2020 - Dublin , Ireland
+http://www.icmr2020.org/
+31
+	
+FG : IEEE International Conference on Automatic Face & Gesture Recognition
+May 18, 2020 - May 22, 2020 - Buenos Aires , Argentina
+https://fg2020.org/
+31
+	
+MMSys : ACM Multimedia Systems Conference
+Jun 8, 2020 - Jun 11, 2020 - Istanbul , Turkey
+https://2020.acmmmsys.org/
+28
+	
+IGARSS : IEEE International Geoscience and Remote Sensing Symposium
+Jul 19, 2020 - Jul 24, 2020 - Waikoloa , United States
+https://igarss2020.org/
+28
+	
+EUSIPCO : European Signal Processing Conference
+Aug 24, 2020 - Aug 28, 2020 - Amsterdam , Netherlands
+https://eusipco2020.org/
+27
+	
+SIGSPATIAL : ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems
+Nov 5, 2019 - Nov 8, 2019 - Chicago , United States
+http://sigspatial2019.sigspatial.org
+26
+	
+ICDAR : International Conference on Document Analysis and Recognition
+Sep 22, 2019 - Sep 25, 2019 - Sydney , Australia
+http://www.icdar2019.org/
+26
+	
+ICME : IEEE International Conference on Multimedia and Expo
+Jul 6, 2020 - Jul 10, 2020 - London , United Kingdom
+http://www.2020.ieeeicme.org/
+24
+	
+SMC : IEEE International Conference on Systems, Man and Cybernetics
+Oct 11, 2020 - Oct 14, 2020 - Toronto , Canada
+http://smc2020.org/
+23
+	
+ICB : IAPR International Conference on Biometrics (ICB)
+Sep 27, 2020 - Sep 30, 2020 - Houston , United States
+https://ieee-biometrics.org/ijcb2020/
+23
+	
+VR : IEEE Virtual Reality Conference
+Mar 22, 2020 - Mar 26, 2020 - Atlanta , United States
+http://ieeevr.org/2020/
+Deadline : to be confirmed
+22
+	
+ICMLA : International Conference on Machine Learning and Applications
+Dec 16, 2019 - Dec 19, 2019 - Boca Raton , United States
+https://www.icmla-conference.org/icmla19
+22
+	
+AVSS : IEEE International Conference on Advanced Video and Signal-Based Surveillance
+Sep 22, 2020 - Sep 25, 2020 - Washington DC , United States
+http://www.avss2020.org
+21
+	
+QoMEX : International Workshop on Quality of Multimedia Experience
+May 26, 2020 - May 28, 2020 - Athlone , Ireland
+http://qomex2020.ie/
+Deadline : to be confirmed
+21
+	
+ETRA : Eye Tracking Research & Application
+Jun 2, 2020 - Jun 5, 2020 - Stuttgart , Germany
+https://etra.acm.org/2020/
+Deadline : to be confirmed
+21
+	
+WIFS : IEEE International Workshop on Information Forensics and Security
+Dec 9, 2019 - Dec 12, 2019 - Delft , Netherlands
+https://wifs2019.tudelft.nl
+21
+	
+PacificVis : IEEE Pacific Visualization Symposium
+Apr 14, 2020 - Apr 17, 2020 - Tianjin , China
+http://vis.tju.edu.cn/pvis2020/
+20
+	
+DCC : Data Compression Conference
+Mar 26, 2019 - Mar 29, 2019 - Snowbird , United States
+http://www.cs.brandeis.edu/~dcc/index.html
+19
+	
+BTAS : IEEE International Conference on Biometrics: Theory Applications and Systems (BTAS)
+Sep 27, 2020 - Sep 30, 2020 - Houston , United States
+https://ieee-biometrics.org/ijcb2020/
+19
+	
+VAST : IEEE Symposium on Visual Analytics Science and Technology
+Oct 20, 2019 - Oct 25, 2019 - Vancouver , Canada
+http://ieeevis.org/year/2019/welcome
+19
+	
+WASSA : Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis
+Oct 31, 2018 - Nov 1, 2018 - Brusssels , Belgium
+https://wt-public.emm4u.eu/wassa2018/index.htm
+18
+	
+DAS : IAPR International Workshop on Document Analysis Systems
+May 17, 2020 - May 20, 2020 - Wuhan , China
+http://www.vlrlab.net/das2020/
+18
+	
+VRST : ACM Symposium on Virtual Reality Software and Technology
+Nov 12, 2019 - Nov 15, 2019 - Penrith , Australia
+https://vrst.acm.org/vrst2019/submissions/
+18
+	
+ICIAP : International Conference on Image Analysis and Processing
+Sep 9, 2019 - Sep 13, 2019 - Trento , Italy
+https://event.unitn.it/iciap2019/
+18
+	
+ACII : International Conference on Affective Computing and Intelligent Interaction
+Sep 3, 2019 - Sep 6, 2019 - Cambridge , United Kingdom
+http://acii-conf.org/2019/important-dates/#top
+17
+	
+AIED : Artificial Intelligence in Education
+Jun 25, 2019 - Jun 29, 2019 - Chicago , United States
+http://caed-lab.com/aied2019/index.html
+16
+	
+IHMMSEC : ACM workshop on Information hiding and multimedia security
+Jun 22, 2020 - Jun 24, 2020 - Denver , United States
+https://www.ihmmsec.org/cms/home/index.html
+15
+	
+ISVC : International Symposium on Visual Computing
+Oct 7, 2019 - Oct 9, 2019 - Lake Tahoe , United States
+http://www.isvc.net
+15
+	
+MMSP : IEEE Workshop on Multimedia Signal Processing
+Oct 27, 2019 - Oct 29, 2019 - Kuala Lumpur , Malaysia
+http://mmsp2019.org
+15
+	
+PCS : Picture Coding Symposium
+Nov 12, 2019 - Nov 15, 2019 - Ningbo , China
+http://pcs2019.org/
+15
+	
+I3DG : Symposium on Interactive 3D Graphics
+May 5, 2020 - May 7, 2020 - San Francisco , United States
+http://i3dsymposium.github.io/2020/
+15
+	
+VL/HCC : IEEE Symposium on Visual Languages and Human-Centric Computing
+Aug 10, 2020 - Aug 14, 2020 - Dunedin , New Zealand
+https://conf.researchr.org/track/vlhcc2020/vlhcc2020-papers
+14
+	
+Web3D : International Conference on 3D Web Technology
+Jun 24, 2020 - Jun 26, 2020 - Seoul , South Korea
+https://web3d2020.web3d.org/
+14
+	
+DICTA : International Conference on Digital Image Computing Techniques and Applications
+Dec 2, 2019 - Dec 4, 2019 - Perth , Australia
+http://dicta2019.dictaconference.org/
+14
+	
+ICIAR : International Conference on Image Analysis and Recognition
+Jun 24, 2020 - Jun 26, 2020 - Póvoa de Varzim , Portugal
+https://www.aimiconf.org/iciar20/
+14
+	
+VCIP : IEEE Visual Communications and Image Processing
+Dec 1, 2019 - Dec 4, 2019 - Sydney , Australia
+http://www.vcip2019.org/
+13
+	
+ICARCV : International Conference on Control, Automation, Robotics and Vision
+Nov 18, 2018 - Nov 21, 2018 - Singapore , Singapore
+http://www.ieee-ras.org/conferences-workshops/technically-co-sponsored/icarcv
+13
+	
+VISSOFT : IEEE Working Conference on Software Visualization
+Sep 30, 2019 - Oct 1, 2019 - Cleveland , United States
+http://vissoft19.dcc.uchile.cl/
+12
+	
+InfoVis : International Conference on Information Visualization
+Feb 27, 2020 - Feb 29, 2020 - Valletta , Malta
+http://ivapp.visigrapp.org/
+
+$Machine Learing, Data Mining & Artificial Intelligence
+240
+	
+CVPR : IEEE/CVF Conference on Computer Vision and Pattern Recognition
+Jun 16, 2020 - Jun 18, 2020 - Seattle , United States
+http://cvpr2020.thecvf.com/
+169
+	
+NeurIPS : Neural Information Processing Systems (NIPS)
+Dec 10, 2019 - Dec 12, 2019 - Vancouver , Canada
+https://nips.cc
+137
+	
+ECCV : European Conference on Computer Vision
+Aug 23, 2020 - Aug 28, 2020 - Glasgow , United Kingdom
+https://eccv2020.eu/
+Deadline : to be confirmed
+135
+	
+ICML : International Conference on Machine Learning (ICML)
+Jul 13, 2020 - Jan 1, 1970 - Vienna , Austria
+https://icml.cc/Conferences/2020
+129
+	
+ICCV : IEEE/CVF International Conference on Computer Vision
+Oct 27, 2019 - Nov 3, 2019 - Seoul , South Korea
+http://iccv2019.thecvf.com/
+106
+	
+ACL : Meeting of the Association for Computational Linguistics (ACL)
+Jul 5, 2020 - Jul 10, 2020 - Seattle , United States
+https://acl2020.org/
+95
+	
+AAAI : AAAI Conference on Artificial Intelligence
+Feb 7, 2020 - Feb 12, 2020 - Hilton New York Midtown , United States
+https://aaai.org/Conferences/AAAI-20
+88
+	
+EMNLP : Conference on Empirical Methods in Natural Language Processing (EMNLP)
+Dec 3, 2019 - Dec 7, 2019 - Hong Kong , Hong Kong
+https://www.emnlp-ijcnlp2019.org/
+86
+	
+SIGKDD : ACM SIGKDD International Conference on Knowledge discovery and data mining
+Aug 22, 2020 - Jan 1, 1970 - San Diego , United States
+https://www.kdd.org/kdd2020/
+67
+	
+IJCAI : International Joint Conference on Artificial Intelligence (IJCAI)
+Jul 11, 2020 - Jan 1, 1970 - Yokohama , Japan
+https://ijcai20.org
+67
+	
+SIGMOD : ACM SIGMOD International Conference on Management of Data
+Jun 14, 2020 - Jun 19, 2020 - Portland , United States
+https://sigmod2020.org/
+65
+	
+INTERSPEECH : Conference of the International Speech Communication Association (INTERSPEECH)
+Sep 14, 2020 - Sep 18, 2020 - Shanghai , China
+http://www.interspeech2020.org
+58
+	
+IROS : IEEE/RSJ International Conference on Intelligent Robots and Systems
+Oct 25, 2020 - Oct 29, 2020 - Las Vegas , United States
+http://www.iros2020.org
+55
+	
+SIGIR : ACM SIGIR Conference on Research and development in information retrieval
+Jul 26, 2020 - Jul 30, 2020 - XI\'AN , China
+https://sigir.org/sigir2020/
+53
+	
+ISIT : IEEE International Symposium on Information Theory
+Jun 21, 2020 - Jun 26, 2020 - Los Angeles , United States
+https://2020.ieee-isit.org/
+52
+	
+AISTATS : International Conference on Artificial Intelligence and Statistics
+Jun 3, 2020 - Jun 5, 2020 - Palermo , Italy
+https://www.aistats.org/
+51
+	
+WSDM : ACM International Conference on Web Search and Data Mining
+Feb 5, 2020 - Feb 9, 2020 - Houston , United States
+http://www.wsdm-conference.org/2020/
+48
+	
+CIKM : ACM International Conference on Information and Knowledge Management
+Oct 19, 2020 - Oct 23, 2020 - Galway , Ireland
+https://cikm2020.org/call-for-papers-full-and-short-research-papers/
+Deadline : Fri 01 May 2020
+48
+	
+COLT : Conference on Learning Theory (COLT)
+Jul 9, 2020 - Jul 12, 2020 - Graz , Austria
+http://learningtheory.org/colt2020/
+46
+	
+BMVC : British Machine Vision Conference
+Sep 9, 2019 - Sep 12, 2019 - Cardiff , United Kingdom
+https://bmvc2019.org/
+45
+	
+ICIP : IEEE International Conference on Image Processing
+Oct 25, 2020 - Oct 28, 2020 - Abu Dhabi , United Arab Emirates
+https://2020.ieeeicip.org/
+45
+	
+RecSys : ACM Conference on Recommender Systems
+Sep 22, 2020 - Sep 26, 2020 - Rio de Janeiro , Brazil
+https://recsys.acm.org/recsys20/
+Deadline : Mon 27 Apr 2020
+45
+	
+LREC : International Conference on Language Resources and Evaluation (LREC)
+May 13, 2020 - May 15, 2020 - Marseille , France
+https://lrec2020.lrec-conf.org/
+44
+	
+ICDMW : IEEE International Conference on Data Mining Workshop
+Nov 17, 2020 - Nov 20, 2020 - Sorrento , Italy
+http://icdm2020.bigke.org/
+Deadline : Sat 11 Jul 2020
+41
+	
+COLING : International Conference on Computational Linguistics
+Sep 15, 2020 - Sep 18, 2020 - Barcelona , Spain
+http://coling2020.org/
+Deadline : Wed 01 Jul 2020
+38
+	
+ACCV : Asian Conference on Computer Vision (ACCV)
+Nov 30, 2020 - Dec 4, 2020 - Kyoto , Japan
+http://accv2020.kyoto/
+Deadline : Wed 08 Jul 2020
+38
+	
+ICPR : International Conference on Pattern Recognition
+Jan 10, 2021 - Jan 15, 2021 - Milan , Italy
+https://www.icpr2020.it/
+36
+	
+EACL : Conference of the European Chapter of the Association for Computational Linguistics
+Apr 3, 2017 - Apr 7, 2017 - Valencia , Spain
+http://eacl2017.org/
+36
+	
+SDM : SIAM International Conference on Data Mining (SDM)
+May 7, 2020 - May 9, 2020 - Cincinnati , United States
+https://www.siam.org/Conferences/CM/Conference/sdm20
+36
+	
+LAK : International Conference on Learning Analytics And Knowledge
+Mar 23, 2020 - Mar 27, 2020 - Frankfurt , Germany
+https://lak20.solaresearch.org/
+36
+	
+IJCNN : International Joint Conference on Neural Networks
+Jul 19, 2020 - Jul 24, 2020 - Glasgow , United Kingdom
+https://wcci2020.org/
+34
+	
+AIME : Artificial Intelligence in Medicine
+Jun 26, 2019 - Jun 29, 2019 - Poznan , Poland
+http://aime19.aimedicine.info/
+33
+	
+UAI : Conference on Uncertainty in Artificial Intelligence (UAI)
+Aug 3, 2020 - Aug 6, 2020 - Toronto , Canada
+http://www.auai.org/uai2020/
+33
+	
+Big Data : IEEE International Conference on Big Data
+Dec 9, 2019 - Dec 12, 2019 - Los Angeles , United States
+http://bigdataieee.org/BigData2019/
+33
+	
+ICMR : ACM International Conference on Multimedia Retrieval
+Jun 8, 2020 - Jun 11, 2020 - Dublin , Ireland
+http://www.icmr2020.org/
+31
+	
+FG : IEEE International Conference on Automatic Face & Gesture Recognition
+May 18, 2020 - May 22, 2020 - Buenos Aires , Argentina
+https://fg2020.org/
+31
+	
+Allerton : Allerton Conference on Communication, Control, and Computing
+Sep 2, 2018 - Sep 5, 2018 - Monticello , United States
+http://allerton.csl.illinois.edu/
+30
+	
+ECMLPKDD : European Conference on Machine learning and knowledge discovery in databases
+Sep 14, 2020 - Sep 18, 2020 - Ghent , Belgium
+https://ecmlpkdd2020.net/
+29
+	
+IPSN : International Symposium on Information Processing in Sensor Networks
+Apr 21, 2020 - Apr 24, 2020 - Sydney , Australia
+http://spaceiot.ewi.tudelft.nl/2020/
+28
+	
+ICAPS : International Conference on Automated Planning and Scheduling
+Jun 15, 2020 - Jun 19, 2020 - Nancy , France
+https://icaps20.icaps-conference.org/
+Deadline : to be confirmed
+28
+	
+EDM : International Conference on Educational Data Mining
+Jul 10, 2020 - Jul 13, 2020 - Ifrane , Morocco
+http://educationaldatamining.org/edm2020/call-for-papers/
+27
+	
+IUI : International Conference on Intelligent User Interfaces
+Mar 17, 2020 - Mar 20, 2020 - Cagliari , Italy
+https://iui.acm.org/2020/
+26
+	
+ICDAR : International Conference on Document Analysis and Recognition
+Sep 22, 2019 - Sep 25, 2019 - Sydney , Australia
+http://www.icdar2019.org/
+26
+	
+ECAI : European Conference on Artificial Intelligence (ECAI)
+Jun 8, 2020 - Jun 12, 2020 - Santiago de Compostela , Spain
+http://www.ecai2020.eu
+26
+	
+SLT : IEEE Spoken Language Technology Workshop
+Dec 13, 2020 - Dec 16, 2020 - Shenzhen , China
+http://www.slt2020.org
+Deadline : Wed 01 Jul 2020
+26
+	
+FUSION : International Conference on Information Fusion
+Jun 6, 2020 - Jun 9, 2020 - Sun City , South Africa
+https://fusion2020.org/
+Deadline : to be confirmed
+26
+	
+ECIR : European Conference on Information Retrieval
+Apr 14, 2020 - Apr 17, 2020 - Lisbon , Portugal
+http://www.ecir2020.org/
+25
+	
+CIG : IEEE Conference on Computational Intelligence and Games
+Aug 14, 2018 - Aug 17, 2018 - Maastricht , Netherlands
+http://www.maastrichtuniversity.nl/cig2018
+25
+	
+CIDR : Conference on Innovative Data Systems Research
+Jan 12, 2020 - Jan 15, 2020 - Amsterdam , Netherlands
+http://cidrdb.org/cidr2020/
+25
+	
+KR : Principles of Knowledge Representation and Reasoning
+Sep 12, 2020 - Sep 18, 2020 - Rhodes , Greece
+https://kr2020.inf.unibz.it
+25
+	
+GDN : Group Decision and Negotiation
+Jun 7, 2020 - Jun 11, 2020 - Toronto , Canada
+http://gdnconference.org/gdn2020/
+24
+	
+SMC : IEEE International Conference on Systems, Man and Cybernetics
+Oct 11, 2020 - Oct 14, 2020 - Toronto , Canada
+http://smc2020.org/
+23
+	
+PAKDD : Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD)
+May 11, 2020 - May 14, 2020 - Singapore , Singapore
+https://www.pakdd2020.org/
+Deadline : to be confirmed
+23
+	
+ICB : IAPR International Conference on Biometrics (ICB)
+Sep 27, 2020 - Sep 30, 2020 - Houston , United States
+https://ieee-biometrics.org/ijcb2020/
+22
+	
+ICMLA : International Conference on Machine Learning and Applications
+Dec 16, 2019 - Dec 19, 2019 - Boca Raton , United States
+https://www.icmla-conference.org/icmla19
+22
+	
+AVSS : IEEE International Conference on Advanced Video and Signal-Based Surveillance
+Sep 22, 2020 - Sep 25, 2020 - Washington DC , United States
+http://www.avss2020.org
+21
+	
+FUZZ : IEEE International Conference on Fuzzy Systems
+Jul 19, 2020 - Jul 24, 2020 - Glasgow , United Kingdom
+https://wcci2020.org/
+21
+	
+ICAC : IEEE International Conference on Autonomic Computing
+Sep 3, 2018 - Sep 7, 2018 - Trento , Italy
+http://icac2018.informatik.uni-wuerzburg.de/
+21
+	
+ICONIP : International Conference on Neural Information Processing
+Dec 12, 2019 - Dec 15, 2019 - Sydney , Australia
+http://ajiips.com.au/iconip2019/
+20
+	
+ICAISC : International Conference on Artificial Intelligence and Soft Computing
+Jun 21, 2020 - Jun 25, 2020 - Zakopane , Poland
+http://www.icaisc.eu/
+20
+	
+ITS : International Conference on Intelligent Tutoring Systems
+Aug 6, 2020 - Aug 12, 2020 - Athens , Greece
+https://its2020.iis-international.org
+20
+	
+CICLing : International Conference on Computational Linguistics and Intelligent Text Processing
+Mar 18, 2018 - Mar 24, 2018 - Hanoi , Viet Nam
+https://www.cicling.org/2018/
+19
+	
+ICTAI : International Conference on Tools with Artificial Intelligence
+Nov 4, 2019 - Nov 6, 2019 - Portland , United States
+http://www.ictai2019.org/
+19
+	
+BTAS : IEEE International Conference on Biometrics: Theory Applications and Systems (BTAS)
+Sep 27, 2020 - Sep 30, 2020 - Houston , United States
+https://ieee-biometrics.org/ijcb2020/
+19
+	
+WASSA : Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis
+Oct 31, 2018 - Nov 1, 2018 - Brusssels , Belgium
+https://wt-public.emm4u.eu/wassa2018/index.htm
+19
+	
+IVA : Intelligent Virtual Agents
+Jul 2, 2019 - Jul 5, 2019 - Paris , France
+http://iva2019.sciencesconf.org
+18
+	
+DAS : IAPR International Workshop on Document Analysis Systems
+May 17, 2020 - May 20, 2020 - Wuhan , China
+http://www.vlrlab.net/das2020/
+18
+	
+ACII : International Conference on Affective Computing and Intelligent Interaction
+Sep 3, 2019 - Sep 6, 2019 - Cambridge , United Kingdom
+http://acii-conf.org/2019/important-dates/#top
+18
+	
+ESANN : European Symposium on Artificial Neural Networks
+Apr 22, 2020 - Apr 24, 2020 - Bruges , Belgium
+https://www.esann.org/
+17
+	
+AIED : Artificial Intelligence in Education
+Jun 25, 2019 - Jun 29, 2019 - Chicago , United States
+http://caed-lab.com/aied2019/index.html
+16
+	
+CISIS : International Conference on Complex, Intelligent and Software Intensive Systems
+Jul 1, 2020 - Jul 3, 2020 - Lodz , Poland
+http://voyager.ce.fit.ac.jp/conf/cisis/2020/
+16
+	
+IDA : Intelligent Data Analysis
+Apr 27, 2020 - Apr 29, 2020 - Konstanz , Germany
+https://ida2020.org/
+Deadline : to be confirmed
+16
+	
+ICANN : International Conference on Artificial Neural Networks
+Sep 15, 2020 - Sep 18, 2020 - Bratislava , Slovakia
+https://e-nns.org/icann2020/
+16
+	
+EKAW : Knowledge Engineering and Management by the Masses
+Sep 15, 2020 - Sep 19, 2020 - Bolzano , Italy
+https://ekaw2020.inf.unibz.it/
+Deadline : to be confirmed
+15
+	
+ISVC : International Symposium on Visual Computing
+Oct 7, 2019 - Oct 9, 2019 - Lake Tahoe , United States
+http://www.isvc.net
+15
+	
+IJCNLP : International Joint Conference on Natural Language Processing (IJCNLP)
+Nov 3, 2019 - Nov 7, 2019 - Hong Kong , Hong Kong
+https://www.emnlp-ijcnlp2019.org/
+15
+	
+ICSI : International Conference on Advances in Swarm Intelligence
+Jul 10, 2020 - Jul 14, 2020 - Belgrade , Serbia
+http://www.ic-si.org
+15
+	
+CPM : Combinatorial Pattern Matching
+Jun 17, 2020 - Jun 19, 2020 - Copenhagen , Denmark
+http://www.imm.dtu.dk/~inge/CPM/
+Deadline : to be confirmed
+15
+	
+CPAIOR : International Conference on Integration of AI and OR Techniques in Constraint Programming
+May 26, 2020 - May 29, 2020 - Vienna , Austria
+https://cpaior.org/
+Deadline : to be confirmed
+14
+	
+ICDE : International Conference on Data Engineering Workshops
+Apr 20, 2020 - Apr 24, 2020 - Dallas , United States
+https://www.utdallas.edu/icde/
+14
+	
+DaWaK : Data Warehousing and Knowledge Discovery (DaWaK)
+Aug 26, 2019 - Aug 29, 2019 - Linz , Austria
+http://www.dexa.org/dawak2019
+14
+	
+RANLP : Recent Advances in Natural Language Processing
+Sep 2, 2017 - Sep 8, 2017 - Varna , Bulgaria
+http://lml.bas.bg/ranlp2017/start.php
+14
+	
+ICAART : International Conference on Agents and Artificial Intelligence
+Feb 22, 2020 - Feb 24, 2020 - Valletta , Malta
+http://www.icaart.org/
+14
+	
+SEKE : International Conference on Software Engineering and Knowledge Engineering
+Jul 9, 2020 - Jul 11, 2020 - Wyndham Pittsburgh University Center , United States
+http://ksiresearch.org/seke/seke20.html
+13
+	
+SPIRE : International Symposium on String Processing and Information Retrieval
+Oct 7, 2019 - Oct 9, 2019 - Segovia , Spain
+https://spire19.lbd.org.es/
+13
+	
+ISI : IEEE International Conference on Intelligence and Security Informatics
+Jul 22, 2017 - Jul 24, 2017 - Beijing , China
+http://www.isi-conf.org/call-for-papers.html
+13
+	
+SAMI : International Symposium on Applied Machine Intelligence and Informatics
+Jan 23, 2020 - Jan 25, 2020 - Herl\'any , Slovakia
+http://conf.uni-obuda.hu/sami2020/
+12
+	
+LION : Learning and Intelligent Optimization
+May 24, 2020 - May 28, 2020 - ATHENS , Greece
+http://www.caopt.com/LION14/
+12
+	
+IPMU : International Conference on Information Processing and Management of Uncertainty in Knowledge-Based Systems
+Jun 15, 2020 - Jun 19, 2020 - Lisbon , Portugal
+https://ipmu2020.inesc-id.pt/
+12
+	
+HAIS : International Conference on Hybrid Artificial Intelligent Systems
+Sep 4, 2019 - Sep 6, 2019 - Leon , Spain
+http://2019.haisconference.eu/
+
+$Computer Graphics and Computer-Aided Design
+137
+	
+ECCV : European Conference on Computer Vision
+Aug 23, 2020 - Aug 28, 2020 - Glasgow , United Kingdom
+https://eccv2020.eu/
+Deadline : to be confirmed
+87
+	
+CHI : Computer Human Interaction (CHI)
+Apr 25, 2020 - Apr 30, 2020 - island of Oahu , United States
+https://chi2020.acm.org/
+46
+	
+UIST : ACM Symposium on User Interface Software and Technology
+Oct 20, 2020 - Oct 23, 2020 - Minneapolis , United States
+https://uist.acm.org/uist2020/
+Deadline : Mon 20 Apr 2020
+46
+	
+BMVC : British Machine Vision Conference
+Sep 9, 2019 - Sep 12, 2019 - Cardiff , United Kingdom
+https://bmvc2019.org/
+38
+	
+ACCV : Asian Conference on Computer Vision (ACCV)
+Nov 30, 2020 - Dec 4, 2020 - Kyoto , Japan
+http://accv2020.kyoto/
+Deadline : Wed 08 Jul 2020
+38
+	
+ICPR : International Conference on Pattern Recognition
+Jan 10, 2021 - Jan 15, 2021 - Milan , Italy
+https://www.icpr2020.it/
+31
+	
+FG : IEEE International Conference on Automatic Face & Gesture Recognition
+May 18, 2020 - May 22, 2020 - Buenos Aires , Argentina
+https://fg2020.org/
+31
+	
+MMSys : ACM Multimedia Systems Conference
+Jun 8, 2020 - Jun 11, 2020 - Istanbul , Turkey
+https://2020.acmmmsys.org/
+28
+	
+ICCAD : IEEE/ACM International Conference on Computer-Aided Design
+Nov 4, 2019 - Nov 7, 2019 - Westminster , United States
+https://iccad.com/
+28
+	
+MobileHCI : Mobile HCI
+Oct 5, 2020 - Oct 8, 2020 - Oldenburg , Germany
+https://mobilehci.acm.org/2020/
+Deadline : to be confirmed
+28
+	
+ICCAD : IEEE/ACM International Conference on Computer-Aided Design (ICCAD)
+Nov 4, 2019 - Nov 7, 2019 - Westminster , United States
+https://iccad.com/
+27
+	
+IUI : International Conference on Intelligent User Interfaces
+Mar 17, 2020 - Mar 20, 2020 - Cagliari , Italy
+https://iui.acm.org/2020/
+26
+	
+ICME : IEEE International Conference on Multimedia and Expo
+Jul 6, 2020 - Jul 10, 2020 - London , United Kingdom
+http://www.2020.ieeeicme.org/
+25
+	
+CIG : IEEE Conference on Computational Intelligence and Games
+Aug 14, 2018 - Aug 17, 2018 - Maastricht , Netherlands
+http://www.maastrichtuniversity.nl/cig2018
+24
+	
+SMC : IEEE International Conference on Systems, Man and Cybernetics
+Oct 11, 2020 - Oct 14, 2020 - Toronto , Canada
+http://smc2020.org/
+23
+	
+VR : IEEE Virtual Reality Conference
+Mar 22, 2020 - Mar 26, 2020 - Atlanta , United States
+http://ieeevr.org/2020/
+Deadline : to be confirmed
+21
+	
+AIIDE : Artificial Intelligence and Interactive Digital Entertainment Conference
+Nov 13, 2018 - Nov 17, 2018 - Edmonton , Canada
+https://sites.google.com/ncsu.edu/aiide-2018/
+21
+	
+PacificVis : IEEE Pacific Visualization Symposium
+Apr 14, 2020 - Apr 17, 2020 - Tianjin , China
+http://vis.tju.edu.cn/pvis2020/
+20
+	
+3DUI : IEEE Symposium on 3D User Interfaces
+Mar 22, 2020 - Mar 26, 2020 - Atlanta , United States
+http://ieeevr.org/2020/
+20
+	
+SCA : ACM SIGGRAPH/Eurographics Symposium on Computer Animation
+Jul 11, 2018 - Jul 13, 2018 - Paris , France
+http://sca2018.inria.fr/
+19
+	
+VAST : IEEE Symposium on Visual Analytics Science and Technology
+Oct 20, 2019 - Oct 25, 2019 - Vancouver , Canada
+http://ieeevis.org/year/2019/welcome
+19
+	
+HPCS : International Conference on High Performance Computing and Simulation
+Jul 20, 2020 - Jul 24, 2020 - Barcelona , Spain
+http://hpcs2020.cisedu.info/
+18
+	
+VRST : ACM Symposium on Virtual Reality Software and Technology
+Nov 12, 2019 - Nov 15, 2019 - Penrith , Australia
+https://vrst.acm.org/vrst2019/submissions/
+15
+	
+I3DG : Symposium on Interactive 3D Graphics
+May 5, 2020 - May 7, 2020 - San Francisco , United States
+http://i3dsymposium.github.io/2020/
+15
+	
+VL/HCC : IEEE Symposium on Visual Languages and Human-Centric Computing
+Aug 10, 2020 - Aug 14, 2020 - Dunedin , New Zealand
+https://conf.researchr.org/track/vlhcc2020/vlhcc2020-papers
+14
+	
+Web3D : International Conference on 3D Web Technology
+Jun 24, 2020 - Jun 26, 2020 - Seoul , South Korea
+https://web3d2020.web3d.org/
+14
+	
+VCIP : IEEE Visual Communications and Image Processing
+Dec 1, 2019 - Dec 4, 2019 - Sydney , Australia
+http://www.vcip2019.org/
+13
+	
+GI : Graphics Interface Conference
+May 21, 2020 - May 22, 2020 - Toronto , Canada
+https://graphicsinterface.org/conference/2020/
+13
+	
+VISSOFT : IEEE Working Conference on Software Visualization
+Sep 30, 2019 - Oct 1, 2019 - Cleveland , United States
+http://vissoft19.dcc.uchile.cl/
+12
+	
+InfoVis : International Conference on Information Visualization
+Feb 27, 2020 - Feb 29, 2020 - Valletta , Malta
+http://ivapp.visigrapp.org/
+12
+	
+GD : Symposium on Graph Drawing
+Sep 17, 2019 - Sep 20, 2019 - Prague , Czech Republic
+https://kam.mff.cuni.cz/gd2019/	
+
+$Computer Networks and Communications
+82
+	
+CCS : ACM Symposium on Computer and Communications Security
+Nov 11, 2019 - Nov 15, 2019 - London , United Kingdom
+https://www.sigsac.org/ccs/CCS2019/
+74
+	
+INFOCOM : IEEE International Conference on Computer Communications (INFOCOM)
+Apr 27, 2020 - Apr 30, 2020 - Beijing , China
+https://infocom2020.ieee-infocom.org/
+72
+	
+SIGCOMM : ACM SIGCOMM Conference
+Aug 10, 2020 - Aug 14, 2020 - New York City , United States
+https://conferences.sigcomm.org/sigcomm/2020
+70
+	
+WWW : International World Wide Web Conferences (WWW)
+Apr 20, 2020 - Apr 25, 2020 - Taipei , Taiwan
+https://www2020.thewebconf.org/
+65
+	
+NDSS : Network and Distributed System Security Symposium (NDSS)
+Feb 23, 2020 - Feb 26, 2020 - San Diego , United States
+https://www.ndss-symposium.org/ndss2020/call-for-papers/
+62
+	
+NSDI : Symposium on Networked Systems Design and Implementation
+Apr 12, 2021 - Apr 14, 2021 - BOSTON , United States
+https://www.usenix.org/conference/nsdi21
+Deadline : Fri 17 Apr 2020
+61
+	
+ICC : IEEE International Conference on Communications
+Jun 7, 2020 - Jun 11, 2020 - Dublin , Ireland
+https://icc2020.ieee-icc.org/
+60
+	
+CSCW : ACM Conference on Computer-Supported Cooperative Work & Social Computing
+Oct 17, 2020 - Oct 21, 2020 - Minneapolis , United States
+http://cscw.acm.org/2020/
+Deadline : Mon 01 Jun 2020
+57
+	
+GLOBECOM : IEEE GLOBECOM
+Dec 7, 2020 - Dec 11, 2020 - Xinyi District , Taiwan
+https://globecom2020.ieee-globecom.org/
+57
+	
+UbiComp : ACM Conference on Pervasive and Ubiquitous Computing (UbiComp)
+Sep 12, 2020 - Sep 16, 2020 - CANCÚN , Mexico
+http://ubicomp.org/ubicomp2020/
+Deadline : Fri 15 May 2020
+56
+	
+EUROCRYPT : International Conference on Theory and Applications of Cryptographic Techniques (EUROCRYPT)
+May 10, 2020 - May 14, 2020 - Zagreb , Croatia
+https://eurocrypt.iacr.org/2020/
+53
+	
+CRYPTO : International Cryptology Conference (CRYPTO)
+Aug 16, 2020 - Aug 20, 2020 - Santa Barbara , United States
+https://crypto.iacr.org/2020/
+50
+	
+MobiCom : Annual International Conference on Mobile Computing and Networking
+Sep 21, 2020 - Sep 25, 2020 - London , United Kingdom
+https://sigmobile.org/mobicom/2020/
+44
+	
+VTC : IEEE Vehicular Technology Conference
+May 25, 2020 - May 28, 2020 - Antwerp , Belgium
+https://events.vtsociety.org/vtc2020-spring/#
+44
+	
+ACT : USENIX Annual Technical Conference
+Jul 15, 2020 - Jul 17, 2020 - Boston , United States
+https://www.usenix.org/conference/atc20
+44
+	
+Mobisys : Annual International Conference on Mobile Systems, Applications, and Services
+Jun 15, 2020 - Jun 19, 2020 - Toronto , Canada
+https://www.sigmobile.org/mobisys/2020/
+43
+	
+FC : International Conference on Financial Cryptography and Data Security
+Feb 17, 2020 - Feb 21, 2020 - Kota Kinabalu , Malaysia
+https://fc20.ifca.ai/
+41
+	
+IPDPS : IEEE International Symposium on Parallel & Distributed Processing
+May 18, 2020 - May 22, 2020 - New Orleans , United States
+http://www.ipdps.org
+36
+	
+ICDCS : International Conference on Distributed Computing Systems, ICDCS
+Jul 7, 2020 - Jul 10, 2020 - Singapore , Singapore
+http://icdcs2020.sg/
+36
+	
+IMC : Internet Measurement Conference
+Oct 21, 2019 - Oct 23, 2019 - Amsterdam , Netherlands
+https://conferences.sigcomm.org/imc/2019/
+34
+	
+SoCC : ACM Symposium on Cloud Computing
+Nov 21, 2019 - Nov 23, 2019 - Chaminade , United States
+https://acmsocc.github.io/2019/
+34
+	
+SENSYS : ACM Conference on Embedded Networked Sensor Systems
+Nov 10, 2019 - Nov 13, 2019 - New York City , United States
+http://sensys.acm.org/2019/
+33
+	
+CoNEXT : ACM Conference on Emerging Network Experiment and Technology
+Dec 4, 2018 - Dec 7, 2018 - Crete , Greece
+https://conferences2.sigcomm.org/co-next/2018
+33
+	
+DSN : IEEE/IFIP International Conference on Dependable Systems and Networks
+Jan 1, 1970 - Aug 2, 2019 - Valencia , Spain
+https://dsn2020.webs.upv.es/
+31
+	
+Allerton : Allerton Conference on Communication, Control, and Computing
+Sep 2, 2018 - Sep 5, 2018 - Monticello , United States
+http://allerton.csl.illinois.edu/
+31
+	
+PPOPP : ACM SIGPLAN Symposium on Principles & Practice of Parallel Programming (PPOPP)
+Feb 22, 2020 - Feb 26, 2020 - San Diego , United States
+https://ppopp20.sigplan.org
+30
+	
+PKC : International Conference on Practice and Theory in Public Key Cryptography
+May 4, 2020 - May 7, 2020 - Edinburgh , United Kingdom
+https://pkc.iacr.org/2020/
+29
+	
+CLOUD : IEEE International Conference on Cloud Computing (CLOUD)
+Jul 6, 2020 - Jul 11, 2020 - Beijing , China
+https://conferences.computer.org/cloud/2020
+29
+	
+IPSN : International Symposium on Information Processing in Sensor Networks
+Apr 21, 2020 - Apr 24, 2020 - Sydney , Australia
+http://spaceiot.ewi.tudelft.nl/2020/
+29
+	
+Radarcon : IEEE Radar Conference
+Apr 22, 2019 - Apr 26, 2019 - Boston , United States
+http://www.radarconf19.org/
+29
+	
+NOMS : IEEE/IFIP Network Operations and Management Symposium
+Apr 20, 2020 - Jan 1, 1970 - Budapest , Hungary
+https://noms2020.ieee-noms.org/
+28
+	
+ESWC : Extended Semantic Web Conference
+May 31, 2020 - Jun 4, 2020 - Heraklion , Greece
+http://2020.eswc-conferences.org/
+28
+	
+CCGrid : IEEE International Symposium on Cluster Computing and the Grid
+May 11, 2020 - May 14, 2020 - Melbourne , Australia
+http://cloudbus.org/ccgrid2020/
+28
+	
+HPDC : ACM International Symposium on High Performance Distributed Computing
+Jun 23, 2020 - Jun 26, 2020 - Stockholm , Sweden
+http://www.hpdc.org/2020
+28
+	
+PERCOM : IEEE International Conference on Pervasive Computing and Communications
+Mar 23, 2020 - Mar 27, 2020 - Austin , United States
+http://www.percom.org/call-for-papers
+28
+	
+PODC : ACM Symposium on Principles of Distributed Computing
+Aug 3, 2020 - Aug 7, 2020 - Salerno , Italy
+https://www.podc.org/
+Deadline : to be confirmed
+28
+	
+AINA : International Conference on Advanced Information Networking and Applications
+Apr 15, 2020 - Apr 17, 2020 - Caserta , Italy
+http://voyager.ce.fit.ac.jp/conf/aina/2020/
+28
+	
+SOUPS : Symposium On Usable Privacy and Security
+Aug 9, 2020 - Aug 11, 2020 - BOSTON , United States
+https://www.usenix.org/conference/soups2020
+Deadline : to be confirmed
+27
+	
+SPAWC : IEEE Workshop on Signal Processing Advances in Wireless Communications
+May 26, 2020 - May 29, 2020 - ATLANTA , United States
+https://spawc2020.netlify.com
+27
+	
+CODASPY : ACM Conference on Data and application security and privacy
+Mar 16, 2020 - Mar 18, 2020 - New Orleans , United States
+http://www.codaspy.org/2020/
+26
+	
+IM : IFIP/IEEE International Symposium on Integrated Network Management
+- ,
+26
+	
+CCNC : IEEE Consumer Communications and Networking Conference
+Jan 10, 2020 - Jan 13, 2020 - Las Vegas , United States
+https://ccnc2020.ieee-ccnc.org/
+25
+	
+AAMAS : Autonomous Agents and Multi-Agent Systems
+May 9, 2020 - May 13, 2020 - Auckland , New Zealand
+https://aamas2020.conference.auckland.ac.nz/
+25
+	
+HOTNETS : ACM Workshop on Hot Topics in Networks
+Nov 13, 2019 - Nov 15, 2019 - Princeton , United States
+https://conferences.sigcomm.org/hotnets/2019/cfp.html
+25
+	
+WoWMoM : IEEE International Symposium on a World of Wireless, Mobile and Multimedia Networks
+Jun 15, 2020 - Jun 18, 2020 - Cork , Ireland
+http://www.cs.ucc.ie/wowmom2020/
+24
+	
+CloudCom : IEEE International Conference on Cloud Computing Technology and Science (CloudCom)
+Dec 11, 2019 - Dec 13, 2019 - Sydney , Australia
+http://2019.cloudcom.org/
+24
+	
+SMC : IEEE International Conference on Systems, Man and Cybernetics
+Oct 11, 2020 - Oct 14, 2020 - Toronto , Canada
+http://smc2020.org/
+24
+	
+TrustCom : IEEE International Conference on Trust, Security and Privacy in Computing and Communications
+Aug 5, 2019 - Aug 8, 2019 - Rotorua , New Zealand
+https://crow.org.nz/Trustcom2019
+23
+	
+Middleware : International Middleware Conference
+Dec 9, 2019 - Dec 13, 2019 - UC Davis , United States
+http://2019.middleware-conference.org/
+23
+	
+SECON : IEEE Communications Society Conference on Sensor, Mesh and Ad Hoc Communications and Networks
+Jun 11, 2018 - Jun 13, 2018 - Hong Kong , Hong Kong
+http://secon2018.ieee-secon.org/
+23
+	
+IC3N : International Conference on Computer Communications and Networks
+Aug 3, 2020 - Aug 6, 2020 - Honolulu , United States
+http://www.icccn.org/
+23
+	
+DYSPAN : IEEE Symposium on New Frontiers in Dynamic Spectrum Access Networks
+Nov 11, 2019 - Nov 14, 2019 - Newark NJ , United States
+https://dyspan2019.ieee-dyspan.org/
+22
+	
+AVSS : IEEE International Conference on Advanced Video and Signal-Based Surveillance
+Sep 22, 2020 - Sep 25, 2020 - Washington DC , United States
+http://www.avss2020.org
+22
+	
+ICNP : IEEE International Conference on Network Protocols
+Oct 7, 2019 - Oct 10, 2019 - Chicago , United States
+https://icnp19.cs.ucr.edu/cfp.html
+22
+	
+SPAA : ACM Symposium on Parallelism in Algorithms and Architectures
+Jul 15, 2020 - Jul 17, 2020 - Philadelphia , United States
+https://spaa.acm.org/
+Deadline : to be confirmed
+22
+	
+WCNCW : IEEE Wireless Communications and Networking Conference Workshops
+Apr 6, 2020 - Apr 9, 2020 - Seoul , South Korea
+https://wcnc2020.ieee-wcnc.org/
+22
+	
+Hypertext : ACM Conference on Hypertext and Hypermedia
+Jul 9, 2018 - Jul 12, 2018 - Baltimore , United States
+https://ht.acm.org/ht2018/
+22
+	
+CNSM : Conference on Network and Service Management
+Oct 21, 2019 - Oct 25, 2019 - Halifax , Canada
+http://www.cnsm-conf.org/2019/
+21
+	
+ICSC : IEEE International Conference on Semantic Computing
+Feb 3, 2020 - Feb 5, 2020 - San Diego , United States
+http://www.ieee-icsc.org
+21
+	
+IEEE ICWS : IEEE International Conference on Web Services
+Jul 6, 2020 - Jul 11, 2020 - Beijing , China
+https://conferences.computer.org/icws/2020/
+21
+	
+ICAC : IEEE International Conference on Autonomic Computing
+Sep 3, 2018 - Sep 7, 2018 - Trento , Italy
+http://icac2018.informatik.uni-wuerzburg.de/
+21
+	
+CONCUR : International Conference on Concurrency Theory
+Sep 1, 2020 - Sep 4, 2020 - Vienna , Austria
+https://concur2020.forsyte.at/
+Deadline : Tue 28 Apr 2020
+21
+	
+EDOC : International IEEE Enterprise Distributed Object Computing Conference
+Oct 28, 2019 - Oct 31, 2019 - Paris , France
+https://edoc2019.sciencesconf.org/resource/page/id/7
+21
+	
+IWCMC : International Wireless Communications and Mobile Computing Conference
+Jun 29, 2020 - Jul 3, 2020 - Byblos , Lebanon
+https://iwcmc.org/2020/
+20
+	
+DCC : Data Compression Conference
+Mar 26, 2019 - Mar 29, 2019 - Snowbird , United States
+http://www.cs.brandeis.edu/~dcc/index.html
+20
+	
+SCC : IEEE International Conference on Services Computing
+Jul 7, 2020 - Jul 11, 2020 - BEIJING , China
+https://conferences.computer.org/scc/2020/
+20
+	
+DCOSS : IEEE International Conference on Distributed Computing in Sensor Systems
+May 25, 2020 - May 27, 2020 - Los Angeles , United States
+http://www.dcoss.org/
+Deadline : to be confirmed
+20
+	
+WiOpt : International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks
+Jun 15, 2020 - Jun 19, 2020 - Volos , Greece
+http://wi-opt.org/
+20
+	
+ICPP : International Conference on Parallel Processing (ICPP)
+Aug 17, 2020 - Aug 20, 2020 - Edmonton , Canada
+https://jnamaral.github.io/icpp20/
+20
+	
+PDP : Euromicro International Conference on Parallel, Distributed and Network-Based Processing
+Mar 11, 2020 - Mar 13, 2020 - Vasteras , Sweden
+http://www.pdp2020.com/
+20
+	
+ARES : International Conference on Availability, Reliability and Security
+Aug 24, 2020 - Aug 28, 2020 - Dublin , Ireland
+https://www.ares-conference.eu/conference-2020/cfp2020/
+20
+	
+DISC : International Symposium on Distributed Computing
+Oct 14, 2019 - Oct 18, 2019 - Budapest , Hungary
+http://www.disc-conference.org/wp/disc2019/
+20
+	
+ACNS : Applied Cryptography and Network Security
+Jun 22, 2020 - Jun 25, 2020 - Rome , Italy
+https://sites.google.com/di.uniroma1.it/ACNS2020
+19
+	
+PPSN : International Conference on Parallel problem solving from nature
+Sep 5, 2020 - Sep 9, 2020 - Leiden , Netherlands
+https://ppsn2020.liacs.leidenuniv.nl/
+19
+	
+HPCC : IEEE International Conference on High Performance Computing and Communications
+Aug 10, 2019 - Aug 12, 2019 - Zhangjiajie , China
+http://csee.hnu.edu.cn/hpcc2019/
+19
+	
+CLUSTER : IEEE International Conference on Cluster Computing
+Sep 14, 2020 - Sep 17, 2020 - Kobe , Japan
+https://clustercomp.org/2020/
+Deadline : Sun 10 May 2020
+19
+	
+LCN : Local Computer Networks
+Oct 14, 2019 - Oct 17, 2019 - Osnabrück , Germany
+http://www.ieeelcn.org
+19
+	
+WiMob : IEEE International Conference on Wireless and Mobile Computing Networking and Communications
+Oct 21, 2019 - Oct 23, 2019 - Barcelona , Spain
+http://wimob.org/wimob2019/
+19
+	
+ICDCN : International Conference of Distributed Computing and Networking
+Jan 4, 2020 - Jan 7, 2020 - Kolkata , India
+https://www.icdcn2020.com/
+18
+	
+MSWIM : ACM International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems
+Nov 25, 2019 - Nov 29, 2019 - Miami ,
+http://mswimconf.com/2019/
+18
+	
+EWSN : International Conference on Embedded Wireless Systems and Networks
+Feb 17, 2020 - Feb 19, 2020 - Lyon , France
+http://ewsn2020.conf.citi-lab.fr/index.html
+18
+	
+IWQoS : International Workshop on Quality of Service
+Jun 15, 2020 - Jun 17, 2020 - Hangzhou , China
+https://iwqos2020.ieee-iwqos.org/
+17
+	
+CSCWD : International Conference on Computer Supported Cooperative Work in Design, CSCWD
+May 6, 2020 - May 8, 2020 - Dalian , China
+http://2020.cscwd.org/
+17
+	
+RFID : IEEE International Conference on Radio Frequency Identification
+Apr 28, 2020 - Apr 30, 2020 - Orlando , United States
+http://2020.ieee-rfid.org/
+17
+	
+ICWE : International Conference on Web Engineering
+Jun 9, 2020 - Jun 12, 2020 - Helsinki , Finland
+http://icwe2020.webengineering.org/
+17
+	
+BSN : International Workshop on Wearable and Implantable Body Sensor Networks
+Mar 4, 2018 - Mar 7, 2018 - Las Vegas , United States
+https://bhi-bsn.embs.org/2018/
+17
+	
+IPCCC : IEEE International Performance, Computing, and Communications Conference
+Oct 29, 2019 - Oct 31, 2019 - London , United Kingdom
+http://ipccc.org
+16
+	
+HASE : IEEE High Assurance Systems Engineering Symposium, HASE
+Jun 19, 2020 - Jun 20, 2020 - Malla Reddy College of Engineering & Technology , India
+http://www.icscsp.com/
+15
+	
+SRDS : Symposium on Reliable Distributed Systems
+Oct 1, 2019 - Oct 4, 2019 - Lyon , France
+https://srds2019.projet.liris.cnrs.fr/
+15
+	
+ICPADS : International Conference on Parallel and Distributed Systems
+Dec 4, 2019 - Dec 6, 2019 - Tianjin , China
+http://www.icpads2019.cn/
+15
+	
+NCA : IEEE International Symposium on Network Computing and Applications
+Sep 26, 2019 - Sep 28, 2019 - Cambridge , United States
+http://www.ieee-nca.org/2019/index.php?p=10_Main_Page.md
+15
+	
+Mobiquitous : International Conference on Mobile and Ubiquitous Systems: Computing, Networking and Services
+Nov 5, 2019 - Nov 7, 2019 - Houston , United States
+http://mobiquitous.org/
+15
+	
+NOCS : ACM/IEEE International Symposium on Networks-on-Chip
+Oct 17, 2019 - Oct 18, 2019 - New York , United States
+https://www.engr.colostate.edu/nocs2019/call-for-papers/
+14
+	
+ISORC : IEEE International Symposium on Object Oriented Real-Time Distributed Computing
+May 19, 2020 - May 21, 2020 - Nashville , United States
+https://isorc.github.io/2020/
+Deadline : to be confirmed
+14
+	
+OPODIS : International Conference On Principles Of DIstributed Systems
+Dec 17, 2019 - Dec 19, 2019 - Neuchâtel , Switzerland
+https://opodis2019.unine.ch/
+13
+	
+WETICE : IEEE International Workshops on Enabling Technologies: Infrastructure for Collaborative Enterprises
+Jun 10, 2020 - Jun 12, 2020 - Bayonne , France
+http://eexposit.perso.univ-pau.fr/wetice/index.html
+13
+	
+HPSR : Workshop on High Performance Switching and Routing
+May 11, 2020 - May 14, 2020 - Newark , United States
+https://hpsr2020.ieee-hpsr.org/authors/
+12
+	
+GD : Symposium on Graph Drawing
+Sep 17, 2019 - Sep 20, 2019 - Prague , Czech Republic
+https://kam.mff.cuni.cz/gd2019/
+12
+	
+SOCA : IEEE International Conference on Service-Oriented Computing and Applications
+Nov 18, 2019 - Nov 21, 2019 - Kaohsiung , Taiwan
+https://www.cs.ccu.edu.tw/~conference/soca2019
+12
+	
+ICA3PP : International Conference on Algorithms and Architectures for Parallel Processing
+Dec 9, 2019 - Dec 11, 2019 - Melbourne , Australia
+http://nsclab.org/ica3pp2019/
+
+$Hardware, Robotics & Electronics
+82
+	
+ICRA : IEEE International Conference on Robotics and Automation
+May 31, 2020 - Jun 4, 2020 - Paris , France
+https://www.icra2020.org/
+74
+	
+INFOCOM : IEEE International Conference on Computer Communications (INFOCOM)
+Apr 27, 2020 - Apr 30, 2020 - Beijing , China
+https://infocom2020.ieee-infocom.org/
+57
+	
+ISSCC : IEEE International Solid-State Circuits Conference
+Feb 16, 2020 - Feb 20, 2020 - San Francisco , United States
+http://isscc.org/
+56
+	
+ISCA : International Symposium on Computer Architecture (ISCA)
+May 30, 2020 - Jun 3, 2020 - Valencia , Spain
+https://iscaconf.org/isca2020/
+53
+	
+HPCA : IEEE International Symposium on High Performance Computer Architecture
+Feb 22, 2020 - Feb 26, 2020 - San Diego , United States
+https://www.hpca-conf.org/2020/?page_id=47
+48
+	
+DAC : Design Automation Conference (DAC)
+Jul 19, 2020 - Jul 23, 2020 - San Francisco , United States
+https://www.dac.com/
+47
+	
+RSS : Robotics: Science and Systems
+Jul 12, 2020 - Jul 17, 2020 - Oregon State University at Corvallis , United States
+https://roboticsconference.org
+44
+	
+MICRO : IEEE/ACM International Symposium on Microarchitecture
+Oct 17, 2020 - Oct 21, 2020 - Athens , Greece
+http://www.microarch.org/micro53
+43
+	
+SC : International Conference for High Performance Computing, Networking, Storage and Analysis
+Nov 15, 2020 - Nov 20, 2020 - Atlanta , United States
+https://sc20.supercomputing.org/submit/paper-submissions/
+43
+	
+DATE : Design, Automation and Test in Europe Conference and Exhibition
+Mar 9, 2020 - Mar 13, 2020 - Grenoble , France
+https://www.date-conference.com/call-for-papers
+42
+	
+CDC : IEEE Conference on Decision and Control
+Dec 8, 2020 - Dec 11, 2020 - Jeju Island , South Korea
+http://cdc2020.ieeecss.org/
+41
+	
+FAST : Conference on File and Storage Technologies (FAST)
+Feb 24, 2020 - Feb 27, 2020 - SANTA CLARA , United States
+https://www.usenix.org/conference/fast20
+41
+	
+ACC : American Control Conference
+Jul 1, 2020 - Jul 3, 2020 - Denver , United States
+http://acc2020.a2c2.org/
+40
+	
+HRI : ACM/IEEE International Conference on Human Robot Interaction
+Mar 23, 2020 - Mar 26, 2020 - Cambridge , United Kingdom
+http://humanrobotinteraction.org/2020/
+36
+	
+CHES : Workshop on Cryptographic Hardware and Embedded Systems (CHES)
+Sep 14, 2020 - Sep 17, 2020 - Beijing , China
+https://ches.iacr.org/2020/
+34
+	
+SENSYS : ACM Conference on Embedded Networked Sensor Systems
+Nov 10, 2019 - Nov 13, 2019 - New York City , United States
+http://sensys.acm.org/2019/
+33
+	
+Humanoids : IEEE-RAS International Conference on Humanoid Robots
+Oct 15, 2019 - Oct 17, 2019 - Toronto , Canada
+http://humanoids2019.loria.fr/
+33
+	
+CoNEXT : ACM Conference on Emerging Network Experiment and Technology
+Dec 4, 2018 - Dec 7, 2018 - Crete , Greece
+https://conferences2.sigcomm.org/co-next/2018
+31
+	
+Allerton : Allerton Conference on Communication, Control, and Computing
+Sep 2, 2018 - Sep 5, 2018 - Monticello , United States
+http://allerton.csl.illinois.edu/
+30
+	
+ISCAS : IEEE International Symposium on Circuits and Systems
+May 17, 2020 - May 20, 2020 - Seville , Spain
+https://www.iscas2020.org/
+30
+	
+VLSIC : IEEE Symposium on VLSI Circuits (VLSIC)
+Jun 14, 2020 - Jun 19, 2020 - Honolulu , United States
+https://vlsisymposium.org/
+29
+	
+FPGA : Symposium on Field Programmable Gate Arrays
+Feb 24, 2020 - Feb 26, 2020 - Seaside , United States
+http://isfpga.org/
+29
+	
+Radarcon : IEEE Radar Conference
+Apr 22, 2019 - Apr 26, 2019 - Boston , United States
+http://www.radarconf19.org/
+28
+	
+ASP-DAC : Asia and South Pacific Design Automation Conference
+Jan 13, 2020 - Jan 16, 2020 - Beijing , China
+https://aspdac2020.github.io/aspdac20/
+28
+	
+HPDC : ACM International Symposium on High Performance Distributed Computing
+Jun 23, 2020 - Jun 26, 2020 - Stockholm , Sweden
+http://www.hpdc.org/2020
+27
+	
+SPAWC : IEEE Workshop on Signal Processing Advances in Wireless Communications
+May 26, 2020 - May 29, 2020 - ATLANTA , United States
+https://spawc2020.netlify.com
+27
+	
+PACT : International Conference on Parallel Architectures and Compilation Techniques
+Sep 23, 2019 - Sep 26, 2019 - Seattle , United States
+http://hpc.pnl.gov/pact19/
+26
+	
+ECRTS : Euromicro Conference on Real-Time Systems
+Jul 7, 2020 - Jul 10, 2020 - Modena , Italy
+https://www.ecrts.org/call-for-papers/
+26
+	
+ICS : International Conference on Supercomputing
+Jun 29, 2020 - Jul 2, 2020 - Barcelona , Spain
+https://www.ics-conference.org/
+Deadline : to be confirmed
+25
+	
+TEI : International Conference on Tangible, embedded, and embodied interaction
+Feb 9, 2020 - Feb 12, 2020 - Sydney , Australia
+https://tei.acm.org/2020
+25
+	
+RTAS : IEEE Real-Time and Embedded Technology and Applications Symposium
+Apr 21, 2020 - Apr 24, 2020 - Sydney , United States
+http://2020.rtas.org/
+Deadline : to be confirmed
+24
+	
+SMC : IEEE International Conference on Systems, Man and Cybernetics
+Oct 11, 2020 - Oct 14, 2020 - Toronto , Canada
+http://smc2020.org/
+24
+	
+FCCM : IEEE Symposium on Field-Programmable Custom Computing Machines
+May 3, 2020 - May 6, 2020 - Fayetteville , United States
+https://www.fccm.org/
+24
+	
+HiPC : International Conference on High Performance Computing
+Dec 17, 2019 - Dec 20, 2019 - Hyderabad , India
+https://hipc.org/call-for-papers/
+23
+	
+BuildSys : ACM International Conference on Systems for Energy-Efficient Built Environments
+Nov 13, 2019 - Nov 14, 2019 - New York City , United States
+http://buildsys.acm.org/2019
+22
+	
+ISLPED : ACM/IEEE International Symposium on Low Power Electronics and Design
+Jul 29, 2019 - Jul 31, 2019 - Lausanne , Switzerland
+http://www.islped.org/2019/
+21
+	
+RTSS : IEEE Real-Time Systems Symposium (RTSS)
+Dec 3, 2019 - Dec 6, 2019 - Hong Kong , Hong Kong
+http://2019.rtss.org/call-for-papers/
+21
+	
+FUZZ : IEEE International Conference on Fuzzy Systems
+Jul 19, 2020 - Jul 24, 2020 - Glasgow , United Kingdom
+https://wcci2020.org/
+21
+	
+ISWC : International Symposium on Wearable Computer
+Sep 12, 2020 - Sep 16, 2020 - CANCÚN , Mexico
+http://iswc.net/iswc20/
+Deadline : to be confirmed
+20
+	
+DCC : Data Compression Conference
+Mar 26, 2019 - Mar 29, 2019 - Snowbird , United States
+http://www.cs.brandeis.edu/~dcc/index.html
+20
+	
+DCOSS : IEEE International Conference on Distributed Computing in Sensor Systems
+May 25, 2020 - May 27, 2020 - Los Angeles , United States
+http://www.dcoss.org/
+Deadline : to be confirmed
+20
+	
+CICC : IEEE Custom Integrated Circuits Conference, CICC
+Mar 22, 2020 - Mar 25, 2020 - Boston , United States
+http://ieee-cicc.org/2020-call-for-papers/
+19
+	
+HPCC : IEEE International Conference on High Performance Computing and Communications
+Aug 10, 2019 - Aug 12, 2019 - Zhangjiajie , China
+http://csee.hnu.edu.cn/hpcc2019/
+19
+	
+HPCS : International Conference on High Performance Computing and Simulation
+Jul 20, 2020 - Jul 24, 2020 - Barcelona , Spain
+http://hpcs2020.cisedu.info/
+18
+	
+ISGT : IEEE PES Innovative Smart Grid Technologies Conference Europe
+Sep 29, 2019 - Oct 2, 2019 - Bucharest , Romania
+http://sites.ieee.org/isgt-europe-2019/
+17
+	
+BSN : International Workshop on Wearable and Implantable Body Sensor Networks
+Mar 4, 2018 - Mar 7, 2018 - Las Vegas , United States
+https://bhi-bsn.embs.org/2018/
+17
+	
+IPCCC : IEEE International Performance, Computing, and Communications Conference
+Oct 29, 2019 - Oct 31, 2019 - London , United Kingdom
+http://ipccc.org
+16
+	
+RTCSA : IEEE International Conference on Embedded and Real-Time Computing Systems and Applications
+Aug 18, 2019 - Aug 21, 2019 - Hangzhou , China
+https://rtcsa2019.github.io/index/
+14
+	
+SBAC-PAD : International Symposium on Computer Architecture and High Performance Computing
+Oct 15, 2019 - Oct 18, 2019 - Campo Grande , Brazil
+http://sbac-pad.facom.ufms.br/
+13
+	
+WSA : Workshop on Smart Antennas
+Feb 18, 2020 - Feb 20, 2020 - Hamburg , Germany
+https://cgi.tu-harburg.de/~c00wsa20/index.php?page=call-for-papers
+13
+	
+CASES : International Conference on Compilers, Architecture, and Synthesis for Embedded Systems
+Oct 13, 2019 - Oct 18, 2019 - New York City , United States
+http://www.esweek.org/cases/about
+13
+	
+ICARCV : International Conference on Control, Automation, Robotics and Vision
+Nov 18, 2018 - Nov 21, 2018 - Singapore , Singapore
+http://www.ieee-ras.org/conferences-workshops/technically-co-sponsored/icarcv
+12
+	
+IOLTS : IEEE International On-Line Testing Symposium
+Jun 1, 2019 - Jun 3, 2019 - Rhodes Island , Greece
+http://tima.univ-grenoble-alpes.fr/conferences/iolts/iolts19/
+
+$Human Computer Interaction
+87
+	
+CHI : Computer Human Interaction (CHI)
+Apr 25, 2020 - Apr 30, 2020 - island of Oahu , United States
+https://chi2020.acm.org/
+70
+	
+WWW : International World Wide Web Conferences (WWW)
+Apr 20, 2020 - Apr 25, 2020 - Taipei , Taiwan
+https://www2020.thewebconf.org/
+58
+	
+ACMMM : ACM International Conference on Multimedia
+Oct 12, 2020 - Oct 16, 2020 - Seattle , United States
+https://www.acmmm.org/2020/
+46
+	
+UIST : ACM Symposium on User Interface Software and Technology
+Oct 20, 2020 - Oct 23, 2020 - Minneapolis , United States
+https://uist.acm.org/uist2020/
+Deadline : Mon 20 Apr 2020
+45
+	
+LREC : International Conference on Language Resources and Evaluation (LREC)
+May 13, 2020 - May 15, 2020 - Marseille , France
+https://lrec2020.lrec-conf.org/
+44
+	
+Mobisys : Annual International Conference on Mobile Systems, Applications, and Services
+Jun 15, 2020 - Jun 19, 2020 - Toronto , Canada
+https://www.sigmobile.org/mobisys/2020/
+40
+	
+HRI : ACM/IEEE International Conference on Human Robot Interaction
+Mar 23, 2020 - Mar 26, 2020 - Cambridge , United Kingdom
+http://humanrobotinteraction.org/2020/
+38
+	
+EuroSys : ACM European Conference on Computer Systems
+Apr 27, 2020 - Apr 30, 2020 - Crete , Greece
+https://www.eurosys2020.org/?page_id=75
+33
+	
+DIS : Conference on Designing Interactive Systems
+Jul 6, 2020 - Jul 10, 2020 - Eindhoven , Netherlands
+https://dis.acm.org/2020/
+33
+	
+ICMI : International Conference on Multimodal Interfaces (ICMI)
+Oct 11, 2020 - Oct 15, 2020 - Utrecht , Netherlands
+http://icmi.acm.org/2020/
+Deadline : to be confirmed
+33
+	
+ICMR : ACM International Conference on Multimedia Retrieval
+Jun 8, 2020 - Jun 11, 2020 - Dublin , Ireland
+http://www.icmr2020.org/
+33
+	
+Humanoids : IEEE-RAS International Conference on Humanoid Robots
+Oct 15, 2019 - Oct 17, 2019 - Toronto , Canada
+http://humanoids2019.loria.fr/
+31
+	
+FG : IEEE International Conference on Automatic Face & Gesture Recognition
+May 18, 2020 - May 22, 2020 - Buenos Aires , Argentina
+https://fg2020.org/
+31
+	
+MMSys : ACM Multimedia Systems Conference
+Jun 8, 2020 - Jun 11, 2020 - Istanbul , Turkey
+https://2020.acmmmsys.org/
+29
+	
+MOBIHOC : ACM International Symposium on Mobile Ad Hoc Networking and Computing
+Jun 30, 2020 - Jul 3, 2020 - Shanghai , China
+https://www.sigmobile.org/mobihoc/2020/
+28
+	
+ICCAD : IEEE/ACM International Conference on Computer-Aided Design
+Nov 4, 2019 - Nov 7, 2019 - Westminster , United States
+https://iccad.com/
+28
+	
+ICCAD : IEEE/ACM International Conference on Computer-Aided Design (ICCAD)
+Nov 4, 2019 - Nov 7, 2019 - Westminster , United States
+https://iccad.com/
+28
+	
+MobileHCI : Mobile HCI
+Oct 5, 2020 - Oct 8, 2020 - Oldenburg , Germany
+https://mobilehci.acm.org/2020/
+Deadline : to be confirmed
+28
+	
+SAC : ACM Symposium on Applied Computing
+Mar 30, 2020 - Apr 3, 2020 - Brno , Czech Republic
+https://www.sigapp.org/sac/sac2020/
+27
+	
+IUI : International Conference on Intelligent User Interfaces
+Mar 17, 2020 - Mar 20, 2020 - Cagliari , Italy
+https://iui.acm.org/2020/
+27
+	
+ICST : IEEE International Conference on Software Testing, Verification and Validation (ICST)
+Mar 23, 2020 - Mar 27, 2020 - Porto , Portugal
+https://icst2020.github.io/
+26
+	
+ICME : IEEE International Conference on Multimedia and Expo
+Jul 6, 2020 - Jul 10, 2020 - London , United Kingdom
+http://www.2020.ieeeicme.org/
+26
+	
+SIGDIAL : Annual Meeting of the Special Interest Group on Discourse and Dialogue (SIGDIAL)
+Sep 11, 2019 - Sep 13, 2019 - Stockholm , Sweden
+https://www.sigdial.org/files/workshops/conference20/
+25
+	
+CIG : IEEE Conference on Computational Intelligence and Games
+Aug 14, 2018 - Aug 17, 2018 - Maastricht , Netherlands
+http://www.maastrichtuniversity.nl/cig2018
+25
+	
+TEI : International Conference on Tangible, embedded, and embodied interaction
+Feb 9, 2020 - Feb 12, 2020 - Sydney , Australia
+https://tei.acm.org/2020
+25
+	
+RE : IEEE International Requirements Engineering Conference
+Aug 31, 2020 - Sep 4, 2020 - Zurich , Switzerland
+https://re20.org/
+25
+	
+UMAP : International Conference on User Modelling, Adaptation, and Personalization
+Jul 14, 2020 - Jul 17, 2020 - Genoa , Italy
+https://www.um.org/umap2020/
+Deadline : to be confirmed
+24
+	
+SMC : IEEE International Conference on Systems, Man and Cybernetics
+Oct 11, 2020 - Oct 14, 2020 - Toronto , Canada
+http://smc2020.org/
+23
+	
+ISMAR : IEEE International Symposium on Mixed and Augmented Reality
+Nov 9, 2020 - Nov 13, 2020 - RECIFE/PORTO DE GALINHAS , Brazil
+http://www.ismar20.org
+Deadline : to be confirmed
+23
+	
+VR : IEEE Virtual Reality Conference
+Mar 22, 2020 - Mar 26, 2020 - Atlanta , United States
+http://ieeevr.org/2020/
+Deadline : to be confirmed
+21
+	
+QoMEX : International Workshop on Quality of Multimedia Experience
+May 26, 2020 - May 28, 2020 - Athlone , Ireland
+http://qomex2020.ie/
+Deadline : to be confirmed
+21
+	
+ISWC : International Symposium on Wearable Computer
+Sep 12, 2020 - Sep 16, 2020 - CANCÚN , Mexico
+http://iswc.net/iswc20/
+Deadline : to be confirmed
+21
+	
+AIIDE : Artificial Intelligence and Interactive Digital Entertainment Conference
+Nov 13, 2018 - Nov 17, 2018 - Edmonton , Canada
+https://sites.google.com/ncsu.edu/aiide-2018/
+21
+	
+ETRA : Eye Tracking Research & Application
+Jun 2, 2020 - Jun 5, 2020 - Stuttgart , Germany
+https://etra.acm.org/2020/
+Deadline : to be confirmed
+21
+	
+EASE : International Conference on Evaluation and Assessment in Software Engineering
+Apr 15, 2020 - Apr 17, 2020 - Trondheim , Norway
+https://www.ntnu.edu/ease2020
+20
+	
+3DUI : IEEE Symposium on 3D User Interfaces
+Mar 22, 2020 - Mar 26, 2020 - Atlanta , United States
+http://ieeevr.org/2020/
+20
+	
+SCA : ACM SIGGRAPH/Eurographics Symposium on Computer Animation
+Jul 11, 2018 - Jul 13, 2018 - Paris , France
+http://sca2018.inria.fr/
+19
+	
+WASSA : Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis
+Oct 31, 2018 - Nov 1, 2018 - Brusssels , Belgium
+https://wt-public.emm4u.eu/wassa2018/index.htm
+19
+	
+REFSQ : International Conference on Requirements Engineering: Foundation for Software Quality
+Mar 24, 2020 - Mar 27, 2020 - Pisa , Italy
+https://refsq.org/welcome
+19
+	
+VAST : IEEE Symposium on Visual Analytics Science and Technology
+Oct 20, 2019 - Oct 25, 2019 - Vancouver , Canada
+http://ieeevis.org/year/2019/welcome
+18
+	
+ACII : International Conference on Affective Computing and Intelligent Interaction
+Sep 3, 2019 - Sep 6, 2019 - Cambridge , United Kingdom
+http://acii-conf.org/2019/important-dates/#top
+18
+	
+VRST : ACM Symposium on Virtual Reality Software and Technology
+Nov 12, 2019 - Nov 15, 2019 - Penrith , Australia
+https://vrst.acm.org/vrst2019/submissions/
+18
+	
+ISS : ACM International Conference on Interactive Tabletops and Surfaces
+Nov 10, 2019 - Nov 13, 2019 - Daejeon , South Korea
+https://iss.acm.org/2019/
+17
+	
+ICWE : International Conference on Web Engineering
+Jun 9, 2020 - Jun 12, 2020 - Helsinki , Finland
+http://icwe2020.webengineering.org/
+17
+	
+BSN : International Workshop on Wearable and Implantable Body Sensor Networks
+Mar 4, 2018 - Mar 7, 2018 - Las Vegas , United States
+https://bhi-bsn.embs.org/2018/
+16
+	
+INTERACT : IFIP Conference on Human-Computer Interaction
+Sep 2, 2019 - Sep 6, 2019 - Paphos , Cyprus
+http://interact2019.org/
+16
+	
+PDC : Participatory Design Conference
+Jun 15, 2020 - Jun 19, 2020 - Manizales , Colombia
+http://www.pdc2020.org/
+16
+	
+GameSec : Conference on the Decision and Game Theory for Security (GameSec)
+Oct 30, 2019 - Nov 1, 2019 - Stockholm , Sweden
+http://www.gamesec-conf.org/
+15
+	
+ITC : IEEE International Test Conference
+Nov 12, 2019 - Nov 14, 2019 - Washington , United States
+http://www.itctestweek.org/
+15
+	
+I3DG : Symposium on Interactive 3D Graphics
+May 5, 2020 - May 7, 2020 - San Francisco , United States
+http://i3dsymposium.github.io/2020/
+15
+	
+VL/HCC : IEEE Symposium on Visual Languages and Human-Centric Computing
+Aug 10, 2020 - Aug 14, 2020 - Dunedin , New Zealand
+https://conf.researchr.org/track/vlhcc2020/vlhcc2020-papers
+14
+	
+Web3D : International Conference on 3D Web Technology
+Jun 24, 2020 - Jun 26, 2020 - Seoul , South Korea
+https://web3d2020.web3d.org/
+14
+	
+WISE : Web Information Systems Engineering
+Nov 26, 2019 - Nov 30, 2019 - Hong Kong , Hong Kong
+https://wise2019.comp.polyu.edu.hk
+14
+	
+VCIP : IEEE Visual Communications and Image Processing
+Dec 1, 2019 - Dec 4, 2019 - Sydney , Australia
+http://www.vcip2019.org/
+13
+	
+GI : Graphics Interface Conference
+May 21, 2020 - May 22, 2020 - Toronto , Canada
+https://graphicsinterface.org/conference/2020/
+13
+	
+HSI : Conference on Human System Interactions
+Jun 6, 2020 - Jun 8, 2020 - Tokyo , Japan
+http://hsi2020.welcometohsi.org/
+13
+	
+ICCHP : International Conference on Computers Helping People with Special Needs
+Sep 9, 2020 - Sep 11, 2020 - Lecco , Italy
+https://www.icchp.org/
+Deadline : to be confirmed
+12
+	
+InfoVis : International Conference on Information Visualization
+Feb 27, 2020 - Feb 29, 2020 - Valletta , Malta
+http://ivapp.visigrapp.org/
+
+$Software Engineering
+75
+	
+ICSE : International Conference on Software Engineering
+May 23, 2020 - May 29, 2020 - Seoul , South Korea
+https://conf.researchr.org/home/icse-2020
+56
+	
+ASPLOS : International Conference on Architectural Support for Programming Languages and Operating Systems
+Mar 16, 2020 - Mar 20, 2020 - Lausanne , Switzerland
+https://asplos-conference.org/calls/
+51
+	
+PLDI : ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI)
+Jun 15, 2020 - Jun 20, 2020 - London , United Kingdom
+https://pldi20.sigplan.org/home
+51
+	
+FOCS : IEEE Symposium on Foundations of Computer Science
+Nov 9, 2019 - Nov 12, 2019 - Baltimore , United States
+http://focs2019.cs.jhu.edu/
+51
+	
+FSE : ACM SIGSOFT International Symposium on Foundations of Software Engineering
+Nov 8, 2020 - Nov 13, 2020 - Sacramento , United States
+https://www.cs.ucdavis.edu/fse2020/
+51
+	
+POPL : ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages (POPL)
+Jan 17, 2021 - Jan 22, 2021 - Copenhagen , Denmark
+https://popl21.sigplan.org/
+Deadline : Thu 09 Jul 2020
+49
+	
+OSDI : Symposium on Operating Systems Design and Implementation (OSDI)
+Nov 4, 2020 - Nov 6, 2020 - BANFF , Canada
+https://www.usenix.org/conference/osdi20
+Deadline : Tue 05 May 2020
+48
+	
+DAC : Design Automation Conference (DAC)
+Jul 19, 2020 - Jul 23, 2020 - San Francisco , United States
+https://www.dac.com/
+47
+	
+RSS : Robotics: Science and Systems
+Jul 12, 2020 - Jul 17, 2020 - Oregon State University at Corvallis , United States
+https://roboticsconference.org
+46
+	
+UIST : ACM Symposium on User Interface Software and Technology
+Oct 20, 2020 - Oct 23, 2020 - Minneapolis , United States
+https://uist.acm.org/uist2020/
+Deadline : Mon 20 Apr 2020
+46
+	
+SODA : ACM SIAM Symposium on Discrete Algorithms
+Jan 10, 2021 - Jan 13, 2021 - Alexandria , United States
+https://www.siam.org/conferences/cm/conference/soda21
+Deadline : to be confirmed
+44
+	
+Mobisys : Annual International Conference on Mobile Systems, Applications, and Services
+Jun 15, 2020 - Jun 19, 2020 - Toronto , Canada
+https://www.sigmobile.org/mobisys/2020/
+43
+	
+DATE : Design, Automation and Test in Europe Conference and Exhibition
+Mar 9, 2020 - Mar 13, 2020 - Grenoble , France
+https://www.date-conference.com/call-for-papers
+41
+	
+IPDPS : IEEE International Symposium on Parallel & Distributed Processing
+May 18, 2020 - May 22, 2020 - New Orleans , United States
+http://www.ipdps.org
+40
+	
+ASE : IEEE/ACM International Conference on Automated Software Engineering
+Sep 21, 2020 - Sep 25, 2020 - Melbourne , Australia
+https://a2i2.github.io/ase2020/
+Deadline : Fri 01 May 2020
+39
+	
+TACAS : International Conference on Tools and Algorithms for the Construction and Analysis of Systems (TACAS)
+Apr 25, 2020 - May 1, 2020 - Dublin , Ireland
+https://www.etaps.org/2020/tacas
+38
+	
+CAV : International Conference on Computer Aided Verification
+Jul 19, 2020 - Jul 24, 2020 - Los Angeles , United States
+http://i-cav.org/2020/
+38
+	
+EuroSys : ACM European Conference on Computer Systems
+Apr 27, 2020 - Apr 30, 2020 - Crete , Greece
+https://www.eurosys2020.org/?page_id=75
+36
+	
+ICDCS : International Conference on Distributed Computing Systems, ICDCS
+Jul 7, 2020 - Jul 10, 2020 - Singapore , Singapore
+http://icdcs2020.sg/
+35
+	
+ISSTA : International Symposium on Software Testing and Analysis
+Jul 18, 2020 - Jul 22, 2020 - Los Angeles , United States
+https://conf.researchr.org/home/issta-2020
+34
+	
+OOPSLA : ACM SIGPLAN International Conference on Object-Oriented Programming, Systems, Languages, and Applications
+Oct 20, 2019 - Oct 25, 2019 - Athens , Greece
+https://2019.splashcon.org/track/splash-2019-oopsla
+33
+	
+ICSME : IEEE International Conference on Software Maintenance and Evolution
+Sep 28, 2020 - Oct 2, 2020 - Adelaide , Australia
+https://icsme2020.github.io/
+Deadline : to be confirmed
+33
+	
+DSN : IEEE/IFIP International Conference on Dependable Systems and Networks
+Jan 1, 1970 - Aug 2, 2019 - Valencia , Spain
+https://dsn2020.webs.upv.es/
+32
+	
+ICALP : International Colloquium on Automata, Languages and Programming
+Jul 8, 2020 - Jul 12, 2020 - Beijing , China
+http://econcs.pku.edu.cn/icalp2020/
+31
+	
+PPOPP : ACM SIGPLAN Symposium on Principles & Practice of Parallel Programming (PPOPP)
+Feb 22, 2020 - Feb 26, 2020 - San Diego , United States
+https://ppopp20.sigplan.org
+30
+	
+SANER : International Conference on Software Analysis, Evolution, and Reengineering
+Feb 16, 2020 - Feb 19, 2020 - London ON , Canada
+https://saner2020.csd.uwo.ca/
+30
+	
+ITCS : Conference on Innovations in Theoretical Computer Science
+Jan 12, 2020 - Jan 14, 2020 - Seattle , United States
+http://itcs-conf.org/itcs20/itcs20-cfp.html
+29
+	
+FPGA : Symposium on Field Programmable Gate Arrays
+Feb 24, 2020 - Feb 26, 2020 - Seaside , United States
+http://isfpga.org/
+29
+	
+NOMS : IEEE/IFIP Network Operations and Management Symposium
+Apr 20, 2020 - Jan 1, 1970 - Budapest , Hungary
+https://noms2020.ieee-noms.org/
+28
+	
+ASP-DAC : Asia and South Pacific Design Automation Conference
+Jan 13, 2020 - Jan 16, 2020 - Beijing , China
+https://aspdac2020.github.io/aspdac20/
+28
+	
+ICCAD : IEEE/ACM International Conference on Computer-Aided Design
+Nov 4, 2019 - Nov 7, 2019 - Westminster , United States
+https://iccad.com/
+28
+	
+ICAPS : International Conference on Automated Planning and Scheduling
+Jun 15, 2020 - Jun 19, 2020 - Nancy , France
+https://icaps20.icaps-conference.org/
+Deadline : to be confirmed
+28
+	
+HPDC : ACM International Symposium on High Performance Distributed Computing
+Jun 23, 2020 - Jun 26, 2020 - Stockholm , Sweden
+http://www.hpdc.org/2020
+28
+	
+PODC : ACM Symposium on Principles of Distributed Computing
+Aug 3, 2020 - Aug 7, 2020 - Salerno , Italy
+https://www.podc.org/
+Deadline : to be confirmed
+28
+	
+SAC : ACM Symposium on Applied Computing
+Mar 30, 2020 - Apr 3, 2020 - Brno , Czech Republic
+https://www.sigapp.org/sac/sac2020/
+28
+	
+AINA : International Conference on Advanced Information Networking and Applications
+Apr 15, 2020 - Apr 17, 2020 - Caserta , Italy
+http://voyager.ce.fit.ac.jp/conf/aina/2020/
+27
+	
+IUI : International Conference on Intelligent User Interfaces
+Mar 17, 2020 - Mar 20, 2020 - Cagliari , Italy
+https://iui.acm.org/2020/
+27
+	
+ICFP : International Conference on Functional Programming
+Aug 24, 2020 - Aug 26, 2020 - Jersey City , United States
+https://icfp20.sigplan.org/
+27
+	
+ICST : IEEE International Conference on Software Testing, Verification and Validation (ICST)
+Mar 23, 2020 - Mar 27, 2020 - Porto , Portugal
+https://icst2020.github.io/
+27
+	
+PACT : International Conference on Parallel Architectures and Compilation Techniques
+Sep 23, 2019 - Sep 26, 2019 - Seattle , United States
+http://hpc.pnl.gov/pact19/
+26
+	
+ECRTS : Euromicro Conference on Real-Time Systems
+Jul 7, 2020 - Jul 10, 2020 - Modena , Italy
+https://www.ecrts.org/call-for-papers/
+26
+	
+CISS : Conference on Information Sciences and Systems
+Mar 18, 2020 - Mar 20, 2020 - Princeton University , United States
+https://ee-ciss.princeton.edu/
+Deadline : to be confirmed
+26
+	
+CGO : International Symposium on Code Generation and Optimization
+Feb 22, 2020 - Feb 26, 2020 - San Diego , United States
+https://cgo.org
+26
+	
+ICS : International Conference on Supercomputing
+Jun 29, 2020 - Jul 2, 2020 - Barcelona , Spain
+https://www.ics-conference.org/
+Deadline : to be confirmed
+26
+	
+ESOP : European Symposium on Programming
+Apr 25, 2020 - May 1, 2020 - Dublin , Ireland
+https://www.etaps.org/2020/esop
+25
+	
+AAMAS : Autonomous Agents and Multi-Agent Systems
+May 9, 2020 - May 13, 2020 - Auckland , New Zealand
+https://aamas2020.conference.auckland.ac.nz/
+25
+	
+RTAS : IEEE Real-Time and Embedded Technology and Applications Symposium
+Apr 21, 2020 - Apr 24, 2020 - Sydney , United States
+http://2020.rtas.org/
+Deadline : to be confirmed
+25
+	
+RE : IEEE International Requirements Engineering Conference
+Aug 31, 2020 - Sep 4, 2020 - Zurich , Switzerland
+https://re20.org/
+25
+	
+ISSRE : International Symposium on Software Reliability Engineering
+Oct 28, 2019 - Oct 31, 2019 - Berlin , Germany
+http://2019.issre.net/
+25
+	
+GDN : Group Decision and Negotiation
+Jun 7, 2020 - Jun 11, 2020 - Toronto , Canada
+http://gdnconference.org/gdn2020/
+25
+	
+UMAP : International Conference on User Modelling, Adaptation, and Personalization
+Jul 14, 2020 - Jul 17, 2020 - Genoa , Italy
+https://www.um.org/umap2020/
+Deadline : to be confirmed
+24
+	
+ESA : European Symposium on Algorithms
+Sep 9, 2019 - Sep 11, 2019 - Munich , Germany
+https://algo2019.ak.in.tum.de/
+24
+	
+HiPC : International Conference on High Performance Computing
+Dec 17, 2019 - Dec 20, 2019 - Hyderabad , India
+https://hipc.org/call-for-papers/
+23
+	
+Middleware : International Middleware Conference
+Dec 9, 2019 - Dec 13, 2019 - UC Davis , United States
+http://2019.middleware-conference.org/
+23
+	
+CaiSE : International Conference on Advanced Information Systems Engineering
+Jun 8, 2020 - Jun 12, 2020 - Grenoble , France
+http://caise20.imag.fr/
+22
+	
+ISPASS : IEEE International Symposium on Performance Analysis of Systems and Software
+Apr 5, 2020 - Apr 7, 2020 - Boston , United States
+https://www.ispass.org/ispass2020/
+22
+	
+SPAA : ACM Symposium on Parallelism in Algorithms and Architectures
+Jul 15, 2020 - Jul 17, 2020 - Philadelphia , United States
+https://spaa.acm.org/
+Deadline : to be confirmed
+22
+	
+CP : International Conference on Principles and Practice of Constraint Programming
+Sep 7, 2020 - Sep 11, 2020 - Louvain-la-Neuve , Belgium
+https://cp2020.a4cp.org
+Deadline : Wed 22 Apr 2020
+22
+	
+CNSM : Conference on Network and Service Management
+Oct 21, 2019 - Oct 25, 2019 - Halifax , Canada
+http://www.cnsm-conf.org/2019/
+21
+	
+FOSSACS : International Conference on Foundations of Software Science and Computation Structures
+Apr 25, 2020 - May 1, 2020 - Dublin , Ireland
+https://www.etaps.org/2020/fossacs
+21
+	
+ECOOP : European Conference on Object-oriented Programming (ECOOP)
+Jul 13, 2020 - Jul 17, 2020 - Berlin , Germany
+https://2020.ecoop.org
+21
+	
+RTSS : IEEE Real-Time Systems Symposium (RTSS)
+Dec 3, 2019 - Dec 6, 2019 - Hong Kong , Hong Kong
+http://2019.rtss.org/call-for-papers/
+21
+	
+STACS : Symposium on Theoretical Aspects of Computer Science (STACS)
+Mar 10, 2020 - Mar 14, 2020 - Montpellier , France
+http://www.stacs-conf.org/
+Deadline : to be confirmed
+21
+	
+IEEE ICWS : IEEE International Conference on Web Services
+Jul 6, 2020 - Jul 11, 2020 - Beijing , China
+https://conferences.computer.org/icws/2020/
+21
+	
+CONCUR : International Conference on Concurrency Theory
+Sep 1, 2020 - Sep 4, 2020 - Vienna , Austria
+https://concur2020.forsyte.at/
+Deadline : Tue 28 Apr 2020
+21
+	
+EDOC : International IEEE Enterprise Distributed Object Computing Conference
+Oct 28, 2019 - Oct 31, 2019 - Paris , France
+https://edoc2019.sciencesconf.org/resource/page/id/7
+21
+	
+EASE : International Conference on Evaluation and Assessment in Software Engineering
+Apr 15, 2020 - Apr 17, 2020 - Trondheim , Norway
+https://www.ntnu.edu/ease2020
+21
+	
+MODELS : Model Driven Engineering Languages and Systems
+Oct 18, 2020 - Oct 23, 2020 - Montreal , Canada
+http://www.modelsconference.org
+Deadline : Fri 08 May 2020
+20
+	
+DCOSS : IEEE International Conference on Distributed Computing in Sensor Systems
+May 25, 2020 - May 27, 2020 - Los Angeles , United States
+http://www.dcoss.org/
+Deadline : to be confirmed
+20
+	
+ICPP : International Conference on Parallel Processing (ICPP)
+Aug 17, 2020 - Aug 20, 2020 - Edmonton , Canada
+https://jnamaral.github.io/icpp20/
+20
+	
+ESEM : International Symposium on Empirical Software Engineering and Measurement
+Sep 16, 2019 - Sep 20, 2019 - Porto de Galinhas , Brazil
+http://eseiw2019.com/esem/
+20
+	
+PDP : Euromicro International Conference on Parallel, Distributed and Network-Based Processing
+Mar 11, 2020 - Mar 13, 2020 - Vasteras , Sweden
+http://www.pdp2020.com/
+20
+	
+ARES : International Conference on Availability, Reliability and Security
+Aug 24, 2020 - Aug 28, 2020 - Dublin , Ireland
+https://www.ares-conference.eu/conference-2020/cfp2020/
+20
+	
+WiOpt : International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks
+Jun 15, 2020 - Jun 19, 2020 - Volos , Greece
+http://wi-opt.org/
+20
+	
+SCC : IEEE International Conference on Services Computing
+Jul 7, 2020 - Jul 11, 2020 - BEIJING , China
+https://conferences.computer.org/scc/2020/
+20
+	
+XP : International Conference on Agile Processes in Software Engineering and Extreme Programming
+Jun 8, 2020 - Jun 12, 2020 - Copenhagen , Denmark
+https://www.agilealliance.org/xp2020/
+19
+	
+IVA : Intelligent Virtual Agents
+Jul 2, 2019 - Jul 5, 2019 - Paris , France
+http://iva2019.sciencesconf.org
+19
+	
+SEA : International Symposium on Experimental Algorithms
+Jun 16, 2020 - Jun 18, 2020 - Catania , Italy
+http://www.sea2020.dmi.unict.it/
+19
+	
+REFSQ : International Conference on Requirements Engineering: Foundation for Software Quality
+Mar 24, 2020 - Mar 27, 2020 - Pisa , Italy
+https://refsq.org/welcome
+19
+	
+HPCS : International Conference on High Performance Computing and Simulation
+Jul 20, 2020 - Jul 24, 2020 - Barcelona , Spain
+http://hpcs2020.cisedu.info/
+19
+	
+ICDCN : International Conference of Distributed Computing and Networking
+Jan 4, 2020 - Jan 7, 2020 - Kolkata , India
+https://www.icdcn2020.com/
+18
+	
+VRST : ACM Symposium on Virtual Reality Software and Technology
+Nov 12, 2019 - Nov 15, 2019 - Penrith , Australia
+https://vrst.acm.org/vrst2019/submissions/
+18
+	
+MSWIM : ACM International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems
+Nov 25, 2019 - Nov 29, 2019 - Miami ,
+http://mswimconf.com/2019/
+18
+	
+FASE : International Conference on Fundamental Approaches to Software Engineering
+Apr 25, 2020 - May 1, 2020 - Dublin , Ireland
+https://www.etaps.org/2020/fase
+18
+	
+ICSOC : International Conference on Service Oriented Computing
+Oct 28, 2019 - Oct 31, 2019 - Toulouse , France
+http://www.icsoc.org/
+18
+	
+ATVA : Automated Technology for Verification and Analysis
+Oct 26, 2020 - Oct 30, 2020 - Hanoi , Viet Nam
+http://fit.uet.vnu.edu.vn/atva2020/
+Deadline : Sun 03 May 2020
+18
+	
+IWQoS : International Workshop on Quality of Service
+Jun 15, 2020 - Jun 17, 2020 - Hangzhou , China
+https://iwqos2020.ieee-iwqos.org/
+17
+	
+VMCAI : Verification, Model Checking and Abstract Interpretation
+Jan 19, 2020 - Jan 25, 2020 - New Orleans , United States
+https://popl20.sigplan.org/home/VMCAI-2020#Call-for-Papers
+17
+	
+CSCWD : International Conference on Computer Supported Cooperative Work in Design, CSCWD
+May 6, 2020 - May 8, 2020 - Dalian , China
+http://2020.cscwd.org/
+17
+	
+ICWE : International Conference on Web Engineering
+Jun 9, 2020 - Jun 12, 2020 - Helsinki , Finland
+http://icwe2020.webengineering.org/
+17
+	
+ER : International Conference on Conceptual Modeling
+Nov 3, 2020 - Nov 6, 2020 - Vienna , Austria
+https://er2020.big.tuwien.ac.at/
+Deadline : to be confirmed
+17
+	
+SEAA : EUROMICRO Conference on Software Engineering and Advanced Applications
+Aug 26, 2020 - Aug 28, 2020 - Portorož , Slovenia
+https://dsd-seaa2020.um.si/seaa/
+17
+	
+ISoLA : International Symposium On Leveraging Applications of Formal Methods, Verification and Validation
+Oct 30, 2018 - Nov 13, 2018 - Royal Apollonia Beach Hotel , Cyprus
+http://www.isola-conference.org/isola2018
+17
+	
+IPCCC : IEEE International Performance, Computing, and Communications Conference
+Oct 29, 2019 - Oct 31, 2019 - London , United Kingdom
+http://ipccc.org
+16
+	
+INTERACT : IFIP Conference on Human-Computer Interaction
+Sep 2, 2019 - Sep 6, 2019 - Paphos , Cyprus
+http://interact2019.org/
+16
+	
+CISIS : International Conference on Complex, Intelligent and Software Intensive Systems
+Jul 1, 2020 - Jul 3, 2020 - Lodz , Poland
+http://voyager.ce.fit.ac.jp/conf/cisis/2020/
+16
+	
+RTCSA : IEEE International Conference on Embedded and Real-Time Computing Systems and Applications
+Aug 18, 2019 - Aug 21, 2019 - Hangzhou , China
+https://rtcsa2019.github.io/index/
+16
+	
+ECSA : European Conference on Software Architecture
+Sep 14, 2020 - Sep 18, 2020 - L\'Aquila , Italy
+https://icst2020.info/series/ecsa
+Deadline : Mon 04 May 2020
+16
+	
+IPCO : International Conference on Integer Programming and Combinatorial Optimization
+Jun 8, 2020 - Jun 10, 2020 - London , United Kingdom
+http://www.lse.ac.uk/IPCO-2020
+16
+	
+HASE : IEEE High Assurance Systems Engineering Symposium, HASE
+Jun 19, 2020 - Jun 20, 2020 - Malla Reddy College of Engineering & Technology , India
+http://www.icscsp.com/
+15
+	
+SRDS : Symposium on Reliable Distributed Systems
+Oct 1, 2019 - Oct 4, 2019 - Lyon , France
+https://srds2019.projet.liris.cnrs.fr/
+15
+	
+ICPADS : International Conference on Parallel and Distributed Systems
+Dec 4, 2019 - Dec 6, 2019 - Tianjin , China
+http://www.icpads2019.cn/
+15
+	
+SSBSE : International Conference on Search based Software Engineering
+Oct 7, 2020 - Oct 8, 2020 - Bari , Italy
+http://ssbse2020.di.uniba.it
+Deadline : Mon 04 May 2020
+15
+	
+CPAIOR : International Conference on Integration of AI and OR Techniques in Constraint Programming
+May 26, 2020 - May 29, 2020 - Vienna , Austria
+https://cpaior.org/
+Deadline : to be confirmed
+15
+	
+ICSSP : International Conference on Software and System Process
+May 23, 2020 - May 24, 2020 - Seoul , South Korea
+http://dbsi.hdu.edu.cn/icssp2020/
+15
+	
+SCAM : IEEE International Working Conference on Source Code Analysis and Manipulation
+Sep 26, 2020 - Sep 27, 2020 - Adelaide , Australia
+http://www.ieee-scam.org/2020/
+Deadline : to be confirmed
+15
+	
+ITC : IEEE International Test Conference
+Nov 12, 2019 - Nov 14, 2019 - Washington , United States
+http://www.itctestweek.org/
+15
+	
+SLE : Software Language Engineering
+Oct 21, 2019 - Oct 22, 2019 - Athens , Greece
+http://www.sleconf.org/2019/
+14
+	
+ISORC : IEEE International Symposium on Object Oriented Real-Time Distributed Computing
+May 19, 2020 - May 21, 2020 - Nashville , United States
+https://isorc.github.io/2020/
+Deadline : to be confirmed
+14
+	
+ISAAC : International Symposium on Algorithms and Computation
+Dec 8, 2019 - Dec 11, 2019 - Shanghai , China
+http://itcs.shufe.edu.cn/isaac2019/
+14
+	
+FST&TCS : Foundations of Software Technology and Theoretical Computer Science
+Dec 11, 2019 - Dec 13, 2019 - Bombay , India
+https://www.fsttcs.org.in/2019/index.php
+14
+	
+SBAC-PAD : International Symposium on Computer Architecture and High Performance Computing
+Oct 15, 2019 - Oct 18, 2019 - Campo Grande , Brazil
+http://sbac-pad.facom.ufms.br/
+14
+	
+ICAART : International Conference on Agents and Artificial Intelligence
+Feb 22, 2020 - Feb 24, 2020 - Valletta , Malta
+http://www.icaart.org/
+14
+	
+OPODIS : International Conference On Principles Of DIstributed Systems
+Dec 17, 2019 - Dec 19, 2019 - Neuchâtel , Switzerland
+https://opodis2019.unine.ch/
+14
+	
+ICGSE : IEEE International Conference on Global Software Engineering
+May 23, 2020 - May 30, 2020 - Seoul , South Korea
+https://conf.researchr.org/home/icgse-2020
+14
+	
+ICEIS : International Conference on Enterprise Information Systems
+May 5, 2020 - May 7, 2020 - Prague , Czech Republic
+http://www.iceis.org/
+14
+	
+FSTTCS : Foundations of Software Technology and Theoretical Computer Science
+Dec 11, 2019 - Dec 13, 2019 - Bombay , India
+https://www.fsttcs.org.in/2019/index.php
+14
+	
+WISE : Web Information Systems Engineering
+Nov 26, 2019 - Nov 30, 2019 - Hong Kong , Hong Kong
+https://wise2019.comp.polyu.edu.hk
+14
+	
+SEKE : International Conference on Software Engineering and Knowledge Engineering
+Jul 9, 2020 - Jul 11, 2020 - Wyndham Pittsburgh University Center , United States
+http://ksiresearch.org/seke/seke20.html
+14
+	
+SEFM : Software Engineering and Formal Methods
+Sep 16, 2019 - Sep 20, 2019 - Oslo , Norway
+https://sefm2019.inria.fr/
+14
+	
+PPDP : International Symposium on Principles and Practice of Declarative Programming
+Oct 7, 2019 - Oct 9, 2019 - Proto , Portugal
+http://ppdp2019.macs.hw.ac.uk
+13
+	
+CASES : International Conference on Compilers, Architecture, and Synthesis for Embedded Systems
+Oct 13, 2019 - Oct 18, 2019 - New York City , United States
+http://www.esweek.org/cases/about
+13
+	
+WETICE : IEEE International Workshops on Enabling Technologies: Infrastructure for Collaborative Enterprises
+Jun 10, 2020 - Jun 12, 2020 - Bayonne , France
+http://eexposit.perso.univ-pau.fr/wetice/index.html
+13
+	
+FEM : International Conference on Formal Engineering Methods
+Nov 13, 2017 - Nov 17, 2017 - Xi’an , China
+http://ictt.xidian.edu.cn/icfem2017/
+13
+	
+APSEC : Asia-Pacific Software Engineering Conference
+Dec 2, 2019 - Dec 5, 2019 - Putrajaya , Malaysia
+https://seminar.utmspace.edu.my/apsec2019/
+13
+	
+WG : Workshop on Graph-Theoretic Concepts in Computer Science
+Jun 24, 2020 - Jun 26, 2020 - University of Leeds , United Kingdom
+https://algorithms.leeds.ac.uk/wg2020/
+13
+	
+VISSOFT : IEEE Working Conference on Software Visualization
+Sep 30, 2019 - Oct 1, 2019 - Cleveland , United States
+http://vissoft19.dcc.uchile.cl/
+13
+	
+ADBIS : Advances in Databases and Information Systems
+Aug 25, 2020 - Aug 28, 2020 - Lyon , France
+http://eric.univ-lyon2.fr/adbis-tpdl-eda-2020/adbis/
+12
+	
+LION : Learning and Intelligent Optimization
+May 24, 2020 - May 28, 2020 - ATHENS , Greece
+http://www.caopt.com/LION14/
+12
+	
+SOCA : IEEE International Conference on Service-Oriented Computing and Applications
+Nov 18, 2019 - Nov 21, 2019 - Kaohsiung , Taiwan
+https://www.cs.ccu.edu.tw/~conference/soca2019
+12
+	
+ICECCS : IEEE International Conference on Engineering of Complex Computer Systems
+Nov 10, 2019 - Nov 13, 2019 - Hong Kong , China
+https://formal-analysis.com/iceccs/2019/
+12
+	
+ICA3PP : International Conference on Algorithms and Architectures for Parallel Processing
+Dec 9, 2019 - Dec 11, 2019 - Melbourne , Australia
+http://nsclab.org/ica3pp2019/
+12
+	
+APLAS : Asian Symposium on Programming Languages and Systems
+Nov 27, 2017 - Nov 29, 2017 - Suzhou , China
+https://www-aplas.github.io/
+12
+	
+IOLTS : IEEE International On-Line Testing Symposium
+Jun 1, 2019 - Jun 3, 2019 - Rhodes Island , Greece
+http://tima.univ-grenoble-alpes.fr/conferences/iolts/iolts19/
+12
+	
+DLT : Developments in Language Theory
+May 11, 2020 - May 15, 2020 - Tampa , United States
+http://knot.math.usf.edu/dlt2020/
+
+$Computational Theory and Mathematics
+169
+	
+NeurIPS : Neural Information Processing Systems (NIPS)
+Dec 10, 2019 - Dec 12, 2019 - Vancouver , Canada
+https://nips.cc
+68
+	
+CEC : IEEE Congress on Evolutionary Computation
+Jul 19, 2020 - Jul 24, 2020 - Glasgow , United Kingdom
+https://wcci2020.org/
+63
+	
+STOC : ACM Symposium on Theory of Computing
+Jun 22, 2020 - Jan 1, 1970 - Chicago , United States
+http://acm-stoc.org/stoc2020/
+56
+	
+EUROCRYPT : International Conference on Theory and Applications of Cryptographic Techniques (EUROCRYPT)
+May 10, 2020 - May 14, 2020 - Zagreb , Croatia
+https://eurocrypt.iacr.org/2020/
+53
+	
+ISIT : IEEE International Symposium on Information Theory
+Jun 21, 2020 - Jun 26, 2020 - Los Angeles , United States
+https://2020.ieee-isit.org/
+52
+	
+AISTATS : International Conference on Artificial Intelligence and Statistics
+Jun 3, 2020 - Jun 5, 2020 - Palermo , Italy
+https://www.aistats.org/
+48
+	
+COLT : Conference on Learning Theory (COLT)
+Jul 9, 2020 - Jul 12, 2020 - Graz , Austria
+http://learningtheory.org/colt2020/
+46
+	
+SODA : ACM SIAM Symposium on Discrete Algorithms
+Jan 10, 2021 - Jan 13, 2021 - Alexandria , United States
+https://www.siam.org/conferences/cm/conference/soda21
+Deadline : to be confirmed
+41
+	
+COLING : International Conference on Computational Linguistics
+Sep 15, 2020 - Sep 18, 2020 - Barcelona , Spain
+http://coling2020.org/
+Deadline : Wed 01 Jul 2020
+36
+	
+EACL : Conference of the European Chapter of the Association for Computational Linguistics
+Apr 3, 2017 - Apr 7, 2017 - Valencia , Spain
+http://eacl2017.org/
+28
+	
+SAC : ACM Symposium on Applied Computing
+Mar 30, 2020 - Apr 3, 2020 - Brno , Czech Republic
+https://www.sigapp.org/sac/sac2020/
+28
+	
+ICAPS : International Conference on Automated Planning and Scheduling
+Jun 15, 2020 - Jun 19, 2020 - Nancy , France
+https://icaps20.icaps-conference.org/
+Deadline : to be confirmed
+26
+	
+GECCO : Conference on Genetic and Evolutionary Computation
+Jul 8, 2020 - Jul 12, 2020 - Cancun , Mexico
+https://gecco-2020.sigevo.org/index.html/HomePage
+Deadline : to be confirmed
+26
+	
+CGO : International Symposium on Code Generation and Optimization
+Feb 22, 2020 - Feb 26, 2020 - San Diego , United States
+https://cgo.org
+26
+	
+ICS : International Conference on Supercomputing
+Jun 29, 2020 - Jul 2, 2020 - Barcelona , Spain
+https://www.ics-conference.org/
+Deadline : to be confirmed
+25
+	
+KR : Principles of Knowledge Representation and Reasoning
+Sep 12, 2020 - Sep 18, 2020 - Rhodes , Greece
+https://kr2020.inf.unibz.it
+24
+	
+LICS : IEEE Symposium on Logic in Computer Science
+Jul 8, 2020 - Jul 12, 2020 - Beijing , China
+https://lics.siglog.org/lics20/
+24
+	
+ESA : European Symposium on Algorithms
+Sep 9, 2019 - Sep 11, 2019 - Munich , Germany
+https://algo2019.ak.in.tum.de/
+24
+	
+TrustCom : IEEE International Conference on Trust, Security and Privacy in Computing and Communications
+Aug 5, 2019 - Aug 8, 2019 - Rotorua , New Zealand
+https://crow.org.nz/Trustcom2019
+24
+	
+HiPC : International Conference on High Performance Computing
+Dec 17, 2019 - Dec 20, 2019 - Hyderabad , India
+https://hipc.org/call-for-papers/
+23
+	
+RECOMB : International Conference on Research in Computational Molecular Biology
+May 10, 2020 - May 13, 2020 - Padova , Italy
+https://www.recomb2020.org/
+22
+	
+PSB : Pacific Symposium on Biocomputing
+Jan 3, 2020 - Jan 7, 2020 - The Big Island of Hawaii , United States
+https://psb.stanford.edu/
+22
+	
+SCG : Symposium on Computational Geometry
+Jun 22, 2020 - Jun 26, 2020 - Zurich , Switzerland
+https://socg20.inf.ethz.ch/
+Deadline : to be confirmed
+22
+	
+SAT : Theory and Applications of Satisfiability Testing
+Jul 5, 2020 - Jul 9, 2020 - Alghero , Italy
+http://sat2020.idea-researchlab.org/
+22
+	
+CP : International Conference on Principles and Practice of Constraint Programming
+Sep 7, 2020 - Sep 11, 2020 - Louvain-la-Neuve , Belgium
+https://cp2020.a4cp.org
+Deadline : Wed 22 Apr 2020
+21
+	
+STACS : Symposium on Theoretical Aspects of Computer Science (STACS)
+Mar 10, 2020 - Mar 14, 2020 - Montpellier , France
+http://www.stacs-conf.org/
+Deadline : to be confirmed
+21
+	
+CCC : Conference on Computational Complexity
+Jul 28, 2020 - Jul 31, 2020 - Saarbruecken , Germany
+https://computationalcomplexity.org
+21
+	
+FOSSACS : International Conference on Foundations of Software Science and Computation Structures
+Apr 25, 2020 - May 1, 2020 - Dublin , Ireland
+https://www.etaps.org/2020/fossacs
+20
+	
+ITW : IEEE Information Theory Workshop
+Aug 25, 2019 - Aug 28, 2019 - Visby , Sweden
+http://itw2019.org/
+20
+	
+ACNS : Applied Cryptography and Network Security
+Jun 22, 2020 - Jun 25, 2020 - Rome , Italy
+https://sites.google.com/di.uniroma1.it/ACNS2020
+19
+	
+PPSN : International Conference on Parallel problem solving from nature
+Sep 5, 2020 - Sep 9, 2020 - Leiden , Netherlands
+https://ppsn2020.liacs.leidenuniv.nl/
+19
+	
+SEA : International Symposium on Experimental Algorithms
+Jun 16, 2020 - Jun 18, 2020 - Catania , Italy
+http://www.sea2020.dmi.unict.it/
+19
+	
+ICCSA : International Conference on Computational Science and Its Applications
+Jul 1, 2020 - Jul 4, 2020 - Cagliari , Italy
+http://www.iccsa.org
+18
+	
+ESANN : European Symposium on Artificial Neural Networks
+Apr 22, 2020 - Apr 24, 2020 - Bruges , Belgium
+https://www.esann.org/
+17
+	
+ISSAC : International Symposium on Symbolic and Algebraic Computation
+Jul 20, 2020 - Jul 23, 2020 - Kalamata , Greece
+http://www.issac-conference.org/2020/
+Deadline : to be confirmed
+17
+	
+CADE : International Conference on Automated Deduction
+Jun 29, 2020 - Jul 5, 2020 - Paris , France
+https://ijcar2020.org/
+17
+	
+MFCS : Mathematical Foundations of Computer Science
+Aug 26, 2019 - Aug 30, 2019 - Aachen , Germany
+http://tcs.rwth-aachen.de/mfcs2019/
+17
+	
+IPCCC : IEEE International Performance, Computing, and Communications Conference
+Oct 29, 2019 - Oct 31, 2019 - London , United Kingdom
+http://ipccc.org
+16
+	
+GameSec : Conference on the Decision and Game Theory for Security (GameSec)
+Oct 30, 2019 - Nov 1, 2019 - Stockholm , Sweden
+http://www.gamesec-conf.org/
+16
+	
+SSDBM : Statistical and Scientific Database Management
+Jul 7, 2020 - Jul 9, 2020 - Vienna , Austria
+http://ssdbm.org/2020/
+16
+	
+IPCO : International Conference on Integer Programming and Combinatorial Optimization
+Jun 8, 2020 - Jun 10, 2020 - London , United Kingdom
+http://www.lse.ac.uk/IPCO-2020
+16
+	
+HASE : IEEE High Assurance Systems Engineering Symposium, HASE
+Jun 19, 2020 - Jun 20, 2020 - Malla Reddy College of Engineering & Technology , India
+http://www.icscsp.com/
+15
+	
+CPM : Combinatorial Pattern Matching
+Jun 17, 2020 - Jun 19, 2020 - Copenhagen , Denmark
+http://www.imm.dtu.dk/~inge/CPM/
+Deadline : to be confirmed
+15
+	
+ALT : Algorithmic Learning Theory (ALT)
+Feb 8, 2020 - Feb 11, 2020 - San Diego , United States
+http://alt2020.algorithmiclearningtheory.org/
+15
+	
+ECTA : International Conference on Applications of Evolutionary Computation
+Sep 17, 2019 - Sep 19, 2019 - Vienna , Austria
+http://www.ecta.ijcci.org/
+15
+	
+CPAIOR : International Conference on Integration of AI and OR Techniques in Constraint Programming
+May 26, 2020 - May 29, 2020 - Vienna , Austria
+https://cpaior.org/
+Deadline : to be confirmed
+15
+	
+SCAM : IEEE International Working Conference on Source Code Analysis and Manipulation
+Sep 26, 2020 - Sep 27, 2020 - Adelaide , Australia
+http://www.ieee-scam.org/2020/
+Deadline : to be confirmed
+14
+	
+ICNC : International Conference on Natural Computation
+Aug 1, 2020 - Aug 3, 2020 - Xi’an , China
+https://icnc-fskd.sust.edu.cn/index.htm
+14
+	
+EMO : Evolutionary Multi-Criterion Optimization
+Mar 28, 2021 - Mar 31, 2021 - Shenzhen , China
+https://www.emo2021.org/
+Deadline : Sun 27 Sep 2020
+14
+	
+ISAAC : International Symposium on Algorithms and Computation
+Dec 8, 2019 - Dec 11, 2019 - Shanghai , China
+http://itcs.shufe.edu.cn/isaac2019/
+14
+	
+FST&TCS : Foundations of Software Technology and Theoretical Computer Science
+Dec 11, 2019 - Dec 13, 2019 - Bombay , India
+https://www.fsttcs.org.in/2019/index.php
+14
+	
+FSTTCS : Foundations of Software Technology and Theoretical Computer Science
+Dec 11, 2019 - Dec 13, 2019 - Bombay , India
+https://www.fsttcs.org.in/2019/index.php
+13
+	
+IPEC : International Workshop on Parameterized and Exact Computation
+Sep 11, 2019 - Sep 13, 2019 - Munich , Germany
+https://easychair.org/cfp/ipec2019
+13
+	
+VISSOFT : IEEE Working Conference on Software Visualization
+Sep 30, 2019 - Oct 1, 2019 - Cleveland , United States
+http://vissoft19.dcc.uchile.cl/
+13
+	
+ADBIS : Advances in Databases and Information Systems
+Aug 25, 2020 - Aug 28, 2020 - Lyon , France
+http://eric.univ-lyon2.fr/adbis-tpdl-eda-2020/adbis/
+12
+	
+COCOON : International Conference on Computing and Combinatorics
+Jul 29, 2019 - Jul 31, 2019 - Xian , China
+http://ictt.xidian.edu.cn/COCOON2019/index.html
+12
+	
+ICA3PP : International Conference on Algorithms and Architectures for Parallel Processing
+Dec 9, 2019 - Dec 11, 2019 - Melbourne , Australia
+http://nsclab.org/ica3pp2019/
+12
+	
+SYNASC : International Symposium on Symbolic and Numeric Algorithms for Scientific Computing
+Sep 21, 2017 - Sep 24, 2017 - Timisoara , Romania
+http://synasc.ro/2017/
+12
+	
+DLT : Developments in Language Theory
+May 11, 2020 - May 15, 2020 - Tampa , United States
+http://knot.math.usf.edu/dlt2020/
+
+$Signal Processing
+240
+	
+CVPR : IEEE/CVF Conference on Computer Vision and Pattern Recognition
+Jun 16, 2020 - Jun 18, 2020 - Seattle , United States
+http://cvpr2020.thecvf.com/
+169
+	
+NeurIPS : Neural Information Processing Systems (NIPS)
+Dec 10, 2019 - Dec 12, 2019 - Vancouver , Canada
+https://nips.cc
+137
+	
+ECCV : European Conference on Computer Vision
+Aug 23, 2020 - Aug 28, 2020 - Glasgow , United Kingdom
+https://eccv2020.eu/
+Deadline : to be confirmed
+129
+	
+ICCV : IEEE/CVF International Conference on Computer Vision
+Oct 27, 2019 - Nov 3, 2019 - Seoul , South Korea
+http://iccv2019.thecvf.com/
+88
+	
+EMNLP : Conference on Empirical Methods in Natural Language Processing (EMNLP)
+Dec 3, 2019 - Dec 7, 2019 - Hong Kong , Hong Kong
+https://www.emnlp-ijcnlp2019.org/
+82
+	
+CCS : ACM Symposium on Computer and Communications Security
+Nov 11, 2019 - Nov 15, 2019 - London , United Kingdom
+https://www.sigsac.org/ccs/CCS2019/
+82
+	
+ICRA : IEEE International Conference on Robotics and Automation
+May 31, 2020 - Jun 4, 2020 - Paris , France
+https://www.icra2020.org/
+80
+	
+ICASSP : IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)
+May 4, 2020 - May 8, 2020 - Barcelona , Spain
+https://2020.ieeeicassp.org/
+74
+	
+INFOCOM : IEEE International Conference on Computer Communications (INFOCOM)
+Apr 27, 2020 - Apr 30, 2020 - Beijing , China
+https://infocom2020.ieee-infocom.org/
+65
+	
+INTERSPEECH : Conference of the International Speech Communication Association (INTERSPEECH)
+Sep 14, 2020 - Sep 18, 2020 - Shanghai , China
+http://www.interspeech2020.org
+61
+	
+ICC : IEEE International Conference on Communications
+Jun 7, 2020 - Jun 11, 2020 - Dublin , Ireland
+https://icc2020.ieee-icc.org/
+57
+	
+GLOBECOM : IEEE GLOBECOM
+Dec 7, 2020 - Dec 11, 2020 - Xinyi District , Taiwan
+https://globecom2020.ieee-globecom.org/
+53
+	
+HPCA : IEEE International Symposium on High Performance Computer Architecture
+Feb 22, 2020 - Feb 26, 2020 - San Diego , United States
+https://www.hpca-conf.org/2020/?page_id=47
+48
+	
+DAC : Design Automation Conference (DAC)
+Jul 19, 2020 - Jul 23, 2020 - San Francisco , United States
+https://www.dac.com/
+46
+	
+BMVC : British Machine Vision Conference
+Sep 9, 2019 - Sep 12, 2019 - Cardiff , United Kingdom
+https://bmvc2019.org/
+45
+	
+ICIP : IEEE International Conference on Image Processing
+Oct 25, 2020 - Oct 28, 2020 - Abu Dhabi , United Arab Emirates
+https://2020.ieeeicip.org/
+45
+	
+LREC : International Conference on Language Resources and Evaluation (LREC)
+May 13, 2020 - May 15, 2020 - Marseille , France
+https://lrec2020.lrec-conf.org/
+44
+	
+MICRO : IEEE/ACM International Symposium on Microarchitecture
+Oct 17, 2020 - Oct 21, 2020 - Athens , Greece
+http://www.microarch.org/micro53
+44
+	
+VTC : IEEE Vehicular Technology Conference
+May 25, 2020 - May 28, 2020 - Antwerp , Belgium
+https://events.vtsociety.org/vtc2020-spring/#
+41
+	
+COLING : International Conference on Computational Linguistics
+Sep 15, 2020 - Sep 18, 2020 - Barcelona , Spain
+http://coling2020.org/
+Deadline : Wed 01 Jul 2020
+41
+	
+ACC : American Control Conference
+Jul 1, 2020 - Jul 3, 2020 - Denver , United States
+http://acc2020.a2c2.org/
+40
+	
+HRI : ACM/IEEE International Conference on Human Robot Interaction
+Mar 23, 2020 - Mar 26, 2020 - Cambridge , United Kingdom
+http://humanrobotinteraction.org/2020/
+38
+	
+ACCV : Asian Conference on Computer Vision (ACCV)
+Nov 30, 2020 - Dec 4, 2020 - Kyoto , Japan
+http://accv2020.kyoto/
+Deadline : Wed 08 Jul 2020
+38
+	
+ICPR : International Conference on Pattern Recognition
+Jan 10, 2021 - Jan 15, 2021 - Milan , Italy
+https://www.icpr2020.it/
+37
+	
+TCC : Theory of Cryptography
+Dec 1, 2019 - Dec 5, 2019 - Nuremberg , Germany
+https://tcc.iacr.org/2019/
+36
+	
+EACL : Conference of the European Chapter of the Association for Computational Linguistics
+Apr 3, 2017 - Apr 7, 2017 - Valencia , Spain
+http://eacl2017.org/
+36
+	
+CHES : Workshop on Cryptographic Hardware and Embedded Systems (CHES)
+Sep 14, 2020 - Sep 17, 2020 - Beijing , China
+https://ches.iacr.org/2020/
+32
+	
+ISMIR : International Society for Music Information Retrieval Conference
+Nov 4, 2019 - Nov 8, 2019 - Delft , Netherlands
+https://ismir2019.ewi.tudelft.nl/
+31
+	
+FG : IEEE International Conference on Automatic Face & Gesture Recognition
+May 18, 2020 - May 22, 2020 - Buenos Aires , Argentina
+https://fg2020.org/
+31
+	
+Allerton : Allerton Conference on Communication, Control, and Computing
+Sep 2, 2018 - Sep 5, 2018 - Monticello , United States
+http://allerton.csl.illinois.edu/
+30
+	
+ISCAS : IEEE International Symposium on Circuits and Systems
+May 17, 2020 - May 20, 2020 - Seville , Spain
+https://www.iscas2020.org/
+29
+	
+FPGA : Symposium on Field Programmable Gate Arrays
+Feb 24, 2020 - Feb 26, 2020 - Seaside , United States
+http://isfpga.org/
+28
+	
+ASP-DAC : Asia and South Pacific Design Automation Conference
+Jan 13, 2020 - Jan 16, 2020 - Beijing , China
+https://aspdac2020.github.io/aspdac20/
+28
+	
+IGARSS : IEEE International Geoscience and Remote Sensing Symposium
+Jul 19, 2020 - Jul 24, 2020 - Waikoloa , United States
+https://igarss2020.org/
+28
+	
+EUSIPCO : European Signal Processing Conference
+Aug 24, 2020 - Aug 28, 2020 - Amsterdam , Netherlands
+https://eusipco2020.org/
+27
+	
+SPAWC : IEEE Workshop on Signal Processing Advances in Wireless Communications
+May 26, 2020 - May 29, 2020 - ATLANTA , United States
+https://spawc2020.netlify.com
+26
+	
+SLT : IEEE Spoken Language Technology Workshop
+Dec 13, 2020 - Dec 16, 2020 - Shenzhen , China
+http://www.slt2020.org
+Deadline : Wed 01 Jul 2020
+26
+	
+CCNC : IEEE Consumer Communications and Networking Conference
+Jan 10, 2020 - Jan 13, 2020 - Las Vegas , United States
+https://ccnc2020.ieee-ccnc.org/
+25
+	
+HOTNETS : ACM Workshop on Hot Topics in Networks
+Nov 13, 2019 - Nov 15, 2019 - Princeton , United States
+https://conferences.sigcomm.org/hotnets/2019/cfp.html
+25
+	
+ACSSC : Asilomar Conference on Signals, Systems and Computers
+Nov 3, 2019 - Nov 6, 2019 - Pacific Grove , United States
+https://www.asilomarsscconf.org/
+24
+	
+SMC : IEEE International Conference on Systems, Man and Cybernetics
+Oct 11, 2020 - Oct 14, 2020 - Toronto , Canada
+http://smc2020.org/
+24
+	
+TrustCom : IEEE International Conference on Trust, Security and Privacy in Computing and Communications
+Aug 5, 2019 - Aug 8, 2019 - Rotorua , New Zealand
+https://crow.org.nz/Trustcom2019
+23
+	
+ICB : IAPR International Conference on Biometrics (ICB)
+Sep 27, 2020 - Sep 30, 2020 - Houston , United States
+https://ieee-biometrics.org/ijcb2020/
+23
+	
+SECON : IEEE Communications Society Conference on Sensor, Mesh and Ad Hoc Communications and Networks
+Jun 11, 2018 - Jun 13, 2018 - Hong Kong , Hong Kong
+http://secon2018.ieee-secon.org/
+22
+	
+AVSS : IEEE International Conference on Advanced Video and Signal-Based Surveillance
+Sep 22, 2020 - Sep 25, 2020 - Washington DC , United States
+http://www.avss2020.org
+22
+	
+ISLPED : ACM/IEEE International Symposium on Low Power Electronics and Design
+Jul 29, 2019 - Jul 31, 2019 - Lausanne , Switzerland
+http://www.islped.org/2019/
+22
+	
+WCNCW : IEEE Wireless Communications and Networking Conference Workshops
+Apr 6, 2020 - Apr 9, 2020 - Seoul , South Korea
+https://wcnc2020.ieee-wcnc.org/
+21
+	
+FUZZ : IEEE International Conference on Fuzzy Systems
+Jul 19, 2020 - Jul 24, 2020 - Glasgow , United Kingdom
+https://wcci2020.org/
+21
+	
+ISWC : International Symposium on Wearable Computer
+Sep 12, 2020 - Sep 16, 2020 - CANCÚN , Mexico
+http://iswc.net/iswc20/
+Deadline : to be confirmed
+21
+	
+ETRA : Eye Tracking Research & Application
+Jun 2, 2020 - Jun 5, 2020 - Stuttgart , Germany
+https://etra.acm.org/2020/
+Deadline : to be confirmed
+21
+	
+IWCMC : International Wireless Communications and Mobile Computing Conference
+Jun 29, 2020 - Jul 3, 2020 - Byblos , Lebanon
+https://iwcmc.org/2020/
+20
+	
+DCC : Data Compression Conference
+Mar 26, 2019 - Mar 29, 2019 - Snowbird , United States
+http://www.cs.brandeis.edu/~dcc/index.html
+19
+	
+BTAS : IEEE International Conference on Biometrics: Theory Applications and Systems (BTAS)
+Sep 27, 2020 - Sep 30, 2020 - Houston , United States
+https://ieee-biometrics.org/ijcb2020/
+19
+	
+WASSA : Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis
+Oct 31, 2018 - Nov 1, 2018 - Brusssels , Belgium
+https://wt-public.emm4u.eu/wassa2018/index.htm
+19
+	
+LCN : Local Computer Networks
+Oct 14, 2019 - Oct 17, 2019 - Osnabrück , Germany
+http://www.ieeelcn.org
+19
+	
+WiMob : IEEE International Conference on Wireless and Mobile Computing Networking and Communications
+Oct 21, 2019 - Oct 23, 2019 - Barcelona , Spain
+http://wimob.org/wimob2019/
+19
+	
+HPCS : International Conference on High Performance Computing and Simulation
+Jul 20, 2020 - Jul 24, 2020 - Barcelona , Spain
+http://hpcs2020.cisedu.info/
+19
+	
+ICDCN : International Conference of Distributed Computing and Networking
+Jan 4, 2020 - Jan 7, 2020 - Kolkata , India
+https://www.icdcn2020.com/
+18
+	
+DAS : IAPR International Workshop on Document Analysis Systems
+May 17, 2020 - May 20, 2020 - Wuhan , China
+http://www.vlrlab.net/das2020/
+17
+	
+RFID : IEEE International Conference on Radio Frequency Identification
+Apr 28, 2020 - Apr 30, 2020 - Orlando , United States
+http://2020.ieee-rfid.org/
+17
+	
+IPCCC : IEEE International Performance, Computing, and Communications Conference
+Oct 29, 2019 - Oct 31, 2019 - London , United Kingdom
+http://ipccc.org
+15
+	
+IJCNLP : International Joint Conference on Natural Language Processing (IJCNLP)
+Nov 3, 2019 - Nov 7, 2019 - Hong Kong , Hong Kong
+https://www.emnlp-ijcnlp2019.org/
+15
+	
+MMSP : IEEE Workshop on Multimedia Signal Processing
+Oct 27, 2019 - Oct 29, 2019 - Kuala Lumpur , Malaysia
+http://mmsp2019.org
+13
+	
+WSA : Workshop on Smart Antennas
+Feb 18, 2020 - Feb 20, 2020 - Hamburg , Germany
+https://cgi.tu-harburg.de/~c00wsa20/index.php?page=call-for-papers
+13
+	
+HPSR : Workshop on High Performance Switching and Routing
+May 11, 2020 - May 14, 2020 - Newark , United States
+https://hpsr2020.ieee-hpsr.org/authors/
+
+$Information Systems
+86
+	
+SIGKDD : ACM SIGKDD International Conference on Knowledge discovery and data mining
+Aug 22, 2020 - Jan 1, 1970 - San Diego , United States
+https://www.kdd.org/kdd2020/
+74
+	
+VLDB : International Conference on Very Large Databases
+Aug 31, 2020 - Sep 4, 2020 - Tokyo , Japan
+https://vldb2020.org/
+67
+	
+SIGMOD : ACM SIGMOD International Conference on Management of Data
+Jun 14, 2020 - Jun 19, 2020 - Portland , United States
+https://sigmod2020.org/
+63
+	
+STOC : ACM Symposium on Theory of Computing
+Jun 22, 2020 - Jan 1, 1970 - Chicago , United States
+http://acm-stoc.org/stoc2020/
+55
+	
+SIGIR : ACM SIGIR Conference on Research and development in information retrieval
+Jul 26, 2020 - Jul 30, 2020 - XI\'AN , China
+https://sigir.org/sigir2020/
+53
+	
+ISIT : IEEE International Symposium on Information Theory
+Jun 21, 2020 - Jun 26, 2020 - Los Angeles , United States
+https://2020.ieee-isit.org/
+52
+	
+AISTATS : International Conference on Artificial Intelligence and Statistics
+Jun 3, 2020 - Jun 5, 2020 - Palermo , Italy
+https://www.aistats.org/
+51
+	
+FOCS : IEEE Symposium on Foundations of Computer Science
+Nov 9, 2019 - Nov 12, 2019 - Baltimore , United States
+http://focs2019.cs.jhu.edu/
+48
+	
+COLT : Conference on Learning Theory (COLT)
+Jul 9, 2020 - Jul 12, 2020 - Graz , Austria
+http://learningtheory.org/colt2020/
+48
+	
+CIKM : ACM International Conference on Information and Knowledge Management
+Oct 19, 2020 - Oct 23, 2020 - Galway , Ireland
+https://cikm2020.org/call-for-papers-full-and-short-research-papers/
+Deadline : Fri 01 May 2020
+43
+	
+FC : International Conference on Financial Cryptography and Data Security
+Feb 17, 2020 - Feb 21, 2020 - Kota Kinabalu , Malaysia
+https://fc20.ifca.ai/
+43
+	
+SC : International Conference for High Performance Computing, Networking, Storage and Analysis
+Nov 15, 2020 - Nov 20, 2020 - Atlanta , United States
+https://sc20.supercomputing.org/submit/paper-submissions/
+41
+	
+FAST : Conference on File and Storage Technologies (FAST)
+Feb 24, 2020 - Feb 27, 2020 - SANTA CLARA , United States
+https://www.usenix.org/conference/fast20
+40
+	
+ASE : IEEE/ACM International Conference on Automated Software Engineering
+Sep 21, 2020 - Sep 25, 2020 - Melbourne , Australia
+https://a2i2.github.io/ase2020/
+Deadline : Fri 01 May 2020
+40
+	
+HICSS : Hawaii International Conference on System Sciences
+Jan 5, 2021 - Jan 5, 2021 - Hawaii , United States
+https://hicss.hawaii.edu/#!future-conferences/ctld
+Deadline : Mon 15 Jun 2020
+38
+	
+EuroSys : ACM European Conference on Computer Systems
+Apr 27, 2020 - Apr 30, 2020 - Crete , Greece
+https://www.eurosys2020.org/?page_id=75
+38
+	
+MSR : Mining Software Repositories
+May 25, 2020 - May 26, 2020 - Seoul , South Korea
+https://2020.msrconf.org/home
+36
+	
+SDM : SIAM International Conference on Data Mining (SDM)
+May 7, 2020 - May 9, 2020 - Cincinnati , United States
+https://www.siam.org/Conferences/CM/Conference/sdm20
+36
+	
+LAK : International Conference on Learning Analytics And Knowledge
+Mar 23, 2020 - Mar 27, 2020 - Frankfurt , Germany
+https://lak20.solaresearch.org/
+35
+	
+ISSTA : International Symposium on Software Testing and Analysis
+Jul 18, 2020 - Jul 22, 2020 - Los Angeles , United States
+https://conf.researchr.org/home/issta-2020
+34
+	
+OOPSLA : ACM SIGPLAN International Conference on Object-Oriented Programming, Systems, Languages, and Applications
+Oct 20, 2019 - Oct 25, 2019 - Athens , Greece
+https://2019.splashcon.org/track/splash-2019-oopsla
+33
+	
+Big Data : IEEE International Conference on Big Data
+Dec 9, 2019 - Dec 12, 2019 - Los Angeles , United States
+http://bigdataieee.org/BigData2019/
+33
+	
+DIS : Conference on Designing Interactive Systems
+Jul 6, 2020 - Jul 10, 2020 - Eindhoven , Netherlands
+https://dis.acm.org/2020/
+33
+	
+ICMR : ACM International Conference on Multimedia Retrieval
+Jun 8, 2020 - Jun 11, 2020 - Dublin , Ireland
+http://www.icmr2020.org/
+32
+	
+ISMIR : International Society for Music Information Retrieval Conference
+Nov 4, 2019 - Nov 8, 2019 - Delft , Netherlands
+https://ismir2019.ewi.tudelft.nl/
+30
+	
+ECMLPKDD : European Conference on Machine learning and knowledge discovery in databases
+Sep 14, 2020 - Sep 18, 2020 - Ghent , Belgium
+https://ecmlpkdd2020.net/
+30
+	
+ECIS : European Conference on Information Systems
+Jun 15, 2020 - Jun 17, 2020 - Marrakech , Morocco
+https://aisnet.org/page/ECISPage
+30
+	
+ITCS : Conference on Innovations in Theoretical Computer Science
+Jan 12, 2020 - Jan 14, 2020 - Seattle , United States
+http://itcs-conf.org/itcs20/itcs20-cfp.html
+29
+	
+ICIS : International Conference on Information Systems
+Dec 15, 2019 - Dec 18, 2019 - Munich , Germany
+https://icis2019.aisconferences.org/
+29
+	
+IPSN : International Symposium on Information Processing in Sensor Networks
+Apr 21, 2020 - Apr 24, 2020 - Sydney , Australia
+http://spaceiot.ewi.tudelft.nl/2020/
+29
+	
+MOBIHOC : ACM International Symposium on Mobile Ad Hoc Networking and Computing
+Jun 30, 2020 - Jul 3, 2020 - Shanghai , China
+https://www.sigmobile.org/mobihoc/2020/
+28
+	
+ICCAD : IEEE/ACM International Conference on Computer-Aided Design
+Nov 4, 2019 - Nov 7, 2019 - Westminster , United States
+https://iccad.com/
+28
+	
+IGARSS : IEEE International Geoscience and Remote Sensing Symposium
+Jul 19, 2020 - Jul 24, 2020 - Waikoloa , United States
+https://igarss2020.org/
+28
+	
+PERCOM : IEEE International Conference on Pervasive Computing and Communications
+Mar 23, 2020 - Mar 27, 2020 - Austin , United States
+http://www.percom.org/call-for-papers
+28
+	
+ITA : Information Theory and Applications Workshop
+Feb 2, 2020 - Feb 7, 2020 - Pacific Beach , United States
+https://ita.ucsd.edu/ws/
+Deadline : to be confirmed
+28
+	
+SAC : ACM Symposium on Applied Computing
+Mar 30, 2020 - Apr 3, 2020 - Brno , Czech Republic
+https://www.sigapp.org/sac/sac2020/
+28
+	
+AINA : International Conference on Advanced Information Networking and Applications
+Apr 15, 2020 - Apr 17, 2020 - Caserta , Italy
+http://voyager.ce.fit.ac.jp/conf/aina/2020/
+28
+	
+EDM : International Conference on Educational Data Mining
+Jul 10, 2020 - Jul 13, 2020 - Ifrane , Morocco
+http://educationaldatamining.org/edm2020/call-for-papers/
+27
+	
+EDBT : International Conference on Extending Database Technology
+Mar 30, 2020 - Apr 2, 2020 - Copenhagen , Denmark
+https://diku-dk.github.io/edbticdt2020/
+27
+	
+SIGSPATIAL : ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems
+Nov 5, 2019 - Nov 8, 2019 - Chicago , United States
+http://sigspatial2019.sigspatial.org
+27
+	
+PACT : International Conference on Parallel Architectures and Compilation Techniques
+Sep 23, 2019 - Sep 26, 2019 - Seattle , United States
+http://hpc.pnl.gov/pact19/
+26
+	
+CISS : Conference on Information Sciences and Systems
+Mar 18, 2020 - Mar 20, 2020 - Princeton University , United States
+https://ee-ciss.princeton.edu/
+Deadline : to be confirmed
+26
+	
+FUSION : International Conference on Information Fusion
+Jun 6, 2020 - Jun 9, 2020 - Sun City , South Africa
+https://fusion2020.org/
+Deadline : to be confirmed
+26
+	
+IM : IFIP/IEEE International Symposium on Integrated Network Management
+- ,
+26
+	
+ECIR : European Conference on Information Retrieval
+Apr 14, 2020 - Apr 17, 2020 - Lisbon , Portugal
+http://www.ecir2020.org/
+25
+	
+KR : Principles of Knowledge Representation and Reasoning
+Sep 12, 2020 - Sep 18, 2020 - Rhodes , Greece
+https://kr2020.inf.unibz.it
+25
+	
+PODS : ACM SIGMOD-SIGACT-SIGART Symposium on Principles of Database Systems
+Jun 14, 2020 - Jun 19, 2020 - Portland , United States
+http://sigmod2020.org/
+25
+	
+TEI : International Conference on Tangible, embedded, and embodied interaction
+Feb 9, 2020 - Feb 12, 2020 - Sydney , Australia
+https://tei.acm.org/2020
+25
+	
+CIDR : Conference on Innovative Data Systems Research
+Jan 12, 2020 - Jan 15, 2020 - Amsterdam , Netherlands
+http://cidrdb.org/cidr2020/
+25
+	
+AAMAS : Autonomous Agents and Multi-Agent Systems
+May 9, 2020 - May 13, 2020 - Auckland , New Zealand
+https://aamas2020.conference.auckland.ac.nz/
+25
+	
+ACSSC : Asilomar Conference on Signals, Systems and Computers
+Nov 3, 2019 - Nov 6, 2019 - Pacific Grove , United States
+https://www.asilomarsscconf.org/
+25
+	
+GDN : Group Decision and Negotiation
+Jun 7, 2020 - Jun 11, 2020 - Toronto , Canada
+http://gdnconference.org/gdn2020/
+24
+	
+CloudCom : IEEE International Conference on Cloud Computing Technology and Science (CloudCom)
+Dec 11, 2019 - Dec 13, 2019 - Sydney , Australia
+http://2019.cloudcom.org/
+24
+	
+SMC : IEEE International Conference on Systems, Man and Cybernetics
+Oct 11, 2020 - Oct 14, 2020 - Toronto , Canada
+http://smc2020.org/
+24
+	
+HiPC : International Conference on High Performance Computing
+Dec 17, 2019 - Dec 20, 2019 - Hyderabad , India
+https://hipc.org/call-for-papers/
+23
+	
+CaiSE : International Conference on Advanced Information Systems Engineering
+Jun 8, 2020 - Jun 12, 2020 - Grenoble , France
+http://caise20.imag.fr/
+23
+	
+PACIS : Pacific Asia Conference on Information Systems
+Jun 20, 2020 - Jun 24, 2020 - Dubai , United Arab Emirates
+https://www.pacis2020.org/
+23
+	
+PAKDD : Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD)
+May 11, 2020 - May 14, 2020 - Singapore , Singapore
+https://www.pakdd2020.org/
+Deadline : to be confirmed
+23
+	
+BuildSys : ACM International Conference on Systems for Energy-Efficient Built Environments
+Nov 13, 2019 - Nov 14, 2019 - New York City , United States
+http://buildsys.acm.org/2019
+22
+	
+AMCIS : Americas Conference on Information Systems
+Sep 12, 2020 - Sep 16, 2020 - Salt Lake City , United States
+https://amcis2020.aisconferences.org
+22
+	
+CNSM : Conference on Network and Service Management
+Oct 21, 2019 - Oct 25, 2019 - Halifax , Canada
+http://www.cnsm-conf.org/2019/
+21
+	
+RTSS : IEEE Real-Time Systems Symposium (RTSS)
+Dec 3, 2019 - Dec 6, 2019 - Hong Kong , Hong Kong
+http://2019.rtss.org/call-for-papers/
+21
+	
+STACS : Symposium on Theoretical Aspects of Computer Science (STACS)
+Mar 10, 2020 - Mar 14, 2020 - Montpellier , France
+http://www.stacs-conf.org/
+Deadline : to be confirmed
+21
+	
+WIFS : IEEE International Workshop on Information Forensics and Security
+Dec 9, 2019 - Dec 12, 2019 - Delft , Netherlands
+https://wifs2019.tudelft.nl
+21
+	
+MODELS : Model Driven Engineering Languages and Systems
+Oct 18, 2020 - Oct 23, 2020 - Montreal , Canada
+http://www.modelsconference.org
+Deadline : Fri 08 May 2020
+21
+	
+ITiCSE : Joint Conference on Innovation and Technology in Computer Science Education
+Jun 17, 2020 - Jun 19, 2020 - Trondheim , Norway
+https://iticse.acm.org/2020/
+Deadline : to be confirmed
+21
+	
+FIE : Frontiers in Education Conference
+Oct 21, 2020 - Oct 24, 2020 - Uppsala , Sweden
+https://www.fie2020.org
+20
+	
+ITW : IEEE Information Theory Workshop
+Aug 25, 2019 - Aug 28, 2019 - Visby , Sweden
+http://itw2019.org/
+20
+	
+ITS : International Conference on Intelligent Tutoring Systems
+Aug 6, 2020 - Aug 12, 2020 - Athens , Greece
+https://its2020.iis-international.org
+20
+	
+DCC : Data Compression Conference
+Mar 26, 2019 - Mar 29, 2019 - Snowbird , United States
+http://www.cs.brandeis.edu/~dcc/index.html
+20
+	
+XP : International Conference on Agile Processes in Software Engineering and Extreme Programming
+Jun 8, 2020 - Jun 12, 2020 - Copenhagen , Denmark
+https://www.agilealliance.org/xp2020/
+19
+	
+JCDL : International ACM/IEEE Joint Conference on Digital Libraries
+Jun 19, 2020 - Jun 23, 2020 - Wuhan , China
+http://2020.jcdl.org/
+18
+	
+WINE : International Conference on Web and Internet Economics
+Dec 10, 2019 - Dec 12, 2019 - New York , United States
+http://wine2019.cs.columbia.edu/
+18
+	
+ICDT : International Conference on Database Theory
+Mar 30, 2020 - Apr 2, 2020 - Copenhagen , Denmark
+https://diku-dk.github.io/edbticdt2020/
+18
+	
+ATVA : Automated Technology for Verification and Analysis
+Oct 26, 2020 - Oct 30, 2020 - Hanoi , Viet Nam
+http://fit.uet.vnu.edu.vn/atva2020/
+Deadline : Sun 03 May 2020
+17
+	
+MDM : International Conference on Mobile Data Management
+Jun 30, 2020 - Jul 3, 2020 - Versailles , France
+http://www.mdmconferences.org/mdm2020/
+17
+	
+DASFAA : International Conference on Database Systems for Advanced Applications
+May 21, 2020 - May 24, 2020 - Jeju , South Korea
+http://db.pknu.ac.kr/dasfaa2020/
+17
+	
+SEAA : EUROMICRO Conference on Software Engineering and Advanced Applications
+Aug 26, 2020 - Aug 28, 2020 - Portorož , Slovenia
+https://dsd-seaa2020.um.si/seaa/
+17
+	
+RCIS : International Conference on Research Challenges in Information Science
+May 20, 2020 - May 22, 2020 - Limassol , Cyprus
+http://www.rcis-conf.com/rcis2020/
+17
+	
+MFCS : Mathematical Foundations of Computer Science
+Aug 26, 2019 - Aug 30, 2019 - Aachen , Germany
+http://tcs.rwth-aachen.de/mfcs2019/
+17
+	
+IPCCC : IEEE International Performance, Computing, and Communications Conference
+Oct 29, 2019 - Oct 31, 2019 - London , United Kingdom
+http://ipccc.org
+16
+	
+CISIS : International Conference on Complex, Intelligent and Software Intensive Systems
+Jul 1, 2020 - Jul 3, 2020 - Lodz , Poland
+http://voyager.ce.fit.ac.jp/conf/cisis/2020/
+16
+	
+EKAW : Knowledge Engineering and Management by the Masses
+Sep 15, 2020 - Sep 19, 2020 - Bolzano , Italy
+https://ekaw2020.inf.unibz.it/
+Deadline : to be confirmed
+16
+	
+SSDBM : Statistical and Scientific Database Management
+Jul 7, 2020 - Jul 9, 2020 - Vienna , Austria
+http://ssdbm.org/2020/
+15
+	
+DGO : Annual International Conference on Digital Government Research
+Jun 17, 2020 - Jun 19, 2020 - Seoul , South Korea
+http://dgsoc.org/dgo-2020/
+Deadline : to be confirmed
+15
+	
+SSBSE : International Conference on Search based Software Engineering
+Oct 7, 2020 - Oct 8, 2020 - Bari , Italy
+http://ssbse2020.di.uniba.it
+Deadline : Mon 04 May 2020
+15
+	
+SCAM : IEEE International Working Conference on Source Code Analysis and Manipulation
+Sep 26, 2020 - Sep 27, 2020 - Adelaide , Australia
+http://www.ieee-scam.org/2020/
+Deadline : to be confirmed
+15
+	
+SLE : Software Language Engineering
+Oct 21, 2019 - Oct 22, 2019 - Athens , Greece
+http://www.sleconf.org/2019/
+14
+	
+DaWaK : Data Warehousing and Knowledge Discovery (DaWaK)
+Aug 26, 2019 - Aug 29, 2019 - Linz , Austria
+http://www.dexa.org/dawak2019
+14
+	
+SYSTOR : ACM International Systems and Storage Conference
+Jun 2, 2020 - Jun 4, 2020 - Haifa , Israel
+https://www.systor.org/2020/
+14
+	
+ICEIS : International Conference on Enterprise Information Systems
+May 5, 2020 - May 7, 2020 - Prague , Czech Republic
+http://www.iceis.org/
+14
+	
+WEBIST : International Conference on Web Information Systems and Technologies
+Sep 18, 2019 - Sep 20, 2019 - Vienna , Austria
+http://www.webist.org/
+14
+	
+ICDE : International Conference on Data Engineering Workshops
+Apr 20, 2020 - Apr 24, 2020 - Dallas , United States
+https://www.utdallas.edu/icde/
+14
+	
+FSTTCS : Foundations of Software Technology and Theoretical Computer Science
+Dec 11, 2019 - Dec 13, 2019 - Bombay , India
+https://www.fsttcs.org.in/2019/index.php
+13
+	
+SPIRE : International Symposium on String Processing and Information Retrieval
+Oct 7, 2019 - Oct 9, 2019 - Segovia , Spain
+https://spire19.lbd.org.es/
+13
+	
+ISI : IEEE International Conference on Intelligence and Security Informatics
+Jul 22, 2017 - Jul 24, 2017 - Beijing , China
+http://www.isi-conf.org/call-for-papers.html
+13
+	
+ADBIS : Advances in Databases and Information Systems
+Aug 25, 2020 - Aug 28, 2020 - Lyon , France
+http://eric.univ-lyon2.fr/adbis-tpdl-eda-2020/adbis/
+12
+	
+IPMU : International Conference on Information Processing and Management of Uncertainty in Knowledge-Based Systems
+Jun 15, 2020 - Jun 19, 2020 - Lisbon , Portugal
+https://ipmu2020.inesc-id.pt/
+12
+	
+APLAS : Asian Symposium on Programming Languages and Systems
+Nov 27, 2017 - Nov 29, 2017 - Suzhou , China
+https://www-aplas.github.io/
+12
+	
+HAIS : International Conference on Hybrid Artificial Intelligent Systems
+Sep 4, 2019 - Sep 6, 2019 - Leon , Spain
+http://2019.haisconference.eu/
+
+$Web, Mobile & Multimedia Technologies
+87
+	
+CHI : Computer Human Interaction (CHI)
+Apr 25, 2020 - Apr 30, 2020 - island of Oahu , United States
+https://chi2020.acm.org/
+70
+	
+WWW : International World Wide Web Conferences (WWW)
+Apr 20, 2020 - Apr 25, 2020 - Taipei , Taiwan
+https://www2020.thewebconf.org/
+60
+	
+CSCW : ACM Conference on Computer-Supported Cooperative Work & Social Computing
+Oct 17, 2020 - Oct 21, 2020 - Minneapolis , United States
+http://cscw.acm.org/2020/
+Deadline : Mon 01 Jun 2020
+58
+	
+ACMMM : ACM International Conference on Multimedia
+Oct 12, 2020 - Oct 16, 2020 - Seattle , United States
+https://www.acmmm.org/2020/
+57
+	
+UbiComp : ACM Conference on Pervasive and Ubiquitous Computing (UbiComp)
+Sep 12, 2020 - Sep 16, 2020 - CANCÚN , Mexico
+http://ubicomp.org/ubicomp2020/
+Deadline : Fri 15 May 2020
+51
+	
+WSDM : ACM International Conference on Web Search and Data Mining
+Feb 5, 2020 - Feb 9, 2020 - Houston , United States
+http://www.wsdm-conference.org/2020/
+50
+	
+MobiCom : Annual International Conference on Mobile Computing and Networking
+Sep 21, 2020 - Sep 25, 2020 - London , United Kingdom
+https://sigmobile.org/mobicom/2020/
+49
+	
+SemEval : International Workshop on Semantic Evaluation
+Sep 13, 2020 - Sep 14, 2020 - Barcelona , Spain
+http://alt.qcri.org/semeval2020/
+45
+	
+RecSys : ACM Conference on Recommender Systems
+Sep 22, 2020 - Sep 26, 2020 - Rio de Janeiro , Brazil
+https://recsys.acm.org/recsys20/
+Deadline : Mon 27 Apr 2020
+44
+	
+Mobisys : Annual International Conference on Mobile Systems, Applications, and Services
+Jun 15, 2020 - Jun 19, 2020 - Toronto , Canada
+https://www.sigmobile.org/mobisys/2020/
+40
+	
+EC : ACM Conference on Electronic Commerce
+Jul 13, 2020 - Jan 1, 1970 - Budapest , Hungary
+http://ec20.sigecom.org/
+37
+	
+ISWC : International Conference on The Semantic Web
+Nov 2, 2020 - Nov 6, 2020 - Athens , Greece
+http://swsa.semanticweb.org/content/international-semantic-web-conference-iswc
+Deadline : to be confirmed
+36
+	
+IMC : Internet Measurement Conference
+Oct 21, 2019 - Oct 23, 2019 - Amsterdam , Netherlands
+https://conferences.sigcomm.org/imc/2019/
+34
+	
+SoCC : ACM Symposium on Cloud Computing
+Nov 21, 2019 - Nov 23, 2019 - Chaminade , United States
+https://acmsocc.github.io/2019/
+34
+	
+SENSYS : ACM Conference on Embedded Networked Sensor Systems
+Nov 10, 2019 - Nov 13, 2019 - New York City , United States
+http://sensys.acm.org/2019/
+33
+	
+DIS : Conference on Designing Interactive Systems
+Jul 6, 2020 - Jul 10, 2020 - Eindhoven , Netherlands
+https://dis.acm.org/2020/
+33
+	
+ICMR : ACM International Conference on Multimedia Retrieval
+Jun 8, 2020 - Jun 11, 2020 - Dublin , Ireland
+http://www.icmr2020.org/
+33
+	
+CoNEXT : ACM Conference on Emerging Network Experiment and Technology
+Dec 4, 2018 - Dec 7, 2018 - Crete , Greece
+https://conferences2.sigcomm.org/co-next/2018
+32
+	
+ISMIR : International Society for Music Information Retrieval Conference
+Nov 4, 2019 - Nov 8, 2019 - Delft , Netherlands
+https://ismir2019.ewi.tudelft.nl/
+31
+	
+MMSys : ACM Multimedia Systems Conference
+Jun 8, 2020 - Jun 11, 2020 - Istanbul , Turkey
+https://2020.acmmmsys.org/
+30
+	
+ECIS : European Conference on Information Systems
+Jun 15, 2020 - Jun 17, 2020 - Marrakech , Morocco
+https://aisnet.org/page/ECISPage
+29
+	
+CLOUD : IEEE International Conference on Cloud Computing (CLOUD)
+Jul 6, 2020 - Jul 11, 2020 - Beijing , China
+https://conferences.computer.org/cloud/2020
+29
+	
+MOBIHOC : ACM International Symposium on Mobile Ad Hoc Networking and Computing
+Jun 30, 2020 - Jul 3, 2020 - Shanghai , China
+https://www.sigmobile.org/mobihoc/2020/
+28
+	
+ESWC : Extended Semantic Web Conference
+May 31, 2020 - Jun 4, 2020 - Heraklion , Greece
+http://2020.eswc-conferences.org/
+28
+	
+CCGrid : IEEE International Symposium on Cluster Computing and the Grid
+May 11, 2020 - May 14, 2020 - Melbourne , Australia
+http://cloudbus.org/ccgrid2020/
+28
+	
+MobileHCI : Mobile HCI
+Oct 5, 2020 - Oct 8, 2020 - Oldenburg , Germany
+https://mobilehci.acm.org/2020/
+Deadline : to be confirmed
+28
+	
+PERCOM : IEEE International Conference on Pervasive Computing and Communications
+Mar 23, 2020 - Mar 27, 2020 - Austin , United States
+http://www.percom.org/call-for-papers
+28
+	
+PODC : ACM Symposium on Principles of Distributed Computing
+Aug 3, 2020 - Aug 7, 2020 - Salerno , Italy
+https://www.podc.org/
+Deadline : to be confirmed
+28
+	
+SAC : ACM Symposium on Applied Computing
+Mar 30, 2020 - Apr 3, 2020 - Brno , Czech Republic
+https://www.sigapp.org/sac/sac2020/
+28
+	
+EDM : International Conference on Educational Data Mining
+Jul 10, 2020 - Jul 13, 2020 - Ifrane , Morocco
+http://educationaldatamining.org/edm2020/call-for-papers/
+26
+	
+CISS : Conference on Information Sciences and Systems
+Mar 18, 2020 - Mar 20, 2020 - Princeton University , United States
+https://ee-ciss.princeton.edu/
+Deadline : to be confirmed
+26
+	
+ICME : IEEE International Conference on Multimedia and Expo
+Jul 6, 2020 - Jul 10, 2020 - London , United Kingdom
+http://www.2020.ieeeicme.org/
+25
+	
+TEI : International Conference on Tangible, embedded, and embodied interaction
+Feb 9, 2020 - Feb 12, 2020 - Sydney , Australia
+https://tei.acm.org/2020
+25
+	
+WoWMoM : IEEE International Symposium on a World of Wireless, Mobile and Multimedia Networks
+Jun 15, 2020 - Jun 18, 2020 - Cork , Ireland
+http://www.cs.ucc.ie/wowmom2020/
+25
+	
+UMAP : International Conference on User Modelling, Adaptation, and Personalization
+Jul 14, 2020 - Jul 17, 2020 - Genoa , Italy
+https://www.um.org/umap2020/
+Deadline : to be confirmed
+24
+	
+CloudCom : IEEE International Conference on Cloud Computing Technology and Science (CloudCom)
+Dec 11, 2019 - Dec 13, 2019 - Sydney , Australia
+http://2019.cloudcom.org/
+23
+	
+SECON : IEEE Communications Society Conference on Sensor, Mesh and Ad Hoc Communications and Networks
+Jun 11, 2018 - Jun 13, 2018 - Hong Kong , Hong Kong
+http://secon2018.ieee-secon.org/
+23
+	
+ISMAR : IEEE International Symposium on Mixed and Augmented Reality
+Nov 9, 2020 - Nov 13, 2020 - RECIFE/PORTO DE GALINHAS , Brazil
+http://www.ismar20.org
+Deadline : to be confirmed
+22
+	
+Hypertext : ACM Conference on Hypertext and Hypermedia
+Jul 9, 2018 - Jul 12, 2018 - Baltimore , United States
+https://ht.acm.org/ht2018/
+22
+	
+CNSM : Conference on Network and Service Management
+Oct 21, 2019 - Oct 25, 2019 - Halifax , Canada
+http://www.cnsm-conf.org/2019/
+21
+	
+ICSC : IEEE International Conference on Semantic Computing
+Feb 3, 2020 - Feb 5, 2020 - San Diego , United States
+http://www.ieee-icsc.org
+21
+	
+ISWC : International Symposium on Wearable Computer
+Sep 12, 2020 - Sep 16, 2020 - CANCÚN , Mexico
+http://iswc.net/iswc20/
+Deadline : to be confirmed
+21
+	
+QoMEX : International Workshop on Quality of Multimedia Experience
+May 26, 2020 - May 28, 2020 - Athlone , Ireland
+http://qomex2020.ie/
+Deadline : to be confirmed
+21
+	
+AIIDE : Artificial Intelligence and Interactive Digital Entertainment Conference
+Nov 13, 2018 - Nov 17, 2018 - Edmonton , Canada
+https://sites.google.com/ncsu.edu/aiide-2018/
+21
+	
+IEEE ICWS : IEEE International Conference on Web Services
+Jul 6, 2020 - Jul 11, 2020 - Beijing , China
+https://conferences.computer.org/icws/2020/
+21
+	
+ITiCSE : Joint Conference on Innovation and Technology in Computer Science Education
+Jun 17, 2020 - Jun 19, 2020 - Trondheim , Norway
+https://iticse.acm.org/2020/
+Deadline : to be confirmed
+21
+	
+IWCMC : International Wireless Communications and Mobile Computing Conference
+Jun 29, 2020 - Jul 3, 2020 - Byblos , Lebanon
+https://iwcmc.org/2020/
+21
+	
+FIE : Frontiers in Education Conference
+Oct 21, 2020 - Oct 24, 2020 - Uppsala , Sweden
+https://www.fie2020.org
+20
+	
+ICAISC : International Conference on Artificial Intelligence and Soft Computing
+Jun 21, 2020 - Jun 25, 2020 - Zakopane , Poland
+http://www.icaisc.eu/
+20
+	
+WiOpt : International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks
+Jun 15, 2020 - Jun 19, 2020 - Volos , Greece
+http://wi-opt.org/
+20
+	
+DISC : International Symposium on Distributed Computing
+Oct 14, 2019 - Oct 18, 2019 - Budapest , Hungary
+http://www.disc-conference.org/wp/disc2019/
+20
+	
+XP : International Conference on Agile Processes in Software Engineering and Extreme Programming
+Jun 8, 2020 - Jun 12, 2020 - Copenhagen , Denmark
+https://www.agilealliance.org/xp2020/
+19
+	
+WiMob : IEEE International Conference on Wireless and Mobile Computing Networking and Communications
+Oct 21, 2019 - Oct 23, 2019 - Barcelona , Spain
+http://wimob.org/wimob2019/
+18
+	
+ACII : International Conference on Affective Computing and Intelligent Interaction
+Sep 3, 2019 - Sep 6, 2019 - Cambridge , United Kingdom
+http://acii-conf.org/2019/important-dates/#top
+18
+	
+WINE : International Conference on Web and Internet Economics
+Dec 10, 2019 - Dec 12, 2019 - New York , United States
+http://wine2019.cs.columbia.edu/
+18
+	
+MSWIM : ACM International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems
+Nov 25, 2019 - Nov 29, 2019 - Miami ,
+http://mswimconf.com/2019/
+18
+	
+ICSOC : International Conference on Service Oriented Computing
+Oct 28, 2019 - Oct 31, 2019 - Toulouse , France
+http://www.icsoc.org/
+18
+	
+ISS : ACM International Conference on Interactive Tabletops and Surfaces
+Nov 10, 2019 - Nov 13, 2019 - Daejeon , South Korea
+https://iss.acm.org/2019/
+17
+	
+MDM : International Conference on Mobile Data Management
+Jun 30, 2020 - Jul 3, 2020 - Versailles , France
+http://www.mdmconferences.org/mdm2020/
+17
+	
+ICWE : International Conference on Web Engineering
+Jun 9, 2020 - Jun 12, 2020 - Helsinki , Finland
+http://icwe2020.webengineering.org/
+16
+	
+INTERACT : IFIP Conference on Human-Computer Interaction
+Sep 2, 2019 - Sep 6, 2019 - Paphos , Cyprus
+http://interact2019.org/
+16
+	
+IHMMSEC : ACM workshop on Information hiding and multimedia security
+Jun 22, 2020 - Jun 24, 2020 - Denver , United States
+https://www.ihmmsec.org/cms/home/index.html
+15
+	
+MMSP : IEEE Workshop on Multimedia Signal Processing
+Oct 27, 2019 - Oct 29, 2019 - Kuala Lumpur , Malaysia
+http://mmsp2019.org
+15
+	
+Mobiquitous : International Conference on Mobile and Ubiquitous Systems: Computing, Networking and Services
+Nov 5, 2019 - Nov 7, 2019 - Houston , United States
+http://mobiquitous.org/
+15
+	
+VL/HCC : IEEE Symposium on Visual Languages and Human-Centric Computing
+Aug 10, 2020 - Aug 14, 2020 - Dunedin , New Zealand
+https://conf.researchr.org/track/vlhcc2020/vlhcc2020-papers
+14
+	
+Web3D : International Conference on 3D Web Technology
+Jun 24, 2020 - Jun 26, 2020 - Seoul , South Korea
+https://web3d2020.web3d.org/
+14
+	
+ICAART : International Conference on Agents and Artificial Intelligence
+Feb 22, 2020 - Feb 24, 2020 - Valletta , Malta
+http://www.icaart.org/
+14
+	
+WEBIST : International Conference on Web Information Systems and Technologies
+Sep 18, 2019 - Sep 20, 2019 - Vienna , Austria
+http://www.webist.org/
+14
+	
+WISE : Web Information Systems Engineering
+Nov 26, 2019 - Nov 30, 2019 - Hong Kong , Hong Kong
+https://wise2019.comp.polyu.edu.hk
+12
+	
+SOCA : IEEE International Conference on Service-Oriented Computing and Applications
+Nov 18, 2019 - Nov 21, 2019 - Kaohsiung , Taiwan
+https://www.cs.ccu.edu.tw/~conference/soca2019
+
+$General Computer Science
+240
+	
+CVPR : IEEE/CVF Conference on Computer Vision and Pattern Recognition
+Jun 16, 2020 - Jun 18, 2020 - Seattle , United States
+http://cvpr2020.thecvf.com/
+169
+	
+NeurIPS : Neural Information Processing Systems (NIPS)
+Dec 10, 2019 - Dec 12, 2019 - Vancouver , Canada
+https://nips.cc
+135
+	
+ICML : International Conference on Machine Learning (ICML)
+Jul 13, 2020 - Jan 1, 1970 - Vienna , Austria
+https://icml.cc/Conferences/2020
+88
+	
+EMNLP : Conference on Empirical Methods in Natural Language Processing (EMNLP)
+Dec 3, 2019 - Dec 7, 2019 - Hong Kong , Hong Kong
+https://www.emnlp-ijcnlp2019.org/
+87
+	
+CHI : Computer Human Interaction (CHI)
+Apr 25, 2020 - Apr 30, 2020 - island of Oahu , United States
+https://chi2020.acm.org/
+86
+	
+SIGKDD : ACM SIGKDD International Conference on Knowledge discovery and data mining
+Aug 22, 2020 - Jan 1, 1970 - San Diego , United States
+https://www.kdd.org/kdd2020/
+82
+	
+CCS : ACM Symposium on Computer and Communications Security
+Nov 11, 2019 - Nov 15, 2019 - London , United Kingdom
+https://www.sigsac.org/ccs/CCS2019/
+81
+	
+USENIX Security : USENIX Security Symposium
+Aug 12, 2020 - Aug 14, 2020 - Boston , United States
+https://www.usenix.org/conference/usenixsecurity20
+74
+	
+INFOCOM : IEEE International Conference on Computer Communications (INFOCOM)
+Apr 27, 2020 - Apr 30, 2020 - Beijing , China
+https://infocom2020.ieee-infocom.org/
+74
+	
+VLDB : International Conference on Very Large Databases
+Aug 31, 2020 - Sep 4, 2020 - Tokyo , Japan
+https://vldb2020.org/
+70
+	
+WWW : International World Wide Web Conferences (WWW)
+Apr 20, 2020 - Apr 25, 2020 - Taipei , Taiwan
+https://www2020.thewebconf.org/
+67
+	
+IJCAI : International Joint Conference on Artificial Intelligence (IJCAI)
+Jul 11, 2020 - Jan 1, 1970 - Yokohama , Japan
+https://ijcai20.org
+67
+	
+SIGMOD : ACM SIGMOD International Conference on Management of Data
+Jun 14, 2020 - Jun 19, 2020 - Portland , United States
+https://sigmod2020.org/
+65
+	
+NDSS : Network and Distributed System Security Symposium (NDSS)
+Feb 23, 2020 - Feb 26, 2020 - San Diego , United States
+https://www.ndss-symposium.org/ndss2020/call-for-papers/
+63
+	
+STOC : ACM Symposium on Theory of Computing
+Jun 22, 2020 - Jan 1, 1970 - Chicago , United States
+http://acm-stoc.org/stoc2020/
+62
+	
+NSDI : Symposium on Networked Systems Design and Implementation
+Apr 12, 2021 - Apr 14, 2021 - BOSTON , United States
+https://www.usenix.org/conference/nsdi21
+Deadline : Fri 17 Apr 2020
+60
+	
+CSCW : ACM Conference on Computer-Supported Cooperative Work & Social Computing
+Oct 17, 2020 - Oct 21, 2020 - Minneapolis , United States
+http://cscw.acm.org/2020/
+Deadline : Mon 01 Jun 2020
+58
+	
+IROS : IEEE/RSJ International Conference on Intelligent Robots and Systems
+Oct 25, 2020 - Oct 29, 2020 - Las Vegas , United States
+http://www.iros2020.org
+58
+	
+ACMMM : ACM International Conference on Multimedia
+Oct 12, 2020 - Oct 16, 2020 - Seattle , United States
+https://www.acmmm.org/2020/
+57
+	
+UbiComp : ACM Conference on Pervasive and Ubiquitous Computing (UbiComp)
+Sep 12, 2020 - Sep 16, 2020 - CANCÚN , Mexico
+http://ubicomp.org/ubicomp2020/
+Deadline : Fri 15 May 2020
+56
+	
+ISCA : International Symposium on Computer Architecture (ISCA)
+May 30, 2020 - Jun 3, 2020 - Valencia , Spain
+https://iscaconf.org/isca2020/
+56
+	
+ASPLOS : International Conference on Architectural Support for Programming Languages and Operating Systems
+Mar 16, 2020 - Mar 20, 2020 - Lausanne , Switzerland
+https://asplos-conference.org/calls/
+55
+	
+SIGIR : ACM SIGIR Conference on Research and development in information retrieval
+Jul 26, 2020 - Jul 30, 2020 - XI\'AN , China
+https://sigir.org/sigir2020/
+53
+	
+ISIT : IEEE International Symposium on Information Theory
+Jun 21, 2020 - Jun 26, 2020 - Los Angeles , United States
+https://2020.ieee-isit.org/
+53
+	
+HPCA : IEEE International Symposium on High Performance Computer Architecture
+Feb 22, 2020 - Feb 26, 2020 - San Diego , United States
+https://www.hpca-conf.org/2020/?page_id=47
+52
+	
+AISTATS : International Conference on Artificial Intelligence and Statistics
+Jun 3, 2020 - Jun 5, 2020 - Palermo , Italy
+https://www.aistats.org/
+51
+	
+WSDM : ACM International Conference on Web Search and Data Mining
+Feb 5, 2020 - Feb 9, 2020 - Houston , United States
+http://www.wsdm-conference.org/2020/
+51
+	
+PLDI : ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI)
+Jun 15, 2020 - Jun 20, 2020 - London , United Kingdom
+https://pldi20.sigplan.org/home
+51
+	
+FOCS : IEEE Symposium on Foundations of Computer Science
+Nov 9, 2019 - Nov 12, 2019 - Baltimore , United States
+http://focs2019.cs.jhu.edu/
+51
+	
+FSE : ACM SIGSOFT International Symposium on Foundations of Software Engineering
+Nov 8, 2020 - Nov 13, 2020 - Sacramento , United States
+https://www.cs.ucdavis.edu/fse2020/
+51
+	
+POPL : ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages (POPL)
+Jan 17, 2021 - Jan 22, 2021 - Copenhagen , Denmark
+https://popl21.sigplan.org/
+Deadline : Thu 09 Jul 2020
+50
+	
+MobiCom : Annual International Conference on Mobile Computing and Networking
+Sep 21, 2020 - Sep 25, 2020 - London , United Kingdom
+https://sigmobile.org/mobicom/2020/
+49
+	
+OSDI : Symposium on Operating Systems Design and Implementation (OSDI)
+Nov 4, 2020 - Nov 6, 2020 - BANFF , Canada
+https://www.usenix.org/conference/osdi20
+Deadline : Tue 05 May 2020
+49
+	
+SemEval : International Workshop on Semantic Evaluation
+Sep 13, 2020 - Sep 14, 2020 - Barcelona , Spain
+http://alt.qcri.org/semeval2020/
+48
+	
+CIKM : ACM International Conference on Information and Knowledge Management
+Oct 19, 2020 - Oct 23, 2020 - Galway , Ireland
+https://cikm2020.org/call-for-papers-full-and-short-research-papers/
+Deadline : Fri 01 May 2020
+48
+	
+DAC : Design Automation Conference (DAC)
+Jul 19, 2020 - Jul 23, 2020 - San Francisco , United States
+https://www.dac.com/
+48
+	
+COLT : Conference on Learning Theory (COLT)
+Jul 9, 2020 - Jul 12, 2020 - Graz , Austria
+http://learningtheory.org/colt2020/
+46
+	
+SODA : ACM SIAM Symposium on Discrete Algorithms
+Jan 10, 2021 - Jan 13, 2021 - Alexandria , United States
+https://www.siam.org/conferences/cm/conference/soda21
+Deadline : to be confirmed
+45
+	
+RecSys : ACM Conference on Recommender Systems
+Sep 22, 2020 - Sep 26, 2020 - Rio de Janeiro , Brazil
+https://recsys.acm.org/recsys20/
+Deadline : Mon 27 Apr 2020
+45
+	
+LREC : International Conference on Language Resources and Evaluation (LREC)
+May 13, 2020 - May 15, 2020 - Marseille , France
+https://lrec2020.lrec-conf.org/
+44
+	
+VTC : IEEE Vehicular Technology Conference
+May 25, 2020 - May 28, 2020 - Antwerp , Belgium
+https://events.vtsociety.org/vtc2020-spring/#
+44
+	
+ACT : USENIX Annual Technical Conference
+Jul 15, 2020 - Jul 17, 2020 - Boston , United States
+https://www.usenix.org/conference/atc20
+44
+	
+ICDMW : IEEE International Conference on Data Mining Workshop
+Nov 17, 2020 - Nov 20, 2020 - Sorrento , Italy
+http://icdm2020.bigke.org/
+Deadline : Sat 11 Jul 2020
+44
+	
+Mobisys : Annual International Conference on Mobile Systems, Applications, and Services
+Jun 15, 2020 - Jun 19, 2020 - Toronto , Canada
+https://www.sigmobile.org/mobisys/2020/
+43
+	
+SC : International Conference for High Performance Computing, Networking, Storage and Analysis
+Nov 15, 2020 - Nov 20, 2020 - Atlanta , United States
+https://sc20.supercomputing.org/submit/paper-submissions/
+43
+	
+DATE : Design, Automation and Test in Europe Conference and Exhibition
+Mar 9, 2020 - Mar 13, 2020 - Grenoble , France
+https://www.date-conference.com/call-for-papers
+41
+	
+IPDPS : IEEE International Symposium on Parallel & Distributed Processing
+May 18, 2020 - May 22, 2020 - New Orleans , United States
+http://www.ipdps.org
+41
+	
+FAST : Conference on File and Storage Technologies (FAST)
+Feb 24, 2020 - Feb 27, 2020 - SANTA CLARA , United States
+https://www.usenix.org/conference/fast20
+40
+	
+ASE : IEEE/ACM International Conference on Automated Software Engineering
+Sep 21, 2020 - Sep 25, 2020 - Melbourne , Australia
+https://a2i2.github.io/ase2020/
+Deadline : Fri 01 May 2020
+40
+	
+EC : ACM Conference on Electronic Commerce
+Jul 13, 2020 - Jan 1, 1970 - Budapest , Hungary
+http://ec20.sigecom.org/
+40
+	
+HICSS : Hawaii International Conference on System Sciences
+Jan 5, 2021 - Jan 5, 2021 - Hawaii , United States
+https://hicss.hawaii.edu/#!future-conferences/ctld
+Deadline : Mon 15 Jun 2020
+39
+	
+TACAS : International Conference on Tools and Algorithms for the Construction and Analysis of Systems (TACAS)
+Apr 25, 2020 - May 1, 2020 - Dublin , Ireland
+https://www.etaps.org/2020/tacas
+38
+	
+ICPR : International Conference on Pattern Recognition
+Jan 10, 2021 - Jan 15, 2021 - Milan , Italy
+https://www.icpr2020.it/
+38
+	
+CAV : International Conference on Computer Aided Verification
+Jul 19, 2020 - Jul 24, 2020 - Los Angeles , United States
+http://i-cav.org/2020/
+38
+	
+EuroSys : ACM European Conference on Computer Systems
+Apr 27, 2020 - Apr 30, 2020 - Crete , Greece
+https://www.eurosys2020.org/?page_id=75
+37
+	
+ISWC : International Conference on The Semantic Web
+Nov 2, 2020 - Nov 6, 2020 - Athens , Greece
+http://swsa.semanticweb.org/content/international-semantic-web-conference-iswc
+Deadline : to be confirmed
+36
+	
+IMC : Internet Measurement Conference
+Oct 21, 2019 - Oct 23, 2019 - Amsterdam , Netherlands
+https://conferences.sigcomm.org/imc/2019/
+36
+	
+ICDCS : International Conference on Distributed Computing Systems, ICDCS
+Jul 7, 2020 - Jul 10, 2020 - Singapore , Singapore
+http://icdcs2020.sg/
+36
+	
+SDM : SIAM International Conference on Data Mining (SDM)
+May 7, 2020 - May 9, 2020 - Cincinnati , United States
+https://www.siam.org/Conferences/CM/Conference/sdm20
+36
+	
+LAK : International Conference on Learning Analytics And Knowledge
+Mar 23, 2020 - Mar 27, 2020 - Frankfurt , Germany
+https://lak20.solaresearch.org/
+35
+	
+ISSTA : International Symposium on Software Testing and Analysis
+Jul 18, 2020 - Jul 22, 2020 - Los Angeles , United States
+https://conf.researchr.org/home/issta-2020
+34
+	
+SoCC : ACM Symposium on Cloud Computing
+Nov 21, 2019 - Nov 23, 2019 - Chaminade , United States
+https://acmsocc.github.io/2019/
+34
+	
+OOPSLA : ACM SIGPLAN International Conference on Object-Oriented Programming, Systems, Languages, and Applications
+Oct 20, 2019 - Oct 25, 2019 - Athens , Greece
+https://2019.splashcon.org/track/splash-2019-oopsla
+33
+	
+UAI : Conference on Uncertainty in Artificial Intelligence (UAI)
+Aug 3, 2020 - Aug 6, 2020 - Toronto , Canada
+http://www.auai.org/uai2020/
+33
+	
+Big Data : IEEE International Conference on Big Data
+Dec 9, 2019 - Dec 12, 2019 - Los Angeles , United States
+http://bigdataieee.org/BigData2019/
+33
+	
+DIS : Conference on Designing Interactive Systems
+Jul 6, 2020 - Jul 10, 2020 - Eindhoven , Netherlands
+https://dis.acm.org/2020/
+33
+	
+ICMI : International Conference on Multimodal Interfaces (ICMI)
+Oct 11, 2020 - Oct 15, 2020 - Utrecht , Netherlands
+http://icmi.acm.org/2020/
+Deadline : to be confirmed
+33
+	
+ICMR : ACM International Conference on Multimedia Retrieval
+Jun 8, 2020 - Jun 11, 2020 - Dublin , Ireland
+http://www.icmr2020.org/
+32
+	
+ICALP : International Colloquium on Automata, Languages and Programming
+Jul 8, 2020 - Jul 12, 2020 - Beijing , China
+http://econcs.pku.edu.cn/icalp2020/
+32
+	
+ISMIR : International Society for Music Information Retrieval Conference
+Nov 4, 2019 - Nov 8, 2019 - Delft , Netherlands
+https://ismir2019.ewi.tudelft.nl/
+31
+	
+FG : IEEE International Conference on Automatic Face & Gesture Recognition
+May 18, 2020 - May 22, 2020 - Buenos Aires , Argentina
+https://fg2020.org/
+31
+	
+Allerton : Allerton Conference on Communication, Control, and Computing
+Sep 2, 2018 - Sep 5, 2018 - Monticello , United States
+http://allerton.csl.illinois.edu/
+31
+	
+PPOPP : ACM SIGPLAN Symposium on Principles & Practice of Parallel Programming (PPOPP)
+Feb 22, 2020 - Feb 26, 2020 - San Diego , United States
+https://ppopp20.sigplan.org
+31
+	
+MMSys : ACM Multimedia Systems Conference
+Jun 8, 2020 - Jun 11, 2020 - Istanbul , Turkey
+https://2020.acmmmsys.org/
+30
+	
+ECMLPKDD : European Conference on Machine learning and knowledge discovery in databases
+Sep 14, 2020 - Sep 18, 2020 - Ghent , Belgium
+https://ecmlpkdd2020.net/
+30
+	
+ITCS : Conference on Innovations in Theoretical Computer Science
+Jan 12, 2020 - Jan 14, 2020 - Seattle , United States
+http://itcs-conf.org/itcs20/itcs20-cfp.html
+29
+	
+CLOUD : IEEE International Conference on Cloud Computing (CLOUD)
+Jul 6, 2020 - Jul 11, 2020 - Beijing , China
+https://conferences.computer.org/cloud/2020
+29
+	
+ICIS : International Conference on Information Systems
+Dec 15, 2019 - Dec 18, 2019 - Munich , Germany
+https://icis2019.aisconferences.org/
+29
+	
+IPSN : International Symposium on Information Processing in Sensor Networks
+Apr 21, 2020 - Apr 24, 2020 - Sydney , Australia
+http://spaceiot.ewi.tudelft.nl/2020/
+29
+	
+MOBIHOC : ACM International Symposium on Mobile Ad Hoc Networking and Computing
+Jun 30, 2020 - Jul 3, 2020 - Shanghai , China
+https://www.sigmobile.org/mobihoc/2020/
+29
+	
+NOMS : IEEE/IFIP Network Operations and Management Symposium
+Apr 20, 2020 - Jan 1, 1970 - Budapest , Hungary
+https://noms2020.ieee-noms.org/
+28
+	
+ICCAD : IEEE/ACM International Conference on Computer-Aided Design
+Nov 4, 2019 - Nov 7, 2019 - Westminster , United States
+https://iccad.com/
+28
+	
+MobileHCI : Mobile HCI
+Oct 5, 2020 - Oct 8, 2020 - Oldenburg , Germany
+https://mobilehci.acm.org/2020/
+Deadline : to be confirmed
+28
+	
+ESWC : Extended Semantic Web Conference
+May 31, 2020 - Jun 4, 2020 - Heraklion , Greece
+http://2020.eswc-conferences.org/
+28
+	
+CCGrid : IEEE International Symposium on Cluster Computing and the Grid
+May 11, 2020 - May 14, 2020 - Melbourne , Australia
+http://cloudbus.org/ccgrid2020/
+28
+	
+ICAPS : International Conference on Automated Planning and Scheduling
+Jun 15, 2020 - Jun 19, 2020 - Nancy , France
+https://icaps20.icaps-conference.org/
+Deadline : to be confirmed
+28
+	
+HPDC : ACM International Symposium on High Performance Distributed Computing
+Jun 23, 2020 - Jun 26, 2020 - Stockholm , Sweden
+http://www.hpdc.org/2020
+28
+	
+PERCOM : IEEE International Conference on Pervasive Computing and Communications
+Mar 23, 2020 - Mar 27, 2020 - Austin , United States
+http://www.percom.org/call-for-papers
+28
+	
+PODC : ACM Symposium on Principles of Distributed Computing
+Aug 3, 2020 - Aug 7, 2020 - Salerno , Italy
+https://www.podc.org/
+Deadline : to be confirmed
+28
+	
+SAC : ACM Symposium on Applied Computing
+Mar 30, 2020 - Apr 3, 2020 - Brno , Czech Republic
+https://www.sigapp.org/sac/sac2020/
+28
+	
+ITA : Information Theory and Applications Workshop
+Feb 2, 2020 - Feb 7, 2020 - Pacific Beach , United States
+https://ita.ucsd.edu/ws/
+Deadline : to be confirmed
+28
+	
+EDM : International Conference on Educational Data Mining
+Jul 10, 2020 - Jul 13, 2020 - Ifrane , Morocco
+http://educationaldatamining.org/edm2020/call-for-papers/
+27
+	
+IUI : International Conference on Intelligent User Interfaces
+Mar 17, 2020 - Mar 20, 2020 - Cagliari , Italy
+https://iui.acm.org/2020/
+27
+	
+ICFP : International Conference on Functional Programming
+Aug 24, 2020 - Aug 26, 2020 - Jersey City , United States
+https://icfp20.sigplan.org/
+27
+	
+EDBT : International Conference on Extending Database Technology
+Mar 30, 2020 - Apr 2, 2020 - Copenhagen , Denmark
+https://diku-dk.github.io/edbticdt2020/
+27
+	
+ICST : IEEE International Conference on Software Testing, Verification and Validation (ICST)
+Mar 23, 2020 - Mar 27, 2020 - Porto , Portugal
+https://icst2020.github.io/
+27
+	
+PACT : International Conference on Parallel Architectures and Compilation Techniques
+Sep 23, 2019 - Sep 26, 2019 - Seattle , United States
+http://hpc.pnl.gov/pact19/
+26
+	
+CISS : Conference on Information Sciences and Systems
+Mar 18, 2020 - Mar 20, 2020 - Princeton University , United States
+https://ee-ciss.princeton.edu/
+Deadline : to be confirmed
+26
+	
+GECCO : Conference on Genetic and Evolutionary Computation
+Jul 8, 2020 - Jul 12, 2020 - Cancun , Mexico
+https://gecco-2020.sigevo.org/index.html/HomePage
+Deadline : to be confirmed
+26
+	
+ICDAR : International Conference on Document Analysis and Recognition
+Sep 22, 2019 - Sep 25, 2019 - Sydney , Australia
+http://www.icdar2019.org/
+26
+	
+ECAI : European Conference on Artificial Intelligence (ECAI)
+Jun 8, 2020 - Jun 12, 2020 - Santiago de Compostela , Spain
+http://www.ecai2020.eu
+26
+	
+ICME : IEEE International Conference on Multimedia and Expo
+Jul 6, 2020 - Jul 10, 2020 - London , United Kingdom
+http://www.2020.ieeeicme.org/
+26
+	
+FUSION : International Conference on Information Fusion
+Jun 6, 2020 - Jun 9, 2020 - Sun City , South Africa
+https://fusion2020.org/
+Deadline : to be confirmed
+26
+	
+CGO : International Symposium on Code Generation and Optimization
+Feb 22, 2020 - Feb 26, 2020 - San Diego , United States
+https://cgo.org
+26
+	
+ESOP : European Symposium on Programming
+Apr 25, 2020 - May 1, 2020 - Dublin , Ireland
+https://www.etaps.org/2020/esop
+25
+	
+CIG : IEEE Conference on Computational Intelligence and Games
+Aug 14, 2018 - Aug 17, 2018 - Maastricht , Netherlands
+http://www.maastrichtuniversity.nl/cig2018
+25
+	
+TEI : International Conference on Tangible, embedded, and embodied interaction
+Feb 9, 2020 - Feb 12, 2020 - Sydney , Australia
+https://tei.acm.org/2020
+25
+	
+AAMAS : Autonomous Agents and Multi-Agent Systems
+May 9, 2020 - May 13, 2020 - Auckland , New Zealand
+https://aamas2020.conference.auckland.ac.nz/
+25
+	
+ACSSC : Asilomar Conference on Signals, Systems and Computers
+Nov 3, 2019 - Nov 6, 2019 - Pacific Grove , United States
+https://www.asilomarsscconf.org/
+25
+	
+GDN : Group Decision and Negotiation
+Jun 7, 2020 - Jun 11, 2020 - Toronto , Canada
+http://gdnconference.org/gdn2020/
+24
+	
+CloudCom : IEEE International Conference on Cloud Computing Technology and Science (CloudCom)
+Dec 11, 2019 - Dec 13, 2019 - Sydney , Australia
+http://2019.cloudcom.org/
+24
+	
+SMC : IEEE International Conference on Systems, Man and Cybernetics
+Oct 11, 2020 - Oct 14, 2020 - Toronto , Canada
+http://smc2020.org/
+24
+	
+ESA : European Symposium on Algorithms
+Sep 9, 2019 - Sep 11, 2019 - Munich , Germany
+https://algo2019.ak.in.tum.de/
+23
+	
+ICB : IAPR International Conference on Biometrics (ICB)
+Sep 27, 2020 - Sep 30, 2020 - Houston , United States
+https://ieee-biometrics.org/ijcb2020/
+23
+	
+ISMAR : IEEE International Symposium on Mixed and Augmented Reality
+Nov 9, 2020 - Nov 13, 2020 - RECIFE/PORTO DE GALINHAS , Brazil
+http://www.ismar20.org
+Deadline : to be confirmed
+23
+	
+Middleware : International Middleware Conference
+Dec 9, 2019 - Dec 13, 2019 - UC Davis , United States
+http://2019.middleware-conference.org/
+23
+	
+PACIS : Pacific Asia Conference on Information Systems
+Jun 20, 2020 - Jun 24, 2020 - Dubai , United Arab Emirates
+https://www.pacis2020.org/
+23
+	
+CaiSE : International Conference on Advanced Information Systems Engineering
+Jun 8, 2020 - Jun 12, 2020 - Grenoble , France
+http://caise20.imag.fr/
+23
+	
+BuildSys : ACM International Conference on Systems for Energy-Efficient Built Environments
+Nov 13, 2019 - Nov 14, 2019 - New York City , United States
+http://buildsys.acm.org/2019
+22
+	
+ICMLA : International Conference on Machine Learning and Applications
+Dec 16, 2019 - Dec 19, 2019 - Boca Raton , United States
+https://www.icmla-conference.org/icmla19
+22
+	
+Hypertext : ACM Conference on Hypertext and Hypermedia
+Jul 9, 2018 - Jul 12, 2018 - Baltimore , United States
+https://ht.acm.org/ht2018/
+22
+	
+AMCIS : Americas Conference on Information Systems
+Sep 12, 2020 - Sep 16, 2020 - Salt Lake City , United States
+https://amcis2020.aisconferences.org
+22
+	
+ISPASS : IEEE International Symposium on Performance Analysis of Systems and Software
+Apr 5, 2020 - Apr 7, 2020 - Boston , United States
+https://www.ispass.org/ispass2020/
+22
+	
+IAS : IEEE Industry Applications Society Annual Meeting
+Sep 29, 2019 - Oct 3, 2019 - Baltimore , United States
+https://ias.ieee.org/2019annualmeeting
+22
+	
+SPAA : ACM Symposium on Parallelism in Algorithms and Architectures
+Jul 15, 2020 - Jul 17, 2020 - Philadelphia , United States
+https://spaa.acm.org/
+Deadline : to be confirmed
+22
+	
+CP : International Conference on Principles and Practice of Constraint Programming
+Sep 7, 2020 - Sep 11, 2020 - Louvain-la-Neuve , Belgium
+https://cp2020.a4cp.org
+Deadline : Wed 22 Apr 2020
+21
+	
+RTSS : IEEE Real-Time Systems Symposium (RTSS)
+Dec 3, 2019 - Dec 6, 2019 - Hong Kong , Hong Kong
+http://2019.rtss.org/call-for-papers/
+21
+	
+ECOOP : European Conference on Object-oriented Programming (ECOOP)
+Jul 13, 2020 - Jul 17, 2020 - Berlin , Germany
+https://2020.ecoop.org
+21
+	
+ICSC : IEEE International Conference on Semantic Computing
+Feb 3, 2020 - Feb 5, 2020 - San Diego , United States
+http://www.ieee-icsc.org
+21
+	
+QoMEX : International Workshop on Quality of Multimedia Experience
+May 26, 2020 - May 28, 2020 - Athlone , Ireland
+http://qomex2020.ie/
+Deadline : to be confirmed
+21
+	
+ISWC : International Symposium on Wearable Computer
+Sep 12, 2020 - Sep 16, 2020 - CANCÚN , Mexico
+http://iswc.net/iswc20/
+Deadline : to be confirmed
+21
+	
+AIIDE : Artificial Intelligence and Interactive Digital Entertainment Conference
+Nov 13, 2018 - Nov 17, 2018 - Edmonton , Canada
+https://sites.google.com/ncsu.edu/aiide-2018/
+21
+	
+STACS : Symposium on Theoretical Aspects of Computer Science (STACS)
+Mar 10, 2020 - Mar 14, 2020 - Montpellier , France
+http://www.stacs-conf.org/
+Deadline : to be confirmed
+21
+	
+ETRA : Eye Tracking Research & Application
+Jun 2, 2020 - Jun 5, 2020 - Stuttgart , Germany
+https://etra.acm.org/2020/
+Deadline : to be confirmed
+21
+	
+ICAC : IEEE International Conference on Autonomic Computing
+Sep 3, 2018 - Sep 7, 2018 - Trento , Italy
+http://icac2018.informatik.uni-wuerzburg.de/
+21
+	
+CONCUR : International Conference on Concurrency Theory
+Sep 1, 2020 - Sep 4, 2020 - Vienna , Austria
+https://concur2020.forsyte.at/
+Deadline : Tue 28 Apr 2020
+21
+	
+MODELS : Model Driven Engineering Languages and Systems
+Oct 18, 2020 - Oct 23, 2020 - Montreal , Canada
+http://www.modelsconference.org
+Deadline : Fri 08 May 2020
+21
+	
+ITiCSE : Joint Conference on Innovation and Technology in Computer Science Education
+Jun 17, 2020 - Jun 19, 2020 - Trondheim , Norway
+https://iticse.acm.org/2020/
+Deadline : to be confirmed
+21
+	
+FIE : Frontiers in Education Conference
+Oct 21, 2020 - Oct 24, 2020 - Uppsala , Sweden
+https://www.fie2020.org
+20
+	
+ITS : International Conference on Intelligent Tutoring Systems
+Aug 6, 2020 - Aug 12, 2020 - Athens , Greece
+https://its2020.iis-international.org
+20
+	
+ICPP : International Conference on Parallel Processing (ICPP)
+Aug 17, 2020 - Aug 20, 2020 - Edmonton , Canada
+https://jnamaral.github.io/icpp20/
+20
+	
+ESEM : International Symposium on Empirical Software Engineering and Measurement
+Sep 16, 2019 - Sep 20, 2019 - Porto de Galinhas , Brazil
+http://eseiw2019.com/esem/
+20
+	
+ITW : IEEE Information Theory Workshop
+Aug 25, 2019 - Aug 28, 2019 - Visby , Sweden
+http://itw2019.org/
+20
+	
+DISC : International Symposium on Distributed Computing
+Oct 14, 2019 - Oct 18, 2019 - Budapest , Hungary
+http://www.disc-conference.org/wp/disc2019/
+20
+	
+XP : International Conference on Agile Processes in Software Engineering and Extreme Programming
+Jun 8, 2020 - Jun 12, 2020 - Copenhagen , Denmark
+https://www.agilealliance.org/xp2020/
+19
+	
+ICTAI : International Conference on Tools with Artificial Intelligence
+Nov 4, 2019 - Nov 6, 2019 - Portland , United States
+http://www.ictai2019.org/
+19
+	
+BTAS : IEEE International Conference on Biometrics: Theory Applications and Systems (BTAS)
+Sep 27, 2020 - Sep 30, 2020 - Houston , United States
+https://ieee-biometrics.org/ijcb2020/
+19
+	
+JCDL : International ACM/IEEE Joint Conference on Digital Libraries
+Jun 19, 2020 - Jun 23, 2020 - Wuhan , China
+http://2020.jcdl.org/
+19
+	
+PPSN : International Conference on Parallel problem solving from nature
+Sep 5, 2020 - Sep 9, 2020 - Leiden , Netherlands
+https://ppsn2020.liacs.leidenuniv.nl/
+19
+	
+WASSA : Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis
+Oct 31, 2018 - Nov 1, 2018 - Brusssels , Belgium
+https://wt-public.emm4u.eu/wassa2018/index.htm
+19
+	
+HPCC : IEEE International Conference on High Performance Computing and Communications
+Aug 10, 2019 - Aug 12, 2019 - Zhangjiajie , China
+http://csee.hnu.edu.cn/hpcc2019/
+19
+	
+SEA : International Symposium on Experimental Algorithms
+Jun 16, 2020 - Jun 18, 2020 - Catania , Italy
+http://www.sea2020.dmi.unict.it/
+19
+	
+ICCSA : International Conference on Computational Science and Its Applications
+Jul 1, 2020 - Jul 4, 2020 - Cagliari , Italy
+http://www.iccsa.org
+19
+	
+HPCS : International Conference on High Performance Computing and Simulation
+Jul 20, 2020 - Jul 24, 2020 - Barcelona , Spain
+http://hpcs2020.cisedu.info/
+18
+	
+DAS : IAPR International Workshop on Document Analysis Systems
+May 17, 2020 - May 20, 2020 - Wuhan , China
+http://www.vlrlab.net/das2020/
+18
+	
+ACII : International Conference on Affective Computing and Intelligent Interaction
+Sep 3, 2019 - Sep 6, 2019 - Cambridge , United Kingdom
+http://acii-conf.org/2019/important-dates/#top
+18
+	
+VRST : ACM Symposium on Virtual Reality Software and Technology
+Nov 12, 2019 - Nov 15, 2019 - Penrith , Australia
+https://vrst.acm.org/vrst2019/submissions/
+18
+	
+WINE : International Conference on Web and Internet Economics
+Dec 10, 2019 - Dec 12, 2019 - New York , United States
+http://wine2019.cs.columbia.edu/
+18
+	
+MSWIM : ACM International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems
+Nov 25, 2019 - Nov 29, 2019 - Miami ,
+http://mswimconf.com/2019/
+18
+	
+ISGT : IEEE PES Innovative Smart Grid Technologies Conference Europe
+Sep 29, 2019 - Oct 2, 2019 - Bucharest , Romania
+http://sites.ieee.org/isgt-europe-2019/
+18
+	
+FASE : International Conference on Fundamental Approaches to Software Engineering
+Apr 25, 2020 - May 1, 2020 - Dublin , Ireland
+https://www.etaps.org/2020/fase
+18
+	
+ICDT : International Conference on Database Theory
+Mar 30, 2020 - Apr 2, 2020 - Copenhagen , Denmark
+https://diku-dk.github.io/edbticdt2020/
+18
+	
+ICALT : IEEE International Conference on Advanced Learning Technologies
+Jul 6, 2020 - Jul 9, 2020 - Tartu , Estonia
+https://icalt2020.ut.ee
+18
+	
+IWQoS : International Workshop on Quality of Service
+Jun 15, 2020 - Jun 17, 2020 - Hangzhou , China
+https://iwqos2020.ieee-iwqos.org/
+17
+	
+DASFAA : International Conference on Database Systems for Advanced Applications
+May 21, 2020 - May 24, 2020 - Jeju , South Korea
+http://db.pknu.ac.kr/dasfaa2020/
+17
+	
+RCIS : International Conference on Research Challenges in Information Science
+May 20, 2020 - May 22, 2020 - Limassol , Cyprus
+http://www.rcis-conf.com/rcis2020/
+17
+	
+AIED : Artificial Intelligence in Education
+Jun 25, 2019 - Jun 29, 2019 - Chicago , United States
+http://caed-lab.com/aied2019/index.html
+17
+	
+MFCS : Mathematical Foundations of Computer Science
+Aug 26, 2019 - Aug 30, 2019 - Aachen , Germany
+http://tcs.rwth-aachen.de/mfcs2019/
+17
+	
+IPCCC : IEEE International Performance, Computing, and Communications Conference
+Oct 29, 2019 - Oct 31, 2019 - London , United Kingdom
+http://ipccc.org
+16
+	
+INTERACT : IFIP Conference on Human-Computer Interaction
+Sep 2, 2019 - Sep 6, 2019 - Paphos , Cyprus
+http://interact2019.org/
+16
+	
+CISIS : International Conference on Complex, Intelligent and Software Intensive Systems
+Jul 1, 2020 - Jul 3, 2020 - Lodz , Poland
+http://voyager.ce.fit.ac.jp/conf/cisis/2020/
+16
+	
+EKAW : Knowledge Engineering and Management by the Masses
+Sep 15, 2020 - Sep 19, 2020 - Bolzano , Italy
+https://ekaw2020.inf.unibz.it/
+Deadline : to be confirmed
+16
+	
+SSDBM : Statistical and Scientific Database Management
+Jul 7, 2020 - Jul 9, 2020 - Vienna , Austria
+http://ssdbm.org/2020/
+16
+	
+IPCO : International Conference on Integer Programming and Combinatorial Optimization
+Jun 8, 2020 - Jun 10, 2020 - London , United Kingdom
+http://www.lse.ac.uk/IPCO-2020
+15
+	
+ISVC : International Symposium on Visual Computing
+Oct 7, 2019 - Oct 9, 2019 - Lake Tahoe , United States
+http://www.isvc.net
+15
+	
+ICSI : International Conference on Advances in Swarm Intelligence
+Jul 10, 2020 - Jul 14, 2020 - Belgrade , Serbia
+http://www.ic-si.org
+15
+	
+ALT : Algorithmic Learning Theory (ALT)
+Feb 8, 2020 - Feb 11, 2020 - San Diego , United States
+http://alt2020.algorithmiclearningtheory.org/
+15
+	
+DGO : Annual International Conference on Digital Government Research
+Jun 17, 2020 - Jun 19, 2020 - Seoul , South Korea
+http://dgsoc.org/dgo-2020/
+Deadline : to be confirmed
+15
+	
+CPAIOR : International Conference on Integration of AI and OR Techniques in Constraint Programming
+May 26, 2020 - May 29, 2020 - Vienna , Austria
+https://cpaior.org/
+Deadline : to be confirmed
+15
+	
+ICSSP : International Conference on Software and System Process
+May 23, 2020 - May 24, 2020 - Seoul , South Korea
+http://dbsi.hdu.edu.cn/icssp2020/
+15
+	
+SCAM : IEEE International Working Conference on Source Code Analysis and Manipulation
+Sep 26, 2020 - Sep 27, 2020 - Adelaide , Australia
+http://www.ieee-scam.org/2020/
+Deadline : to be confirmed
+15
+	
+ITC : IEEE International Test Conference
+Nov 12, 2019 - Nov 14, 2019 - Washington , United States
+http://www.itctestweek.org/
+15
+	
+VL/HCC : IEEE Symposium on Visual Languages and Human-Centric Computing
+Aug 10, 2020 - Aug 14, 2020 - Dunedin , New Zealand
+https://conf.researchr.org/track/vlhcc2020/vlhcc2020-papers
+15
+	
+SLE : Software Language Engineering
+Oct 21, 2019 - Oct 22, 2019 - Athens , Greece
+http://www.sleconf.org/2019/
+14
+	
+ICDE : International Conference on Data Engineering Workshops
+Apr 20, 2020 - Apr 24, 2020 - Dallas , United States
+https://www.utdallas.edu/icde/
+14
+	
+DaWaK : Data Warehousing and Knowledge Discovery (DaWaK)
+Aug 26, 2019 - Aug 29, 2019 - Linz , Austria
+http://www.dexa.org/dawak2019
+14
+	
+RANLP : Recent Advances in Natural Language Processing
+Sep 2, 2017 - Sep 8, 2017 - Varna , Bulgaria
+http://lml.bas.bg/ranlp2017/start.php
+14
+	
+Web3D : International Conference on 3D Web Technology
+Jun 24, 2020 - Jun 26, 2020 - Seoul , South Korea
+https://web3d2020.web3d.org/
+14
+	
+SYSTOR : ACM International Systems and Storage Conference
+Jun 2, 2020 - Jun 4, 2020 - Haifa , Israel
+https://www.systor.org/2020/
+14
+	
+ISAAC : International Symposium on Algorithms and Computation
+Dec 8, 2019 - Dec 11, 2019 - Shanghai , China
+http://itcs.shufe.edu.cn/isaac2019/
+14
+	
+FST&TCS : Foundations of Software Technology and Theoretical Computer Science
+Dec 11, 2019 - Dec 13, 2019 - Bombay , India
+https://www.fsttcs.org.in/2019/index.php
+14
+	
+WEBIST : International Conference on Web Information Systems and Technologies
+Sep 18, 2019 - Sep 20, 2019 - Vienna , Austria
+http://www.webist.org/
+14
+	
+ICEIS : International Conference on Enterprise Information Systems
+May 5, 2020 - May 7, 2020 - Prague , Czech Republic
+http://www.iceis.org/
+14
+	
+FSTTCS : Foundations of Software Technology and Theoretical Computer Science
+Dec 11, 2019 - Dec 13, 2019 - Bombay , India
+https://www.fsttcs.org.in/2019/index.php
+14
+	
+WISE : Web Information Systems Engineering
+Nov 26, 2019 - Nov 30, 2019 - Hong Kong , Hong Kong
+https://wise2019.comp.polyu.edu.hk
+14
+	
+PPDP : International Symposium on Principles and Practice of Declarative Programming
+Oct 7, 2019 - Oct 9, 2019 - Proto , Portugal
+http://ppdp2019.macs.hw.ac.uk
+13
+	
+CASES : International Conference on Compilers, Architecture, and Synthesis for Embedded Systems
+Oct 13, 2019 - Oct 18, 2019 - New York City , United States
+http://www.esweek.org/cases/about
+13
+	
+WETICE : IEEE International Workshops on Enabling Technologies: Infrastructure for Collaborative Enterprises
+Jun 10, 2020 - Jun 12, 2020 - Bayonne , France
+http://eexposit.perso.univ-pau.fr/wetice/index.html
+13
+	
+ICCHP : International Conference on Computers Helping People with Special Needs
+Sep 9, 2020 - Sep 11, 2020 - Lecco , Italy
+https://www.icchp.org/
+Deadline : to be confirmed
+13
+	
+ISI : IEEE International Conference on Intelligence and Security Informatics
+Jul 22, 2017 - Jul 24, 2017 - Beijing , China
+http://www.isi-conf.org/call-for-papers.html
+13
+	
+SAMI : International Symposium on Applied Machine Intelligence and Informatics
+Jan 23, 2020 - Jan 25, 2020 - Herl\'any , Slovakia
+http://conf.uni-obuda.hu/sami2020/
+13
+	
+WG : Workshop on Graph-Theoretic Concepts in Computer Science
+Jun 24, 2020 - Jun 26, 2020 - University of Leeds , United Kingdom
+https://algorithms.leeds.ac.uk/wg2020/
+13
+	
+ADBIS : Advances in Databases and Information Systems
+Aug 25, 2020 - Aug 28, 2020 - Lyon , France
+http://eric.univ-lyon2.fr/adbis-tpdl-eda-2020/adbis/
+12
+	
+LION : Learning and Intelligent Optimization
+May 24, 2020 - May 28, 2020 - ATHENS , Greece
+http://www.caopt.com/LION14/
+12
+	
+InfoVis : International Conference on Information Visualization
+Feb 27, 2020 - Feb 29, 2020 - Valletta , Malta
+http://ivapp.visigrapp.org/
+12
+	
+APLAS : Asian Symposium on Programming Languages and Systems
+Nov 27, 2017 - Nov 29, 2017 - Suzhou , China
+https://www-aplas.github.io/
+12
+	
+DLT : Developments in Language Theory
+May 11, 2020 - May 15, 2020 - Tampa , United States
+http://knot.math.usf.edu/dlt2020/
+
+$Biomedical Engineering & Medical Informatics
+46
+	
+MICCAI : Medical Image Computing and Computer Assisted Intervention
+Oct 4, 2020 - Oct 8, 2020 - Lima , Peru
+https://miccai2020.org/en/
+34
+	
+AIME : Artificial Intelligence in Medicine
+Jun 26, 2019 - Jun 29, 2019 - Poznan , Poland
+http://aime19.aimedicine.info/
+33
+	
+Big Data : IEEE International Conference on Big Data
+Dec 9, 2019 - Dec 12, 2019 - Los Angeles , United States
+http://bigdataieee.org/BigData2019/
+28
+	
+SAC : ACM Symposium on Applied Computing
+Mar 30, 2020 - Apr 3, 2020 - Brno , Czech Republic
+https://www.sigapp.org/sac/sac2020/
+25
+	
+AMIA : AMIA Symposium
+Nov 14, 2020 - Nov 18, 2020 - Chicago , United States
+https://www.amia.org/amia2020
+24
+	
+SMC : IEEE International Conference on Systems, Man and Cybernetics
+Oct 11, 2020 - Oct 14, 2020 - Toronto , Canada
+http://smc2020.org/
+23
+	
+RECOMB : International Conference on Research in Computational Molecular Biology
+May 10, 2020 - May 13, 2020 - Padova , Italy
+https://www.recomb2020.org/
+22
+	
+PSB : Pacific Symposium on Biocomputing
+Jan 3, 2020 - Jan 7, 2020 - The Big Island of Hawaii , United States
+https://psb.stanford.edu/
+19
+	
+PPSN : International Conference on Parallel problem solving from nature
+Sep 5, 2020 - Sep 9, 2020 - Leiden , Netherlands
+https://ppsn2020.liacs.leidenuniv.nl/
+17
+	
+BSN : International Workshop on Wearable and Implantable Body Sensor Networks
+Mar 4, 2018 - Mar 7, 2018 - Las Vegas , United States
+https://bhi-bsn.embs.org/2018/
+16
+	
+ICHI : IEEE International Conference on Healthcare Informatics
+Jun 15, 2020 - Jun 18, 2020 - Oldenburg , Germany
+https://hs-heilbronn.de/ichi2020
+15
+	
+ICSI : International Conference on Advances in Swarm Intelligence
+Jul 10, 2020 - Jul 14, 2020 - Belgrade , Serbia
+http://www.ic-si.org
+
+$Computer Security and Cryptography
+81
+	
+USENIX Security : USENIX Security Symposium
+Aug 12, 2020 - Aug 14, 2020 - Boston , United States
+https://www.usenix.org/conference/usenixsecurity20
+72
+	
+SP : IEEE Symposium on Security and Privacy
+May 18, 2020 - May 20, 2020 - HYATT REGENCY , United States
+http://www.ieee-security.org/TC/SP2020/
+65
+	
+NDSS : Network and Distributed System Security Symposium (NDSS)
+Feb 23, 2020 - Feb 26, 2020 - San Diego , United States
+https://www.ndss-symposium.org/ndss2020/call-for-papers/
+56
+	
+EUROCRYPT : International Conference on Theory and Applications of Cryptographic Techniques (EUROCRYPT)
+May 10, 2020 - May 14, 2020 - Zagreb , Croatia
+https://eurocrypt.iacr.org/2020/
+53
+	
+CRYPTO : International Cryptology Conference (CRYPTO)
+Aug 16, 2020 - Aug 20, 2020 - Santa Barbara , United States
+https://crypto.iacr.org/2020/
+44
+	
+ACT : USENIX Annual Technical Conference
+Jul 15, 2020 - Jul 17, 2020 - Boston , United States
+https://www.usenix.org/conference/atc20
+43
+	
+FC : International Conference on Financial Cryptography and Data Security
+Feb 17, 2020 - Feb 21, 2020 - Kota Kinabalu , Malaysia
+https://fc20.ifca.ai/
+40
+	
+ASIACRYPT : International Conference on The Theory and Application of Cryptology and Information Security (ASIACRYPT)
+Dec 8, 2019 - Dec 12, 2019 - Kobe , Japan
+https://asiacrypt.iacr.org/2019/
+37
+	
+TCC : Theory of Cryptography
+Dec 1, 2019 - Dec 5, 2019 - Nuremberg , Germany
+https://tcc.iacr.org/2019/
+32
+	
+ESORICS : European Conference on Research in Computer Security
+Sep 23, 2019 - Sep 27, 2019 - Luxembourg , Luxembourg
+https://esorics2019.uni.lu
+30
+	
+PKC : International Conference on Practice and Theory in Public Key Cryptography
+May 4, 2020 - May 7, 2020 - Edinburgh , United Kingdom
+https://pkc.iacr.org/2020/
+30
+	
+ACSAC : Computer Security Applications Conference
+Dec 9, 2019 - Dec 13, 2019 - San Juan , Puerto Rico
+https://www.acsac.org/
+28
+	
+SOUPS : Symposium On Usable Privacy and Security
+Aug 9, 2020 - Aug 11, 2020 - BOSTON , United States
+https://www.usenix.org/conference/soups2020
+Deadline : to be confirmed
+27
+	
+CODASPY : ACM Conference on Data and application security and privacy
+Mar 16, 2020 - Mar 18, 2020 - New Orleans , United States
+http://www.codaspy.org/2020/
+26
+	
+IM : IFIP/IEEE International Symposium on Integrated Network Management
+- ,
+26
+	
+CSF : IEEE Computer Security Foundations Symposium
+Jun 22, 2020 - Jun 26, 2020 - Boston , United States
+https://www.ieee-security.org/TC/CSF2020/
+24
+	
+TrustCom : IEEE International Conference on Trust, Security and Privacy in Computing and Communications
+Aug 5, 2019 - Aug 8, 2019 - Rotorua , New Zealand
+https://crow.org.nz/Trustcom2019
+23
+	
+Middleware : International Middleware Conference
+Dec 9, 2019 - Dec 13, 2019 - UC Davis , United States
+http://2019.middleware-conference.org/
+21
+	
+WIFS : IEEE International Workshop on Information Forensics and Security
+Dec 9, 2019 - Dec 12, 2019 - Delft , Netherlands
+https://wifs2019.tudelft.nl
+20
+	
+ARES : International Conference on Availability, Reliability and Security
+Aug 24, 2020 - Aug 28, 2020 - Dublin , Ireland
+https://www.ares-conference.eu/conference-2020/cfp2020/
+20
+	
+ACNS : Applied Cryptography and Network Security
+Jun 22, 2020 - Jun 25, 2020 - Rome , Italy
+https://sites.google.com/di.uniroma1.it/ACNS2020
+19
+	
+IFIP SEC : IFIP TC 11 International Conference on ICT Systems Security and Privacy Protection
+May 26, 2020 - May 28, 2020 - Maribor , Slovenia
+https://www.ifipsec.org/
+Deadline : to be confirmed
+19
+	
+ICDCN : International Conference of Distributed Computing and Networking
+Jan 4, 2020 - Jan 7, 2020 - Kolkata , India
+https://www.icdcn2020.com/
+17
+	
+INDOCRYPT : International Conference on Cryptology in India
+Dec 15, 2019 - Dec 18, 2019 - Hyderabad , India
+https://www.isical.ac.in/~indocrypt2019
+16
+	
+SAFECOMP : International Conference on Computer Safety, Reliability, and Security
+Sep 15, 2020 - Sep 18, 2020 - Lisbon , Portugal
+http://safecomp2020.di.fc.ul.pt/
+16
+	
+IHMMSEC : ACM workshop on Information hiding and multimedia security
+Jun 22, 2020 - Jun 24, 2020 - Denver , United States
+https://www.ihmmsec.org/cms/home/index.html
+16
+	
+GameSec : Conference on the Decision and Game Theory for Security (GameSec)
+Oct 30, 2019 - Nov 1, 2019 - Stockholm , Sweden
+http://www.gamesec-conf.org/
+16
+	
+HASE : IEEE High Assurance Systems Engineering Symposium, HASE
+Jun 19, 2020 - Jun 20, 2020 - Malla Reddy College of Engineering & Technology , India
+http://www.icscsp.com/
+13
+	
+ISI : IEEE International Conference on Intelligence and Security Informatics
+Jul 22, 2017 - Jul 24, 2017 - Beijing , China
+http://www.isi-conf.org/call-for-papers.html
+
+$Computational Linguistics & Speech Processing
+106
+	
+ACL : Meeting of the Association for Computational Linguistics (ACL)
+Jul 5, 2020 - Jul 10, 2020 - Seattle , United States
+https://acl2020.org/
+88
+	
+EMNLP : Conference on Empirical Methods in Natural Language Processing (EMNLP)
+Dec 3, 2019 - Dec 7, 2019 - Hong Kong , Hong Kong
+https://www.emnlp-ijcnlp2019.org/
+80
+	
+ICASSP : IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)
+May 4, 2020 - May 8, 2020 - Barcelona , Spain
+https://2020.ieeeicassp.org/
+65
+	
+INTERSPEECH : Conference of the International Speech Communication Association (INTERSPEECH)
+Sep 14, 2020 - Sep 18, 2020 - Shanghai , China
+http://www.interspeech2020.org
+61
+	
+HLT-NAACL : Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (HLT-NAACL)
+Jun 2, 2019 - Jun 7, 2019 - Minneapolis , United States
+http://naacl2019.org/
+45
+	
+LREC : International Conference on Language Resources and Evaluation (LREC)
+May 13, 2020 - May 15, 2020 - Marseille , France
+https://lrec2020.lrec-conf.org/
+41
+	
+COLING : International Conference on Computational Linguistics
+Sep 15, 2020 - Sep 18, 2020 - Barcelona , Spain
+http://coling2020.org/
+Deadline : Wed 01 Jul 2020
+36
+	
+EACL : Conference of the European Chapter of the Association for Computational Linguistics
+Apr 3, 2017 - Apr 7, 2017 - Valencia , Spain
+http://eacl2017.org/
+34
+	
+CoNLL : Conference on Computational Natural Language Learning (CoNLL)
+Nov 3, 2019 - Nov 4, 2019 - Hong Kong , Hong Kong
+https://www.conll.org/2019
+26
+	
+SLT : IEEE Spoken Language Technology Workshop
+Dec 13, 2020 - Dec 16, 2020 - Shenzhen , China
+http://www.slt2020.org
+Deadline : Wed 01 Jul 2020
+26
+	
+ICDAR : International Conference on Document Analysis and Recognition
+Sep 22, 2019 - Sep 25, 2019 - Sydney , Australia
+http://www.icdar2019.org/
+26
+	
+SIGDIAL : Annual Meeting of the Special Interest Group on Discourse and Dialogue (SIGDIAL)
+Sep 11, 2019 - Sep 13, 2019 - Stockholm , Sweden
+https://www.sigdial.org/files/workshops/conference20/
+20
+	
+CICLing : International Conference on Computational Linguistics and Intelligent Text Processing
+Mar 18, 2018 - Mar 24, 2018 - Hanoi , Viet Nam
+https://www.cicling.org/2018/
+18
+	
+DAS : IAPR International Workshop on Document Analysis Systems
+May 17, 2020 - May 20, 2020 - Wuhan , China
+http://www.vlrlab.net/das2020/
+16
+	
+*SEM : Joint Conference on Lexical and Computational Semantics
+Jun 5, 2018 - Jun 5, 2018 - New Orleans , United States
+https://sites.google.com/view/starsem2018
+15
+	
+IJCNLP : International Joint Conference on Natural Language Processing (IJCNLP)
+Nov 3, 2019 - Nov 7, 2019 - Hong Kong , Hong Kong
+https://www.emnlp-ijcnlp2019.org/
+14
+	
+RANLP : Recent Advances in Natural Language Processing
+Sep 2, 2017 - Sep 8, 2017 - Varna , Bulgaria
+http://lml.bas.bg/ranlp2017/start.php
