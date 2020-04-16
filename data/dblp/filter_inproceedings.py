@@ -78,14 +78,15 @@ def main(argv):
 
     with open('./data/authorconf.csv', 'w') as f:
         csv_writer = csv.writer(f)
-        conf_keys = [top_confs[key]['abbr'] for key in top_confs]
+        sorted_confs = [k for k, v in sorted(confs.items(), key=lambda item: item[1], reverse=True)]
+        conf_keys = [top_confs[key]['abbr'] for key in sorted_confs]
         csv_writer.writerow(['author'] + conf_keys)
-        topauthors = {k: v for k, v in sorted(author_rec.items(), key=lambda item: item[1]['total'],reverse=True)}
+        top_authors = {k: v for k, v in sorted(author_rec.items(), key=lambda item: item[1]['total'],reverse=True)}
         cnt = 0
         last_total = 0
-        for author in topauthors:
+        for author in top_authors:
             cnt += 1
-            if cnt > 3000 and author_rec[author]['total'] < last_total:
+            if cnt > 500 and author_rec[author]['total'] < last_total:
                 break
             last_total = author_rec[author]['total']
             confstat = []
