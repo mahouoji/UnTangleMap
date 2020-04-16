@@ -100,13 +100,13 @@
             neighbors.forEach((ncord, i) => {
                 let nkey = ncord.toString();
                 if (nkey in self.labelMap.in) {
-                    // update edge corr
-                    let nid = self.labelMap.in[nkey].index;
-                    edgeCorr += self.data.corr[self.utility.method][nid][id];
-                    edgeCnt += 1;
-                    // update face corr
                     let nnkey = neighbors[(i + 1) % 6].toString();
                     if (nnkey in self.labelMap.in) {
+                        // update edge corr
+                        let nid = self.labelMap.in[nkey].index;
+                        edgeCorr += self.data.corr[self.utility.method][nid][id];
+                        edgeCnt += 1;
+                        // update face corr
                         let nnid = self.labelMap.in[nnkey].index;
                         triCorr += (self.data.corr[self.utility.method][nid][id]
                                 + self.data.corr[self.utility.method][nid][nnid]
