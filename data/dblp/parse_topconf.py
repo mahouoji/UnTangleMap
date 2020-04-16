@@ -1,7 +1,8 @@
 import csv, json
 import sys
 
-TOPCONF_FILENAME = '../dataset/topconf.txt'
+TOPCONF_FILENAME = './data/topconf.txt'
+OUTPUT_FILENAME = './data/topconf.json'
 
 def main(argv):
     confs = {}
@@ -21,23 +22,24 @@ def main(argv):
                 name = line.strip().split(':', 1)
                 if len(name) != 2:
                     print('unknown name format: %s %d' % (line, len(name)))
-                curr_key = abbr = name[0].strip()
+                abbr = name[0].strip()
+                curr_key = abbr.lower()
                 fullname = name[1].strip()
-                if abbr not in confs:
-                    confs[abbr] = {
+                if curr_key not in confs:
+                    confs[curr_key] = {
                         'abbr': abbr,
                         'fullname': fullname,
                         'cates': [category],
                         'hindex': hindex
                     }
                 else:
-                    in_name = confs[abbr]['fullname']
+                    in_name = confs[curr_key]['fullname']
                     if fullname != in_name:
                         print('conflict abbr: %s | %s | %s' % (abbr, fullname, in_name))
-                    confs[abbr]['cates'].append(category)
+                    confs[curr_key]['cates'].append(category)
                 next_item = False
     print('total confs: %d' % len(confs))
-    json.dump(confs, open('../dataset/topconf.json', 'w'), indent=2)
+    json.dump(confs, open(OUTPUT_FILENAME, 'w'), indent=2)
 
                 
 
