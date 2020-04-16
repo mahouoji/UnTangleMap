@@ -76,7 +76,7 @@ def main(argv):
             print('%s | %s | %d' % (key, top_confs[key]['fullname'], top_confs[key]['hindex']))
     print('%d conference found from file' % len(confs))
 
-    with open('./data/authorconf.csv', 'w') as f:
+    with open('./data/author_conf.csv', 'w') as f:
         csv_writer = csv.writer(f)
         sorted_confs = [k for k, v in sorted(confs.items(), key=lambda item: item[1], reverse=True)]
         conf_keys = [top_confs[key]['abbr'] for key in sorted_confs]
