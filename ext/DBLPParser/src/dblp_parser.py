@@ -229,7 +229,7 @@ def main():
     except IOError:
         log_msg("ERROR: Failed to load file \"{}\". Please check your XML and DTD files.".format(dblp_path))
         exit()
-    parse_author_conference(dblp_path, save_path, save_to_csv=True, include_key=True)
+    parse_authnce(dblp_path, save_path, save_to_csv=True, include_key=True)
 
 
 if __name__ == '__main__':
