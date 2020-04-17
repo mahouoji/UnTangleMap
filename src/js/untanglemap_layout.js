@@ -148,12 +148,9 @@
             if (numLabels === 1 && key in self.labelMap.cand) { return true; }
             if (!(key in self.labelMap.cand)
                 || self.labelMap.cand[key].cnt < 2) { return false; }
-            // TODO: a more efficient way (with bit?)
-            for(let i = 0; i < 6; i++) {
-                if(self.labelMap.cand[key].ins[i] === 1
-                    && self.labelMap.cand[key].ins[(i + 1) % 6] === 1) {
-                        return true;
-                }
+            if ((self.labelMap.cand[key].ins & (self.labelMap.cand[key].ins >> 1))
+                || (self.labelMap.cand[key].ins & (self.labelMap.cand[key].ins >> 5))) {
+                return true;
             }
             return false;
         },
@@ -198,11 +195,11 @@
                     self.labelMap.cand[nkey] = {
                         'cord': ncord,
                         'cnt': 0,
-                        'ins': [0, 0, 0, 0, 0, 0]
+                        'ins': 0 //bitwise record for neighbors in map
                     }
                 }
                 self.labelMap.cand[nkey].cnt += 1;
-                self.labelMap.cand[nkey].ins[(i + 3) % 6] = 1;
+                self.labelMap.cand[nkey].ins |= (1 << ((i + 3) % 6));
             });
             //console.log(self.labelMap);
             //console.log(self.utility);
@@ -236,7 +233,7 @@
                 if (self.labelMap.cand[nkey].cnt === 0) {
                     delete self.labelMap.cand[nkey];
                 } else {
-                    self.labelMap.cand[nkey].ins[(i + 3) % 6] = 0;
+                    self.labelMap.cand[nkey].ins &= ~(1 <<((i + 3) % 6));
                 }
             });
             faces.forEach(fcord => {
