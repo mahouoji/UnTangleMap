@@ -65,7 +65,7 @@
                     triCorr: 0.0,
                     triCnt: 0
                 };
-            $.each(self.labelMap.cand, function(key, _){
+            Object.keys(self.labelMap.cand).forEach(key=>{
                 if (self.isValidSlot(key)) {//valid slots
                     labels.forEach(name=>{
                         let cord = self.labelMap.cand[key].cord;
@@ -143,8 +143,9 @@
         isValidSlot: function(key) {
             var self = this;
             if (key in self.labelMap.in) { return false; }
-            if (self.labelMap.in.lenght === 0) { return true; }
-            if (self.labelMap.in.length === 1 && key in self.labelMap.cand) { return true; }
+            let numLabels = Object.keys(self.labelMap.in).length;
+            if (numLabels === 0) { return true; }
+            if (numLabels === 1 && key in self.labelMap.cand) { return true; }
             if (!(key in self.labelMap.cand)
                 || self.labelMap.cand[key].cnt < 2) { return false; }
             // TODO: a more efficient way (with bit?)

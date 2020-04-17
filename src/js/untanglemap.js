@@ -26,6 +26,8 @@ UnTangleMap.prototype = {
         utgmap.append('g').attr('class', 'scatter-plot');
         utgmap.append('g').attr('class', 'hint');
         utgmap.append('g').attr('class', 'label');
+        // tooltip
+        self.selector.append("div").attr("class", "tooltip");
         return self
     },
     // set up grid and zooming
@@ -112,9 +114,9 @@ UnTangleMap.prototype = {
     // set up labels and label dragging
     initLabels: function (labelData) {
         var self = this;
-        var hints = self.svg.select('.utgmap').select('.hint');
-        var vertex = self.svg.select('.utgmap').select('.label').attr('cursor', 'grab');
-        var g = vertex.selectAll('g')
+        let hints = self.svg.select('.utgmap').select('.hint');
+        let vertex = self.svg.select('.utgmap').select('.label').attr('cursor', 'grab');
+        let g = vertex.selectAll('g')
             .data(labelData)
             .enter()
             .append('g');
@@ -123,18 +125,23 @@ UnTangleMap.prototype = {
             .attr('dx', function (d) { return Hex.hexToX(d.cord); })
             .attr('dy', function (d) { return Hex.hexToY(d.cord) +  self.opt.labelTextOffset; })
             .attr('text-anchor','middle')
+            .on("mouseover", d=>{
+                console.log(self.data.labels[self.data.labelIndex[d.name]]);
+            });
+        let ttp = self.selector.select('.tooltip');
         g.append('circle')
             .attr('r', self.opt.labelRaid)
             .attr('cx', function (d) { return Hex.hexToX(d.cord); })
             .attr('cy', function (d) { return Hex.hexToY(d.cord); })
             .attr('label', d=>d.name)
+            // drag
             .call(d3.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
             .on("end", dragended));
 
         //hints
-        var hintData = Layout.getCandidateLayout();
+        let hintData = Layout.getCandidateLayout();
         hints.selectAll('circle')
             .data(hintData)
             .enter()
@@ -188,8 +195,18 @@ UnTangleMap.prototype = {
                 .attr("dy", y + self.opt.labelTextOffset);
             // update position record
             self.labelPos[self.data.labelIndex[name]] = [x, y];
-            console.log(self.labelPos);
+            //console.log(self.labelPos);
             self.updateLayout();
+        }
+
+        function mouseover() {
+
+        }
+        function mousemove() {
+
+        }
+        function mouseleave() {
+
         }
         return self;
     },
@@ -227,7 +244,7 @@ UnTangleMap.prototype = {
                 }
             });
         });
-        console.log(self.labelPos);
+        //console.log(self.labelPos);
         let circle = scatter.selectAll('circle')
             .data(data);
         circle.exit().remove();
@@ -320,7 +337,8 @@ UnTangleMap.init = function (selector, userOpt) {
     self.activeCord = HexCord(0, 0);
     self.labelPos = [];//svg coordinates for labels by lableIndex
     //canvas
-    self.svg = d3.select(selector).append('svg')
+    self.selector = d3.select(selector);
+    self.svg = self.selector.append('svg')
         .attr('width', self.opt.width)
         .attr('height', self.opt.height);
     self.initLayers().initGrid();
