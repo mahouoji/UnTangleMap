@@ -198,16 +198,6 @@ UnTangleMap.prototype = {
             //console.log(self.labelPos);
             self.updateLayout();
         }
-
-        function mouseover() {
-
-        }
-        function mousemove() {
-
-        }
-        function mouseleave() {
-
-        }
         return self;
     },
 
