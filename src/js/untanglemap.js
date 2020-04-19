@@ -306,7 +306,7 @@ UnTangleMap.init = function (selector, userOpt) {
     self.opt = {
         margin: { top: 50, left: 50, bottom: 50, right: 50 },
         width: 1000,
-        height: 800,
+        height: 550,
         side: 40,
         gridRaid: 5,
         labelRaid: 4,

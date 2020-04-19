@@ -1,0 +1,20 @@
+.nav-tabs {
+    font-size: 16px;
+    background-color: white;
+}
+.nav-tabs > a
+{
+    padding-top: 4px; 
+    padding-bottom: 4px;
+}
+
+.navbar {
+    position: fixed; /* Set the navbar to fixed position */
+    top: 32px; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+
+.plot {
+    position: fixed;
+    top: 80px;
+}
