@@ -10,7 +10,7 @@ function main(){
                 'dblp_ac': "data/dblp.json",
 
             }
-            console.log($('#untangleDataSelect').val());
+            //console.log($('#untangleDataSelect').val());
             controller.loadStaticData(dataPath[$('#untangleDataSelect').val()]);
         });
         $('#untangleCorrSelect').change(function() {

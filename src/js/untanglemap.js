@@ -116,7 +116,6 @@ UnTangleMap.prototype = {
         var self = this;
         let hints = self.svg.select('.utgmap').select('.hint');
         let vertex = self.svg.select('.utgmap').select('.label').attr('cursor', 'grab');
-        console.log(labelData);
         let g = vertex.selectAll('g').data(labelData);
         g.exit().remove();
         g.enter().append('g').merge(g)
@@ -141,17 +140,6 @@ UnTangleMap.prototype = {
             .on("drag", dragged)
             .on("end", dragended));
         });
-
-        //hints
-        let hintData = Layout.getCandidateLayout();
-        hints.selectAll('circle')
-            .data(hintData)
-            .enter()
-            .append('circle')
-            .attr('r', self.opt.gridRaid)
-            .attr('cx', function (d) { return Hex.hexToX(d.cord); })
-            .attr('cy', function (d) { return Hex.hexToY(d.cord); })
-            .attr('opacity', d=>d.cnt/6.0);
         // drag
         function dragstarted() {
             let x = d3.select(this).attr('cx');
@@ -291,8 +279,10 @@ UnTangleMap.prototype = {
         Layout.initLabelLayout(data, center);
         let labelLayout = Layout.getLabelLayout();
         let faceLayout = Layout.getFaceLayout();
+        let candLayout = Layout.getCandidateLayout();
         self.initLabelPos(labelLayout);
         self.initLabels(labelLayout)
+            .updateHints(candLayout)
             .updateFaces(faceLayout)
             .updateScatterPlot(faceLayout);
     },
