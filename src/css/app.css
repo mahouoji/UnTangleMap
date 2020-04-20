@@ -18,3 +18,14 @@
     position: fixed;
     top: 80px;
 }
+
+#untangle-control-panel {
+    position: fixed;
+    top: 80px;
+    width: 200px;
+    height: 500px;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1;
+    padding: 10px;
+    color: #999;
+}

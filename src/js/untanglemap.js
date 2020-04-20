@@ -16,10 +16,10 @@ UnTangleMap.prototype = {
         var self = this;
         // grid
         let grid = self.svg.append('g').attr('class', 'grid');
-        grid.append('g').attr('class', 'grid-axes-q');
-        grid.append('g').attr('class', 'grid-axes-s');
-        grid.append('g').attr('class', 'grid-axes-r');
-        grid.append('g').attr('class', 'grid-vertex');
+        grid.append('g').attr('class', 'grid-axes-q grid-zoom-1');
+        grid.append('g').attr('class', 'grid-axes-s grid-zoom-2');
+        grid.append('g').attr('class', 'grid-axes-r grid-zoom-2');
+        grid.append('g').attr('class', 'grid-vertex grid-zoom-2');
         // map
         let utgmap = self.svg.append('g').attr('class', 'utgmap');
         utgmap.append('g').attr('class', 'face');
@@ -40,12 +40,9 @@ UnTangleMap.prototype = {
         var height = self.opt.height;
 
         //axis
-        let axes_q = self.svg.select('.grid-axes-q');
-        let axes_s = self.svg.select('.grid-axes-s');
-        let axes_r = self.svg.select('.grid-axes-r');
-        let vertex = self.svg.select('.grid-vertex');
+        let grid = self.svg.select('.grid');
         // horizontal
-        axes_q.selectAll('line')
+        grid.select('.grid-axes-q').selectAll('line')
             .data(d3.range(0, height / h + 1))
             .enter()
             .append('line')
@@ -53,9 +50,10 @@ UnTangleMap.prototype = {
             .attr('x1', 0)
             .attr('y1', function (d) { return d * h; })
             .attr('x2', width)
-            .attr('y2', function (d) { return d * h; });
+            .attr('y2', function (d) { return d * h; })
+            .attr('stroke', '');
         // left
-        axes_s.selectAll('line')
+        grid.select('.grid-axes-s').selectAll('line')
             .data(d3.range(-1, width * 2 / w))
             .enter()
             .append('line')
@@ -65,7 +63,7 @@ UnTangleMap.prototype = {
             .attr('x2', function (d) { return d * w - (height + 2 * h) / Math.sqrt(3); })
             .attr('y2', height + 2 * h);
         // right
-        axes_r.selectAll('line')
+        grid.select('.grid-axes-r').selectAll('line')
             .data(d3.range(Math.floor(-width * 2 / w), width * 2 / w))
             .enter()
             .append('line')
@@ -75,41 +73,55 @@ UnTangleMap.prototype = {
             .attr('x2', function (d) { return d * w + (height + 2 * h) / Math.sqrt(3); })
             .attr('y2', height + 2 * h);
         // vertex
-        vertex.selectAll('circle')
+        grid.select('.grid-vertex').selectAll('circle')
             .data(d3.cross(d3.range(-1, width / w + 1), d3.range(-1, height / h + 1)))
             .enter()
             .append('circle')
             .attr('r', this.opt.gridRaid)
             .attr('cx', function (d) { return d[0] * w - (d[1] % 2 ? w / 2 : 0); })
             .attr('cy', function (d) { return d[1] * h; });
+        // style
+        grid.selectAll('line')
+            .attr('stroke', self.opt.gridStroke)
+            .attr('vector-effect', 'non-scaling-stroke');
+        grid.selectAll('circle')
+            .attr('stroke', self.opt.gridStroke)
+            .attr('vector-effect', 'non-scaling-stroke');
+    },
+    initZoom: function () {
+        var self = this;
+        var w = self.opt.side;
+        var h = self.opt.side * Math.sqrt(3) / 2.0;
         // zoom
         var zoom = d3.zoom().scaleExtent([1, 10])
             .on("zoom", zoomed);
         function zoomed() {
             // grid
-            axes_q.attr("transform",
+            self.svg.selectAll('.grid-zoom-1').attr("transform",
                 "translate(0,"
                 + d3.event.transform.y % (h * d3.event.transform.k)
                 + ")scale(" + d3.event.transform.k + ")");
-            axes_s.attr("transform",
-                "translate(" + d3.event.transform.x % (w * d3.event.transform.k) + ","
-                + d3.event.transform.y % (2 * h * d3.event.transform.k)
-                + ")scale(" + d3.event.transform.k + ")");
-            axes_r.attr("transform",
-                "translate(" + d3.event.transform.x % (w * d3.event.transform.k) + ","
-                + d3.event.transform.y % (2 * h * d3.event.transform.k)
-                + ")scale(" + d3.event.transform.k + ")");
-            vertex.attr("transform",
+            self.svg.selectAll('.grid-zoom-2').attr("transform",
                 "translate(" + d3.event.transform.x % (w * d3.event.transform.k) + ","
                 + d3.event.transform.y % (2 * h * d3.event.transform.k)
                 + ")scale(" + d3.event.transform.k + ")");
             // labels and data items
-            self.svg.select('.utgmap').attr("transform", d3.event.transform);
+            let utgmap = self.svg.select('.utgmap').attr("transform", d3.event.transform);
+            // label font-size
+            let labelFontSize = Math.min(self.opt.labelFontSize, 32 / d3.event.transform.k);
+            let gridRaid = Math.min(self.opt.gridRaid, 8 / d3.event.transform.k);
+            utgmap.selectAll('text').attr('font-size', labelFontSize);
+            utgmap.selectAll('text').attr("transform","translate(0,"+(labelFontSize+gridRaid)+")")
+            // circles
+            self.svg.select(".grid-vertex").selectAll("circle").attr('r', gridRaid);
+            //console.log(Math.min(self.opt.gridRaid, 12 / d3.event.transform.k));
+
             // offset
             self.originOffset[0] = d3.event.transform.x;
             self.originOffset[1] = d3.event.transform.y;
         }
         self.svg.call(zoom);
+        return self;
     },
     // set up labels and label dragging
     initLabels: function (labelData) {
@@ -123,8 +135,10 @@ UnTangleMap.prototype = {
             d3.select(this).selectAll("*").remove();
             d3.select(this).append('text')
             .text(d => d.name)
+            .attr('font-size', self.opt.labelFontSize)
             .attr('dx', function (d) { return Hex.hexToX(d.cord); })
-            .attr('dy', function (d) { return Hex.hexToY(d.cord) +  self.opt.labelTextOffset; })
+            .attr('dy', function (d) { return Hex.hexToY(d.cord); })
+            .attr("transform","translate(0,"+(self.opt.labelFontSize+self.opt.gridRaid)+")")
             .attr('text-anchor','middle')
             .on("mouseover", d=>{
                 console.log(self.data.labels[self.data.labelIndex[d.name]]);
@@ -164,7 +178,7 @@ UnTangleMap.prototype = {
                 .attr("cy", d3.event.y);
             d3.select(this.parentNode).select('text')
                 .attr("dx", d3.event.x)
-                .attr("dy", d3.event.y + self.opt.labelTextOffset);
+                .attr("dy", d3.event.y);
         }
 
         function dragended() {
@@ -182,7 +196,7 @@ UnTangleMap.prototype = {
                 .attr("cy", y);
             d3.select(this.parentNode).select('text')
                 .attr("dx", x)
-                .attr("dy", y + self.opt.labelTextOffset);
+                .attr("dy", y);
             // update position record
             self.labelPos[self.data.labelIndex[name]] = [x, y];
             //console.log(self.labelPos);
@@ -281,7 +295,7 @@ UnTangleMap.prototype = {
         let faceLayout = Layout.getFaceLayout();
         let candLayout = Layout.getCandidateLayout();
         self.initLabelPos(labelLayout);
-        self.initLabels(labelLayout)
+        self.initLabels(labelLayout).initZoom()
             .updateHints(candLayout)
             .updateFaces(faceLayout)
             .updateScatterPlot(faceLayout);
@@ -300,10 +314,11 @@ UnTangleMap.init = function (selector, userOpt) {
         width: 1000,
         height: 550,
         side: 30.0,
+        gridStroke: 0.5,
         gridRaid: 4,
         labelRaid: 3,
+        labelFontSize: 5,
         itemRaid: 2,
-        labelTextOffset: 15,
     };
     for (var o in userOpt) {
         self.opt[o] = userOpt[o];
