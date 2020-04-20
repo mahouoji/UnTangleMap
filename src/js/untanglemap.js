@@ -66,7 +66,7 @@ UnTangleMap.prototype = {
             .attr('y2', height + 2 * h);
         // right
         axes_r.selectAll('line')
-            .data(d3.range(-width * 2 / w, width * 2 / w))
+            .data(d3.range(Math.floor(-width * 2 / w), width * 2 / w))
             .enter()
             .append('line')
             .attr('class', 'grid-axes-r')
@@ -116,11 +116,13 @@ UnTangleMap.prototype = {
         var self = this;
         let hints = self.svg.select('.utgmap').select('.hint');
         let vertex = self.svg.select('.utgmap').select('.label').attr('cursor', 'grab');
-        let g = vertex.selectAll('g')
-            .data(labelData)
-            .enter()
-            .append('g');
-        g.append('text')
+        console.log(labelData);
+        let g = vertex.selectAll('g').data(labelData);
+        g.exit().remove();
+        g.enter().append('g').merge(g)
+        .each(function(d) {
+            d3.select(this).selectAll("*").remove();
+            d3.select(this).append('text')
             .text(d => d.name)
             .attr('dx', function (d) { return Hex.hexToX(d.cord); })
             .attr('dy', function (d) { return Hex.hexToY(d.cord) +  self.opt.labelTextOffset; })
@@ -128,8 +130,7 @@ UnTangleMap.prototype = {
             .on("mouseover", d=>{
                 console.log(self.data.labels[self.data.labelIndex[d.name]]);
             });
-        let ttp = self.selector.select('.tooltip');
-        g.append('circle')
+            d3.select(this).append('circle')
             .attr('r', self.opt.labelRaid)
             .attr('cx', function (d) { return Hex.hexToX(d.cord); })
             .attr('cy', function (d) { return Hex.hexToY(d.cord); })
@@ -139,6 +140,7 @@ UnTangleMap.prototype = {
             .on("start", dragstarted)
             .on("drag", dragged)
             .on("end", dragended));
+        });
 
         //hints
         let hintData = Layout.getCandidateLayout();
@@ -307,9 +309,9 @@ UnTangleMap.init = function (selector, userOpt) {
         margin: { top: 50, left: 50, bottom: 50, right: 50 },
         width: 1000,
         height: 550,
-        side: 40,
-        gridRaid: 5,
-        labelRaid: 4,
+        side: 30.0,
+        gridRaid: 4,
+        labelRaid: 3,
         itemRaid: 2,
         labelTextOffset: 15,
     };

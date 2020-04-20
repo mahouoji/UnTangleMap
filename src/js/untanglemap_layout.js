@@ -7,9 +7,24 @@
 
     UnTangleMap.prototype = {
         // layout
+        initRec: function() {
+            var self = this;
+            self.labelMap = {
+                in: {},
+                cand: {},
+                faces: {}
+            };
+            self.utility.utility = 0.0;
+            self.utility.edgeCorr = 0.0;
+            self.utility.edgeCnt = 0;
+            self.utility.triCorr = 0.0;
+            self.utility.triCnt =  0;
+
+        },
         initLabelLayout: function(data, center) {
             var self = this;
             center = center || HexCord(0, 0);
+            self.initRec();
             self.data = data;
 
             let labelNames = self.data.labels.map(l => l.name);
