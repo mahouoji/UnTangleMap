@@ -16,5 +16,12 @@ function main(){
         $('#untangleCorrSelect').change(function() {
             console.log("hi!");
         });
+        $('#checkboxScatter').change(function(){
+            if(this.checked) {
+                $('.scatter-plot').show();
+            } else {
+                $('.scatter-plot').hide();
+            }
+        })
     })
 }
