@@ -12,7 +12,8 @@
             self.labelMap = {
                 in: {},
                 cand: {},
-                faces: {}
+                faces: {},
+                edges: {}
             };
             self.utility.utility = 0.0;
             self.utility.edgeCorr = 0.0;
@@ -31,11 +32,11 @@
             // TODO: sort labels
             //let label = self.getFirstLabel(data.labels);
             let firstLabel = labelNames[0];
-            let secondLabel = labelNames[1];
+            //let secondLabel = labelNames[1];
             self.addLabel(firstLabel, center);
-            self.addLabel(secondLabel, center.getNeighbors()[0]);
+            //self.addLabel(secondLabel, center.getNeighbors()[0]);
             labelNames = labelNames.filter(name=>name !== firstLabel);
-            labelNames = labelNames.filter(name=>name !== secondLabel);
+            //labelNames = labelNames.filter(name=>name !== secondLabel);
             while (labelNames.length > 0) {
                 let res = self.maximizeUtility(labelNames);
                 self.addLabel(res[0], res[1], res[2]);
@@ -69,6 +70,15 @@
             return $.map(this.labelMap.faces, function(value, key) { return value });
         },
 
+        makeUtility: function(util, ecrr, ecnt, tcrr, tcnt) {
+            return {
+                utility: util,
+                edgeCorr: ecrr,
+                edgeCnt: ecnt,
+                triCorr: tcrr,
+                triCnt: tcnt
+            };
+        },
         maximizeUtility: function(labels) {
             var self = this;
             let maxLabel = null,
@@ -112,6 +122,21 @@
             let triCorr = 0.0;
             let triCnt = 0;
             let neighbors = cord.getNeighbors();
+
+            let numLabels = Object.keys(self.labelMap.in).length;
+            if (numLabels === 0) { return self.makeUtility(0.0,0.0,0,0.0,0); }
+            if (numLabels === 1) {
+                neighbors.forEach((ncord, i) => {
+                    let nkey = ncord.toString();
+                    if (nkey in self.labelMap.in) {
+                        let nid = self.labelMap.in[nkey].index;
+                        let corr = self.data.corr[self.utility.method][nid][id];
+                        return self.makeUtility(corr, corr, 1, 0.0, 0);
+                    }
+                });
+                return self.makeUtility(0.0,0.0,0,0.0,0);
+            }
+
             neighbors.forEach((ncord, i) => {
                 let nkey = ncord.toString();
                 if (nkey in self.labelMap.in) {
@@ -271,7 +296,8 @@
         self.labelMap = {
             in: {},
             cand: {},
-            faces: {}
+            faces: {},
+            edges: {}
         };
         self.utility = {
             // records
