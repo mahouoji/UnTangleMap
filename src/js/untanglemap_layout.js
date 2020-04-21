@@ -110,6 +110,7 @@
             //console.log(maxLabel);
             //console.log(maxCord.toString());
             //console.log(maxRec.utility);
+            //console.log("maxLable: " + maxLabel + ' ' + maxRec.utility);
             return [maxLabel, maxCord, maxRec];
         },
 
@@ -126,15 +127,16 @@
             let numLabels = Object.keys(self.labelMap.in).length;
             if (numLabels === 0) { return self.makeUtility(0.0,0.0,0,0.0,0); }
             if (numLabels === 1) {
-                neighbors.forEach((ncord, i) => {
+                for(var i = 0; i < neighbors.length; i++) {
+                    let ncord = neighbors[i];
                     let nkey = ncord.toString();
                     if (nkey in self.labelMap.in) {
                         let nid = self.labelMap.in[nkey].index;
                         let corr = self.data.corr[self.utility.method][nid][id];
                         return self.makeUtility(corr, corr, 1, 0.0, 0);
                     }
-                });
-                return self.makeUtility(0.0,0.0,0,0.0,0);
+                }
+                return self.makeUtility(-1.0,0.0,0,0.0,0);
             }
 
             neighbors.forEach((ncord, i) => {
@@ -307,7 +309,7 @@
             triCorr: 0.0,
             triCnt: 0,
             // settings
-            alpha: 0.5,
+            alpha: 0.0,
             method: 'spearman'
         }
     }
