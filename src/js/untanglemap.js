@@ -250,6 +250,42 @@ UnTangleMap.prototype = {
             .attr('r', self.opt.itemRaid);
         return self;
     },
+    doUpdateHeatmap: function (vertices, tcord, depth) {
+
+    },
+    updateHeatmap: function (faceData) {
+        var self = this;
+        let scatter = self.svg.select('.utgmap').select('.scatter-plot');
+        let data = []
+        faceData.forEach(face=>{
+            let ids = face.vertIndex;
+            let pa = self.labelPos[ids[0]];
+            let pb = self.labelPos[ids[1]];
+            let pc = self.labelPos[ids[2]];
+            self.data.items.forEach(item=>{
+                let a = item.vec[ids[0]];
+                let b = item.vec[ids[1]];
+                let c = item.vec[ids[2]];
+                if (a > 0 || b > 0 || c > 0) {
+                    let sum = a + b + c;
+                    a = a/sum;
+                    b = b/sum;
+                    c = c/sum;
+                    data.push([a * pa[0] + b * pb[0] + c * pc[0],
+                               a * pa[1] + b * pb[1] + c * pc[1]]);
+                }
+            });
+        });
+        //console.log(self.labelPos);
+        let circle = scatter.selectAll('circle')
+            .data(data);
+        circle.exit().remove();
+        circle.enter().append('circle').merge(circle)
+            .attr('cx', d=>d[0])
+            .attr('cy', d=>d[1])
+            .attr('r', self.opt.itemRaid);
+        return self;
+    },
     updateEdges: function (faceData) {
         var self = this;
         let selection = self.svg.select('.utgmap').select('.edge');
@@ -273,7 +309,7 @@ UnTangleMap.prototype = {
         });
         let colorScale = d3.scaleDiverging(t=>d3.interpolateRdYlBu(1-t)).domain([-1, 0, 1])
         let line = selection.selectAll('line')
-            .data($.map(edgeSet, function(value, key) { return value }))
+            .data(Object.values(edgeSet))
         line.exit().remove();
         line.enter().append('line').merge(line)
             .attr('x1', d=>d.pos1[0])

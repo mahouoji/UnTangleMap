@@ -12,8 +12,7 @@
             self.labelMap = {
                 in: {},
                 cand: {},
-                faces: {},
-                edges: {}
+                faces: {}
             };
             self.utility.utility = 0.0;
             self.utility.edgeCorr = 0.0;
@@ -59,15 +58,15 @@
         },
 
         getLabelLayout: function() {
-            return $.map(this.labelMap.in, function(value, key) { return value });
+            return Object.values(this.labelMap.in);
         },
 
         getCandidateLayout: function() {
-            return $.map(this.labelMap.cand, function(value, key) { return value });
+            return Object.values(this.labelMap.cand);
         },
 
         getFaceLayout: function() {
-            return $.map(this.labelMap.faces, function(value, key) { return value });
+            return Object.values(this.labelMap.faces);
         },
 
         makeUtility: function(util, ecrr, ecnt, tcrr, tcnt) {
@@ -298,8 +297,7 @@
         self.labelMap = {
             in: {},
             cand: {},
-            faces: {},
-            edges: {}
+            faces: {}
         };
         self.utility = {
             // records
