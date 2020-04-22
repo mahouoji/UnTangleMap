@@ -109,6 +109,7 @@ UnTangleMap.prototype = {
             // labels and data items
             let utgmap = self.svg.select('.utgmap').attr("transform", d3.event.transform);
             // label font-size
+            /*
             let labelFontSize = Math.min(self.opt.labelFontSize, 32 / d3.event.transform.k);
             let gridRaid = Math.min(self.opt.gridRaid, 8 / d3.event.transform.k);
             utgmap.selectAll('text').attr('font-size', labelFontSize);
@@ -116,7 +117,7 @@ UnTangleMap.prototype = {
             // circles
             //self.svg.select(".grid-vertex").selectAll("circle").attr('r', Math.min(self.opt.gridRaid, 8 / d3.event.transform.k));
             //console.log(Math.min(self.opt.gridRaid, 12 / d3.event.transform.k));
-
+            */
             // offset
             self.originOffset[0] = d3.event.transform.x;
             self.originOffset[1] = d3.event.transform.y;
@@ -247,15 +248,6 @@ UnTangleMap.prototype = {
             .attr('cx', d=>d[0])
             .attr('cy', d=>d[1])
             .attr('r', self.opt.itemRaid);
-        /*
-        let g = scatter.selectAll('g')
-            .data(faceData);
-        g.exit().remove();
-        g.enter().append('g').merge(g);
-        g.selectAll('circle')
-            .data(self.data.items)
-            .enter()
-            .append('circle');*/
         return self;
     },
     updateEdges: function (faceData) {
@@ -279,7 +271,7 @@ UnTangleMap.prototype = {
                 }
             });
         });
-        let colorScale = d3.scaleDiverging(t=>d3.interpolateRdBu(1-t)).domain([-1, 0, 1])
+        let colorScale = d3.scaleDiverging(t=>d3.interpolateRdYlBu(1-t)).domain([-1, 0, 1])
         let line = selection.selectAll('line')
             .data($.map(edgeSet, function(value, key) { return value }))
         line.exit().remove();
