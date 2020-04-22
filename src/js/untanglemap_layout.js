@@ -126,7 +126,7 @@
             let numLabels = Object.keys(self.labelMap.in).length;
             if (numLabels === 0) { return self.makeUtility(0.0,0.0,0,0.0,0); }
             if (numLabels === 1) {
-                for(var i = 0; i < neighbors.length; i++) {
+                for(let i = 0; i < neighbors.length; i++) {
                     let ncord = neighbors[i];
                     let nkey = ncord.toString();
                     if (nkey in self.labelMap.in) {
@@ -317,4 +317,4 @@
     // attach to global
     global.UnTangleMapLayout = UnTangleMap;
     
-    }(window));
+}(window));

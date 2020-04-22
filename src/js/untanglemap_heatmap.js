@@ -4,6 +4,12 @@
         return new UTHeatmap.init();
     }
 
+    UTHeatmap.prototype = {
+        initHeatmap: function(data) {
+            this.data = data;
+        }
+    };
+
     UTHeatmap.init = function () {
         var self = this;
         // data
