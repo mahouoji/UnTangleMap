@@ -279,6 +279,7 @@ UnTangleMap.prototype = {
                 }
             });
         });
+        let colorScale = d3.scaleDiverging(t=>d3.interpolateRdBu(1-t)).domain([-1, 0, 1])
         let line = selection.selectAll('line')
             .data($.map(edgeSet, function(value, key) { return value }))
         line.exit().remove();
@@ -287,8 +288,9 @@ UnTangleMap.prototype = {
             .attr('y1', d=>d.pos1[1])
             .attr('x2', d=>d.pos2[0])
             .attr('y2', d=>d.pos2[1])
-            .attr('stroke', '#999')
-            .attr('stroke-width', 1);
+            .attr('stroke', d=>colorScale(d.corr))
+            .attr('stroke-width', 2)
+            .attr('stroke-linecap', 'round');
         return self;
     },
     updateHints: function(hintData) {
@@ -305,9 +307,12 @@ UnTangleMap.prototype = {
     },
 
     updateLayout: function() {
-        this.updateFaces(Layout.getFaceLayout())
-            .updateHints(Layout.getCandidateLayout())
-            .updateScatterPlot(Layout.getFaceLayout());
+        let faceLayout = Layout.getFaceLayout();
+        let candLayout = Layout.getCandidateLayout();
+        this.updateHints(candLayout)
+            .updateFaces(faceLayout)
+            .updateScatterPlot(faceLayout)
+            .updateEdges(faceLayout);
     },
 
     // manage data

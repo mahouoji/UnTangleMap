@@ -9,7 +9,7 @@ Controller.prototype = {
     loadStaticData: function (path) {
         var self = this;
         path = path || "data/imdb_mg.json";
-        d3.json(path, function(data) {
+        d3.json(path).then(function(data) {
             self.updateData(data);
             //console.log(self.data);
         });
