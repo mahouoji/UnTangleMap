@@ -30,5 +30,12 @@ function main(){
                 $('.edge').hide();
             }
         })
+        $('#checkboxHeatmap').change(function(){
+            if(this.checked) {
+                $('.heatmap').show();
+            } else {
+                $('.heatmap').hide();
+            }
+        })
     })
 }

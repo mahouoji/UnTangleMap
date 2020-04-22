@@ -297,6 +297,7 @@ UnTangleMap.prototype = {
                 let a = item.vec[ids[0]];
                 let b = item.vec[ids[1]];
                 let c = item.vec[ids[2]];
+
                 if (a === 0 && b === 0 && c === 0) { continue; }
                 let sum = a + b + c;
                 a = a/sum;
@@ -317,13 +318,14 @@ UnTangleMap.prototype = {
         }
         //console.log(self.labelPos);
         console.log(data[1]);
+        let maxCnt = d3.max(data[1].map(d=>d.cnt));
+        let colorScale = d3.scaleSequential(d3.interpolateGreens).domain([0, maxCnt * 0.8])
         let poly = self.svg.select('.utgmap').select('.heatmap')
             .selectAll('polyline').data(data[1])
         poly.exit().remove();
         poly.enter().append('polyline').merge(poly)
             .attr('points', d=>self.getSVGPoints(d.vecpos))
-            .attr('fill', '#888')
-            .attr('opacity', d=>d.cnt / 50.0)
+            .attr('fill', d=>colorScale(d.cnt));
         return self;
     },
     updateEdges: function (faceData) {
