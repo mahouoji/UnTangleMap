@@ -3,13 +3,13 @@ svg {
 }
 
 .grid-axes-q,.grid-axes-r,.grid-axes-s {
-    stroke: #888;
+    stroke: #ccc;
     stroke-width: 0.5px;
     shape-rendering: crispEdges;
 }
 .grid-vertex {
     fill: white;
-    stroke:#888;
+    stroke:#ccc;
     stroke-width: 1px;
 }
 .label circle {

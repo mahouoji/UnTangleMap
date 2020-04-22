@@ -23,5 +23,12 @@ function main(){
                 $('.scatter-plot').hide();
             }
         })
+        $('#checkboxCorr').change(function(){
+            if(this.checked) {
+                $('.edge').show();
+            } else {
+                $('.edge').hide();
+            }
+        })
     })
 }
