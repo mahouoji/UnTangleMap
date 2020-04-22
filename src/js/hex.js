@@ -34,7 +34,7 @@
     ];
 
     HexCord.prototype = {
-        toString: function(hexcord) {
+        toString: function() {
             return `${this.q},${this.r},${this.s}`;
         },
         // round to nearest hexagon
@@ -56,6 +56,9 @@
         },
         add: function(other) {
             return HexCord(this.q + other.q, this.r + other.r, this.s + other.s);
+        },
+        getSum: function() {
+            return this.q + this.r + this.s;
         },
         getNeighbors: function() {
             return neighborOffsets.map(o => this.add(o));

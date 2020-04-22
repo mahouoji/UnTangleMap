@@ -23,6 +23,7 @@ UnTangleMap.prototype = {
         // map
         let utgmap = self.svg.append('g').attr('class', 'utgmap');
         utgmap.append('g').attr('class', 'face');
+        utgmap.append('g').attr('class', 'edge');
         utgmap.append('g').attr('class', 'scatter-plot');
         utgmap.append('g').attr('class', 'hint');
         utgmap.append('g').attr('class', 'label');
@@ -108,15 +109,14 @@ UnTangleMap.prototype = {
             // labels and data items
             let utgmap = self.svg.select('.utgmap').attr("transform", d3.event.transform);
             // label font-size
-            /*
             let labelFontSize = Math.min(self.opt.labelFontSize, 32 / d3.event.transform.k);
-            let gridRaid = Math.min(self.opt.gridRaid, 16 / d3.event.transform.k);
+            let gridRaid = Math.min(self.opt.gridRaid, 8 / d3.event.transform.k);
             utgmap.selectAll('text').attr('font-size', labelFontSize);
             utgmap.selectAll('text').attr("transform","translate(0,"+(labelFontSize+gridRaid)+")")
             // circles
-            self.svg.select(".grid-vertex").selectAll("circle").attr('r', gridRaid);
+            //self.svg.select(".grid-vertex").selectAll("circle").attr('r', Math.min(self.opt.gridRaid, 8 / d3.event.transform.k));
             //console.log(Math.min(self.opt.gridRaid, 12 / d3.event.transform.k));
-            */
+
             // offset
             self.originOffset[0] = d3.event.transform.x;
             self.originOffset[1] = d3.event.transform.y;
@@ -258,6 +258,39 @@ UnTangleMap.prototype = {
             .append('circle');*/
         return self;
     },
+    updateEdges: function (faceData) {
+        var self = this;
+        let selection = self.svg.select('.utgmap').select('.edge');
+        let edgeSet = {};
+        faceData.forEach(face=>{
+            let vindex = face.vertIndex; //[lid0, lid1, lid2]
+            let vpos = vindex.map(id=>self.labelPos[id]); //[[x, y], [x, y], [x, y]]
+            let vcord = face.cord.getVertices(); // [hcord0, hcord1, hcord2]
+            let eids = face.cord.getSum() === 1 ? [[0, 1], [1, 2], [0, 2]] : [[1, 0], [2, 1], [2, 0]];
+            eids.forEach(pair=>{
+                let ecord = [vcord[pair[0]], vcord[pair[1]]] // [hcord, hcord]
+                let key = `${ecord[0].toString()}-${ecord[1].toString()}`;
+                if (!(key in edgeSet)) {
+                    edgeSet[key] = {
+                        pos1: vpos[pair[0]],
+                        pos2: vpos[pair[1]],
+                        corr: self.data.corr[self.corrMethod][vindex[pair[0]]][vindex[pair[1]]]
+                    }
+                }
+            });
+        });
+        let line = selection.selectAll('line')
+            .data($.map(edgeSet, function(value, key) { return value }))
+        line.exit().remove();
+        line.enter().append('line').merge(line)
+            .attr('x1', d=>d.pos1[0])
+            .attr('y1', d=>d.pos1[1])
+            .attr('x2', d=>d.pos2[0])
+            .attr('y2', d=>d.pos2[1])
+            .attr('stroke', '#999')
+            .attr('stroke-width', 1);
+        return self;
+    },
     updateHints: function(hintData) {
         var self = this;
         var hints = self.svg.select('.utgmap').select('.hint')
@@ -270,6 +303,7 @@ UnTangleMap.prototype = {
             .attr('opacity', d => d.cnt / 6.0);
         return self;
     },
+
     updateLayout: function() {
         this.updateFaces(Layout.getFaceLayout())
             .updateHints(Layout.getCandidateLayout())
@@ -299,7 +333,8 @@ UnTangleMap.prototype = {
         self.initLabels(labelLayout).initZoom()
             .updateHints(candLayout)
             .updateFaces(faceLayout)
-            .updateScatterPlot(faceLayout);
+            .updateScatterPlot(faceLayout)
+            .updateEdges(faceLayout);
     },
 };
 
@@ -309,6 +344,7 @@ UnTangleMap.init = function (selector, userOpt) {
     self.data = {labels: [], items: []};
 
     self.originOffset = [0, 0];
+    self.corrMethod = 'spearman';
     //config
     self.opt = {
         margin: { top: 50, left: 50, bottom: 50, right: 50 },
@@ -318,7 +354,7 @@ UnTangleMap.init = function (selector, userOpt) {
         gridStroke: 0.5,
         gridRaid: 4,
         labelRaid: 3,
-        labelFontSize: 5,
+        labelFontSize: 8,
         itemRaid: 2,
     };
     for (var o in userOpt) {
