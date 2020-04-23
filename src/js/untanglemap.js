@@ -8,6 +8,7 @@ var UnTangleMap = function (selector, userOpt) {
 
 var Hex = global.Hex(1.0);
 var Layout = global.UnTangleMapLayout();
+var Heatmap = global.UnTangleMapHeatmap();
 
 UnTangleMap.prototype = {
     // init plots and interactions
@@ -251,9 +252,6 @@ UnTangleMap.prototype = {
             .attr('r', self.opt.itemRaid);
         return self;
     },
-    doUpdateHeatmap: function (vertices, tcord, depth) {
-
-    },
     getMidPoint: function (pa, pb) {
         return [0.5 * (pa[0] + pb[0]), 0.5 * (pa[1] + pb[1])];
     },
@@ -404,8 +402,8 @@ UnTangleMap.prototype = {
         Layout.initLabelLayout(data, center);
         let labelLayout = Layout.getLabelLayout();
         let faceLayout = Layout.getFaceLayout();
-        let candLayout = Layout.getCandidateLayout();
         self.initLabelPos(labelLayout);
+        Heatmap.initData(data, self.labelPos, faceLayout);
         self.initLabels(labelLayout).initZoom()
             .updateLayout();
     },
@@ -415,10 +413,11 @@ UnTangleMap.init = function (selector, userOpt) {
     var self = this;
     //data
     self.data = {labels: [], items: []};
-
+    self.labelPos = [];//svg coordinates for labels by lableIndex
     self.originOffset = [0, 0];
-    self.corrMethod = 'spearman';
+
     //config
+    self.corrMethod = 'spearman';
     self.opt = {
         margin: { top: 50, left: 50, bottom: 50, right: 50 },
         width: 1000,
@@ -435,14 +434,7 @@ UnTangleMap.init = function (selector, userOpt) {
     }
     //hexagon algorithms
     Hex.side = self.opt.side;
-    // label map
-    self.labelMap = {
-        in: {},
-        cand: {},
-        out: {}
-    };
     self.activeCord = HexCord(0, 0);
-    self.labelPos = [];//svg coordinates for labels by lableIndex
     //canvas
     self.selector = d3.select(selector);
     self.svg = self.selector.append('svg')
