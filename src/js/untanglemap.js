@@ -28,6 +28,7 @@ UnTangleMap.prototype = {
         heatmap.append('g').attr('class', 'heatmap-d0');
         heatmap.append('g').attr('class', 'heatmap-d1');
         heatmap.append('g').attr('class', 'heatmap-d2');
+        heatmap.append('g').attr('class', 'heatmap-d3');
         utgmap.append('g').attr('class', 'edge');
         utgmap.append('g').attr('class', 'scatter-plot');
         utgmap.append('g').attr('class', 'hint');
@@ -260,7 +261,7 @@ UnTangleMap.prototype = {
     },
     updateHeatmap: function (faceData) {
         var self = this;
-        for (let d = 0; d < 3; d++) {
+        for (let d = 0; d < 4; d++) {
             let maxCnt = d3.max(Heatmap.heatmap[d].map(d=>d.cnt));
             let logScale = d3.scaleLog().domain([1, maxCnt+1]);
             let colorScale = d3.scaleSequential(t=>d3.interpolateGreens(logScale(t)));

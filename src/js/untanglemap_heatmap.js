@@ -101,7 +101,7 @@ UTHeatmap.prototype = {
 
 UTHeatmap.init = function () {
     // config
-    this.maxDepth = 3;
+    this.maxDepth = 4;
     // data
     this.data = null;
     this.labelPos = null;
