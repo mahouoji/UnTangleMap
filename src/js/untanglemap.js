@@ -24,7 +24,10 @@ UnTangleMap.prototype = {
         // map
         let utgmap = self.svg.append('g').attr('class', 'utgmap');
         utgmap.append('g').attr('class', 'face');
-        utgmap.append('g').attr('class', 'heatmap');
+        let heatmap = utgmap.append('g').attr('class', 'heatmap');
+        heatmap.append('g').attr('class', 'heatmap-d0');
+        heatmap.append('g').attr('class', 'heatmap-d1');
+        heatmap.append('g').attr('class', 'heatmap-d2');
         utgmap.append('g').attr('class', 'edge');
         utgmap.append('g').attr('class', 'scatter-plot');
         utgmap.append('g').attr('class', 'hint');
@@ -252,78 +255,26 @@ UnTangleMap.prototype = {
             .attr('r', self.opt.itemRaid);
         return self;
     },
-    getMidPoint: function (pa, pb) {
-        return [0.5 * (pa[0] + pb[0]), 0.5 * (pa[1] + pb[1])];
-    },
     getSVGPoints: function (v) {
         return `${v[0][0]} ${v[0][1]},${v[1][0]} ${v[1][1]},${v[2][0]} ${v[2][1]}`
     },
     updateHeatmap: function (faceData) {
         var self = this;
-        let data = [[], []]
-        for (let i = 0; i < faceData.length; i++) {//face loop
-            let face = faceData[i];
-            let ids = face.vertIndex;
-            let pa = self.labelPos[ids[0]];
-            let pb = self.labelPos[ids[1]];
-            let pc = self.labelPos[ids[2]];
-            let pab = self.getMidPoint(pa, pb);
-            let pac = self.getMidPoint(pa, pc);
-            let pbc = self.getMidPoint(pb, pc);
-            data[0].push({
-                cnt: 0,
-                vecpos: [pa, pb, pc]
-            });
-            data[1].push({
-                cnt: 0,
-                vecpos: [pa, pab, pac]
-            });
-            data[1].push({
-                cnt: 0,
-                vecpos: [pab, pb, pbc]
-            });
-            data[1].push({
-                cnt: 0,
-                vecpos: [pac, pbc, pc]
-            });
-            data[1].push({
-                cnt: 0,
-                vecpos: [pab, pbc, pac]
-            });
-            for (let j = 0; j < self.data.items.length; j++) {//data item loop
-                let item = self.data.items[j];
-                let a = item.vec[ids[0]];
-                let b = item.vec[ids[1]];
-                let c = item.vec[ids[2]];
-
-                if (a === 0 && b === 0 && c === 0) { continue; }
-                let sum = a + b + c;
-                a = a/sum;
-                b = b/sum;
-                c = c/sum;
-                data[0][i].cnt += 1;
-                let fid = i * 4;
-                if (a > 0.5) {
-                    data[1][fid].cnt += 1;
-                } else if (b > 0.5) {
-                    data[1][fid + 1].cnt += 1;
-                } else if (c > 0.5) {
-                    data[1][fid + 2].cnt += 1;
-                } else {
-                    data[1][fid + 3].cnt += 1
-                }
+        for (let d = 0; d < 3; d++) {
+            let maxCnt = d3.max(Heatmap.heatmap[d].map(d=>d.cnt));
+            let logScale = d3.scaleLog().domain([1, maxCnt+1]);
+            let colorScale = d3.scaleSequential(t=>d3.interpolateGreens(logScale(t)));
+            if (d === 0) {
+                colorScale = d3.scaleSequential(d3.interpolateGreens).domain([1, maxCnt+1]);
             }
+            let poly = self.svg.select('.utgmap').select(`.heatmap-d${d}`)
+                .selectAll('polyline').data(Heatmap.heatmap[d])
+            poly.exit().remove();
+            poly.enter().append('polyline').merge(poly)
+                .attr('points', d=>self.getSVGPoints(d.vecPos))
+                .attr('fill', d=>colorScale(d.cnt + 1));
         }
-        //console.log(self.labelPos);
-        console.log(data[1]);
-        let maxCnt = d3.max(data[1].map(d=>d.cnt));
-        let colorScale = d3.scaleSequential(d3.interpolateGreens).domain([0, maxCnt * 0.8])
-        let poly = self.svg.select('.utgmap').select('.heatmap')
-            .selectAll('polyline').data(data[1])
-        poly.exit().remove();
-        poly.enter().append('polyline').merge(poly)
-            .attr('points', d=>self.getSVGPoints(d.vecpos))
-            .attr('fill', d=>colorScale(d.cnt));
+
         return self;
     },
     updateEdges: function (faceData) {

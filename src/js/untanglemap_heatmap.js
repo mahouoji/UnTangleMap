@@ -22,7 +22,7 @@ UTHeatmap.prototype = {
         this.labelPos = labelPos;
         this.faceLayout = faceLayout;
         this.initHeatmapSlots();
-        this.initCount(self.faceLayout);
+        this.initCount();
     },
     initHeatmapSlots: function() {
         var self = this;
@@ -49,7 +49,7 @@ UTHeatmap.prototype = {
             [vpos[0], midpos[0], midpos[2]],
             [midpos[0], vpos[1], midpos[1]],
             [midpos[2], midpos[1], vpos[2]],
-            [midpos[0], midpos[0], midpos[2]]
+            [midpos[0], midpos[1], midpos[2]]
         ];
         self.heatmap[depth].push(
             {vecPos: newpos[0], cnt: 0},
@@ -63,10 +63,10 @@ UTHeatmap.prototype = {
             self.getHeatmapSlotsRecursive(newpos[i], depth);
         }
     },
-    initCount: function(faceLayout) {
+    initCount: function() {
         var self = this;
-        for (let i = 0; i < faceLayout.length; i++) {//face loop
-            let face = faceLayout[i];
+        for (let i = 0; i < self.faceLayout.length; i++) {//face loop
+            let face = self.faceLayout[i];
             let ids = face.vertIndex;
             for (let j = 0; j < self.data.items.length; j++) {
                 let item = self.data.items[j];
@@ -88,13 +88,13 @@ UTHeatmap.prototype = {
             self.getCountRecursive([a-b-c, 2*b, 2*c],faceOffset * 4, depth + 1);
         } else if (b > 0.5) {
             self.heatmap[depth][faceOffset + 1].cnt += 1;
-            self.getCountRecursive([2*a, b-a-c, 2*c], faceOffset * 4, depth + 1);
+            self.getCountRecursive([2*a, b-a-c, 2*c], (faceOffset+1) * 4, depth + 1);
         } else if (c > 0.5) {
             self.heatmap[depth][faceOffset + 2].cnt += 1;
-            self.getCountRecursive([2*a, 2*b, c-a-b], faceOffset * 4, depth + 1);
+            self.getCountRecursive([2*a, 2*b, c-a-b], (faceOffset+2) * 4, depth + 1);
         } else {
             self.heatmap[depth][faceOffset + 3].cnt += 1;
-            self.getCountRecursive([a-b+c, a+b-c, -a+b-c],faceOffset * 4, depth + 1);
+            self.getCountRecursive([a-b+c, a+b-c, -a+b-c],(faceOffset+3) * 4, depth + 1);
         }
     }
 };
