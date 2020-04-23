@@ -13,9 +13,9 @@ var getSVGPoints = function(v) {
 };
 
 UTHeatmap.prototype = {
-    initData: function(data, labelPos, faceLayout) {
+    initData: function(data) {
         this.data = data;
-        this.initHeatmap(labelPos, faceLayout);
+        //this.initHeatmap(labelPos, faceLayout);
     },
     initHeatmap: function(labelPos, faceLayout) {
         var self = this;

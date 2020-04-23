@@ -261,6 +261,7 @@ UnTangleMap.prototype = {
     },
     updateHeatmap: function (faceData) {
         var self = this;
+        Heatmap.initHeatmap(self.labelPos, faceData);
         for (let d = 0; d < 4; d++) {
             let maxCnt = d3.max(Heatmap.heatmap[d].map(d=>d.cnt));
             let logScale = d3.scaleLog().domain([1, maxCnt+1]);
@@ -352,10 +353,9 @@ UnTangleMap.prototype = {
 
         let center = Hex.svgToRoundHex([self.opt.width / 2.0, self.opt.height / 2.0]);
         Layout.initLabelLayout(data, center);
+        Heatmap.initData(data);
         let labelLayout = Layout.getLabelLayout();
-        let faceLayout = Layout.getFaceLayout();
         self.initLabelPos(labelLayout);
-        Heatmap.initData(data, self.labelPos, faceLayout);
         self.initLabels(labelLayout).initZoom()
             .updateLayout();
     },
