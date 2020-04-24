@@ -295,7 +295,7 @@ UnTangleMap.prototype = {
                     edgeSet[key] = {
                         pos1: vpos[pair[0]],
                         pos2: vpos[pair[1]],
-                        corr: self.data.corr[self.corrMethod][vindex[pair[0]]][vindex[pair[1]]]
+                        corr: self.data.corr[self.opt.corrMethod][vindex[pair[0]]][vindex[pair[1]]]
                     }
                 }
             });
@@ -359,6 +359,10 @@ UnTangleMap.prototype = {
         self.initLabels(labelLayout).initZoom()
             .updateLayout();
     },
+    updateCorrMethod: function(method) {
+        this.opt.corrMethod = method;
+        Layout.corrMethod = method;
+    }
 };
 
 UnTangleMap.init = function (selector, userOpt) {
@@ -369,7 +373,6 @@ UnTangleMap.init = function (selector, userOpt) {
     self.originOffset = [0, 0];
 
     //config
-    self.corrMethod = 'spearman';
     self.opt = {
         margin: { top: 50, left: 50, bottom: 50, right: 50 },
         width: 1000,
@@ -380,6 +383,7 @@ UnTangleMap.init = function (selector, userOpt) {
         labelRaid: 3,
         labelFontSize: 8,
         itemRaid: 2,
+        corrMethod: 'spearman'
     };
     for (var o in userOpt) {
         self.opt[o] = userOpt[o];

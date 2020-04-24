@@ -131,7 +131,7 @@
                     let nkey = ncord.toString();
                     if (nkey in self.labelMap.in) {
                         let nid = self.labelMap.in[nkey].index;
-                        let corr = self.data.corr[self.utility.method][nid][id];
+                        let corr = self.data.corr[self.corrMethod][nid][id];
                         return self.makeUtility(corr, corr, 1, 0.0, 0);
                     }
                 }
@@ -146,15 +146,15 @@
                     let nnkey = neighbors[(i + 1) % 6].toString();
                     if (nnkey in self.labelMap.in || pnkey in self.labelMap.in) {
                         // update edge corr
-                        edgeCorr += self.data.corr[self.utility.method][nid][id];
+                        edgeCorr += self.data.corr[self.corrMethod][nid][id];
                         edgeCnt += 1;
                     }
                     if (nnkey in self.labelMap.in) {
                         // update face corr
                         let nnid = self.labelMap.in[nnkey].index;
-                        triCorr += (self.data.corr[self.utility.method][nid][id]
-                                + self.data.corr[self.utility.method][nid][nnid]
-                                + self.data.corr[self.utility.method][nnid][id]) / 3.0;
+                        triCorr += (self.data.corr[self.corrMethod][nid][id]
+                                + self.data.corr[self.corrMethod][nid][nnid]
+                                + self.data.corr[self.corrMethod][nnid][id]) / 3.0;
                         triCnt += 1;
                     }
                 }
@@ -307,9 +307,9 @@
             triCorr: 0.0,
             triCnt: 0,
             // settings
-            alpha: 0.0,
-            method: 'spearman'
-        }
+            alpha: 0.0
+        };
+        self.corrMethod = 'spearman';
     }
     
     UnTangleMap.init.prototype = UnTangleMap.prototype;

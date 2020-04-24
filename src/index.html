@@ -25,16 +25,16 @@
           <!--select dataset-->
           <label for="untangleDataSelect" class="mr-sm-1">Data</label>
           <select class="form-control mr-sm-4" id="untangleDataSelect">
-            <option value="imdb_mg">IMDB Movie-Genre</option>
             <option value="imdb_yg">IMDB Year-Genre</option>
+            <option value="imdb_mg">IMDB Movie-Genre</option>
             <option value="dblp_ac">DBLP Author-Conf</option>
           </select>
           <!--select correlation-->
           <label for="untangleCorrSelect" class="mr-sm-1">Corr Method</label>
           <select class="form-control mr-sm-4" id="untangleCorrSelect">
-            <option>Spearman</option>
-            <option>Kendall</option>
-            <option>Pearson</option>
+            <option value="spearman">Spearman</option>
+            <option value="kendall">Kendall</option>
+            <option value="pearson">Pearson</option>
           </select>
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

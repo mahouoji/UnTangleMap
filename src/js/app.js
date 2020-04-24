@@ -6,15 +6,15 @@ function main(){
         $('#untangleDataSelect').change(function() {
             let dataPath = {
                 'imdb_mg': "data/imdb_mg.json",
-                'imdb_yg': "data/imdb.json",
-                'dblp_ac': "data/dblp.json",
+                'imdb_yg': "data/imdb_year_genre.json",
+                'dblp_ac': "data/dblp_author_conf.json",
 
             }
             //console.log($('#untangleDataSelect').val());
             controller.loadStaticData(dataPath[$('#untangleDataSelect').val()]);
         });
         $('#untangleCorrSelect').change(function() {
-            console.log("hi!");
+            controller.updateCorrMethod($('#untangleCorrSelect').val());
         });
         $('#checkboxLabel').change(function(){
             if(this.checked) {

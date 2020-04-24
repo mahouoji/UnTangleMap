@@ -45,10 +45,28 @@ with open('./yg_corr_spearman.csv') as csv_file:
             line_count += 1
             continue
         spearman_corr.append([float(c) for c in row[1:]])
+kendall_corr = []
+with open('./yg_corr_kendall.csv') as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    line_count = 0
+    for row in csv_reader:
+        if line_count == 0:
+            line_count += 1
+            continue
+        kendall_corr.append([float(c) for c in row[1:]])
+pearson_corr = []
+with open('./yg_corr_pearson.csv') as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    line_count = 0
+    for row in csv_reader:
+        if line_count == 0:
+            line_count += 1
+            continue
+        pearson_corr.append([float(c) for c in row[1:]])
 
 json_data = {
     'labels': structured_genre,
     'items': structured_items,
-    'corr': {'spearman' : spearman_corr}
+    'corr': {'spearman': spearman_corr, 'kendall': kendall_corr, 'pearson': pearson_corr}
 }
-json.dump(json_data, open('./imdb.json', 'w'))
+json.dump(json_data, open('./imdb_year_genre.json', 'w'))
