@@ -94,7 +94,7 @@ UTHeatmap.prototype = {
             self.getCountRecursive([2*a, 2*b, c-a-b], (faceOffset+2) * 4, depth + 1);
         } else {
             self.heatmap[depth][faceOffset + 3].cnt += 1;
-            self.getCountRecursive([a-b+c, a+b-c, -a+b-c],(faceOffset+3) * 4, depth + 1);
+            self.getCountRecursive([a+b-c, -a+b+c, a-b+c],(faceOffset+3) * 4, depth + 1);
         }
     }
 };

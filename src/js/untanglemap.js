@@ -123,7 +123,7 @@ UnTangleMap.prototype = {
             utgmap.selectAll('text').attr('font-size', labelFontSize);
             utgmap.selectAll('text').attr("transform","translate(0,"+(labelFontSize+gridRaid)+")")
             // circles
-            self.svg.select(".scatter-plot").selectAll("circle").attr('r', self.opt.gridRaid / d3.event.transform.k);
+            self.svg.select(".scatter-plot").selectAll("circle").attr('r', self.opt.itemRaid / d3.event.transform.k);
             //console.log(Math.min(self.opt.gridRaid, 12 / d3.event.transform.k));
             // heatmap
             if (d3.event.transform.k < 2) {
@@ -289,7 +289,8 @@ UnTangleMap.prototype = {
             poly.exit().remove();
             poly.enter().append('polyline').merge(poly)
                 .attr('points', d=>self.getSVGPoints(d.vecPos))
-                .attr('fill', d=>colorScale(d.cnt + 1));
+                .attr('fill', d=>colorScale(d.cnt + 1))
+                .attr('cnt', d=>d.cnt);
         }
 
         return self;
@@ -398,7 +399,7 @@ UnTangleMap.init = function (selector, userOpt) {
         gridRaid: 4,
         labelRaid: 3,
         labelFontSize: 8,
-        itemRaid: 2,
+        itemRaid: 3,
         corrMethod: 'spearman'
     };
     for (var o in userOpt) {
