@@ -362,6 +362,7 @@ UnTangleMap.prototype = {
     updateCorrMethod: function(method) {
         this.opt.corrMethod = method;
         Layout.corrMethod = method;
+        this.initData(this.data);
     }
 };
 

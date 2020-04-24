@@ -5,7 +5,7 @@ function main(){
     $(document).ready(function() {
         $('#untangleDataSelect').change(function() {
             let dataPath = {
-                'imdb_mg': "data/imdb_mg.json",
+                'imdb_mg': "data/imdb_movie_genre.json",
                 'imdb_yg': "data/imdb_year_genre.json",
                 'dblp_ac': "data/dblp_author_conf.json",
 
