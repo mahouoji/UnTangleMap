@@ -26,6 +26,10 @@ svg {
     opacity: 0.0;
 }
 
+.edge {
+    opacity: 0.8;
+}
+
 .scatter-plot circle {
     fill: #088;
     opacity: 0.2;
