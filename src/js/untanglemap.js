@@ -118,12 +118,12 @@ UnTangleMap.prototype = {
             // labels and data items
             let utgmap = self.svg.select('.utgmap').attr("transform", d3.event.transform);
             // label font-size
-            let labelFontSize = Math.min(self.opt.labelFontSize, 32 / d3.event.transform.k);
+            let labelFontSize = Math.min(self.opt.labelFontSize, 28 / d3.event.transform.k);
             let gridRaid = Math.min(self.opt.gridRaid, 8 / d3.event.transform.k);
             utgmap.selectAll('text').attr('font-size', labelFontSize);
             utgmap.selectAll('text').attr("transform","translate(0,"+(labelFontSize+gridRaid)+")")
             // circles
-            //self.svg.select(".grid-vertex").selectAll("circle").attr('r', Math.min(self.opt.gridRaid, 8 / d3.event.transform.k));
+            self.svg.select(".scatter-plot").selectAll("circle").attr('r', self.opt.gridRaid / d3.event.transform.k);
             //console.log(Math.min(self.opt.gridRaid, 12 / d3.event.transform.k));
             // heatmap
             if (d3.event.transform.k < 2) {
