@@ -99,6 +99,9 @@ UnTangleMap.prototype = {
         var self = this;
         var w = self.opt.side;
         var h = self.opt.side * Math.sqrt(3) / 2.0;
+        $('.heatmap-d1').show();
+        $('.heatmap-d2').hide();
+        $('.heatmap-d3').hide();
         // zoom
         var zoom = d3.zoom().scaleExtent([1, 10])
             .on("zoom", zoomed);
@@ -115,7 +118,6 @@ UnTangleMap.prototype = {
             // labels and data items
             let utgmap = self.svg.select('.utgmap').attr("transform", d3.event.transform);
             // label font-size
-            /*
             let labelFontSize = Math.min(self.opt.labelFontSize, 32 / d3.event.transform.k);
             let gridRaid = Math.min(self.opt.gridRaid, 8 / d3.event.transform.k);
             utgmap.selectAll('text').attr('font-size', labelFontSize);
@@ -123,7 +125,20 @@ UnTangleMap.prototype = {
             // circles
             //self.svg.select(".grid-vertex").selectAll("circle").attr('r', Math.min(self.opt.gridRaid, 8 / d3.event.transform.k));
             //console.log(Math.min(self.opt.gridRaid, 12 / d3.event.transform.k));
-            */
+            // heatmap
+            if (d3.event.transform.k < 2) {
+                $('.heatmap-d1').show();
+                $('.heatmap-d2').hide();
+                $('.heatmap-d3').hide();
+            } else if (d3.event.transform.k < 5) {
+                $('.heatmap-d1').hide();
+                $('.heatmap-d2').show();
+                $('.heatmap-d3').hide();
+            } else {
+                $('.heatmap-d1').hide();
+                $('.heatmap-d2').hide();
+                $('.heatmap-d3').show();
+            }
             // offset
             self.originOffset[0] = d3.event.transform.x;
             self.originOffset[1] = d3.event.transform.y;
