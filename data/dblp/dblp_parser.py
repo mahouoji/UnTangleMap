@@ -1,3 +1,4 @@
+# modified from https://github.com/IsaacChanghau/DBLPParser
 from lxml import etree
 from datetime import datetime
 import csv
@@ -107,7 +108,7 @@ def parse_all(dblp_path, save_path, include_key=False):
     log_msg("FINISHED...")  # load the saved results line by line using json
 
 
-def parse_entity(dblp_path, save_path, type_name, features=None, save_to_csv=False, include_key=False):
+def parse_entity(dblp_path, save_path, type_name, features=None, save_to_csv=False, include_key=False, filter_func=None):
     """Parse specific elements according to the given type name and features"""
     log_msg("PROCESS: Start parsing for {}...".format(str(type_name)))
     assert features is not None, "features must be assigned before parsing the dblp dataset"
@@ -136,7 +137,8 @@ def parse_entity(dblp_path, save_path, type_name, features=None, save_to_csv=Fal
         for record in results:
             # some features contain multiple values (e.g.: author), concatenate with `::`
             row = ['::'.join(v) for v in list(record.values())]
-            writer.writerow(row)
+            if (filter_func is None or filter_func(row)):
+                writer.writerow(row)
         f.close()
     else:  # default save to json file
         with codecs.open(save_path, mode='w', encoding='utf8', errors='ignore') as f:
@@ -211,25 +213,33 @@ def parse_publications(dblp_path, save_path, save_to_csv=False, include_key=Fals
     log_msg("Features information: {}".format(str(info[2])))
 
 # by mohoj, parse key, author, year
-def parse_author_conference(dblp_path, save_path, save_to_csv=False, include_key=False):
+def parse_author_conference(dblp_path, save_path, save_to_csv=False, include_key=False, filter_func=None):
     type_name = ['inproceedings']
     features = ['author', 'year']
-    info = parse_entity(dblp_path, save_path, type_name, features, save_to_csv=save_to_csv, include_key=include_key)
+    info = parse_entity(dblp_path, save_path, type_name, features, save_to_csv=save_to_csv, include_key=include_key, filter_func=filter_conference)
     log_msg('Total publications found: {}, publications contain all features: {}, publications contain part of '
             'features: {}'.format(info[0] + info[1], info[0], info[1]))
     log_msg("Features information: {}".format(str(info[2])))
 
+def filter_conference(row):
+    key = row[0]
+    author = row[1]
+    year = int(row[2])
+    if year < 1900 or year > 2020: False
+    if not key.startswith('conf'):
+        return False
+    return True
 
 def main():
-    dblp_path = '../dataset/dblp.xml'
-    save_path = '../dataset/inproceedings.csv'
+    dblp_path = 'data/dblp.xml'
+    save_path = 'data/inproceedings.csv'
     try:
         context_iter(dblp_path)
         log_msg("LOG: Successfully loaded \"{}\".".format(dblp_path))
     except IOError:
         log_msg("ERROR: Failed to load file \"{}\". Please check your XML and DTD files.".format(dblp_path))
         exit()
-    parse_authnce(dblp_path, save_path, save_to_csv=True, include_key=True)
+    parse_author_conference(dblp_path, save_path, save_to_csv=True, include_key=True, filter_func=filter_conference)
 
 
 if __name__ == '__main__':
