@@ -4,7 +4,8 @@ import sys
 INPROCEEDINGS_FILENAME = './data/inproceedings.csv'
 TOPCONF_FILENAME = './data/topconf.json'
 HINDEX = 30
-disambig = { # dplp key to abbriviation (for hindex >= 30)
+TOPAUTHOR = 800
+DISAMBIG = { # dplp key to abbriviation (for hindex >= 30)
     "nips": "neurips",
     "kdd": "sigkdd",
     "uss": "usenix security",
@@ -22,6 +23,8 @@ disambig = { # dplp key to abbriviation (for hindex >= 30)
     "ecml": "ecmlpkdd",
     "wcre": "saner"
 }
+INPROCEEDINGS_OUT_FILENAME = './data/inproceedings_topconf.csv'
+AUTHOR_CONF_OUT_FILENAME = './data/author_conf.csv'
 
 def main(argv):
     with open(TOPCONF_FILENAME) as f:
@@ -34,26 +37,29 @@ def main(argv):
 
     with open(INPROCEEDINGS_FILENAME) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
-        with open('./data/inproceedings_filtered.csv', 'w', newline='') as wcsv_file:
+        with open(INPROCEEDINGS_OUT_FILENAME, 'w', newline='') as wcsv_file:
             csv_writer = csv.writer(wcsv_file)
             line_count = 0
+            paper_count = 0
             for row in csv_reader:
                 if line_count == 0:
                     csv_writer.writerow(['conf', 'authors', 'year'])
                     line_count += 1
                 else:
-                    conf = row[0]
+                    dblp_key = row[0]
+                    conf = dblp_key.split('/', 3)[1].strip()
                     author = row[1]
                     year = int(row[2])
                     line_count += 1
                     key = conf.lower()
-                    if key in disambig:
-                        key = disambig[key]
+                    if key in DISAMBIG:
+                        key = DISAMBIG[key]
                     if key in top_confs:
                         csv_writer.writerow([conf, author, year])
                         if key not in confs:
                             confs[key] = 0
                         confs[key] += 1
+                        paper_count += 1
                     else:
                         continue
                     #parse authors
@@ -71,12 +77,13 @@ def main(argv):
                         author_rec[a]['confs'][key] += 1
                         author_rec[a]['total'] += 1
 
+    print('%d paper read from file' % paper_count)
     for key in top_confs:
         if key not in confs:
             print('%s | %s | %d' % (key, top_confs[key]['fullname'], top_confs[key]['hindex']))
     print('%d conference found from file' % len(confs))
 
-    with open('./data/author_conf.csv', 'w') as f:
+    with open(AUTHOR_CONF_OUT_FILENAME, 'w', newline='') as f:
         csv_writer = csv.writer(f)
         sorted_confs = [k for k, v in sorted(confs.items(), key=lambda item: item[1], reverse=True)]
         conf_keys = [top_confs[key]['abbr'] for key in sorted_confs]
@@ -86,7 +93,7 @@ def main(argv):
         last_total = 0
         for author in top_authors:
             cnt += 1
-            if cnt > 500 and author_rec[author]['total'] < last_total:
+            if cnt > TOPAUTHOR and author_rec[author]['total'] < last_total:
                 break
             last_total = author_rec[author]['total']
             confstat = []
