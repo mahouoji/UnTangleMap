@@ -1,0 +1,3906 @@
+{
+  "cvpr": {
+    "abbr": "CVPR",
+    "fullname": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Signal Processing",
+      "General Computer Science"
+    ],
+    "hindex": 240
+  },
+  "eccv": {
+    "abbr": "ECCV",
+    "fullname": "European Conference on Computer Vision",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computer Graphics and Computer-Aided Design",
+      "Signal Processing"
+    ],
+    "hindex": 137
+  },
+  "iccv": {
+    "abbr": "ICCV",
+    "fullname": "IEEE/CVF International Conference on Computer Vision",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Signal Processing"
+    ],
+    "hindex": 129
+  },
+  "iros": {
+    "abbr": "IROS",
+    "fullname": "IEEE/RSJ International Conference on Intelligent Robots and Systems",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "General Computer Science"
+    ],
+    "hindex": 58
+  },
+  "acmmm": {
+    "abbr": "ACMMM",
+    "fullname": "ACM International Conference on Multimedia",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Human Computer Interaction",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 58
+  },
+  "bmvc": {
+    "abbr": "BMVC",
+    "fullname": "British Machine Vision Conference",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computer Graphics and Computer-Aided Design",
+      "Signal Processing"
+    ],
+    "hindex": 46
+  },
+  "miccai": {
+    "abbr": "MICCAI",
+    "fullname": "Medical Image Computing and Computer Assisted Intervention",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Biomedical Engineering & Medical Informatics"
+    ],
+    "hindex": 46
+  },
+  "wacv": {
+    "abbr": "WACV",
+    "fullname": "Workshop on Applications of Computer Vision",
+    "cates": [
+      "Image Processing & Computer Vision"
+    ],
+    "hindex": 46
+  },
+  "icip": {
+    "abbr": "ICIP",
+    "fullname": "IEEE International Conference on Image Processing",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Signal Processing"
+    ],
+    "hindex": 45
+  },
+  "accv": {
+    "abbr": "ACCV",
+    "fullname": "Asian Conference on Computer Vision (ACCV)",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computer Graphics and Computer-Aided Design",
+      "Signal Processing"
+    ],
+    "hindex": 38
+  },
+  "icpr": {
+    "abbr": "ICPR",
+    "fullname": "International Conference on Pattern Recognition",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computer Graphics and Computer-Aided Design",
+      "Signal Processing",
+      "General Computer Science"
+    ],
+    "hindex": 38
+  },
+  "icmr": {
+    "abbr": "ICMR",
+    "fullname": "ACM International Conference on Multimedia Retrieval",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Human Computer Interaction",
+      "Information Systems",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 33
+  },
+  "fg": {
+    "abbr": "FG",
+    "fullname": "IEEE International Conference on Automatic Face & Gesture Recognition",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction",
+      "Signal Processing",
+      "General Computer Science"
+    ],
+    "hindex": 31
+  },
+  "mmsys": {
+    "abbr": "MMSys",
+    "fullname": "ACM Multimedia Systems Conference",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 31
+  },
+  "igarss": {
+    "abbr": "IGARSS",
+    "fullname": "IEEE International Geoscience and Remote Sensing Symposium",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Signal Processing",
+      "Information Systems"
+    ],
+    "hindex": 28
+  },
+  "eusipco": {
+    "abbr": "EUSIPCO",
+    "fullname": "European Signal Processing Conference",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Signal Processing"
+    ],
+    "hindex": 28
+  },
+  "sigspatial": {
+    "abbr": "SIGSPATIAL",
+    "fullname": "ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Information Systems"
+    ],
+    "hindex": 27
+  },
+  "icdar": {
+    "abbr": "ICDAR",
+    "fullname": "International Conference on Document Analysis and Recognition",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "General Computer Science",
+      "Computational Linguistics & Speech Processing"
+    ],
+    "hindex": 26
+  },
+  "icme": {
+    "abbr": "ICME",
+    "fullname": "IEEE International Conference on Multimedia and Expo",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 26
+  },
+  "smc": {
+    "abbr": "SMC",
+    "fullname": "IEEE International Conference on Systems, Man and Cybernetics",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computer Graphics and Computer-Aided Design",
+      "Computer Networks and Communications",
+      "Hardware, Robotics & Electronics",
+      "Human Computer Interaction",
+      "Signal Processing",
+      "Information Systems",
+      "General Computer Science",
+      "Biomedical Engineering & Medical Informatics"
+    ],
+    "hindex": 24
+  },
+  "icb": {
+    "abbr": "ICB",
+    "fullname": "IAPR International Conference on Biometrics (ICB)",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Signal Processing",
+      "General Computer Science"
+    ],
+    "hindex": 23
+  },
+  "vr": {
+    "abbr": "VR",
+    "fullname": "IEEE Virtual Reality Conference",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction"
+    ],
+    "hindex": 23
+  },
+  "icmla": {
+    "abbr": "ICMLA",
+    "fullname": "International Conference on Machine Learning and Applications",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "General Computer Science"
+    ],
+    "hindex": 22
+  },
+  "avss": {
+    "abbr": "AVSS",
+    "fullname": "IEEE International Conference on Advanced Video and Signal-Based Surveillance",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computer Networks and Communications",
+      "Signal Processing"
+    ],
+    "hindex": 22
+  },
+  "qomex": {
+    "abbr": "QoMEX",
+    "fullname": "International Workshop on Quality of Multimedia Experience",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Human Computer Interaction",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 21
+  },
+  "etra": {
+    "abbr": "ETRA",
+    "fullname": "Eye Tracking Research & Application",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Human Computer Interaction",
+      "Signal Processing",
+      "General Computer Science"
+    ],
+    "hindex": 21
+  },
+  "wifs": {
+    "abbr": "WIFS",
+    "fullname": "IEEE International Workshop on Information Forensics and Security",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Information Systems",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 21
+  },
+  "pacificvis": {
+    "abbr": "PacificVis",
+    "fullname": "IEEE Pacific Visualization Symposium",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Computer Graphics and Computer-Aided Design"
+    ],
+    "hindex": 21
+  },
+  "dcc": {
+    "abbr": "DCC",
+    "fullname": "Data Compression Conference",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Computer Networks and Communications",
+      "Hardware, Robotics & Electronics",
+      "Signal Processing",
+      "Information Systems"
+    ],
+    "hindex": 20
+  },
+  "btas": {
+    "abbr": "BTAS",
+    "fullname": "IEEE International Conference on Biometrics: Theory Applications and Systems (BTAS)",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Signal Processing",
+      "General Computer Science"
+    ],
+    "hindex": 19
+  },
+  "vast": {
+    "abbr": "VAST",
+    "fullname": "IEEE Symposium on Visual Analytics Science and Technology",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction"
+    ],
+    "hindex": 19
+  },
+  "wassa": {
+    "abbr": "WASSA",
+    "fullname": "Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Human Computer Interaction",
+      "Signal Processing",
+      "General Computer Science"
+    ],
+    "hindex": 19
+  },
+  "das": {
+    "abbr": "DAS",
+    "fullname": "IAPR International Workshop on Document Analysis Systems",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Signal Processing",
+      "General Computer Science",
+      "Computational Linguistics & Speech Processing"
+    ],
+    "hindex": 18
+  },
+  "vrst": {
+    "abbr": "VRST",
+    "fullname": "ACM Symposium on Virtual Reality Software and Technology",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction",
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 18
+  },
+  "iciap": {
+    "abbr": "ICIAP",
+    "fullname": "International Conference on Image Analysis and Processing",
+    "cates": [
+      "Image Processing & Computer Vision"
+    ],
+    "hindex": 18
+  },
+  "acii": {
+    "abbr": "ACII",
+    "fullname": "International Conference on Affective Computing and Intelligent Interaction",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Human Computer Interaction",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 18
+  },
+  "aied": {
+    "abbr": "AIED",
+    "fullname": "Artificial Intelligence in Education",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "General Computer Science"
+    ],
+    "hindex": 17
+  },
+  "ihmmsec": {
+    "abbr": "IHMMSEC",
+    "fullname": "ACM workshop on Information hiding and multimedia security",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Web, Mobile & Multimedia Technologies",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 16
+  },
+  "isvc": {
+    "abbr": "ISVC",
+    "fullname": "International Symposium on Visual Computing",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "General Computer Science"
+    ],
+    "hindex": 15
+  },
+  "mmsp": {
+    "abbr": "MMSP",
+    "fullname": "IEEE Workshop on Multimedia Signal Processing",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Signal Processing",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 15
+  },
+  "pcs": {
+    "abbr": "PCS",
+    "fullname": "Picture Coding Symposium",
+    "cates": [
+      "Image Processing & Computer Vision"
+    ],
+    "hindex": 15
+  },
+  "i3dg": {
+    "abbr": "I3DG",
+    "fullname": "Symposium on Interactive 3D Graphics",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction"
+    ],
+    "hindex": 15
+  },
+  "vl/hcc": {
+    "abbr": "VL/HCC",
+    "fullname": "IEEE Symposium on Visual Languages and Human-Centric Computing",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 15
+  },
+  "web3d": {
+    "abbr": "Web3D",
+    "fullname": "International Conference on 3D Web Technology",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 14
+  },
+  "dicta": {
+    "abbr": "DICTA",
+    "fullname": "International Conference on Digital Image Computing Techniques and Applications",
+    "cates": [
+      "Image Processing & Computer Vision"
+    ],
+    "hindex": 14
+  },
+  "iciar": {
+    "abbr": "ICIAR",
+    "fullname": "International Conference on Image Analysis and Recognition",
+    "cates": [
+      "Image Processing & Computer Vision"
+    ],
+    "hindex": 14
+  },
+  "vcip": {
+    "abbr": "VCIP",
+    "fullname": "IEEE Visual Communications and Image Processing",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction"
+    ],
+    "hindex": 14
+  },
+  "icarcv": {
+    "abbr": "ICARCV",
+    "fullname": "International Conference on Control, Automation, Robotics and Vision",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Hardware, Robotics & Electronics"
+    ],
+    "hindex": 13
+  },
+  "vissoft": {
+    "abbr": "VISSOFT",
+    "fullname": "IEEE Working Conference on Software Visualization",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Computer Graphics and Computer-Aided Design",
+      "Software Engineering",
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 13
+  },
+  "infovis": {
+    "abbr": "InfoVis",
+    "fullname": "International Conference on Information Visualization",
+    "cates": [
+      "Image Processing & Computer Vision",
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction",
+      "General Computer Science"
+    ],
+    "hindex": 12
+  },
+  "neurips": {
+    "abbr": "NeurIPS",
+    "fullname": "Neural Information Processing Systems (NIPS)",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computational Theory and Mathematics",
+      "Signal Processing",
+      "General Computer Science"
+    ],
+    "hindex": 169
+  },
+  "icml": {
+    "abbr": "ICML",
+    "fullname": "International Conference on Machine Learning (ICML)",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "General Computer Science"
+    ],
+    "hindex": 135
+  },
+  "acl": {
+    "abbr": "ACL",
+    "fullname": "Meeting of the Association for Computational Linguistics (ACL)",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computational Linguistics & Speech Processing"
+    ],
+    "hindex": 106
+  },
+  "aaai": {
+    "abbr": "AAAI",
+    "fullname": "AAAI Conference on Artificial Intelligence",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence"
+    ],
+    "hindex": 95
+  },
+  "emnlp": {
+    "abbr": "EMNLP",
+    "fullname": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Signal Processing",
+      "General Computer Science",
+      "Computational Linguistics & Speech Processing"
+    ],
+    "hindex": 88
+  },
+  "sigkdd": {
+    "abbr": "SIGKDD",
+    "fullname": "ACM SIGKDD International Conference on Knowledge discovery and data mining",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 86
+  },
+  "ijcai": {
+    "abbr": "IJCAI",
+    "fullname": "International Joint Conference on Artificial Intelligence (IJCAI)",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "General Computer Science"
+    ],
+    "hindex": 67
+  },
+  "sigmod": {
+    "abbr": "SIGMOD",
+    "fullname": "ACM SIGMOD International Conference on Management of Data",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 67
+  },
+  "interspeech": {
+    "abbr": "INTERSPEECH",
+    "fullname": "Conference of the International Speech Communication Association (INTERSPEECH)",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Signal Processing",
+      "Computational Linguistics & Speech Processing"
+    ],
+    "hindex": 65
+  },
+  "sigir": {
+    "abbr": "SIGIR",
+    "fullname": "ACM SIGIR Conference on Research and development in information retrieval",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 55
+  },
+  "isit": {
+    "abbr": "ISIT",
+    "fullname": "IEEE International Symposium on Information Theory",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computational Theory and Mathematics",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 53
+  },
+  "aistats": {
+    "abbr": "AISTATS",
+    "fullname": "International Conference on Artificial Intelligence and Statistics",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computational Theory and Mathematics",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 52
+  },
+  "wsdm": {
+    "abbr": "WSDM",
+    "fullname": "ACM International Conference on Web Search and Data Mining",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 51
+  },
+  "cikm": {
+    "abbr": "CIKM",
+    "fullname": "ACM International Conference on Information and Knowledge Management",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 48
+  },
+  "colt": {
+    "abbr": "COLT",
+    "fullname": "Conference on Learning Theory (COLT)",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computational Theory and Mathematics",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 48
+  },
+  "recsys": {
+    "abbr": "RecSys",
+    "fullname": "ACM Conference on Recommender Systems",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 45
+  },
+  "lrec": {
+    "abbr": "LREC",
+    "fullname": "International Conference on Language Resources and Evaluation (LREC)",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Human Computer Interaction",
+      "Signal Processing",
+      "General Computer Science",
+      "Computational Linguistics & Speech Processing"
+    ],
+    "hindex": 45
+  },
+  "icdmw": {
+    "abbr": "ICDMW",
+    "fullname": "IEEE International Conference on Data Mining Workshop",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "General Computer Science"
+    ],
+    "hindex": 44
+  },
+  "coling": {
+    "abbr": "COLING",
+    "fullname": "International Conference on Computational Linguistics",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computational Theory and Mathematics",
+      "Signal Processing",
+      "Computational Linguistics & Speech Processing"
+    ],
+    "hindex": 41
+  },
+  "eacl": {
+    "abbr": "EACL",
+    "fullname": "Conference of the European Chapter of the Association for Computational Linguistics",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computational Theory and Mathematics",
+      "Signal Processing",
+      "Computational Linguistics & Speech Processing"
+    ],
+    "hindex": 36
+  },
+  "sdm": {
+    "abbr": "SDM",
+    "fullname": "SIAM International Conference on Data Mining (SDM)",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 36
+  },
+  "lak": {
+    "abbr": "LAK",
+    "fullname": "International Conference on Learning Analytics And Knowledge",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 36
+  },
+  "ijcnn": {
+    "abbr": "IJCNN",
+    "fullname": "International Joint Conference on Neural Networks",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence"
+    ],
+    "hindex": 36
+  },
+  "aime": {
+    "abbr": "AIME",
+    "fullname": "Artificial Intelligence in Medicine",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Biomedical Engineering & Medical Informatics"
+    ],
+    "hindex": 34
+  },
+  "uai": {
+    "abbr": "UAI",
+    "fullname": "Conference on Uncertainty in Artificial Intelligence (UAI)",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "General Computer Science"
+    ],
+    "hindex": 33
+  },
+  "big data": {
+    "abbr": "Big Data",
+    "fullname": "IEEE International Conference on Big Data",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems",
+      "General Computer Science",
+      "Biomedical Engineering & Medical Informatics"
+    ],
+    "hindex": 33
+  },
+  "allerton": {
+    "abbr": "Allerton",
+    "fullname": "Allerton Conference on Communication, Control, and Computing",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computer Networks and Communications",
+      "Hardware, Robotics & Electronics",
+      "Signal Processing",
+      "General Computer Science"
+    ],
+    "hindex": 31
+  },
+  "ecmlpkdd": {
+    "abbr": "ECMLPKDD",
+    "fullname": "European Conference on Machine learning and knowledge discovery in databases",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 30
+  },
+  "ipsn": {
+    "abbr": "IPSN",
+    "fullname": "International Symposium on Information Processing in Sensor Networks",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computer Networks and Communications",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 29
+  },
+  "icaps": {
+    "abbr": "ICAPS",
+    "fullname": "International Conference on Automated Planning and Scheduling",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "General Computer Science"
+    ],
+    "hindex": 28
+  },
+  "edm": {
+    "abbr": "EDM",
+    "fullname": "International Conference on Educational Data Mining",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 28
+  },
+  "iui": {
+    "abbr": "IUI",
+    "fullname": "International Conference on Intelligent User Interfaces",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction",
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 27
+  },
+  "ecai": {
+    "abbr": "ECAI",
+    "fullname": "European Conference on Artificial Intelligence (ECAI)",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "General Computer Science"
+    ],
+    "hindex": 26
+  },
+  "slt": {
+    "abbr": "SLT",
+    "fullname": "IEEE Spoken Language Technology Workshop",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Signal Processing",
+      "Computational Linguistics & Speech Processing"
+    ],
+    "hindex": 26
+  },
+  "fusion": {
+    "abbr": "FUSION",
+    "fullname": "International Conference on Information Fusion",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 26
+  },
+  "ecir": {
+    "abbr": "ECIR",
+    "fullname": "European Conference on Information Retrieval",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems"
+    ],
+    "hindex": 26
+  },
+  "cig": {
+    "abbr": "CIG",
+    "fullname": "IEEE Conference on Computational Intelligence and Games",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction",
+      "General Computer Science"
+    ],
+    "hindex": 25
+  },
+  "cidr": {
+    "abbr": "CIDR",
+    "fullname": "Conference on Innovative Data Systems Research",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems"
+    ],
+    "hindex": 25
+  },
+  "kr": {
+    "abbr": "KR",
+    "fullname": "Principles of Knowledge Representation and Reasoning",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computational Theory and Mathematics",
+      "Information Systems"
+    ],
+    "hindex": 25
+  },
+  "gdn": {
+    "abbr": "GDN",
+    "fullname": "Group Decision and Negotiation",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Software Engineering",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 25
+  },
+  "pakdd": {
+    "abbr": "PAKDD",
+    "fullname": "Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD)",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems"
+    ],
+    "hindex": 23
+  },
+  "fuzz": {
+    "abbr": "FUZZ",
+    "fullname": "IEEE International Conference on Fuzzy Systems",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Hardware, Robotics & Electronics",
+      "Signal Processing"
+    ],
+    "hindex": 21
+  },
+  "icac": {
+    "abbr": "ICAC",
+    "fullname": "IEEE International Conference on Autonomic Computing",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computer Networks and Communications",
+      "General Computer Science"
+    ],
+    "hindex": 21
+  },
+  "iconip": {
+    "abbr": "ICONIP",
+    "fullname": "International Conference on Neural Information Processing",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence"
+    ],
+    "hindex": 21
+  },
+  "icaisc": {
+    "abbr": "ICAISC",
+    "fullname": "International Conference on Artificial Intelligence and Soft Computing",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 20
+  },
+  "its": {
+    "abbr": "ITS",
+    "fullname": "International Conference on Intelligent Tutoring Systems",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 20
+  },
+  "cicling": {
+    "abbr": "CICLing",
+    "fullname": "International Conference on Computational Linguistics and Intelligent Text Processing",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computational Linguistics & Speech Processing"
+    ],
+    "hindex": 20
+  },
+  "ictai": {
+    "abbr": "ICTAI",
+    "fullname": "International Conference on Tools with Artificial Intelligence",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "General Computer Science"
+    ],
+    "hindex": 19
+  },
+  "iva": {
+    "abbr": "IVA",
+    "fullname": "Intelligent Virtual Agents",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Software Engineering"
+    ],
+    "hindex": 19
+  },
+  "esann": {
+    "abbr": "ESANN",
+    "fullname": "European Symposium on Artificial Neural Networks",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 18
+  },
+  "cisis": {
+    "abbr": "CISIS",
+    "fullname": "International Conference on Complex, Intelligent and Software Intensive Systems",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Software Engineering",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 16
+  },
+  "ida": {
+    "abbr": "IDA",
+    "fullname": "Intelligent Data Analysis",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence"
+    ],
+    "hindex": 16
+  },
+  "icann": {
+    "abbr": "ICANN",
+    "fullname": "International Conference on Artificial Neural Networks",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence"
+    ],
+    "hindex": 16
+  },
+  "ekaw": {
+    "abbr": "EKAW",
+    "fullname": "Knowledge Engineering and Management by the Masses",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 16
+  },
+  "ijcnlp": {
+    "abbr": "IJCNLP",
+    "fullname": "International Joint Conference on Natural Language Processing (IJCNLP)",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Signal Processing",
+      "Computational Linguistics & Speech Processing"
+    ],
+    "hindex": 15
+  },
+  "icsi": {
+    "abbr": "ICSI",
+    "fullname": "International Conference on Advances in Swarm Intelligence",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "General Computer Science",
+      "Biomedical Engineering & Medical Informatics"
+    ],
+    "hindex": 15
+  },
+  "cpm": {
+    "abbr": "CPM",
+    "fullname": "Combinatorial Pattern Matching",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 15
+  },
+  "cpaior": {
+    "abbr": "CPAIOR",
+    "fullname": "International Conference on Integration of AI and OR Techniques in Constraint Programming",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "General Computer Science"
+    ],
+    "hindex": 15
+  },
+  "icde": {
+    "abbr": "ICDE",
+    "fullname": "International Conference on Data Engineering Workshops",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 14
+  },
+  "dawak": {
+    "abbr": "DaWaK",
+    "fullname": "Data Warehousing and Knowledge Discovery (DaWaK)",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 14
+  },
+  "ranlp": {
+    "abbr": "RANLP",
+    "fullname": "Recent Advances in Natural Language Processing",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "General Computer Science",
+      "Computational Linguistics & Speech Processing"
+    ],
+    "hindex": 14
+  },
+  "icaart": {
+    "abbr": "ICAART",
+    "fullname": "International Conference on Agents and Artificial Intelligence",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Software Engineering",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 14
+  },
+  "seke": {
+    "abbr": "SEKE",
+    "fullname": "International Conference on Software Engineering and Knowledge Engineering",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Software Engineering"
+    ],
+    "hindex": 14
+  },
+  "spire": {
+    "abbr": "SPIRE",
+    "fullname": "International Symposium on String Processing and Information Retrieval",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems"
+    ],
+    "hindex": 13
+  },
+  "isi": {
+    "abbr": "ISI",
+    "fullname": "IEEE International Conference on Intelligence and Security Informatics",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems",
+      "General Computer Science",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 13
+  },
+  "sami": {
+    "abbr": "SAMI",
+    "fullname": "International Symposium on Applied Machine Intelligence and Informatics",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "General Computer Science"
+    ],
+    "hindex": 13
+  },
+  "lion": {
+    "abbr": "LION",
+    "fullname": "Learning and Intelligent Optimization",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 12
+  },
+  "ipmu": {
+    "abbr": "IPMU",
+    "fullname": "International Conference on Information Processing and Management of Uncertainty in Knowledge-Based Systems",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems"
+    ],
+    "hindex": 12
+  },
+  "hais": {
+    "abbr": "HAIS",
+    "fullname": "International Conference on Hybrid Artificial Intelligent Systems",
+    "cates": [
+      "Machine Learing, Data Mining & Artificial Intelligence",
+      "Information Systems"
+    ],
+    "hindex": 12
+  },
+  "chi": {
+    "abbr": "CHI",
+    "fullname": "Computer Human Interaction (CHI)",
+    "cates": [
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 87
+  },
+  "uist": {
+    "abbr": "UIST",
+    "fullname": "ACM Symposium on User Interface Software and Technology",
+    "cates": [
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction",
+      "Software Engineering"
+    ],
+    "hindex": 46
+  },
+  "iccad": {
+    "abbr": "ICCAD",
+    "fullname": "IEEE/ACM International Conference on Computer-Aided Design",
+    "cates": [
+      "Computer Graphics and Computer-Aided Design",
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction",
+      "Human Computer Interaction",
+      "Software Engineering",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 28
+  },
+  "mobilehci": {
+    "abbr": "MobileHCI",
+    "fullname": "Mobile HCI",
+    "cates": [
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 28
+  },
+  "aiide": {
+    "abbr": "AIIDE",
+    "fullname": "Artificial Intelligence and Interactive Digital Entertainment Conference",
+    "cates": [
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 21
+  },
+  "3dui": {
+    "abbr": "3DUI",
+    "fullname": "IEEE Symposium on 3D User Interfaces",
+    "cates": [
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction"
+    ],
+    "hindex": 20
+  },
+  "sca": {
+    "abbr": "SCA",
+    "fullname": "ACM SIGGRAPH/Eurographics Symposium on Computer Animation",
+    "cates": [
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction"
+    ],
+    "hindex": 20
+  },
+  "hpcs": {
+    "abbr": "HPCS",
+    "fullname": "International Conference on High Performance Computing and Simulation",
+    "cates": [
+      "Computer Graphics and Computer-Aided Design",
+      "Hardware, Robotics & Electronics",
+      "Software Engineering",
+      "Signal Processing",
+      "General Computer Science"
+    ],
+    "hindex": 19
+  },
+  "gi": {
+    "abbr": "GI",
+    "fullname": "Graphics Interface Conference",
+    "cates": [
+      "Computer Graphics and Computer-Aided Design",
+      "Human Computer Interaction"
+    ],
+    "hindex": 13
+  },
+  "gd": {
+    "abbr": "GD",
+    "fullname": "Symposium on Graph Drawing",
+    "cates": [
+      "Computer Graphics and Computer-Aided Design",
+      "Computer Networks and Communications"
+    ],
+    "hindex": 12
+  },
+  "ccs": {
+    "abbr": "CCS",
+    "fullname": "ACM Symposium on Computer and Communications Security",
+    "cates": [
+      "Computer Networks and Communications",
+      "Signal Processing",
+      "General Computer Science"
+    ],
+    "hindex": 82
+  },
+  "infocom": {
+    "abbr": "INFOCOM",
+    "fullname": "IEEE International Conference on Computer Communications (INFOCOM)",
+    "cates": [
+      "Computer Networks and Communications",
+      "Hardware, Robotics & Electronics",
+      "Signal Processing",
+      "General Computer Science"
+    ],
+    "hindex": 74
+  },
+  "sigcomm": {
+    "abbr": "SIGCOMM",
+    "fullname": "ACM SIGCOMM Conference",
+    "cates": [
+      "Computer Networks and Communications"
+    ],
+    "hindex": 72
+  },
+  "www": {
+    "abbr": "WWW",
+    "fullname": "International World Wide Web Conferences (WWW)",
+    "cates": [
+      "Computer Networks and Communications",
+      "Human Computer Interaction",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 70
+  },
+  "ndss": {
+    "abbr": "NDSS",
+    "fullname": "Network and Distributed System Security Symposium (NDSS)",
+    "cates": [
+      "Computer Networks and Communications",
+      "General Computer Science",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 65
+  },
+  "nsdi": {
+    "abbr": "NSDI",
+    "fullname": "Symposium on Networked Systems Design and Implementation",
+    "cates": [
+      "Computer Networks and Communications",
+      "General Computer Science"
+    ],
+    "hindex": 62
+  },
+  "icc": {
+    "abbr": "ICC",
+    "fullname": "IEEE International Conference on Communications",
+    "cates": [
+      "Computer Networks and Communications",
+      "Signal Processing"
+    ],
+    "hindex": 61
+  },
+  "cscw": {
+    "abbr": "CSCW",
+    "fullname": "ACM Conference on Computer-Supported Cooperative Work & Social Computing",
+    "cates": [
+      "Computer Networks and Communications",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 60
+  },
+  "globecom": {
+    "abbr": "GLOBECOM",
+    "fullname": "IEEE GLOBECOM",
+    "cates": [
+      "Computer Networks and Communications",
+      "Signal Processing"
+    ],
+    "hindex": 57
+  },
+  "ubicomp": {
+    "abbr": "UbiComp",
+    "fullname": "ACM Conference on Pervasive and Ubiquitous Computing (UbiComp)",
+    "cates": [
+      "Computer Networks and Communications",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 57
+  },
+  "eurocrypt": {
+    "abbr": "EUROCRYPT",
+    "fullname": "International Conference on Theory and Applications of Cryptographic Techniques (EUROCRYPT)",
+    "cates": [
+      "Computer Networks and Communications",
+      "Computational Theory and Mathematics",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 56
+  },
+  "crypto": {
+    "abbr": "CRYPTO",
+    "fullname": "International Cryptology Conference (CRYPTO)",
+    "cates": [
+      "Computer Networks and Communications",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 53
+  },
+  "mobicom": {
+    "abbr": "MobiCom",
+    "fullname": "Annual International Conference on Mobile Computing and Networking",
+    "cates": [
+      "Computer Networks and Communications",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 50
+  },
+  "vtc": {
+    "abbr": "VTC",
+    "fullname": "IEEE Vehicular Technology Conference",
+    "cates": [
+      "Computer Networks and Communications",
+      "Signal Processing",
+      "General Computer Science"
+    ],
+    "hindex": 44
+  },
+  "act": {
+    "abbr": "ACT",
+    "fullname": "USENIX Annual Technical Conference",
+    "cates": [
+      "Computer Networks and Communications",
+      "General Computer Science",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 44
+  },
+  "mobisys": {
+    "abbr": "Mobisys",
+    "fullname": "Annual International Conference on Mobile Systems, Applications, and Services",
+    "cates": [
+      "Computer Networks and Communications",
+      "Human Computer Interaction",
+      "Software Engineering",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 44
+  },
+  "fc": {
+    "abbr": "FC",
+    "fullname": "International Conference on Financial Cryptography and Data Security",
+    "cates": [
+      "Computer Networks and Communications",
+      "Information Systems",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 43
+  },
+  "ipdps": {
+    "abbr": "IPDPS",
+    "fullname": "IEEE International Symposium on Parallel & Distributed Processing",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 41
+  },
+  "icdcs": {
+    "abbr": "ICDCS",
+    "fullname": "International Conference on Distributed Computing Systems, ICDCS",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 36
+  },
+  "imc": {
+    "abbr": "IMC",
+    "fullname": "Internet Measurement Conference",
+    "cates": [
+      "Computer Networks and Communications",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 36
+  },
+  "socc": {
+    "abbr": "SoCC",
+    "fullname": "ACM Symposium on Cloud Computing",
+    "cates": [
+      "Computer Networks and Communications",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 34
+  },
+  "sensys": {
+    "abbr": "SENSYS",
+    "fullname": "ACM Conference on Embedded Networked Sensor Systems",
+    "cates": [
+      "Computer Networks and Communications",
+      "Hardware, Robotics & Electronics",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 34
+  },
+  "conext": {
+    "abbr": "CoNEXT",
+    "fullname": "ACM Conference on Emerging Network Experiment and Technology",
+    "cates": [
+      "Computer Networks and Communications",
+      "Hardware, Robotics & Electronics",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 33
+  },
+  "dsn": {
+    "abbr": "DSN",
+    "fullname": "IEEE/IFIP International Conference on Dependable Systems and Networks",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering"
+    ],
+    "hindex": 33
+  },
+  "ppopp": {
+    "abbr": "PPOPP",
+    "fullname": "ACM SIGPLAN Symposium on Principles & Practice of Parallel Programming (PPOPP)",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 31
+  },
+  "pkc": {
+    "abbr": "PKC",
+    "fullname": "International Conference on Practice and Theory in Public Key Cryptography",
+    "cates": [
+      "Computer Networks and Communications",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 30
+  },
+  "cloud": {
+    "abbr": "CLOUD",
+    "fullname": "IEEE International Conference on Cloud Computing (CLOUD)",
+    "cates": [
+      "Computer Networks and Communications",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 29
+  },
+  "radarcon": {
+    "abbr": "Radarcon",
+    "fullname": "IEEE Radar Conference",
+    "cates": [
+      "Computer Networks and Communications",
+      "Hardware, Robotics & Electronics"
+    ],
+    "hindex": 29
+  },
+  "noms": {
+    "abbr": "NOMS",
+    "fullname": "IEEE/IFIP Network Operations and Management Symposium",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 29
+  },
+  "eswc": {
+    "abbr": "ESWC",
+    "fullname": "Extended Semantic Web Conference",
+    "cates": [
+      "Computer Networks and Communications",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 28
+  },
+  "ccgrid": {
+    "abbr": "CCGrid",
+    "fullname": "IEEE International Symposium on Cluster Computing and the Grid",
+    "cates": [
+      "Computer Networks and Communications",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 28
+  },
+  "hpdc": {
+    "abbr": "HPDC",
+    "fullname": "ACM International Symposium on High Performance Distributed Computing",
+    "cates": [
+      "Computer Networks and Communications",
+      "Hardware, Robotics & Electronics",
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 28
+  },
+  "percom": {
+    "abbr": "PERCOM",
+    "fullname": "IEEE International Conference on Pervasive Computing and Communications",
+    "cates": [
+      "Computer Networks and Communications",
+      "Information Systems",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 28
+  },
+  "podc": {
+    "abbr": "PODC",
+    "fullname": "ACM Symposium on Principles of Distributed Computing",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 28
+  },
+  "aina": {
+    "abbr": "AINA",
+    "fullname": "International Conference on Advanced Information Networking and Applications",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "Information Systems"
+    ],
+    "hindex": 28
+  },
+  "soups": {
+    "abbr": "SOUPS",
+    "fullname": "Symposium On Usable Privacy and Security",
+    "cates": [
+      "Computer Networks and Communications",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 28
+  },
+  "spawc": {
+    "abbr": "SPAWC",
+    "fullname": "IEEE Workshop on Signal Processing Advances in Wireless Communications",
+    "cates": [
+      "Computer Networks and Communications",
+      "Hardware, Robotics & Electronics",
+      "Signal Processing"
+    ],
+    "hindex": 27
+  },
+  "codaspy": {
+    "abbr": "CODASPY",
+    "fullname": "ACM Conference on Data and application security and privacy",
+    "cates": [
+      "Computer Networks and Communications",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 27
+  },
+  "im": {
+    "abbr": "IM",
+    "fullname": "IFIP/IEEE International Symposium on Integrated Network Management",
+    "cates": [
+      "Computer Networks and Communications",
+      "Information Systems",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 26
+  },
+  "ccnc": {
+    "abbr": "CCNC",
+    "fullname": "IEEE Consumer Communications and Networking Conference",
+    "cates": [
+      "Computer Networks and Communications",
+      "Signal Processing"
+    ],
+    "hindex": 26
+  },
+  "aamas": {
+    "abbr": "AAMAS",
+    "fullname": "Autonomous Agents and Multi-Agent Systems",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 25
+  },
+  "hotnets": {
+    "abbr": "HOTNETS",
+    "fullname": "ACM Workshop on Hot Topics in Networks",
+    "cates": [
+      "Computer Networks and Communications",
+      "Signal Processing"
+    ],
+    "hindex": 25
+  },
+  "wowmom": {
+    "abbr": "WoWMoM",
+    "fullname": "IEEE International Symposium on a World of Wireless, Mobile and Multimedia Networks",
+    "cates": [
+      "Computer Networks and Communications",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 25
+  },
+  "cloudcom": {
+    "abbr": "CloudCom",
+    "fullname": "IEEE International Conference on Cloud Computing Technology and Science (CloudCom)",
+    "cates": [
+      "Computer Networks and Communications",
+      "Information Systems",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 24
+  },
+  "trustcom": {
+    "abbr": "TrustCom",
+    "fullname": "IEEE International Conference on Trust, Security and Privacy in Computing and Communications",
+    "cates": [
+      "Computer Networks and Communications",
+      "Computational Theory and Mathematics",
+      "Signal Processing",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 24
+  },
+  "middleware": {
+    "abbr": "Middleware",
+    "fullname": "International Middleware Conference",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "General Computer Science",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 23
+  },
+  "secon": {
+    "abbr": "SECON",
+    "fullname": "IEEE Communications Society Conference on Sensor, Mesh and Ad Hoc Communications and Networks",
+    "cates": [
+      "Computer Networks and Communications",
+      "Signal Processing",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 23
+  },
+  "ic3n": {
+    "abbr": "IC3N",
+    "fullname": "International Conference on Computer Communications and Networks",
+    "cates": [
+      "Computer Networks and Communications"
+    ],
+    "hindex": 23
+  },
+  "dyspan": {
+    "abbr": "DYSPAN",
+    "fullname": "IEEE Symposium on New Frontiers in Dynamic Spectrum Access Networks",
+    "cates": [
+      "Computer Networks and Communications"
+    ],
+    "hindex": 23
+  },
+  "icnp": {
+    "abbr": "ICNP",
+    "fullname": "IEEE International Conference on Network Protocols",
+    "cates": [
+      "Computer Networks and Communications"
+    ],
+    "hindex": 22
+  },
+  "spaa": {
+    "abbr": "SPAA",
+    "fullname": "ACM Symposium on Parallelism in Algorithms and Architectures",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 22
+  },
+  "wcncw": {
+    "abbr": "WCNCW",
+    "fullname": "IEEE Wireless Communications and Networking Conference Workshops",
+    "cates": [
+      "Computer Networks and Communications",
+      "Signal Processing"
+    ],
+    "hindex": 22
+  },
+  "hypertext": {
+    "abbr": "Hypertext",
+    "fullname": "ACM Conference on Hypertext and Hypermedia",
+    "cates": [
+      "Computer Networks and Communications",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 22
+  },
+  "cnsm": {
+    "abbr": "CNSM",
+    "fullname": "Conference on Network and Service Management",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "Information Systems",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 22
+  },
+  "icsc": {
+    "abbr": "ICSC",
+    "fullname": "IEEE International Conference on Semantic Computing",
+    "cates": [
+      "Computer Networks and Communications",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 21
+  },
+  "ieee icws": {
+    "abbr": "IEEE ICWS",
+    "fullname": "IEEE International Conference on Web Services",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 21
+  },
+  "concur": {
+    "abbr": "CONCUR",
+    "fullname": "International Conference on Concurrency Theory",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 21
+  },
+  "edoc": {
+    "abbr": "EDOC",
+    "fullname": "International IEEE Enterprise Distributed Object Computing Conference",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering"
+    ],
+    "hindex": 21
+  },
+  "iwcmc": {
+    "abbr": "IWCMC",
+    "fullname": "International Wireless Communications and Mobile Computing Conference",
+    "cates": [
+      "Computer Networks and Communications",
+      "Signal Processing",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 21
+  },
+  "scc": {
+    "abbr": "SCC",
+    "fullname": "IEEE International Conference on Services Computing",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering"
+    ],
+    "hindex": 20
+  },
+  "dcoss": {
+    "abbr": "DCOSS",
+    "fullname": "IEEE International Conference on Distributed Computing in Sensor Systems",
+    "cates": [
+      "Computer Networks and Communications",
+      "Hardware, Robotics & Electronics",
+      "Software Engineering"
+    ],
+    "hindex": 20
+  },
+  "wiopt": {
+    "abbr": "WiOpt",
+    "fullname": "International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 20
+  },
+  "icpp": {
+    "abbr": "ICPP",
+    "fullname": "International Conference on Parallel Processing (ICPP)",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 20
+  },
+  "pdp": {
+    "abbr": "PDP",
+    "fullname": "Euromicro International Conference on Parallel, Distributed and Network-Based Processing",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering"
+    ],
+    "hindex": 20
+  },
+  "ares": {
+    "abbr": "ARES",
+    "fullname": "International Conference on Availability, Reliability and Security",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 20
+  },
+  "disc": {
+    "abbr": "DISC",
+    "fullname": "International Symposium on Distributed Computing",
+    "cates": [
+      "Computer Networks and Communications",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 20
+  },
+  "acns": {
+    "abbr": "ACNS",
+    "fullname": "Applied Cryptography and Network Security",
+    "cates": [
+      "Computer Networks and Communications",
+      "Computational Theory and Mathematics",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 20
+  },
+  "ppsn": {
+    "abbr": "PPSN",
+    "fullname": "International Conference on Parallel problem solving from nature",
+    "cates": [
+      "Computer Networks and Communications",
+      "Computational Theory and Mathematics",
+      "General Computer Science",
+      "Biomedical Engineering & Medical Informatics"
+    ],
+    "hindex": 19
+  },
+  "hpcc": {
+    "abbr": "HPCC",
+    "fullname": "IEEE International Conference on High Performance Computing and Communications",
+    "cates": [
+      "Computer Networks and Communications",
+      "Hardware, Robotics & Electronics",
+      "General Computer Science"
+    ],
+    "hindex": 19
+  },
+  "cluster": {
+    "abbr": "CLUSTER",
+    "fullname": "IEEE International Conference on Cluster Computing",
+    "cates": [
+      "Computer Networks and Communications"
+    ],
+    "hindex": 19
+  },
+  "lcn": {
+    "abbr": "LCN",
+    "fullname": "Local Computer Networks",
+    "cates": [
+      "Computer Networks and Communications",
+      "Signal Processing"
+    ],
+    "hindex": 19
+  },
+  "wimob": {
+    "abbr": "WiMob",
+    "fullname": "IEEE International Conference on Wireless and Mobile Computing Networking and Communications",
+    "cates": [
+      "Computer Networks and Communications",
+      "Signal Processing",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 19
+  },
+  "icdcn": {
+    "abbr": "ICDCN",
+    "fullname": "International Conference of Distributed Computing and Networking",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "Signal Processing",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 19
+  },
+  "mswim": {
+    "abbr": "MSWIM",
+    "fullname": "ACM International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 18
+  },
+  "ewsn": {
+    "abbr": "EWSN",
+    "fullname": "International Conference on Embedded Wireless Systems and Networks",
+    "cates": [
+      "Computer Networks and Communications"
+    ],
+    "hindex": 18
+  },
+  "iwqos": {
+    "abbr": "IWQoS",
+    "fullname": "International Workshop on Quality of Service",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 18
+  },
+  "cscwd": {
+    "abbr": "CSCWD",
+    "fullname": "International Conference on Computer Supported Cooperative Work in Design, CSCWD",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering"
+    ],
+    "hindex": 17
+  },
+  "rfid": {
+    "abbr": "RFID",
+    "fullname": "IEEE International Conference on Radio Frequency Identification",
+    "cates": [
+      "Computer Networks and Communications",
+      "Signal Processing"
+    ],
+    "hindex": 17
+  },
+  "icwe": {
+    "abbr": "ICWE",
+    "fullname": "International Conference on Web Engineering",
+    "cates": [
+      "Computer Networks and Communications",
+      "Human Computer Interaction",
+      "Software Engineering",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 17
+  },
+  "bsn": {
+    "abbr": "BSN",
+    "fullname": "International Workshop on Wearable and Implantable Body Sensor Networks",
+    "cates": [
+      "Computer Networks and Communications",
+      "Hardware, Robotics & Electronics",
+      "Human Computer Interaction",
+      "Biomedical Engineering & Medical Informatics"
+    ],
+    "hindex": 17
+  },
+  "ipccc": {
+    "abbr": "IPCCC",
+    "fullname": "IEEE International Performance, Computing, and Communications Conference",
+    "cates": [
+      "Computer Networks and Communications",
+      "Hardware, Robotics & Electronics",
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "Signal Processing",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 17
+  },
+  "hase": {
+    "abbr": "HASE",
+    "fullname": "IEEE High Assurance Systems Engineering Symposium, HASE",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 16
+  },
+  "srds": {
+    "abbr": "SRDS",
+    "fullname": "Symposium on Reliable Distributed Systems",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering"
+    ],
+    "hindex": 15
+  },
+  "icpads": {
+    "abbr": "ICPADS",
+    "fullname": "International Conference on Parallel and Distributed Systems",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering"
+    ],
+    "hindex": 15
+  },
+  "nca": {
+    "abbr": "NCA",
+    "fullname": "IEEE International Symposium on Network Computing and Applications",
+    "cates": [
+      "Computer Networks and Communications"
+    ],
+    "hindex": 15
+  },
+  "mobiquitous": {
+    "abbr": "Mobiquitous",
+    "fullname": "International Conference on Mobile and Ubiquitous Systems: Computing, Networking and Services",
+    "cates": [
+      "Computer Networks and Communications",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 15
+  },
+  "nocs": {
+    "abbr": "NOCS",
+    "fullname": "ACM/IEEE International Symposium on Networks-on-Chip",
+    "cates": [
+      "Computer Networks and Communications"
+    ],
+    "hindex": 15
+  },
+  "isorc": {
+    "abbr": "ISORC",
+    "fullname": "IEEE International Symposium on Object Oriented Real-Time Distributed Computing",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering"
+    ],
+    "hindex": 14
+  },
+  "opodis": {
+    "abbr": "OPODIS",
+    "fullname": "International Conference On Principles Of DIstributed Systems",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering"
+    ],
+    "hindex": 14
+  },
+  "wetice": {
+    "abbr": "WETICE",
+    "fullname": "IEEE International Workshops on Enabling Technologies: Infrastructure for Collaborative Enterprises",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 13
+  },
+  "hpsr": {
+    "abbr": "HPSR",
+    "fullname": "Workshop on High Performance Switching and Routing",
+    "cates": [
+      "Computer Networks and Communications",
+      "Signal Processing"
+    ],
+    "hindex": 13
+  },
+  "soca": {
+    "abbr": "SOCA",
+    "fullname": "IEEE International Conference on Service-Oriented Computing and Applications",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 12
+  },
+  "ica3pp": {
+    "abbr": "ICA3PP",
+    "fullname": "International Conference on Algorithms and Architectures for Parallel Processing",
+    "cates": [
+      "Computer Networks and Communications",
+      "Software Engineering",
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 12
+  },
+  "icra": {
+    "abbr": "ICRA",
+    "fullname": "IEEE International Conference on Robotics and Automation",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Signal Processing"
+    ],
+    "hindex": 82
+  },
+  "isscc": {
+    "abbr": "ISSCC",
+    "fullname": "IEEE International Solid-State Circuits Conference",
+    "cates": [
+      "Hardware, Robotics & Electronics"
+    ],
+    "hindex": 57
+  },
+  "isca": {
+    "abbr": "ISCA",
+    "fullname": "International Symposium on Computer Architecture (ISCA)",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "General Computer Science"
+    ],
+    "hindex": 56
+  },
+  "hpca": {
+    "abbr": "HPCA",
+    "fullname": "IEEE International Symposium on High Performance Computer Architecture",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Signal Processing",
+      "General Computer Science"
+    ],
+    "hindex": 53
+  },
+  "dac": {
+    "abbr": "DAC",
+    "fullname": "Design Automation Conference (DAC)",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Software Engineering",
+      "Signal Processing",
+      "General Computer Science"
+    ],
+    "hindex": 48
+  },
+  "rss": {
+    "abbr": "RSS",
+    "fullname": "Robotics: Science and Systems",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Software Engineering"
+    ],
+    "hindex": 47
+  },
+  "micro": {
+    "abbr": "MICRO",
+    "fullname": "IEEE/ACM International Symposium on Microarchitecture",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Signal Processing"
+    ],
+    "hindex": 44
+  },
+  "sc": {
+    "abbr": "SC",
+    "fullname": "International Conference for High Performance Computing, Networking, Storage and Analysis",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 43
+  },
+  "date": {
+    "abbr": "DATE",
+    "fullname": "Design, Automation and Test in Europe Conference and Exhibition",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 43
+  },
+  "cdc": {
+    "abbr": "CDC",
+    "fullname": "IEEE Conference on Decision and Control",
+    "cates": [
+      "Hardware, Robotics & Electronics"
+    ],
+    "hindex": 42
+  },
+  "fast": {
+    "abbr": "FAST",
+    "fullname": "Conference on File and Storage Technologies (FAST)",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 41
+  },
+  "acc": {
+    "abbr": "ACC",
+    "fullname": "American Control Conference",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Signal Processing"
+    ],
+    "hindex": 41
+  },
+  "hri": {
+    "abbr": "HRI",
+    "fullname": "ACM/IEEE International Conference on Human Robot Interaction",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Human Computer Interaction",
+      "Signal Processing"
+    ],
+    "hindex": 40
+  },
+  "ches": {
+    "abbr": "CHES",
+    "fullname": "Workshop on Cryptographic Hardware and Embedded Systems (CHES)",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Signal Processing"
+    ],
+    "hindex": 36
+  },
+  "humanoids": {
+    "abbr": "Humanoids",
+    "fullname": "IEEE-RAS International Conference on Humanoid Robots",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Human Computer Interaction"
+    ],
+    "hindex": 33
+  },
+  "iscas": {
+    "abbr": "ISCAS",
+    "fullname": "IEEE International Symposium on Circuits and Systems",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Signal Processing"
+    ],
+    "hindex": 30
+  },
+  "vlsic": {
+    "abbr": "VLSIC",
+    "fullname": "IEEE Symposium on VLSI Circuits (VLSIC)",
+    "cates": [
+      "Hardware, Robotics & Electronics"
+    ],
+    "hindex": 30
+  },
+  "fpga": {
+    "abbr": "FPGA",
+    "fullname": "Symposium on Field Programmable Gate Arrays",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Software Engineering",
+      "Signal Processing"
+    ],
+    "hindex": 29
+  },
+  "asp-dac": {
+    "abbr": "ASP-DAC",
+    "fullname": "Asia and South Pacific Design Automation Conference",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Software Engineering",
+      "Signal Processing"
+    ],
+    "hindex": 28
+  },
+  "pact": {
+    "abbr": "PACT",
+    "fullname": "International Conference on Parallel Architectures and Compilation Techniques",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Software Engineering",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 27
+  },
+  "ecrts": {
+    "abbr": "ECRTS",
+    "fullname": "Euromicro Conference on Real-Time Systems",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Software Engineering"
+    ],
+    "hindex": 26
+  },
+  "ics": {
+    "abbr": "ICS",
+    "fullname": "International Conference on Supercomputing",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Software Engineering",
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 26
+  },
+  "tei": {
+    "abbr": "TEI",
+    "fullname": "International Conference on Tangible, embedded, and embodied interaction",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Human Computer Interaction",
+      "Information Systems",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 25
+  },
+  "rtas": {
+    "abbr": "RTAS",
+    "fullname": "IEEE Real-Time and Embedded Technology and Applications Symposium",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Software Engineering"
+    ],
+    "hindex": 25
+  },
+  "fccm": {
+    "abbr": "FCCM",
+    "fullname": "IEEE Symposium on Field-Programmable Custom Computing Machines",
+    "cates": [
+      "Hardware, Robotics & Electronics"
+    ],
+    "hindex": 24
+  },
+  "hipc": {
+    "abbr": "HiPC",
+    "fullname": "International Conference on High Performance Computing",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "Information Systems"
+    ],
+    "hindex": 24
+  },
+  "buildsys": {
+    "abbr": "BuildSys",
+    "fullname": "ACM International Conference on Systems for Energy-Efficient Built Environments",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 23
+  },
+  "islped": {
+    "abbr": "ISLPED",
+    "fullname": "ACM/IEEE International Symposium on Low Power Electronics and Design",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Signal Processing"
+    ],
+    "hindex": 22
+  },
+  "rtss": {
+    "abbr": "RTSS",
+    "fullname": "IEEE Real-Time Systems Symposium (RTSS)",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Software Engineering",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 21
+  },
+  "iswc": {
+    "abbr": "ISWC",
+    "fullname": "International Symposium on Wearable Computer",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Human Computer Interaction",
+      "Signal Processing",
+      "Web, Mobile & Multimedia Technologies",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science",
+      "General Computer Science"
+    ],
+    "hindex": 21
+  },
+  "cicc": {
+    "abbr": "CICC",
+    "fullname": "IEEE Custom Integrated Circuits Conference, CICC",
+    "cates": [
+      "Hardware, Robotics & Electronics"
+    ],
+    "hindex": 20
+  },
+  "isgt": {
+    "abbr": "ISGT",
+    "fullname": "IEEE PES Innovative Smart Grid Technologies Conference Europe",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "General Computer Science"
+    ],
+    "hindex": 18
+  },
+  "rtcsa": {
+    "abbr": "RTCSA",
+    "fullname": "IEEE International Conference on Embedded and Real-Time Computing Systems and Applications",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Software Engineering"
+    ],
+    "hindex": 16
+  },
+  "sbac-pad": {
+    "abbr": "SBAC-PAD",
+    "fullname": "International Symposium on Computer Architecture and High Performance Computing",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Software Engineering"
+    ],
+    "hindex": 14
+  },
+  "wsa": {
+    "abbr": "WSA",
+    "fullname": "Workshop on Smart Antennas",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Signal Processing"
+    ],
+    "hindex": 13
+  },
+  "cases": {
+    "abbr": "CASES",
+    "fullname": "International Conference on Compilers, Architecture, and Synthesis for Embedded Systems",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 13
+  },
+  "iolts": {
+    "abbr": "IOLTS",
+    "fullname": "IEEE International On-Line Testing Symposium",
+    "cates": [
+      "Hardware, Robotics & Electronics",
+      "Software Engineering"
+    ],
+    "hindex": 12
+  },
+  "eurosys": {
+    "abbr": "EuroSys",
+    "fullname": "ACM European Conference on Computer Systems",
+    "cates": [
+      "Human Computer Interaction",
+      "Software Engineering",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 38
+  },
+  "dis": {
+    "abbr": "DIS",
+    "fullname": "Conference on Designing Interactive Systems",
+    "cates": [
+      "Human Computer Interaction",
+      "Information Systems",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 33
+  },
+  "icmi": {
+    "abbr": "ICMI",
+    "fullname": "International Conference on Multimodal Interfaces (ICMI)",
+    "cates": [
+      "Human Computer Interaction",
+      "General Computer Science"
+    ],
+    "hindex": 33
+  },
+  "mobihoc": {
+    "abbr": "MOBIHOC",
+    "fullname": "ACM International Symposium on Mobile Ad Hoc Networking and Computing",
+    "cates": [
+      "Human Computer Interaction",
+      "Information Systems",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 29
+  },
+  "sac": {
+    "abbr": "SAC",
+    "fullname": "ACM Symposium on Applied Computing",
+    "cates": [
+      "Human Computer Interaction",
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "Information Systems",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science",
+      "Biomedical Engineering & Medical Informatics"
+    ],
+    "hindex": 28
+  },
+  "icst": {
+    "abbr": "ICST",
+    "fullname": "IEEE International Conference on Software Testing, Verification and Validation (ICST)",
+    "cates": [
+      "Human Computer Interaction",
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 27
+  },
+  "sigdial": {
+    "abbr": "SIGDIAL",
+    "fullname": "Annual Meeting of the Special Interest Group on Discourse and Dialogue (SIGDIAL)",
+    "cates": [
+      "Human Computer Interaction",
+      "Computational Linguistics & Speech Processing"
+    ],
+    "hindex": 26
+  },
+  "re": {
+    "abbr": "RE",
+    "fullname": "IEEE International Requirements Engineering Conference",
+    "cates": [
+      "Human Computer Interaction",
+      "Software Engineering"
+    ],
+    "hindex": 25
+  },
+  "umap": {
+    "abbr": "UMAP",
+    "fullname": "International Conference on User Modelling, Adaptation, and Personalization",
+    "cates": [
+      "Human Computer Interaction",
+      "Software Engineering",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 25
+  },
+  "ismar": {
+    "abbr": "ISMAR",
+    "fullname": "IEEE International Symposium on Mixed and Augmented Reality",
+    "cates": [
+      "Human Computer Interaction",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 23
+  },
+  "ease": {
+    "abbr": "EASE",
+    "fullname": "International Conference on Evaluation and Assessment in Software Engineering",
+    "cates": [
+      "Human Computer Interaction",
+      "Software Engineering"
+    ],
+    "hindex": 21
+  },
+  "refsq": {
+    "abbr": "REFSQ",
+    "fullname": "International Conference on Requirements Engineering: Foundation for Software Quality",
+    "cates": [
+      "Human Computer Interaction",
+      "Software Engineering"
+    ],
+    "hindex": 19
+  },
+  "iss": {
+    "abbr": "ISS",
+    "fullname": "ACM International Conference on Interactive Tabletops and Surfaces",
+    "cates": [
+      "Human Computer Interaction",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 18
+  },
+  "interact": {
+    "abbr": "INTERACT",
+    "fullname": "IFIP Conference on Human-Computer Interaction",
+    "cates": [
+      "Human Computer Interaction",
+      "Software Engineering",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 16
+  },
+  "pdc": {
+    "abbr": "PDC",
+    "fullname": "Participatory Design Conference",
+    "cates": [
+      "Human Computer Interaction"
+    ],
+    "hindex": 16
+  },
+  "gamesec": {
+    "abbr": "GameSec",
+    "fullname": "Conference on the Decision and Game Theory for Security (GameSec)",
+    "cates": [
+      "Human Computer Interaction",
+      "Computational Theory and Mathematics",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 16
+  },
+  "itc": {
+    "abbr": "ITC",
+    "fullname": "IEEE International Test Conference",
+    "cates": [
+      "Human Computer Interaction",
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 15
+  },
+  "wise": {
+    "abbr": "WISE",
+    "fullname": "Web Information Systems Engineering",
+    "cates": [
+      "Human Computer Interaction",
+      "Software Engineering",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 14
+  },
+  "hsi": {
+    "abbr": "HSI",
+    "fullname": "Conference on Human System Interactions",
+    "cates": [
+      "Human Computer Interaction"
+    ],
+    "hindex": 13
+  },
+  "icchp": {
+    "abbr": "ICCHP",
+    "fullname": "International Conference on Computers Helping People with Special Needs",
+    "cates": [
+      "Human Computer Interaction",
+      "General Computer Science"
+    ],
+    "hindex": 13
+  },
+  "icse": {
+    "abbr": "ICSE",
+    "fullname": "International Conference on Software Engineering",
+    "cates": [
+      "Software Engineering"
+    ],
+    "hindex": 75
+  },
+  "asplos": {
+    "abbr": "ASPLOS",
+    "fullname": "International Conference on Architectural Support for Programming Languages and Operating Systems",
+    "cates": [
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 56
+  },
+  "pldi": {
+    "abbr": "PLDI",
+    "fullname": "ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI)",
+    "cates": [
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 51
+  },
+  "focs": {
+    "abbr": "FOCS",
+    "fullname": "IEEE Symposium on Foundations of Computer Science",
+    "cates": [
+      "Software Engineering",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 51
+  },
+  "fse": {
+    "abbr": "FSE",
+    "fullname": "ACM SIGSOFT International Symposium on Foundations of Software Engineering",
+    "cates": [
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 51
+  },
+  "popl": {
+    "abbr": "POPL",
+    "fullname": "ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages (POPL)",
+    "cates": [
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 51
+  },
+  "osdi": {
+    "abbr": "OSDI",
+    "fullname": "Symposium on Operating Systems Design and Implementation (OSDI)",
+    "cates": [
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 49
+  },
+  "soda": {
+    "abbr": "SODA",
+    "fullname": "ACM SIAM Symposium on Discrete Algorithms",
+    "cates": [
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "General Computer Science"
+    ],
+    "hindex": 46
+  },
+  "ase": {
+    "abbr": "ASE",
+    "fullname": "IEEE/ACM International Conference on Automated Software Engineering",
+    "cates": [
+      "Software Engineering",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 40
+  },
+  "tacas": {
+    "abbr": "TACAS",
+    "fullname": "International Conference on Tools and Algorithms for the Construction and Analysis of Systems (TACAS)",
+    "cates": [
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 39
+  },
+  "cav": {
+    "abbr": "CAV",
+    "fullname": "International Conference on Computer Aided Verification",
+    "cates": [
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 38
+  },
+  "issta": {
+    "abbr": "ISSTA",
+    "fullname": "International Symposium on Software Testing and Analysis",
+    "cates": [
+      "Software Engineering",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 35
+  },
+  "oopsla": {
+    "abbr": "OOPSLA",
+    "fullname": "ACM SIGPLAN International Conference on Object-Oriented Programming, Systems, Languages, and Applications",
+    "cates": [
+      "Software Engineering",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 34
+  },
+  "icsme": {
+    "abbr": "ICSME",
+    "fullname": "IEEE International Conference on Software Maintenance and Evolution",
+    "cates": [
+      "Software Engineering"
+    ],
+    "hindex": 33
+  },
+  "icalp": {
+    "abbr": "ICALP",
+    "fullname": "International Colloquium on Automata, Languages and Programming",
+    "cates": [
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 32
+  },
+  "saner": {
+    "abbr": "SANER",
+    "fullname": "International Conference on Software Analysis, Evolution, and Reengineering",
+    "cates": [
+      "Software Engineering"
+    ],
+    "hindex": 30
+  },
+  "itcs": {
+    "abbr": "ITCS",
+    "fullname": "Conference on Innovations in Theoretical Computer Science",
+    "cates": [
+      "Software Engineering",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 30
+  },
+  "icfp": {
+    "abbr": "ICFP",
+    "fullname": "International Conference on Functional Programming",
+    "cates": [
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 27
+  },
+  "ciss": {
+    "abbr": "CISS",
+    "fullname": "Conference on Information Sciences and Systems",
+    "cates": [
+      "Software Engineering",
+      "Information Systems",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 26
+  },
+  "cgo": {
+    "abbr": "CGO",
+    "fullname": "International Symposium on Code Generation and Optimization",
+    "cates": [
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "General Computer Science"
+    ],
+    "hindex": 26
+  },
+  "esop": {
+    "abbr": "ESOP",
+    "fullname": "European Symposium on Programming",
+    "cates": [
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 26
+  },
+  "issre": {
+    "abbr": "ISSRE",
+    "fullname": "International Symposium on Software Reliability Engineering",
+    "cates": [
+      "Software Engineering"
+    ],
+    "hindex": 25
+  },
+  "esa": {
+    "abbr": "ESA",
+    "fullname": "European Symposium on Algorithms",
+    "cates": [
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "General Computer Science"
+    ],
+    "hindex": 24
+  },
+  "caise": {
+    "abbr": "CaiSE",
+    "fullname": "International Conference on Advanced Information Systems Engineering",
+    "cates": [
+      "Software Engineering",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 23
+  },
+  "ispass": {
+    "abbr": "ISPASS",
+    "fullname": "IEEE International Symposium on Performance Analysis of Systems and Software",
+    "cates": [
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 22
+  },
+  "cp": {
+    "abbr": "CP",
+    "fullname": "International Conference on Principles and Practice of Constraint Programming",
+    "cates": [
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "General Computer Science"
+    ],
+    "hindex": 22
+  },
+  "fossacs": {
+    "abbr": "FOSSACS",
+    "fullname": "International Conference on Foundations of Software Science and Computation Structures",
+    "cates": [
+      "Software Engineering",
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 21
+  },
+  "ecoop": {
+    "abbr": "ECOOP",
+    "fullname": "European Conference on Object-oriented Programming (ECOOP)",
+    "cates": [
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 21
+  },
+  "stacs": {
+    "abbr": "STACS",
+    "fullname": "Symposium on Theoretical Aspects of Computer Science (STACS)",
+    "cates": [
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 21
+  },
+  "models": {
+    "abbr": "MODELS",
+    "fullname": "Model Driven Engineering Languages and Systems",
+    "cates": [
+      "Software Engineering",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 21
+  },
+  "esem": {
+    "abbr": "ESEM",
+    "fullname": "International Symposium on Empirical Software Engineering and Measurement",
+    "cates": [
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 20
+  },
+  "xp": {
+    "abbr": "XP",
+    "fullname": "International Conference on Agile Processes in Software Engineering and Extreme Programming",
+    "cates": [
+      "Software Engineering",
+      "Information Systems",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 20
+  },
+  "sea": {
+    "abbr": "SEA",
+    "fullname": "International Symposium on Experimental Algorithms",
+    "cates": [
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "General Computer Science"
+    ],
+    "hindex": 19
+  },
+  "fase": {
+    "abbr": "FASE",
+    "fullname": "International Conference on Fundamental Approaches to Software Engineering",
+    "cates": [
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 18
+  },
+  "icsoc": {
+    "abbr": "ICSOC",
+    "fullname": "International Conference on Service Oriented Computing",
+    "cates": [
+      "Software Engineering",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 18
+  },
+  "atva": {
+    "abbr": "ATVA",
+    "fullname": "Automated Technology for Verification and Analysis",
+    "cates": [
+      "Software Engineering",
+      "Information Systems"
+    ],
+    "hindex": 18
+  },
+  "vmcai": {
+    "abbr": "VMCAI",
+    "fullname": "Verification, Model Checking and Abstract Interpretation",
+    "cates": [
+      "Software Engineering"
+    ],
+    "hindex": 17
+  },
+  "er": {
+    "abbr": "ER",
+    "fullname": "International Conference on Conceptual Modeling",
+    "cates": [
+      "Software Engineering"
+    ],
+    "hindex": 17
+  },
+  "seaa": {
+    "abbr": "SEAA",
+    "fullname": "EUROMICRO Conference on Software Engineering and Advanced Applications",
+    "cates": [
+      "Software Engineering",
+      "Information Systems"
+    ],
+    "hindex": 17
+  },
+  "isola": {
+    "abbr": "ISoLA",
+    "fullname": "International Symposium On Leveraging Applications of Formal Methods, Verification and Validation",
+    "cates": [
+      "Software Engineering"
+    ],
+    "hindex": 17
+  },
+  "ecsa": {
+    "abbr": "ECSA",
+    "fullname": "European Conference on Software Architecture",
+    "cates": [
+      "Software Engineering"
+    ],
+    "hindex": 16
+  },
+  "ipco": {
+    "abbr": "IPCO",
+    "fullname": "International Conference on Integer Programming and Combinatorial Optimization",
+    "cates": [
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "General Computer Science"
+    ],
+    "hindex": 16
+  },
+  "ssbse": {
+    "abbr": "SSBSE",
+    "fullname": "International Conference on Search based Software Engineering",
+    "cates": [
+      "Software Engineering",
+      "Information Systems"
+    ],
+    "hindex": 15
+  },
+  "icssp": {
+    "abbr": "ICSSP",
+    "fullname": "International Conference on Software and System Process",
+    "cates": [
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 15
+  },
+  "scam": {
+    "abbr": "SCAM",
+    "fullname": "IEEE International Working Conference on Source Code Analysis and Manipulation",
+    "cates": [
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 15
+  },
+  "sle": {
+    "abbr": "SLE",
+    "fullname": "Software Language Engineering",
+    "cates": [
+      "Software Engineering",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 15
+  },
+  "isaac": {
+    "abbr": "ISAAC",
+    "fullname": "International Symposium on Algorithms and Computation",
+    "cates": [
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "General Computer Science"
+    ],
+    "hindex": 14
+  },
+  "fst&tcs": {
+    "abbr": "FST&TCS",
+    "fullname": "Foundations of Software Technology and Theoretical Computer Science",
+    "cates": [
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "General Computer Science"
+    ],
+    "hindex": 14
+  },
+  "icgse": {
+    "abbr": "ICGSE",
+    "fullname": "IEEE International Conference on Global Software Engineering",
+    "cates": [
+      "Software Engineering"
+    ],
+    "hindex": 14
+  },
+  "iceis": {
+    "abbr": "ICEIS",
+    "fullname": "International Conference on Enterprise Information Systems",
+    "cates": [
+      "Software Engineering",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 14
+  },
+  "fsttcs": {
+    "abbr": "FSTTCS",
+    "fullname": "Foundations of Software Technology and Theoretical Computer Science",
+    "cates": [
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 14
+  },
+  "sefm": {
+    "abbr": "SEFM",
+    "fullname": "Software Engineering and Formal Methods",
+    "cates": [
+      "Software Engineering"
+    ],
+    "hindex": 14
+  },
+  "ppdp": {
+    "abbr": "PPDP",
+    "fullname": "International Symposium on Principles and Practice of Declarative Programming",
+    "cates": [
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 14
+  },
+  "fem": {
+    "abbr": "FEM",
+    "fullname": "International Conference on Formal Engineering Methods",
+    "cates": [
+      "Software Engineering"
+    ],
+    "hindex": 13
+  },
+  "apsec": {
+    "abbr": "APSEC",
+    "fullname": "Asia-Pacific Software Engineering Conference",
+    "cates": [
+      "Software Engineering"
+    ],
+    "hindex": 13
+  },
+  "wg": {
+    "abbr": "WG",
+    "fullname": "Workshop on Graph-Theoretic Concepts in Computer Science",
+    "cates": [
+      "Software Engineering",
+      "General Computer Science"
+    ],
+    "hindex": 13
+  },
+  "adbis": {
+    "abbr": "ADBIS",
+    "fullname": "Advances in Databases and Information Systems",
+    "cates": [
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 13
+  },
+  "iceccs": {
+    "abbr": "ICECCS",
+    "fullname": "IEEE International Conference on Engineering of Complex Computer Systems",
+    "cates": [
+      "Software Engineering"
+    ],
+    "hindex": 12
+  },
+  "aplas": {
+    "abbr": "APLAS",
+    "fullname": "Asian Symposium on Programming Languages and Systems",
+    "cates": [
+      "Software Engineering",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 12
+  },
+  "dlt": {
+    "abbr": "DLT",
+    "fullname": "Developments in Language Theory",
+    "cates": [
+      "Software Engineering",
+      "Computational Theory and Mathematics",
+      "General Computer Science"
+    ],
+    "hindex": 12
+  },
+  "cec": {
+    "abbr": "CEC",
+    "fullname": "IEEE Congress on Evolutionary Computation",
+    "cates": [
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 68
+  },
+  "stoc": {
+    "abbr": "STOC",
+    "fullname": "ACM Symposium on Theory of Computing",
+    "cates": [
+      "Computational Theory and Mathematics",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 63
+  },
+  "gecco": {
+    "abbr": "GECCO",
+    "fullname": "Conference on Genetic and Evolutionary Computation",
+    "cates": [
+      "Computational Theory and Mathematics",
+      "General Computer Science"
+    ],
+    "hindex": 26
+  },
+  "lics": {
+    "abbr": "LICS",
+    "fullname": "IEEE Symposium on Logic in Computer Science",
+    "cates": [
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 24
+  },
+  "recomb": {
+    "abbr": "RECOMB",
+    "fullname": "International Conference on Research in Computational Molecular Biology",
+    "cates": [
+      "Computational Theory and Mathematics",
+      "Biomedical Engineering & Medical Informatics"
+    ],
+    "hindex": 23
+  },
+  "psb": {
+    "abbr": "PSB",
+    "fullname": "Pacific Symposium on Biocomputing",
+    "cates": [
+      "Computational Theory and Mathematics",
+      "Biomedical Engineering & Medical Informatics"
+    ],
+    "hindex": 22
+  },
+  "scg": {
+    "abbr": "SCG",
+    "fullname": "Symposium on Computational Geometry",
+    "cates": [
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 22
+  },
+  "sat": {
+    "abbr": "SAT",
+    "fullname": "Theory and Applications of Satisfiability Testing",
+    "cates": [
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 22
+  },
+  "ccc": {
+    "abbr": "CCC",
+    "fullname": "Conference on Computational Complexity",
+    "cates": [
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 21
+  },
+  "itw": {
+    "abbr": "ITW",
+    "fullname": "IEEE Information Theory Workshop",
+    "cates": [
+      "Computational Theory and Mathematics",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 20
+  },
+  "iccsa": {
+    "abbr": "ICCSA",
+    "fullname": "International Conference on Computational Science and Its Applications",
+    "cates": [
+      "Computational Theory and Mathematics",
+      "General Computer Science"
+    ],
+    "hindex": 19
+  },
+  "issac": {
+    "abbr": "ISSAC",
+    "fullname": "International Symposium on Symbolic and Algebraic Computation",
+    "cates": [
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 17
+  },
+  "cade": {
+    "abbr": "CADE",
+    "fullname": "International Conference on Automated Deduction",
+    "cates": [
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 17
+  },
+  "mfcs": {
+    "abbr": "MFCS",
+    "fullname": "Mathematical Foundations of Computer Science",
+    "cates": [
+      "Computational Theory and Mathematics",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 17
+  },
+  "ssdbm": {
+    "abbr": "SSDBM",
+    "fullname": "Statistical and Scientific Database Management",
+    "cates": [
+      "Computational Theory and Mathematics",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 16
+  },
+  "alt": {
+    "abbr": "ALT",
+    "fullname": "Algorithmic Learning Theory (ALT)",
+    "cates": [
+      "Computational Theory and Mathematics",
+      "General Computer Science"
+    ],
+    "hindex": 15
+  },
+  "ecta": {
+    "abbr": "ECTA",
+    "fullname": "International Conference on Applications of Evolutionary Computation",
+    "cates": [
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 15
+  },
+  "icnc": {
+    "abbr": "ICNC",
+    "fullname": "International Conference on Natural Computation",
+    "cates": [
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 14
+  },
+  "emo": {
+    "abbr": "EMO",
+    "fullname": "Evolutionary Multi-Criterion Optimization",
+    "cates": [
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 14
+  },
+  "ipec": {
+    "abbr": "IPEC",
+    "fullname": "International Workshop on Parameterized and Exact Computation",
+    "cates": [
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 13
+  },
+  "cocoon": {
+    "abbr": "COCOON",
+    "fullname": "International Conference on Computing and Combinatorics",
+    "cates": [
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 12
+  },
+  "synasc": {
+    "abbr": "SYNASC",
+    "fullname": "International Symposium on Symbolic and Numeric Algorithms for Scientific Computing",
+    "cates": [
+      "Computational Theory and Mathematics"
+    ],
+    "hindex": 12
+  },
+  "icassp": {
+    "abbr": "ICASSP",
+    "fullname": "IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+    "cates": [
+      "Signal Processing",
+      "Computational Linguistics & Speech Processing"
+    ],
+    "hindex": 80
+  },
+  "tcc": {
+    "abbr": "TCC",
+    "fullname": "Theory of Cryptography",
+    "cates": [
+      "Signal Processing",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 37
+  },
+  "ismir": {
+    "abbr": "ISMIR",
+    "fullname": "International Society for Music Information Retrieval Conference",
+    "cates": [
+      "Signal Processing",
+      "Information Systems",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 32
+  },
+  "acssc": {
+    "abbr": "ACSSC",
+    "fullname": "Asilomar Conference on Signals, Systems and Computers",
+    "cates": [
+      "Signal Processing",
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 25
+  },
+  "vldb": {
+    "abbr": "VLDB",
+    "fullname": "International Conference on Very Large Databases",
+    "cates": [
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 74
+  },
+  "hicss": {
+    "abbr": "HICSS",
+    "fullname": "Hawaii International Conference on System Sciences",
+    "cates": [
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 40
+  },
+  "msr": {
+    "abbr": "MSR",
+    "fullname": "Mining Software Repositories",
+    "cates": [
+      "Information Systems"
+    ],
+    "hindex": 38
+  },
+  "ecis": {
+    "abbr": "ECIS",
+    "fullname": "European Conference on Information Systems",
+    "cates": [
+      "Information Systems",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 30
+  },
+  "icis": {
+    "abbr": "ICIS",
+    "fullname": "International Conference on Information Systems",
+    "cates": [
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 29
+  },
+  "ita": {
+    "abbr": "ITA",
+    "fullname": "Information Theory and Applications Workshop",
+    "cates": [
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 28
+  },
+  "edbt": {
+    "abbr": "EDBT",
+    "fullname": "International Conference on Extending Database Technology",
+    "cates": [
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 27
+  },
+  "pods": {
+    "abbr": "PODS",
+    "fullname": "ACM SIGMOD-SIGACT-SIGART Symposium on Principles of Database Systems",
+    "cates": [
+      "Information Systems"
+    ],
+    "hindex": 25
+  },
+  "pacis": {
+    "abbr": "PACIS",
+    "fullname": "Pacific Asia Conference on Information Systems",
+    "cates": [
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 23
+  },
+  "amcis": {
+    "abbr": "AMCIS",
+    "fullname": "Americas Conference on Information Systems",
+    "cates": [
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 22
+  },
+  "iticse": {
+    "abbr": "ITiCSE",
+    "fullname": "Joint Conference on Innovation and Technology in Computer Science Education",
+    "cates": [
+      "Information Systems",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 21
+  },
+  "fie": {
+    "abbr": "FIE",
+    "fullname": "Frontiers in Education Conference",
+    "cates": [
+      "Information Systems",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 21
+  },
+  "jcdl": {
+    "abbr": "JCDL",
+    "fullname": "International ACM/IEEE Joint Conference on Digital Libraries",
+    "cates": [
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 19
+  },
+  "wine": {
+    "abbr": "WINE",
+    "fullname": "International Conference on Web and Internet Economics",
+    "cates": [
+      "Information Systems",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 18
+  },
+  "icdt": {
+    "abbr": "ICDT",
+    "fullname": "International Conference on Database Theory",
+    "cates": [
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 18
+  },
+  "mdm": {
+    "abbr": "MDM",
+    "fullname": "International Conference on Mobile Data Management",
+    "cates": [
+      "Information Systems",
+      "Web, Mobile & Multimedia Technologies"
+    ],
+    "hindex": 17
+  },
+  "dasfaa": {
+    "abbr": "DASFAA",
+    "fullname": "International Conference on Database Systems for Advanced Applications",
+    "cates": [
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 17
+  },
+  "rcis": {
+    "abbr": "RCIS",
+    "fullname": "International Conference on Research Challenges in Information Science",
+    "cates": [
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 17
+  },
+  "dgo": {
+    "abbr": "DGO",
+    "fullname": "Annual International Conference on Digital Government Research",
+    "cates": [
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 15
+  },
+  "systor": {
+    "abbr": "SYSTOR",
+    "fullname": "ACM International Systems and Storage Conference",
+    "cates": [
+      "Information Systems",
+      "General Computer Science"
+    ],
+    "hindex": 14
+  },
+  "webist": {
+    "abbr": "WEBIST",
+    "fullname": "International Conference on Web Information Systems and Technologies",
+    "cates": [
+      "Information Systems",
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 14
+  },
+  "semeval": {
+    "abbr": "SemEval",
+    "fullname": "International Workshop on Semantic Evaluation",
+    "cates": [
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 49
+  },
+  "ec": {
+    "abbr": "EC",
+    "fullname": "ACM Conference on Electronic Commerce",
+    "cates": [
+      "Web, Mobile & Multimedia Technologies",
+      "General Computer Science"
+    ],
+    "hindex": 40
+  },
+  "usenix security": {
+    "abbr": "USENIX Security",
+    "fullname": "USENIX Security Symposium",
+    "cates": [
+      "General Computer Science",
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 81
+  },
+  "ias": {
+    "abbr": "IAS",
+    "fullname": "IEEE Industry Applications Society Annual Meeting",
+    "cates": [
+      "General Computer Science"
+    ],
+    "hindex": 22
+  },
+  "icalt": {
+    "abbr": "ICALT",
+    "fullname": "IEEE International Conference on Advanced Learning Technologies",
+    "cates": [
+      "General Computer Science"
+    ],
+    "hindex": 18
+  },
+  "amia": {
+    "abbr": "AMIA",
+    "fullname": "AMIA Symposium",
+    "cates": [
+      "Biomedical Engineering & Medical Informatics"
+    ],
+    "hindex": 25
+  },
+  "ichi": {
+    "abbr": "ICHI",
+    "fullname": "IEEE International Conference on Healthcare Informatics",
+    "cates": [
+      "Biomedical Engineering & Medical Informatics"
+    ],
+    "hindex": 16
+  },
+  "sp": {
+    "abbr": "SP",
+    "fullname": "IEEE Symposium on Security and Privacy",
+    "cates": [
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 72
+  },
+  "asiacrypt": {
+    "abbr": "ASIACRYPT",
+    "fullname": "International Conference on The Theory and Application of Cryptology and Information Security (ASIACRYPT)",
+    "cates": [
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 40
+  },
+  "esorics": {
+    "abbr": "ESORICS",
+    "fullname": "European Conference on Research in Computer Security",
+    "cates": [
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 32
+  },
+  "acsac": {
+    "abbr": "ACSAC",
+    "fullname": "Computer Security Applications Conference",
+    "cates": [
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 30
+  },
+  "csf": {
+    "abbr": "CSF",
+    "fullname": "IEEE Computer Security Foundations Symposium",
+    "cates": [
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 26
+  },
+  "ifip sec": {
+    "abbr": "IFIP SEC",
+    "fullname": "IFIP TC 11 International Conference on ICT Systems Security and Privacy Protection",
+    "cates": [
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 19
+  },
+  "indocrypt": {
+    "abbr": "INDOCRYPT",
+    "fullname": "International Conference on Cryptology in India",
+    "cates": [
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 17
+  },
+  "safecomp": {
+    "abbr": "SAFECOMP",
+    "fullname": "International Conference on Computer Safety, Reliability, and Security",
+    "cates": [
+      "Computer Security and Cryptography"
+    ],
+    "hindex": 16
+  },
+  "hlt-naacl": {
+    "abbr": "HLT-NAACL",
+    "fullname": "Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (HLT-NAACL)",
+    "cates": [
+      "Computational Linguistics & Speech Processing"
+    ],
+    "hindex": 61
+  },
+  "conll": {
+    "abbr": "CoNLL",
+    "fullname": "Conference on Computational Natural Language Learning (CoNLL)",
+    "cates": [
+      "Computational Linguistics & Speech Processing"
+    ],
+    "hindex": 34
+  },
+  "*sem": {
+    "abbr": "*SEM",
+    "fullname": "Joint Conference on Lexical and Computational Semantics",
+    "cates": [
+      "Computational Linguistics & Speech Processing"
+    ],
+    "hindex": 16
+  }
+}
