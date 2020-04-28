@@ -21,15 +21,20 @@ svg {
     fill: #888;
     opacity: 0.5;
 }
+
 .face {
-    fill: #888;
-    opacity: 0.0;
+    stroke: #888;
+    fill: none;
+    display: none;
 }
 
 .edge {
     opacity: 0.8;
 }
 
+.scatter-plot {
+    display: none;
+}
 .scatter-plot circle {
     fill: #088;
     opacity: 0.3;

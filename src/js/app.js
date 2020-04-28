@@ -23,18 +23,20 @@ function main(){
                 $('.label').hide();
             }
         })
+        $('#checkboxCorr').change(function(){
+            if(this.checked) {
+                $('.edge').show();
+                $('.face').hide();
+            } else {
+                $('.edge').hide();
+                $('.face').show();
+            }
+        })
         $('#checkboxScatter').change(function(){
             if(this.checked) {
                 $('.scatter-plot').show();
             } else {
                 $('.scatter-plot').hide();
-            }
-        })
-        $('#checkboxCorr').change(function(){
-            if(this.checked) {
-                $('.edge').show();
-            } else {
-                $('.edge').hide();
             }
         })
         $('#checkboxHeatmap').change(function(){

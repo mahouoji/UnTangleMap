@@ -23,12 +23,12 @@ UnTangleMap.prototype = {
         grid.append('g').attr('class', 'grid-vertex grid-zoom-2');
         // map
         let utgmap = self.svg.append('g').attr('class', 'utgmap');
-        utgmap.append('g').attr('class', 'face');
         let heatmap = utgmap.append('g').attr('class', 'heatmap');
         heatmap.append('g').attr('class', 'heatmap-d0');
         heatmap.append('g').attr('class', 'heatmap-d1');
         heatmap.append('g').attr('class', 'heatmap-d2');
         heatmap.append('g').attr('class', 'heatmap-d3');
+        utgmap.append('g').attr('class', 'face');
         utgmap.append('g').attr('class', 'edge');
         utgmap.append('g').attr('class', 'scatter-plot');
         utgmap.append('g').attr('class', 'hint');
@@ -234,10 +234,12 @@ UnTangleMap.prototype = {
     updateFaces: function(faceData) {
         var self = this;
         var face = self.svg.select('.utgmap').select('.face')
-            .selectAll('polyline').data(faceData);
+            .selectAll('polygon').data(faceData);
         face.exit().remove();
-        face.enter().append('polyline').merge(face)
+        face.enter().append('polygon').merge(face)
         .attr('points', function (f) { return Hex.faceToSvgPath(f.cord); })
+        .attr('stroke-width', self.opt.faceStroke)
+        .attr('stroke-linejoin', 'round');
         return self;
     },
     updateScatterPlot: function (faceData) {
@@ -287,9 +289,9 @@ UnTangleMap.prototype = {
                 colorScale = d3.scaleSequential(d3.interpolateGreens).domain([1, maxCnt+1]);
             }
             let poly = self.svg.select('.utgmap').select(`.heatmap-d${d}`)
-                .selectAll('polyline').data(Heatmap.heatmap[d])
+                .selectAll('polygon').data(Heatmap.heatmap[d])
             poly.exit().remove();
-            poly.enter().append('polyline').merge(poly)
+            poly.enter().append('polygon').merge(poly)
                 .attr('points', d=>self.getSVGPoints(d.vecPos))
                 .attr('fill', d=>colorScale(d.cnt + 1))
                 .attr('cnt', d=>d.cnt);
@@ -328,7 +330,7 @@ UnTangleMap.prototype = {
             .attr('x2', d=>d.pos2[0])
             .attr('y2', d=>d.pos2[1])
             .attr('stroke', d=>colorScale(d.corr))
-            .attr('stroke-width', 2)
+            .attr('stroke-width', self.opt.edgeStroke)
             .attr('stroke-linecap', 'round');
         return self;
     },
@@ -398,6 +400,8 @@ UnTangleMap.init = function (selector, userOpt) {
         height: 550,
         side: 30.0,
         gridStroke: 0.5,
+        faceStroke: 0.8,
+        edgeStroke: 2,
         gridRaid: 4,
         labelRaid: 3,
         labelFontSize: 8,
