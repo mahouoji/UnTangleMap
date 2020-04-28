@@ -1,12 +1,12 @@
 svg {
     border: 1px dashed;
 }
-
+/*
 .grid-axes-q,.grid-axes-r,.grid-axes-s {
     stroke: #ccc;
     stroke-width: 0.5px;
     shape-rendering: crispEdges;
-}
+}*/
 .grid-vertex {
     fill: white;
     stroke:#ccc;

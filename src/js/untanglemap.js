@@ -16,11 +16,10 @@ UnTangleMap.prototype = {
     initLayers: function() {
         var self = this;
         // grid
-        let grid = self.svg.append('g').attr('class', 'grid');
-        grid.append('g').attr('class', 'grid-axes-q grid-zoom-1');
-        grid.append('g').attr('class', 'grid-axes-s grid-zoom-2');
-        grid.append('g').attr('class', 'grid-axes-r grid-zoom-2');
-        grid.append('g').attr('class', 'grid-vertex grid-zoom-2');
+        self.addGridLayer('grid-d0');
+        //self.addGridLayer('grid-d1')
+        //    .addGridLayer('grid-d2')
+        //    .addGridLayer('grid-d3');
         // map
         let utgmap = self.svg.append('g').attr('class', 'utgmap');
         let heatmap = utgmap.append('g').attr('class', 'heatmap');
@@ -37,17 +36,45 @@ UnTangleMap.prototype = {
         self.selector.append("div").attr("class", "tooltip");
         return self
     },
+    addGridLayer: function(gridSelector) {
+        let grid = this.svg.append('g').attr('class', gridSelector);
+        grid.append('g').attr('class', 'grid-axes-q grid-zoom-1');
+        grid.append('g').attr('class', 'grid-axes-s grid-zoom-2');
+        grid.append('g').attr('class', 'grid-axes-r grid-zoom-2');
+        grid.append('g').attr('class', 'grid-vertex grid-zoom-2');
+        return this;
+    },
     // set up grid and zooming
     initGrid: function () {
         //step
         var self = this;
-        var w = self.opt.side;
-        var h = self.opt.side * Math.sqrt(3) / 2.0;
-        var width = self.opt.width;
-        var height = self.opt.height;
+        let w = self.opt.side;
+        let h = self.opt.side * Math.sqrt(3) / 2.0;
+        let width = self.opt.width;
+        let height = self.opt.height;
 
         //axis
-        let grid = self.svg.select('.grid');
+        self.drawGridLines('.grid-d0', width, height, w, h, self.opt.gridStroke);
+        //self.drawGridLines('.grid-d1', width, height, w/2., h/2., self.opt.gridStrokeSub);
+        //self.drawGridLines('.grid-d2', width, height, w/4., h/4., self.opt.gridStrokeSub);
+        //self.drawGridLines('.grid-d3', width, height, w/8., h/8., self.opt.gridStrokeSub);
+        // vertex
+        let grid = self.svg.select('.grid-d0');
+        grid.select('.grid-vertex').selectAll('circle')
+            .data(d3.cross(d3.range(-1, width / w + 1), d3.range(-1, height / h + 1)))
+            .enter()
+            .append('circle')
+            .attr('r', this.opt.gridRaid)
+            .attr('cx', function (d) { return d[0] * w - (d[1] % 2 ? w / 2 : 0); })
+            .attr('cy', function (d) { return d[1] * h; });
+        // style
+        grid.selectAll('circle')
+            .attr('stroke', self.opt.gridStroke)
+            .attr('vector-effect', 'non-scaling-stroke');
+    },
+    drawGridLines: function(gridSelector, width, height, w, h, stroke) {
+        //axis
+        let grid = this.svg.select(gridSelector);
         // horizontal
         grid.select('.grid-axes-q').selectAll('line')
             .data(d3.range(0, height / h + 1))
@@ -58,7 +85,7 @@ UnTangleMap.prototype = {
             .attr('y1', function (d) { return d * h; })
             .attr('x2', width)
             .attr('y2', function (d) { return d * h; })
-            .attr('stroke', '');
+            .attr('stroke', stroke);
         // left
         grid.select('.grid-axes-s').selectAll('line')
             .data(d3.range(-1, width * 2 / w))
@@ -79,29 +106,16 @@ UnTangleMap.prototype = {
             .attr('y1', -2 * h)
             .attr('x2', function (d) { return d * w + (height + 2 * h) / Math.sqrt(3); })
             .attr('y2', height + 2 * h);
-        // vertex
-        grid.select('.grid-vertex').selectAll('circle')
-            .data(d3.cross(d3.range(-1, width / w + 1), d3.range(-1, height / h + 1)))
-            .enter()
-            .append('circle')
-            .attr('r', this.opt.gridRaid)
-            .attr('cx', function (d) { return d[0] * w - (d[1] % 2 ? w / 2 : 0); })
-            .attr('cy', function (d) { return d[1] * h; });
-        // style
         grid.selectAll('line')
-            .attr('stroke', self.opt.gridStroke)
-            .attr('vector-effect', 'non-scaling-stroke');
-        grid.selectAll('circle')
-            .attr('stroke', self.opt.gridStroke)
-            .attr('vector-effect', 'non-scaling-stroke');
+            .attr('stroke', '#ccc')
+            .attr('stroke-width', stroke)
+            .attr('vector-effect', 'non-scaling-stroke')
+            .attr('shape-rendering', 'crispEdges');
     },
     initZoom: function () {
         var self = this;
         var w = self.opt.side;
         var h = self.opt.side * Math.sqrt(3) / 2.0;
-        $('.heatmap-d1').show();
-        $('.heatmap-d2').hide();
-        $('.heatmap-d3').hide();
         // zoom
         var zoom = d3.zoom().scaleExtent([1, 10])
             .on("zoom", zoomed)
@@ -127,20 +141,21 @@ UnTangleMap.prototype = {
             self.adjustZoom();
         }
         self.svg.call(zoom);
+        self.adjustZoom(); // resize to adjust current zooming when switching datasets
         return self;
     },
     adjustZoom: function() {
         var self = this;
-        let utgmap = self.svg.select('.utgmap').attr("transform", d3.event.transform);
+        let utgmap = self.svg.select('.utgmap');
         // label font-size
-        let labelFontSize = Math.min(self.opt.labelFontSize, 28 / d3.event.transform.k);
-        let gridRaid = Math.min(self.opt.gridRaid, 8 / d3.event.transform.k);
+        let labelFontSize = Math.min(self.opt.labelFontSize, 28 / self.transform.k);
+        let gridRaid = Math.min(self.opt.gridRaid, 8 / self.transform.k);
         utgmap.selectAll('text').attr('font-size', labelFontSize);
         utgmap.selectAll('text').attr("transform","translate(0,"+(labelFontSize+gridRaid)+")")
         // circles
-        self.svg.select(".scatter-plot").selectAll("circle").attr('r', self.opt.itemRaid / d3.event.transform.k);
+        self.svg.select(".scatter-plot").selectAll("circle").attr('r', self.opt.itemRaid / self.transform.k);
         // heatmap
-        if (self.transform.k < 2) {
+        if (self.transform.k < 1.5) {
             $('.heatmap-d1').show();
             $('.heatmap-d2').hide();
             $('.heatmap-d3').hide();
@@ -153,6 +168,21 @@ UnTangleMap.prototype = {
             $('.heatmap-d2').hide();
             $('.heatmap-d3').show();
         }
+        // grid
+        /*
+        if (self.transform.k < 2) {
+            $('.grid-d1').show();
+            $('.grid-d2').hide();
+            $('.grid-d3').hide();
+        } else if (self.transform.k < 5) {
+            $('.grid-d1').hide();
+            $('.grid-d2').show();
+            $('.grid-d3').hide();
+        } else {
+            $('.grid-d1').hide();
+            $('.grid-d2').hide();
+            $('.grid-d3').show();
+        }*/
         return self;
     },
     // set up labels and label dragging
@@ -407,6 +437,7 @@ UnTangleMap.init = function (selector, userOpt) {
         width: 1000,
         height: 550,
         side: 30.0,
+        gridStrokeSub: 0.3,
         gridStroke: 0.5,
         faceStroke: 0.8,
         edgeStroke: 2,
