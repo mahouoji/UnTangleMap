@@ -104,7 +104,8 @@ UnTangleMap.prototype = {
         $('.heatmap-d3').hide();
         // zoom
         var zoom = d3.zoom().scaleExtent([1, 10])
-            .on("zoom", zoomed);
+            .on("zoom", zoomed)
+            .on("end", zoomEnd);
         function zoomed() {
             // grid
             self.svg.selectAll('.grid-zoom-1').attr("transform",
@@ -116,36 +117,42 @@ UnTangleMap.prototype = {
                 + d3.event.transform.y % (2 * h * d3.event.transform.k)
                 + ")scale(" + d3.event.transform.k + ")");
             // labels and data items
-            let utgmap = self.svg.select('.utgmap').attr("transform", d3.event.transform);
-            // label font-size
-            /*
-            let labelFontSize = Math.min(self.opt.labelFontSize, 28 / d3.event.transform.k);
-            let gridRaid = Math.min(self.opt.gridRaid, 8 / d3.event.transform.k);
-            utgmap.selectAll('text').attr('font-size', labelFontSize);
-            utgmap.selectAll('text').attr("transform","translate(0,"+(labelFontSize+gridRaid)+")")
-            // circles
-            self.svg.select(".scatter-plot").selectAll("circle").attr('r', self.opt.itemRaid / d3.event.transform.k);
-            //console.log(Math.min(self.opt.gridRaid, 12 / d3.event.transform.k));
-            */
-            // heatmap
-            if (d3.event.transform.k < 2) {
-                $('.heatmap-d1').show();
-                $('.heatmap-d2').hide();
-                $('.heatmap-d3').hide();
-            } else if (d3.event.transform.k < 5) {
-                $('.heatmap-d1').hide();
-                $('.heatmap-d2').show();
-                $('.heatmap-d3').hide();
-            } else {
-                $('.heatmap-d1').hide();
-                $('.heatmap-d2').hide();
-                $('.heatmap-d3').show();
-            }
+            self.svg.select('.utgmap').attr("transform", d3.event.transform);
             // offset
-            self.originOffset[0] = d3.event.transform.x;
-            self.originOffset[1] = d3.event.transform.y;
+            self.transform.x = d3.event.transform.x;
+            self.transform.y = d3.event.transform.y;
+            self.transform.k = d3.event.transform.k;
+        }
+        function zoomEnd() {
+            self.adjustZoom();
         }
         self.svg.call(zoom);
+        return self;
+    },
+    adjustZoom: function() {
+        var self = this;
+        let utgmap = self.svg.select('.utgmap').attr("transform", d3.event.transform);
+        // label font-size
+        let labelFontSize = Math.min(self.opt.labelFontSize, 28 / d3.event.transform.k);
+        let gridRaid = Math.min(self.opt.gridRaid, 8 / d3.event.transform.k);
+        utgmap.selectAll('text').attr('font-size', labelFontSize);
+        utgmap.selectAll('text').attr("transform","translate(0,"+(labelFontSize+gridRaid)+")")
+        // circles
+        self.svg.select(".scatter-plot").selectAll("circle").attr('r', self.opt.itemRaid / d3.event.transform.k);
+        // heatmap
+        if (self.transform.k < 2) {
+            $('.heatmap-d1').show();
+            $('.heatmap-d2').hide();
+            $('.heatmap-d3').hide();
+        } else if (self.transform.k < 5) {
+            $('.heatmap-d1').hide();
+            $('.heatmap-d2').show();
+            $('.heatmap-d3').hide();
+        } else {
+            $('.heatmap-d1').hide();
+            $('.heatmap-d2').hide();
+            $('.heatmap-d3').show();
+        }
         return self;
     },
     // set up labels and label dragging
@@ -355,6 +362,7 @@ UnTangleMap.prototype = {
             .updateHeatmap(faceLayout)
             .updateScatterPlot(faceLayout)
             .updateEdges(faceLayout);
+        return this;
     },
 
     // manage data
@@ -390,8 +398,8 @@ UnTangleMap.init = function (selector, userOpt) {
     var self = this;
     //data
     self.data = {labels: [], items: []};
-    self.labelPos = [];//svg coordinates for labels by lableIndex
-    self.originOffset = [0, 0];
+    self.labelPos = [];// svg coordinates for labels by lableIndex
+    self.transform = {x:0, y:0, k:1.0};// records transformation
 
     //config
     self.opt = {
