@@ -13,8 +13,7 @@ svg {
     stroke-width: 1px;
 }
 .label circle {
-    fill: #088;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 .label text {

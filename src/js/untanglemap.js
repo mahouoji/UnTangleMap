@@ -212,6 +212,8 @@ UnTangleMap.prototype = {
         let vertex = self.svg.select('.utgmap').select('.label').attr('cursor', 'grab');
         let g = vertex.selectAll('g').data(labelData);
         let labelTrans = self.labelAsCircle ? `translate(0,${self.opt.labelFontSize+self.opt.gridRaid})` : 'translate(0,0)';
+        let powScale = d3.scalePow().exponent(0.2).domain([0.,1.]);
+        let colorScale = d3.scaleSequential(t=>d3.interpolatePurples(powScale(t)));
         g.exit().remove();
         g.enter().append('g').merge(g)
         .each(function(d) {
@@ -234,7 +236,8 @@ UnTangleMap.prototype = {
             .attr('r', self.opt.labelRaid)
             .attr('cx', function (d) { return Hex.hexToX(d.cord); })
             .attr('cy', function (d) { return Hex.hexToY(d.cord); })
-            .attr('label', d=>d.name);
+            .attr('label', d=>d.name)
+            .attr('fill', d=>colorScale(self.data.labelScore[self.data.labelIndex[d.name]]));
         });
         self.initDrag();
         return self;
@@ -371,7 +374,7 @@ UnTangleMap.prototype = {
                 .selectAll('polygon').data(Heatmap.heatmap[k])
             poly.exit().remove();
             poly.enter().append('polygon').merge(poly)
-                .attr('points', d=>self.getSVGPoints(d.vecPos))
+                .attr('points', d=>`${d.vecPos[0][0]} ${d.vecPos[0][1]},${d.vecPos[1][0]} ${d.vecPos[1][1]},${d.vecPos[2][0]} ${d.vecPos[2][1]}`)
                 .attr('fill', d=>colorScale(d.cnt + 1))
                 .attr('cnt', d=>d.cnt)
                 .attr('cnt-color', d=>colorScale(d.cnt + 1))
@@ -522,7 +525,7 @@ UnTangleMap.init = function (selector, userOpt) {
         faceStroke: 0.5,
         edgeStroke: 2,
         gridRaid: 4,
-        labelRaid: 3,
+        labelRaid: 3.5,
         labelFontSize: 8,
         itemRaid: 1.3,
         corrMethod: 'spearman'

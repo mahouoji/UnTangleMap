@@ -19,11 +19,26 @@ Controller.prototype = {
         //TODO: check validity
 
         // hashmap for label to index in label list
-        data.labelIndex = data.labels.reduce(function(map, label, index) {
+        data.labelIndex = data.labels.reduce((map, label, index)=>{
             map[label.name] = index;
             return map;
         }, {});
-        data.label
+        // label score
+        let itemSum = data.items.map(item=>item.vec.reduce((total,n)=>total+n, 0));
+        data.labelScore = data.items.reduce((total, item, index)=>{
+            //console.log(total.map((x,i)=>x + item.vec[i] / itemSum[index]));
+            if (itemSum[index] === 0) { return total; }
+            return total.map((x,i)=>x + item.vec[i] / itemSum[index]);
+        }, Array(data.labels.length).fill(0));
+        data.labelScore = data.labelScore.map(x=>x/data.items.length);
+        console.log(data.labelScore);
+        // data.labelScore = data.items.reduce((total, item)=>{
+        //     return total.map((x,i)=>x + item.vec[i]);
+        // }, Array(data.labels.length).fill(0));
+        // let total = data.labelScore.reduce((total,n)=>total+n);
+        // console.log(total);
+        // data.labelScore = data.labelScore.map(x=>x/total);
+        // console.log(data.labelScore);
         return data;
     },
 
