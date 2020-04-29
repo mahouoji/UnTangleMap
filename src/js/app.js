@@ -17,11 +17,7 @@ function main(){
             controller.updateCorrMethod($('#untangleCorrSelect').val());
         });
         $('#checkboxLabel').change(function(){
-            if(this.checked) {
-                $('.label').show();
-            } else {
-                $('.label').hide();
-            }
+            controller.checkLabel(this.checked);
         })
         $('#checkboxCorr').change(function(){
             if(this.checked) {

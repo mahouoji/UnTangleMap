@@ -157,8 +157,9 @@ UnTangleMap.prototype = {
         let labelFontSize = self.transform.k < 1.5 ? 8 : self.transform.k < 4 ? 6 : self.transform.k < 8 ? 4 : 3;
         //let gridRaid = Math.min(self.opt.gridRaid, 8 / self.transform.k);
         let gridRaid = self.opt.gridRaid / (self.transform.k * 1.5);
+        let labelTrans = self.labelAsCircle ? `translate(0,${labelFontSize+gridRaid})` : 'translate(0,0)';
         utgmap.selectAll('text').attr('font-size', labelFontSize);
-        utgmap.selectAll('text').attr("transform","translate(0,"+(labelFontSize+gridRaid)+")")
+        utgmap.selectAll('text').attr("transform",labelTrans);
         // circles
         let constItenSize = self.transform.k < 2 ? 1.0 : (self.transform.k < 5 ? 0.8 : 0.6);
         self.svg.select(".scatter-plot").selectAll("circle").attr('r', Math.max(self.opt.itemRaid / self.transform.k, constItenSize));
@@ -208,9 +209,9 @@ UnTangleMap.prototype = {
     // set up labels and label dragging
     initLabels: function (labelData) {
         var self = this;
-        let hints = self.svg.select('.utgmap').select('.hint');
         let vertex = self.svg.select('.utgmap').select('.label').attr('cursor', 'grab');
         let g = vertex.selectAll('g').data(labelData);
+        let labelTrans = self.labelAsCircle ? `translate(0,${self.opt.labelFontSize+self.opt.gridRaid})` : 'translate(0,0)';
         g.exit().remove();
         g.enter().append('g').merge(g)
         .each(function(d) {
@@ -220,8 +221,9 @@ UnTangleMap.prototype = {
             .attr('font-size', self.opt.labelFontSize)
             .attr('dx', function (d) { return Hex.hexToX(d.cord); })
             .attr('dy', function (d) { return Hex.hexToY(d.cord); })
-            .attr("transform","translate(0,"+(self.opt.labelFontSize+self.opt.gridRaid)+")")
+            .attr("transform", labelTrans)
             .attr('text-anchor','middle')
+            .attr('label', d=>d.name)
             //.attr('stroke', 'white')
             //.attr('stroke-width', 0.2)
             //.attr('vector-effect', 'non-scaling-stroke')
@@ -232,17 +234,35 @@ UnTangleMap.prototype = {
             .attr('r', self.opt.labelRaid)
             .attr('cx', function (d) { return Hex.hexToX(d.cord); })
             .attr('cy', function (d) { return Hex.hexToY(d.cord); })
-            .attr('label', d=>d.name)
-            // drag
+            .attr('label', d=>d.name);
+        });
+        self.initDrag();
+        return self;
+    },
+    initDrag: function() {
+        var self = this;
+        let dragBy = self.labelAsCircle ? 'circle' : 'text',
+            notDragBy = self.labelAsCircle ? 'text' : 'circle';
+        let label = self.svg.select('.utgmap').select('.label');
+        // disable drag
+        label.selectAll(notDragBy)
+            .call(d3.drag()
+            .on("start", null)
+            .on("drag", null)
+            .on("end", null));
+        // enable drag
+        let vertex = label.selectAll(dragBy)
             .call(d3.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
             .on("end", dragended));
-        });
         // drag
         function dragstarted() {
-            let x = d3.select(this).attr('cx');
-            let y = d3.select(this).attr('cy');
+            let kx = self.labelAsCircle ? 'cx' : 'dx',
+                ky = self.labelAsCircle ? 'cy' : 'dy';
+            let x = d3.select(this).attr(kx);
+            let y = d3.select(this).attr(ky);
+            console.log(x, y);
             self.activeCord = Hex.svgToRoundHex([x,y]);
             Layout.removeLabel(self.activeCord);
             self.updateLayout();
@@ -258,7 +278,7 @@ UnTangleMap.prototype = {
             //d3.select(this)
             //    .attr("cx", function(d) {return Hex.hex2x(hcord); })
             //    .attr("cy", function(d) {return Hex.hex2y(hcord); });
-            d3.select(this)
+            d3.select(this.parentNode).select('circle')
                 .attr("cx", d3.event.x)
                 .attr("cy", d3.event.y);
             d3.select(this.parentNode).select('text')
@@ -276,7 +296,7 @@ UnTangleMap.prototype = {
             Layout.addLabel(name, hcord);
             let x = Hex.hexToX(hcord),
                 y = Hex.hexToY(hcord);
-            d3.select(this)
+            d3.select(this.parentNode).select('circle')
                 .attr("cx", x)
                 .attr("cy", y);
             d3.select(this.parentNode).select('text')
@@ -289,7 +309,6 @@ UnTangleMap.prototype = {
         }
         return self;
     },
-
     // update plots
     updateFaces: function(faceData) {
         var self = this;
@@ -425,7 +444,24 @@ UnTangleMap.prototype = {
             .attr('opacity', d => d.cnt / 6.0);
         return self;
     },
-
+    checkLabel: function(checked) {
+        var self = this;
+        let label = self.svg.select('.utgmap').select('.label');
+        self.labelAsCircle = checked;
+        if(checked) {
+            label.selectAll('circle').transition().duration(200).attr("r", self.opt.labelRaid);
+            let gridRaid = self.opt.gridRaid / (self.transform.k * 1.5);
+            label.selectAll('text').transition().duration(200).attr("transform", `translate(0,${self.opt.labelFontSize+gridRaid})`);
+            self.svg.select('.grid-d0').selectAll('circle').transition().duration(200).attr("r", self.opt.gridRaid);
+            //$('.label').show();
+        } else {
+            label.selectAll('circle').transition().duration(200).attr("r", 0);
+            label.selectAll('text').transition().duration(200).attr("transform", "translate(0,0)");
+            self.svg.select('.grid-d0').selectAll('circle').transition().duration(200).attr("r", 0);
+            //$('.label').hide();
+        }
+        self.initDrag();
+    },
     updateLayout: function() {
         let faceLayout = Layout.getFaceLayout();
         let candLayout = Layout.getCandidateLayout();
@@ -469,11 +505,11 @@ UnTangleMap.prototype = {
 
 UnTangleMap.init = function (selector, userOpt) {
     var self = this;
-    //data
+    //data and states
     self.data = {labels: [], items: []};
     self.labelPos = [];// svg coordinates for labels by lableIndex
     self.transform = {x:0, y:0, k:1.0};// records transformation
-
+    self.labelAsCircle = true; // show label vertex as (circle or text)
     //config
     self.opt = {
         margin: { top: 50, left: 50, bottom: 50, right: 50 },
