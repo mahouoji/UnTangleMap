@@ -345,11 +345,13 @@ UnTangleMap.prototype = {
                 .attr('stroke-linejoin', 'round');
             // update grids
             let edge = self.svg.select('.utgmap').select(`.ternary-grid-d${k}`)
-                .selectAll('polygon').data(Heatmap.heatmap[k])
+                .selectAll('line').data(Heatmap.grid[k])
             edge.exit().remove();
-            edge.enter().append('polygon').merge(edge)
-                .attr('points', d=>self.getSVGPoints(d.vecPos))
-                .attr('fill', 'none')
+            edge.enter().append('line').merge(edge)
+                .attr('x1', d=>d[0][0])
+                .attr('y1', d=>d[0][1])
+                .attr('x2', d=>d[1][0])
+                .attr('y2', d=>d[1][1])
                 .attr('stroke', '#ccc')
                 .attr('stroke-width', self.opt.gridStrokeTernary[k])
                 .attr('vector-effect', 'non-scaling-stroke')
