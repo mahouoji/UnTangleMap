@@ -156,8 +156,8 @@ UnTangleMap.prototype = {
         //let labelFontSize = Math.min(self.opt.labelFontSize, 28 / self.transform.k);
         let labelFontSize = self.transform.k < 1.5 ? 8 : self.transform.k < 4 ? 6 : self.transform.k < 8 ? 4 : 3;
         //let gridRaid = Math.min(self.opt.gridRaid, 8 / self.transform.k);
-        let gridRaid = self.opt.gridRaid / (self.transform.k * 1.5);
-        let labelTrans = self.labelAsCircle ? `translate(0,${labelFontSize+gridRaid})` : 'translate(0,0)';
+        let gridRaid = self.opt.gridRaid / (self.transform.k * 1.4);
+        let labelTrans = self.labelAsCircle ? `translate(0,${labelFontSize+gridRaid})` : `translate(0,${-gridRaid})`;
         utgmap.selectAll('text').attr('font-size', labelFontSize);
         utgmap.selectAll('text').attr("transform",labelTrans);
         // circles
@@ -448,15 +448,15 @@ UnTangleMap.prototype = {
         var self = this;
         let label = self.svg.select('.utgmap').select('.label');
         self.labelAsCircle = checked;
+        let gridRaid = self.opt.gridRaid / (self.transform.k * 1.4);
         if(checked) {
             label.selectAll('circle').transition().duration(200).attr("r", self.opt.labelRaid);
-            let gridRaid = self.opt.gridRaid / (self.transform.k * 1.5);
             label.selectAll('text').transition().duration(200).attr("transform", `translate(0,${self.opt.labelFontSize+gridRaid})`);
             self.svg.select('.grid-d0').selectAll('circle').transition().duration(200).attr("r", self.opt.gridRaid);
             //$('.label').show();
         } else {
             label.selectAll('circle').transition().duration(200).attr("r", 0);
-            label.selectAll('text').transition().duration(200).attr("transform", "translate(0,0)");
+            label.selectAll('text').transition().duration(200).attr("transform", `translate(0,${-gridRaid})`);
             self.svg.select('.grid-d0').selectAll('circle').transition().duration(200).attr("r", 0);
             //$('.label').hide();
         }
