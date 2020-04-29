@@ -17,11 +17,7 @@ function main(){
             controller.updateCorrMethod($('#untangleCorrSelect').val());
         });
         $('#checkboxLabel').change(function(){
-            if(this.checked) {
-                $('.label').show();
-            } else {
-                $('.label').hide();
-            }
+            controller.checkLabel(this.checked);
         })
         $('#checkboxCorr').change(function(){
             if(this.checked) {
@@ -35,15 +31,26 @@ function main(){
         $('#checkboxScatter').change(function(){
             if(this.checked) {
                 $('.scatter-plot').show();
+                if (!$('#checkboxHeatmap').prop("checked")) {
+                    $('.ternary-grid').show();
+                }
             } else {
                 $('.scatter-plot').hide();
+                $('.ternary-grid').hide();
             }
         })
         $('#checkboxHeatmap').change(function(){
             if(this.checked) {
                 $('.heatmap').show();
+                $('.ternary-grid').hide();
+                //let poly = d3.select('.heatmap').selectAll('polygon');
+                //poly.attr('fill', ()=>d3.select(this).attr('cnt-color'));
             } else {
                 $('.heatmap').hide();
+                if ($('#checkboxScatter').prop("checked")) {
+                    $('.ternary-grid').show();
+                }
+                //d3.select('.heatmap').attr('fill', 'none');
             }
         })
     })

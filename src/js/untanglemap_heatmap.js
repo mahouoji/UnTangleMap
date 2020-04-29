@@ -12,17 +12,52 @@ var getSVGPoints = function(v) {
     return `${v[0][0]} ${v[0][1]},${v[1][0]} ${v[1][1]},${v[2][0]} ${v[2][1]}`
 };
 
+var tailingZeroLookup = [32, 0, 1,
+    26, 2, 23, 27, 0, 3, 16, 24, 30, 28, 11,
+    0, 13, 4, 7, 17, 0, 25, 22, 31, 15, 29,
+    10, 12, 6, 0, 21, 14, 9, 5, 20, 8, 19,
+    18];
+
 UTHeatmap.prototype = {
     initData: function(data) {
         this.data = data;
         //this.initHeatmap(labelPos, faceLayout);
     },
     initHeatmap: function(labelPos, faceLayout) {
-        var self = this;
         this.labelPos = labelPos;
         this.faceLayout = faceLayout;
         this.initHeatmapSlots();
         this.initCount();
+        this.initGrid();
+    },
+    initGrid: function() {
+        var self = this;
+        self.grid = [];
+        for (let i = 0; i < self.maxDepth; i++) {
+            self.grid.push([]);
+        }
+        for (let i = 0; i < self.faceLayout.length; i++) {//face loop
+            let face = self.faceLayout[i];
+            let ids = face.vertIndex;
+            let vpos = ids.map(id=>self.labelPos[id]);
+            self.grid[0].push(vpos);
+            let n = 2 << (self.maxDepth - 2);
+            let step = vpos.map(p=>[p[0]/n,p[1]/n]);
+            for (let k = 1; k < n; k++) {
+                let bin = self.maxDepth - 1 - tailingZeroLookup[(-k & k) % 37];
+                //console.log(k);
+                //console.log(bin);
+                self.grid[bin].push(
+                    [[step[0][0] * k + step[1][0] * (n-k), step[0][1] * k + step[1][1] * (n-k)],
+                    [step[0][0] * k + step[2][0] * (n-k), step[0][1] * k + step[2][1] * (n-k)]],
+                    [[step[1][0] * k + step[0][0] * (n-k), step[1][1] * k + step[0][1] * (n-k)],
+                    [step[1][0] * k + step[2][0] * (n-k), step[1][1] * k + step[2][1] * (n-k)]],
+                    [[step[2][0] * k + step[0][0] * (n-k), step[2][1] * k + step[0][1] * (n-k)],
+                    [step[2][0] * k + step[1][0] * (n-k), step[2][1] * k + step[1][1] * (n-k)]]
+                );
+            }
+        }
+
     },
     initHeatmapSlots: function() {
         var self = this;
@@ -30,7 +65,7 @@ UTHeatmap.prototype = {
         for (let i = 0; i < self.maxDepth; i++) {
             self.heatmap.push([]);
         }
-        console.log(self.data);
+        //console.log(self.data);
         self.faceLayout.forEach(face => {
             let ids = face.vertIndex;
             let vpos = ids.map(id=>self.labelPos[id]);
@@ -40,7 +75,7 @@ UTHeatmap.prototype = {
             });
             self.getHeatmapSlotsRecursive(vpos, 1);
         });
-        console.log(self.heatmap);
+        //console.log(self.heatmap);
     },
     getHeatmapSlotsRecursive: function(vpos, depth) {
         var self = this;
@@ -109,6 +144,7 @@ UTHeatmap.init = function () {
     this.faceIndex = []
     // heatmap
     this.heatmap = []
+    this.grid = []
 }
 
 UTHeatmap.init.prototype = UTHeatmap.prototype;
