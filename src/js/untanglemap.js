@@ -164,14 +164,23 @@ UnTangleMap.prototype = {
             $('.heatmap-d1').show();
             $('.heatmap-d2').hide();
             $('.heatmap-d3').hide();
+            $('.ternary-grid-d1').show();
+            $('.ternary-grid-d2').hide();
+            $('.ternary-grid-d3').hide();
         } else if (self.transform.k < 5) {
             $('.heatmap-d1').hide();
             $('.heatmap-d2').show();
             $('.heatmap-d3').hide();
+            $('.ternary-grid-d1').show();
+            $('.ternary-grid-d2').show();
+            $('.ternary-grid-d3').hide();
         } else {
             $('.heatmap-d1').hide();
             $('.heatmap-d2').hide();
             $('.heatmap-d3').show();
+            $('.ternary-grid-d1').show();
+            $('.ternary-grid-d2').show();
+            $('.ternary-grid-d3').show();
         }
         // grid
         /*
@@ -461,10 +470,10 @@ UnTangleMap.init = function (selector, userOpt) {
         width: 1000,
         height: 550,
         side: 30.0,
-        gridStrokeTernary: [0.8, 0.3, 0.3, 0.2],
+        gridStrokeTernary: [0.5, 0.8, 0.5, 0.3],
         gridStrokeSub: 0.3,
         gridStroke: 0.5,
-        faceStroke: 0.8,
+        faceStroke: 0.5,
         edgeStroke: 2,
         gridRaid: 4,
         labelRaid: 3,

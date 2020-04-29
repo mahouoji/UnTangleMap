@@ -35,8 +35,12 @@ function main(){
         $('#checkboxScatter').change(function(){
             if(this.checked) {
                 $('.scatter-plot').show();
+                if (!$('#checkboxHeatmap').prop("checked")) {
+                    $('.ternary-grid').show();
+                }
             } else {
                 $('.scatter-plot').hide();
+                $('.ternary-grid').hide();
             }
         })
         $('#checkboxHeatmap').change(function(){
@@ -47,7 +51,9 @@ function main(){
                 //poly.attr('fill', ()=>d3.select(this).attr('cnt-color'));
             } else {
                 $('.heatmap').hide();
-                $('.ternary-grid').show();
+                if ($('#checkboxScatter').prop("checked")) {
+                    $('.ternary-grid').show();
+                }
                 //d3.select('.heatmap').attr('fill', 'none');
             }
         })

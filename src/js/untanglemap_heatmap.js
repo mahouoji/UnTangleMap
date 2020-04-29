@@ -41,7 +41,7 @@ UTHeatmap.prototype = {
             let ids = face.vertIndex;
             let vpos = ids.map(id=>self.labelPos[id]);
             self.grid[0].push(vpos);
-            let n = 2 << (self.maxDepth - 1);
+            let n = 2 << (self.maxDepth - 2);
             let step = vpos.map(p=>[p[0]/n,p[1]/n]);
             for (let k = 1; k < n; k++) {
                 let bin = self.maxDepth - 1 - tailingZeroLookup[(-k & k) % 37];
