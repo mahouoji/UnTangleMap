@@ -146,19 +146,22 @@ UnTangleMap.prototype = {
             self.adjustZoom();
         }
         self.svg.call(zoom);
-        self.adjustZoom(); // resize to adjust current zooming when switching datasets
+        //self.adjustZoom(); // resize to adjust current zooming when switching datasets
         return self;
     },
     adjustZoom: function() {
         var self = this;
         let utgmap = self.svg.select('.utgmap');
         // label font-size
-        let labelFontSize = Math.min(self.opt.labelFontSize, 28 / self.transform.k);
-        let gridRaid = Math.min(self.opt.gridRaid, 8 / self.transform.k);
+        //let labelFontSize = Math.min(self.opt.labelFontSize, 28 / self.transform.k);
+        let labelFontSize = self.transform.k < 1.5 ? 8 : self.transform.k < 4 ? 6 : self.transform.k < 8 ? 4 : 3;
+        //let gridRaid = Math.min(self.opt.gridRaid, 8 / self.transform.k);
+        let gridRaid = self.opt.gridRaid / (self.transform.k * 1.5);
         utgmap.selectAll('text').attr('font-size', labelFontSize);
         utgmap.selectAll('text').attr("transform","translate(0,"+(labelFontSize+gridRaid)+")")
         // circles
-        self.svg.select(".scatter-plot").selectAll("circle").attr('r', self.opt.itemRaid / self.transform.k);
+        let constItenSize = self.transform.k < 2 ? 1.0 : (self.transform.k < 5 ? 0.8 : 0.6);
+        self.svg.select(".scatter-plot").selectAll("circle").attr('r', Math.max(self.opt.itemRaid / self.transform.k, constItenSize));
         // heatmap
         if (self.transform.k < 1.5) {
             $('.heatmap-d1').show();
@@ -167,7 +170,7 @@ UnTangleMap.prototype = {
             $('.ternary-grid-d1').show();
             $('.ternary-grid-d2').hide();
             $('.ternary-grid-d3').hide();
-        } else if (self.transform.k < 5) {
+        } else if (self.transform.k < 4) {
             $('.heatmap-d1').hide();
             $('.heatmap-d2').show();
             $('.heatmap-d3').hide();
@@ -181,6 +184,9 @@ UnTangleMap.prototype = {
             $('.ternary-grid-d1').show();
             $('.ternary-grid-d2').show();
             $('.ternary-grid-d3').show();
+        }
+        if (self.transform.k == 1.0) {
+            $('.ternary-grid-d1').hide();
         }
         // grid
         /*
@@ -216,6 +222,9 @@ UnTangleMap.prototype = {
             .attr('dy', function (d) { return Hex.hexToY(d.cord); })
             .attr("transform","translate(0,"+(self.opt.labelFontSize+self.opt.gridRaid)+")")
             .attr('text-anchor','middle')
+            //.attr('stroke', 'white')
+            //.attr('stroke-width', 0.2)
+            //.attr('vector-effect', 'non-scaling-stroke')
             .on("mouseover", d=>{
                 console.log(self.data.labels[self.data.labelIndex[d.name]]);
             });
@@ -424,7 +433,8 @@ UnTangleMap.prototype = {
             .updateFaces(faceLayout)
             .updateHeatmap(faceLayout)
             .updateScatterPlot(faceLayout)
-            .updateEdges(faceLayout);
+            .updateEdges(faceLayout)
+            .adjustZoom(); // resize to adjust current zooming when switching datasets
         return this;
     },
 
@@ -478,7 +488,7 @@ UnTangleMap.init = function (selector, userOpt) {
         gridRaid: 4,
         labelRaid: 3,
         labelFontSize: 8,
-        itemRaid: 2,
+        itemRaid: 1.3,
         corrMethod: 'spearman'
     };
     for (var o in userOpt) {
