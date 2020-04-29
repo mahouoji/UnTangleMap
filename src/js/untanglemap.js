@@ -218,6 +218,7 @@ UnTangleMap.prototype = {
         g.enter().append('g').merge(g)
         .each(function(d) {
             d3.select(this).selectAll("*").remove();
+            //text
             d3.select(this).append('text')
             .text(d => d.name)
             .attr('font-size', self.opt.labelFontSize)
@@ -232,6 +233,7 @@ UnTangleMap.prototype = {
             .on("mouseover", d=>{
                 console.log(self.data.labels[self.data.labelIndex[d.name]]);
             });
+            // circle
             d3.select(this).append('circle')
             .attr('r', self.opt.labelRaid)
             .attr('cx', function (d) { return Hex.hexToX(d.cord); })
