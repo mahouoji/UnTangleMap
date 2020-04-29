@@ -28,6 +28,10 @@ svg {
     display: none;
 }
 
+.ternary-grid {
+    display: none;
+}
+
 .edge {
     opacity: 0.8;
 }

@@ -42,8 +42,13 @@ function main(){
         $('#checkboxHeatmap').change(function(){
             if(this.checked) {
                 $('.heatmap').show();
+                $('.ternary-grid').hide();
+                //let poly = d3.select('.heatmap').selectAll('polygon');
+                //poly.attr('fill', ()=>d3.select(this).attr('cnt-color'));
             } else {
                 $('.heatmap').hide();
+                $('.ternary-grid').show();
+                //d3.select('.heatmap').attr('fill', 'none');
             }
         })
     })

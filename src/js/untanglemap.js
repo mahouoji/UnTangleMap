@@ -27,6 +27,11 @@ UnTangleMap.prototype = {
         heatmap.append('g').attr('class', 'heatmap-d1');
         heatmap.append('g').attr('class', 'heatmap-d2');
         heatmap.append('g').attr('class', 'heatmap-d3');
+        let tgrid = utgmap.append('g').attr('class', 'ternary-grid');
+        tgrid.append('g').attr('class', 'ternary-grid-d0');
+        tgrid.append('g').attr('class', 'ternary-grid-d1');
+        tgrid.append('g').attr('class', 'ternary-grid-d2');
+        tgrid.append('g').attr('class', 'ternary-grid-d3');
         utgmap.append('g').attr('class', 'face');
         utgmap.append('g').attr('class', 'edge');
         utgmap.append('g').attr('class', 'scatter-plot');
@@ -318,21 +323,38 @@ UnTangleMap.prototype = {
     updateHeatmap: function (faceData) {
         var self = this;
         Heatmap.initHeatmap(self.labelPos, faceData);
-        for (let d = 0; d < 4; d++) {
-            let maxCnt = d3.max(Heatmap.heatmap[d].map(d=>d.cnt));
+        for (let k = 0; k < 4; k++) {
+            let maxCnt = d3.max(Heatmap.heatmap[k].map(d=>d.cnt));
             let logScale = d3.scaleLog().domain([1, maxCnt+1]);
             let colorScale = d3.scaleSequential(t=>d3.interpolateGreens(logScale(t)));
-            if (d === 0) {
+            if (k === 0) {
                 colorScale = d3.scaleSequential(d3.interpolateGreens).domain([1, maxCnt+1]);
             }
-            let poly = self.svg.select('.utgmap').select(`.heatmap-d${d}`)
-                .selectAll('polygon').data(Heatmap.heatmap[d])
+            let poly = self.svg.select('.utgmap').select(`.heatmap-d${k}`)
+                .selectAll('polygon').data(Heatmap.heatmap[k])
             poly.exit().remove();
             poly.enter().append('polygon').merge(poly)
                 .attr('points', d=>self.getSVGPoints(d.vecPos))
                 .attr('fill', d=>colorScale(d.cnt + 1))
-                .attr('cnt', d=>d.cnt);
-        }
+                .attr('cnt', d=>d.cnt)
+                .attr('cnt-color', d=>colorScale(d.cnt + 1))
+                .attr('stroke', '#ccc')
+                .attr('stroke-width', self.opt.gridStrokeSub)
+                .attr('vector-effect', 'non-scaling-stroke')
+                .attr('shape-rendering', 'crispEdges')
+                .attr('stroke-linejoin', 'round');
+            // update grids
+            let edge = self.svg.select('.utgmap').select(`.ternary-grid-d${k}`)
+                .selectAll('polygon').data(Heatmap.heatmap[k])
+            edge.exit().remove();
+            edge.enter().append('polygon').merge(edge)
+                .attr('points', d=>self.getSVGPoints(d.vecPos))
+                .attr('fill', 'none')
+                .attr('stroke', '#ccc')
+                .attr('stroke-width', self.opt.gridStrokeTernary[k])
+                .attr('vector-effect', 'non-scaling-stroke')
+                .attr('shape-rendering', 'crispEdges')
+                .attr('stroke-linejoin', 'round'); }
 
         return self;
     },
@@ -437,6 +459,7 @@ UnTangleMap.init = function (selector, userOpt) {
         width: 1000,
         height: 550,
         side: 30.0,
+        gridStrokeTernary: [0.8, 0.3, 0.3, 0.2],
         gridStrokeSub: 0.3,
         gridStroke: 0.5,
         faceStroke: 0.8,
@@ -444,7 +467,7 @@ UnTangleMap.init = function (selector, userOpt) {
         gridRaid: 4,
         labelRaid: 3,
         labelFontSize: 8,
-        itemRaid: 3,
+        itemRaid: 2,
         corrMethod: 'spearman'
     };
     for (var o in userOpt) {

@@ -18,7 +18,6 @@ UTHeatmap.prototype = {
         //this.initHeatmap(labelPos, faceLayout);
     },
     initHeatmap: function(labelPos, faceLayout) {
-        var self = this;
         this.labelPos = labelPos;
         this.faceLayout = faceLayout;
         this.initHeatmapSlots();
