@@ -155,11 +155,13 @@ UnTangleMap.prototype = {
         // label font-size
         //let labelFontSize = Math.min(self.opt.labelFontSize, 28 / self.transform.k);
         let labelFontSize = self.transform.k < 1.5 ? 8 : self.transform.k < 4 ? 6 : self.transform.k < 8 ? 4 : 3;
-        //let gridRaid = Math.min(self.opt.gridRaid, 8 / self.transform.k);
         let gridRaid = self.opt.gridRaid / (self.transform.k * 1.4);
         let labelTrans = self.labelAsCircle ? `translate(0,${labelFontSize+gridRaid})` : `translate(0,${-gridRaid})`;
-        utgmap.selectAll('text').attr('font-size', labelFontSize);
-        utgmap.selectAll('text').attr("transform",labelTrans);
+        let label = utgmap.select('.label');
+        label.selectAll('text')
+            .attr('font-size', labelFontSize)
+            .attr("transform",labelTrans);
+        //label.selectAll('circle').attr("r", Math.max(gridRaid, 2));
         // circles
         let constItenSize = self.transform.k < 2 ? 1.0 : (self.transform.k < 5 ? 0.8 : 0.6);
         self.svg.select(".scatter-plot").selectAll("circle").attr('r', Math.max(self.opt.itemRaid / self.transform.k, constItenSize));
@@ -189,21 +191,6 @@ UnTangleMap.prototype = {
         if (self.transform.k == 1.0) {
             $('.ternary-grid-d1').hide();
         }
-        // grid
-        /*
-        if (self.transform.k < 2) {
-            $('.grid-d1').show();
-            $('.grid-d2').hide();
-            $('.grid-d3').hide();
-        } else if (self.transform.k < 5) {
-            $('.grid-d1').hide();
-            $('.grid-d2').show();
-            $('.grid-d3').hide();
-        } else {
-            $('.grid-d1').hide();
-            $('.grid-d2').hide();
-            $('.grid-d3').show();
-        }*/
         return self;
     },
     // set up labels and label dragging
@@ -358,9 +345,6 @@ UnTangleMap.prototype = {
             .attr('cy', d=>d[1])
             .attr('r', self.opt.itemRaid);
         return self;
-    },
-    getSVGPoints: function (v) {
-        return `${v[0][0]} ${v[0][1]},${v[1][0]} ${v[1][1]},${v[2][0]} ${v[2][1]}`
     },
     updateHeatmap: function (faceData) {
         var self = this;
