@@ -413,18 +413,6 @@ UnTangleMap.prototype = {
             .attr('r', self.opt.itemRaid);
         return self;
     },
-    updateHeatmapAdd(facesAdded) {
-        Heatmap.addFaces(facesRemoved);
-        facesAdded.forEach(key=>{
-            //TODO
-        });
-    },
-    updateHeatmapRemove(facesRemoved) {
-        Heatmap.removeFaces(facesRemoved);
-        facesRemoved.forEach(key=>{
-            d3.selectAll(`face-${key}`).remove;
-        });
-    },
     updateEdges: function (faceData) {
         var self = this;
         let selection = self.svg.select('.utgmap').select('.edge');

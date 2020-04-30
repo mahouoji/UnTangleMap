@@ -30,6 +30,10 @@ UTHeatmap.prototype = {
         this.initCount();
         this.initGrid();
     },
+    updateHeatmap: function(facesAdded, facesRemoved) {
+        this.updateGrid(facesAdded, facesRemoved)
+    },
+    // Grid
     getGridPos: function() {
         var self = this;
         let data = []
@@ -95,6 +99,7 @@ UTHeatmap.prototype = {
             );
         }
     },
+    // Heatmap
     initHeatmapSlots: function() {
         var self = this;
         self.heatmap = []
