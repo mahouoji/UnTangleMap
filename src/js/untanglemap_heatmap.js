@@ -105,15 +105,23 @@ UTHeatmap.prototype = {
         for (let i = 0; i < this.maxDepth; i++) {
             data.push([]);
         }
-        for (const key in this.grid) {
+        for (const key in this.heatmap) {
             for (let i = 0; i < this.maxDepth; i++) {
                 data[i] = data[i].concat(this.heatmap[key].data[i]);
             }
         }
         return data;
     },
+    getScatterData: function() {
+        let data = []
+        for (const key in this.scatter) {
+            data = data.concat(this.scatter[key]);
+        }
+        return data;
+    },
     initHeatmap: function() {
         this.heatmap = {};
+        this.scatter = {};
         for (let i = 0; i < this.faceLayout.length; i++) {//face loop
             this.addFaceHeatmap(this.faceLayout[i]);
         }
@@ -130,6 +138,7 @@ UTHeatmap.prototype = {
         facesRemoved.forEach(key=>{
             if (key in self.heatmap) {
                 delete self.heatmap[key];
+                delete self.scatter[key];
             } else {
                 console.log('Removing face not exist.');
             }
@@ -143,6 +152,7 @@ UTHeatmap.prototype = {
             key: face.key,
             data: []
         }
+        self.scatter[face.key] = []; //scatter
         // init slots
         for (let i = 0; i < self.maxDepth; i++) {
             self.heatmap[face.key].data.push([]);
@@ -160,6 +170,11 @@ UTHeatmap.prototype = {
             if (tercord[0] === 0 && tercord[1] === 0 && tercord[2] === 0) { continue; }
             let sum = tercord[0] + tercord[1] + tercord[2];
             tercord = tercord.map(cord=>cord/sum);
+            // update scatter
+            self.scatter[face.key].push(
+                [tercord[0] * vpos[0][0] + tercord[1] * vpos[1][0] + tercord[2] * vpos[2][0],
+                tercord[0] * vpos[0][1] + tercord[1] * vpos[1][1] + tercord[2] * vpos[2][1]]
+            );
             self.heatmap[face.key].data[0][0].cnt += 1;
             self.getCountRecursive(face.key, tercord, 0, 1);
         }
@@ -216,6 +231,7 @@ UTHeatmap.init = function () {
     // heatmap
     this.heatmap = {} // key=face.toString()
     this.grid = {} // key=face.toString()
+    this.scatter = {} // key=face.toString()
 }
 
 UTHeatmap.init.prototype = UTHeatmap.prototype;

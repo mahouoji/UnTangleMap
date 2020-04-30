@@ -313,7 +313,7 @@ UnTangleMap.prototype = {
                 colorScale = d3.scaleSequential(d3.interpolateGreens).domain([1, maxCnt+1]);
             }
             let poly = self.svg.select('.utgmap').select(`.heatmap-d${k}`)
-                .selectAll('polygon').data(heatmapData[k])
+                .selectAll('polygon').data(heatmapData[k])//, d=>`${d.vecPos[0][0]} ${d.vecPos[0][1]},${d.vecPos[1][0]} ${d.vecPos[1][1]},${d.vecPos[2][0]} ${d.vecPos[2][1]}`)
             poly.exit().remove();
             poly.enter().append('polygon').merge(poly)
                 .attr('points', d=>`${d.vecPos[0][0]} ${d.vecPos[0][1]},${d.vecPos[1][0]} ${d.vecPos[1][1]},${d.vecPos[2][0]} ${d.vecPos[2][1]}`)
@@ -327,7 +327,7 @@ UnTangleMap.prototype = {
                 .attr('stroke-linejoin', 'round');
             // update grids
             let edge = self.svg.select('.utgmap').select(`.ternary-grid-d${k}`)
-                .selectAll('line').data(gridData[k])
+                .selectAll('line').data(gridData[k])//, d=>`${d[0][0]}_${d[0][1]}_${d[1][0]}_${d[1][1]}`)
             edge.exit().remove();
             edge.enter().append('line').merge(edge)
                 .attr('x1', d=>d[0][0])
@@ -340,32 +340,19 @@ UnTangleMap.prototype = {
                 .attr('shape-rendering', 'crispEdges')
                 .attr('stroke-linejoin', 'round');
         }
-        // let gridData = Object.values(Heatmap.grid);
-        // console.log(gridData);
-        // let grid = self.svg.select('.utgmap').select('.ternary-grid').selectAll('g').data(gridData);
-        // grid.exit().remove();
-        // grid.enter().append('g').merge(grid)
-        //     .attr('class', d=>`face-${d.key}`);
-        // for(let i = 0; i < gridData.length; i++) {
-        //     let data = gridData[i];
-        //     let g = grid.select(`.face-${data.key}`);
-        //     g.selectAll('*').remove();
-        //     for (let k = 0; k < Heatmap.maxDepth; k++) {
-        //         let g = self.svg.select(`ternary-grid-d${k}`);
-        //         g.append('g').attr('class', `ternary-grid-d${k}`)
-        //             .selectAll('line').data(data[k])
-        //             .enter().append('line')
-        //             .attr('x1', d=>d[0][0])
-        //             .attr('y1', d=>d[0][1])
-        //             .attr('x2', d=>d[1][0])
-        //             .attr('y2', d=>d[1][1])
-        //             .attr('stroke', '#ccc')
-        //             .attr('stroke-width', self.opt.gridStrokeTernary[k])
-        //             .attr('vector-effect', 'non-scaling-stroke')
-        //             .attr('shape-rendering', 'crispEdges')
-        //             .attr('stroke-linejoin', 'round');
-        //     }
-        // }
+        return self;
+    },
+    updateScatterPlot: function () {
+        var self = this;
+        let scatter = self.svg.select('.utgmap').select('.scatter-plot');
+        let data = Heatmap.getScatterData();
+        let circle = scatter.selectAll('circle')
+            .data(data);
+        circle.exit().remove();
+        circle.enter().append('circle').merge(circle)
+            .attr('cx', d=>d[0])
+            .attr('cy', d=>d[1])
+            .attr('r', self.opt.itemRaid);
         return self;
     },
     // update plots
@@ -378,39 +365,6 @@ UnTangleMap.prototype = {
         .attr('points', function (f) { return Hex.faceToSvgPath(f.cord); })
         .attr('stroke-width', self.opt.faceStroke)
         .attr('stroke-linejoin', 'round');
-        return self;
-    },
-    updateScatterPlot: function (faceData) {
-        var self = this;
-        let scatter = self.svg.select('.utgmap').select('.scatter-plot');
-        let data = []
-        faceData.forEach(face=>{
-            let ids = face.vertIndex;
-            let pa = self.labelPos[ids[0]];
-            let pb = self.labelPos[ids[1]];
-            let pc = self.labelPos[ids[2]];
-            self.data.items.forEach(item=>{
-                let a = item.vec[ids[0]];
-                let b = item.vec[ids[1]];
-                let c = item.vec[ids[2]];
-                if (a > 0 || b > 0 || c > 0) {
-                    let sum = a + b + c;
-                    a = a/sum;
-                    b = b/sum;
-                    c = c/sum;
-                    data.push([a * pa[0] + b * pb[0] + c * pc[0],
-                               a * pa[1] + b * pb[1] + c * pc[1]]);
-                }
-            });
-        });
-        //console.log(self.labelPos);
-        let circle = scatter.selectAll('circle')
-            .data(data);
-        circle.exit().remove();
-        circle.enter().append('circle').merge(circle)
-            .attr('cx', d=>d[0])
-            .attr('cy', d=>d[1])
-            .attr('r', self.opt.itemRaid);
         return self;
     },
     updateEdges: function (faceData) {
@@ -485,10 +439,9 @@ UnTangleMap.prototype = {
         facesAdded = facesAdded || [];
         facesRemoved = facesRemoved || [];
         Heatmap.update(facesAdded, facesRemoved);
-        this.updateHeatmap();
+        this.updateHeatmap().updateScatterPlot();
         this.updateHints(candLayout)
             .updateFaces(faceLayout)
-            .updateScatterPlot(faceLayout)
             .updateEdges(faceLayout)
             .adjustZoom(); // resize to adjust current zooming when switching datasets
         return this;
