@@ -47,34 +47,53 @@ UTHeatmap.prototype = {
         var self = this;
         self.grid = {};
         for (let i = 0; i < self.faceLayout.length; i++) {//face loop
-            let face = self.faceLayout[i];
-            let ids = face.vertIndex;
-            let vpos = ids.map(id=>self.labelPos[id]);
-            self.grid[face.key] = {
-                key: face.key,
-                data: []
-            };
-            for (let i = 0; i < self.maxDepth; i++) {
-                self.grid[face.key].data.push([]);
-            }
-            self.grid[face.key].data[0].push(vpos);
-            let n = 2 << (self.maxDepth - 2);
-            let step = vpos.map(p=>[p[0]/n,p[1]/n]);
-            for (let k = 1; k < n; k++) {
-                let bin = self.maxDepth - 1 - tailingZeroLookup[(-k & k) % 37];
-                //console.log(k);
-                //console.log(bin);
-                self.grid[face.key].data[bin].push(
-                    [[step[0][0] * k + step[1][0] * (n-k), step[0][1] * k + step[1][1] * (n-k)],
-                    [step[0][0] * k + step[2][0] * (n-k), step[0][1] * k + step[2][1] * (n-k)]],
-                    [[step[1][0] * k + step[0][0] * (n-k), step[1][1] * k + step[0][1] * (n-k)],
-                    [step[1][0] * k + step[2][0] * (n-k), step[1][1] * k + step[2][1] * (n-k)]],
-                    [[step[2][0] * k + step[0][0] * (n-k), step[2][1] * k + step[0][1] * (n-k)],
-                    [step[2][0] * k + step[1][0] * (n-k), step[2][1] * k + step[1][1] * (n-k)]]
-                );
-            }
+            self.addFaceGrid(self.faceLayout[i]);
         }
-
+    },
+    updateGrid: function(facesAdded, facesRemoved) {
+        var self = this;
+        facesAdded.forEach(face=>{
+            if (face.key in self.grid) {
+                console.log('Adding face already in.');
+            } else {
+                self.addFaceGrid(face);
+            }
+        });
+        facesRemoved.forEach(key=>{
+            if (key in self.grid) {
+                delete self.grid[key];
+            } else {
+                console.log('Removing face not exist.');
+            }
+        });
+    },
+    addFaceGrid: function(face) {
+        var self = this;
+        let ids = face.vertIndex;
+        let vpos = ids.map(id=>self.labelPos[id]);
+        self.grid[face.key] = {
+            key: face.key,
+            data: []
+        };
+        for (let i = 0; i < self.maxDepth; i++) {
+            self.grid[face.key].data.push([]);
+        }
+        self.grid[face.key].data[0].push(vpos);
+        let n = 2 << (self.maxDepth - 2);
+        let step = vpos.map(p=>[p[0]/n,p[1]/n]);
+        for (let k = 1; k < n; k++) {
+            let bin = self.maxDepth - 1 - tailingZeroLookup[(-k & k) % 37];
+            //console.log(k);
+            //console.log(bin);
+            self.grid[face.key].data[bin].push(
+                [[step[0][0] * k + step[1][0] * (n-k), step[0][1] * k + step[1][1] * (n-k)],
+                [step[0][0] * k + step[2][0] * (n-k), step[0][1] * k + step[2][1] * (n-k)]],
+                [[step[1][0] * k + step[0][0] * (n-k), step[1][1] * k + step[0][1] * (n-k)],
+                [step[1][0] * k + step[2][0] * (n-k), step[1][1] * k + step[2][1] * (n-k)]],
+                [[step[2][0] * k + step[0][0] * (n-k), step[2][1] * k + step[0][1] * (n-k)],
+                [step[2][0] * k + step[1][0] * (n-k), step[2][1] * k + step[1][1] * (n-k)]]
+            );
+        }
     },
     initHeatmapSlots: function() {
         var self = this;

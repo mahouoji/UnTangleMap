@@ -232,7 +232,11 @@
                             'cord': triCord,
                             'vertIndex': vertIndex
                         }
-                        facesAdded.push(triKey);
+                        facesAdded.push({
+                            'key': triKey,
+                            'cord': triCord,
+                            'vertIndex': vertIndex
+                        });
                     }
                 }
                 // update candidates
