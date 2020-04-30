@@ -254,10 +254,10 @@ UnTangleMap.prototype = {
                 ky = self.labelAsCircle ? 'cy' : 'dy';
             let x = d3.select(this).attr(kx);
             let y = d3.select(this).attr(ky);
-            console.log(x, y);
+            //console.log(x, y);
             self.activeCord = Hex.svgToRoundHex([x,y]);
-            Layout.removeLabel(self.activeCord);
-            self.updateLayout();
+            let removed = Layout.removeLabel(self.activeCord);
+            self.updateLayout([], removed);
             d3.select(this.parentNode).raise();
             vertex.attr("cursor", "grabbing");
         }
@@ -285,7 +285,7 @@ UnTangleMap.prototype = {
             if (!Layout.isEmptySlot(hcord.toString())) {
                 hcord = self.activeCord;
             }
-            Layout.addLabel(name, hcord);
+            let added = Layout.addLabel(name, hcord);
             let x = Hex.hexToX(hcord),
                 y = Hex.hexToY(hcord);
             d3.select(this.parentNode).select('circle')
@@ -297,23 +297,23 @@ UnTangleMap.prototype = {
             // update position record
             self.labelPos[self.data.labelIndex[name]] = [x, y];
             //console.log(self.labelPos);
-            self.updateLayout();
+            self.updateLayout(added, []);
         }
         return self;
     },
-    updateHeatmap: function (faceData) {
+    updateHeatmap: function () {
         var self = this;
-        Heatmap.initHeatmap(self.labelPos, faceData);
-        let gridPos = Heatmap.getGridPos();
+        let heatmapData = Heatmap.getHeatmapData();
+        let gridData = Heatmap.getGridData();
         for (let k = 0; k < 4; k++) {
-            let maxCnt = d3.max(Heatmap.heatmap[k].map(d=>d.cnt));
+            let maxCnt = d3.max(heatmapData[k].map(d=>d.cnt));
             let logScale = d3.scaleLog().domain([1, maxCnt+1]);
             let colorScale = d3.scaleSequential(t=>d3.interpolateGreens(logScale(t)));
             if (k <= 1) {
                 colorScale = d3.scaleSequential(d3.interpolateGreens).domain([1, maxCnt+1]);
             }
             let poly = self.svg.select('.utgmap').select(`.heatmap-d${k}`)
-                .selectAll('polygon').data(Heatmap.heatmap[k])
+                .selectAll('polygon').data(heatmapData[k])
             poly.exit().remove();
             poly.enter().append('polygon').merge(poly)
                 .attr('points', d=>`${d.vecPos[0][0]} ${d.vecPos[0][1]},${d.vecPos[1][0]} ${d.vecPos[1][1]},${d.vecPos[2][0]} ${d.vecPos[2][1]}`)
@@ -327,7 +327,7 @@ UnTangleMap.prototype = {
                 .attr('stroke-linejoin', 'round');
             // update grids
             let edge = self.svg.select('.utgmap').select(`.ternary-grid-d${k}`)
-                .selectAll('line').data(gridPos[k])
+                .selectAll('line').data(gridData[k])
             edge.exit().remove();
             edge.enter().append('line').merge(edge)
                 .attr('x1', d=>d[0][0])
@@ -460,6 +460,7 @@ UnTangleMap.prototype = {
             .attr('opacity', d => d.cnt / 6.0);
         return self;
     },
+    // invoking update plots
     checkLabel: function(checked) {
         var self = this;
         let label = self.svg.select('.utgmap').select('.label');
@@ -478,12 +479,15 @@ UnTangleMap.prototype = {
         }
         self.initDrag();
     },
-    updateLayout: function() {
+    updateLayout: function(facesAdded, facesRemoved) {
         let faceLayout = Layout.getFaceLayout();
         let candLayout = Layout.getCandidateLayout();
+        facesAdded = facesAdded || [];
+        facesRemoved = facesRemoved || [];
+        Heatmap.update(facesAdded, facesRemoved);
+        this.updateHeatmap();
         this.updateHints(candLayout)
             .updateFaces(faceLayout)
-            .updateHeatmap(faceLayout)
             .updateScatterPlot(faceLayout)
             .updateEdges(faceLayout)
             .adjustZoom(); // resize to adjust current zooming when switching datasets
@@ -501,15 +505,18 @@ UnTangleMap.prototype = {
 
     // controller
     initData: function(data) {
-        var self = this;
-        self.data = data;
-
-        let center = Hex.svgToRoundHex([self.opt.width / 2.0, self.opt.height / 2.0]);
+        this.data = data;
+        // init label layout
+        let center = Hex.svgToRoundHex([this.opt.width / 2.0, this.opt.height / 2.0]);
         Layout.initLabelLayout(data, center);
-        Heatmap.initData(data);
         let labelLayout = Layout.getLabelLayout();
-        self.initLabelPos(labelLayout);
-        self.initLabels(labelLayout).initZoom()
+        let faceLayout = Layout.getFaceLayout();
+        // store label pos
+        this.initLabelPos(labelLayout);
+        // init heatmap and ternary-grid
+        Heatmap.initData(data).initPosLayout(this.labelPos, faceLayout);
+        // draw
+        this.initLabels(labelLayout).initZoom()
             .updateLayout();
     },
     updateCorrMethod: function(method) {
