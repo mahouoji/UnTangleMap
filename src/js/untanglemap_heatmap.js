@@ -30,6 +30,19 @@ UTHeatmap.prototype = {
         this.initCount();
         this.initGrid();
     },
+    getGridPos: function() {
+        var self = this;
+        let data = []
+        for (let i = 0; i < self.maxDepth; i++) {
+            data.push([]);
+        }
+        for (const key in self.grid) {
+            for (let i = 0; i < self.maxDepth; i++) {
+                data[i] = data[i].concat(self.grid[key].data[i]);
+            }
+        }
+        return data;
+    },
     initGrid: function() {
         var self = this;
         self.grid = {};
