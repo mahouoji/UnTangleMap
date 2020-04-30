@@ -301,6 +301,7 @@ UnTangleMap.prototype = {
         }
         return self;
     },
+    // ternary plots (heatmap & grid, scatter plot)
     updateHeatmap: function () {
         var self = this;
         let heatmapData = Heatmap.getHeatmapData();
@@ -344,8 +345,9 @@ UnTangleMap.prototype = {
     },
     updateScatterPlot: function () {
         var self = this;
-        let scatter = self.svg.select('.utgmap').select('.scatter-plot');
+        if (!self.renderScatterPlot || !self.scatterPlotDataChanged) { return self; } // lazy updating
         let data = Heatmap.getScatterData();
+        let scatter = self.svg.select('.utgmap').select('.scatter-plot');
         let circle = scatter.selectAll('circle')
             .data(data);
         circle.exit().remove();
@@ -353,6 +355,7 @@ UnTangleMap.prototype = {
             .attr('cx', d=>d[0])
             .attr('cy', d=>d[1])
             .attr('r', self.opt.itemRaid);
+        self.scatterPlotDataChanged = false; // up-to-date
         return self;
     },
     // update plots
@@ -433,11 +436,18 @@ UnTangleMap.prototype = {
         }
         self.initDrag();
     },
+    checkScatter: function(checked) {
+        this.renderScatterPlot = checked;
+        if (checked) { this.updateScatterPlot(); }
+    },
     updateLayout: function(facesAdded, facesRemoved) {
         let faceLayout = Layout.getFaceLayout();
         let candLayout = Layout.getCandidateLayout();
         facesAdded = facesAdded || [];
         facesRemoved = facesRemoved || [];
+        if (facesAdded.length > 0 || facesRemoved.length > 0) {
+            this.scatterPlotDataChanged = true;
+        }
         Heatmap.update(facesAdded, facesRemoved);
         this.updateHeatmap().updateScatterPlot();
         this.updateHints(candLayout)
@@ -446,7 +456,6 @@ UnTangleMap.prototype = {
             .adjustZoom(); // resize to adjust current zooming when switching datasets
         return this;
     },
-
     // manage data
     initLabelPos: function(labelData) {
         var self = this;
@@ -455,7 +464,6 @@ UnTangleMap.prototype = {
             self.labelPos[rec.index] = Hex.hexToSvg(rec.cord);
         });
     },
-
     // controller
     initData: function(data) {
         this.data = data;
@@ -467,6 +475,7 @@ UnTangleMap.prototype = {
         // store label pos
         this.initLabelPos(labelLayout);
         // init heatmap and ternary-grid
+        this.scatterPlotDataChanged = true;
         Heatmap.initData(data).initPosLayout(this.labelPos, faceLayout);
         // draw
         this.initLabels(labelLayout).initZoom()
@@ -485,7 +494,10 @@ UnTangleMap.init = function (selector, userOpt) {
     self.data = {labels: [], items: []};
     self.labelPos = [];// svg coordinates for labels by lableIndex
     self.transform = {x:0, y:0, k:1.0};// records transformation
+    // check boxes
     self.labelAsCircle = true; // show label vertex as (circle or text)
+    self.scatterPlotDataChanged = false; // scatter plot data updated but not binded
+    self.renderScatterPlot = false; // need to render scatter plot
     //config
     self.opt = {
         margin: { top: 50, left: 50, bottom: 50, right: 50 },

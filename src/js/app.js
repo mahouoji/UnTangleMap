@@ -29,6 +29,7 @@ function main(){
             }
         })
         $('#checkboxScatter').change(function(){
+            controller.checkScatter(this.checked);
             if(this.checked) {
                 $('.scatter-plot').show();
                 if (!$('#checkboxHeatmap').prop("checked")) {
