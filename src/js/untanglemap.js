@@ -149,19 +149,29 @@ UnTangleMap.prototype = {
         //self.adjustZoom(); // resize to adjust current zooming when switching datasets
         return self;
     },
-    adjustZoom: function() {
+    adjustZoomLabel: function(duration) {
         var self = this;
-        let utgmap = self.svg.select('.utgmap');
         // label font-size
-        //let labelFontSize = Math.min(self.opt.labelFontSize, 28 / self.transform.k);
         let labelFontSize = self.transform.k < 1.5 ? 8 : self.transform.k < 4 ? 6 : self.transform.k < 8 ? 4 : 3;
         let gridRaid = self.opt.gridRaid / (self.transform.k * 1.4);
-        let labelTrans = self.labelAsCircle ? `translate(0,${labelFontSize+gridRaid})` : `translate(0,${-gridRaid})`;
-        let label = utgmap.select('.label');
-        label.selectAll('text')
-            .attr('font-size', labelFontSize)
-            .attr("transform",labelTrans);
-        //label.selectAll('circle').attr("r", Math.max(gridRaid, 2));
+        let label = self.svg.select('.utgmap').select('.label');
+        label.selectAll('text').attr('font-size', labelFontSize);
+        if(self.labelAsCircle) {
+            label.selectAll('circle').transition().duration(duration).attr("r", self.opt.labelRaid);
+            label.selectAll('text').transition().duration(duration).attr("transform", `translate(0,${labelFontSize+gridRaid})`);
+            self.svg.select('.grid-d0').selectAll('circle').transition().duration(200).attr("r", self.opt.gridRaid);
+            //$('.label').show();
+        } else {
+            label.selectAll('circle').transition().duration(duration).attr("r", 0);
+            label.selectAll('text').transition().duration(duration).attr("transform", `translate(0,${-gridRaid})`);
+            self.svg.select('.grid-d0').selectAll('circle').transition().duration(duration).attr("r", 0);
+            //$('.label').hide();
+        }
+        return self;
+    },
+    adjustZoom: function() {
+        var self = this;
+        self.adjustZoomLabel(0);
         // circles
         let constItenSize = self.transform.k < 2 ? 1.0 : (self.transform.k < 5 ? 0.8 : 0.6);
         self.svg.select(".scatter-plot").selectAll("circle").attr('r', Math.max(self.opt.itemRaid / self.transform.k, constItenSize));
@@ -301,7 +311,7 @@ UnTangleMap.prototype = {
         }
         return self;
     },
-    // ternary plots (heatmap & grid, scatter plot)
+    // update ternary plots (heatmap & grid, scatter plot)
     updateHeatmap: function () {
         var self = this;
         let heatmapData = Heatmap.getHeatmapData();
@@ -346,6 +356,7 @@ UnTangleMap.prototype = {
     updateScatterPlot: function () {
         var self = this;
         if (!self.renderScatterPlot || !self.scatterPlotDataChanged) { return self; } // lazy updating
+        console.log('updating scatter map');
         let data = Heatmap.getScatterData();
         let scatter = self.svg.select('.utgmap').select('.scatter-plot');
         let circle = scatter.selectAll('circle')
@@ -357,6 +368,10 @@ UnTangleMap.prototype = {
             .attr('r', self.opt.itemRaid);
         self.scatterPlotDataChanged = false; // up-to-date
         return self;
+    },
+    clearScatterPlot: function () {
+        this.svg.select('.utgmap').select('.scatter-plot').selectAll('circle').remove();
+        this.scatterPlotDataChanged = true;
     },
     // update plots
     updateFaces: function(faceData) {
@@ -417,29 +432,8 @@ UnTangleMap.prototype = {
             .attr('opacity', d => d.cnt / 6.0);
         return self;
     },
-    // invoking update plots
-    checkLabel: function(checked) {
-        var self = this;
-        let label = self.svg.select('.utgmap').select('.label');
-        self.labelAsCircle = checked;
-        let gridRaid = self.opt.gridRaid / (self.transform.k * 1.4);
-        if(checked) {
-            label.selectAll('circle').transition().duration(200).attr("r", self.opt.labelRaid);
-            label.selectAll('text').transition().duration(200).attr("transform", `translate(0,${self.opt.labelFontSize+gridRaid})`);
-            self.svg.select('.grid-d0').selectAll('circle').transition().duration(200).attr("r", self.opt.gridRaid);
-            //$('.label').show();
-        } else {
-            label.selectAll('circle').transition().duration(200).attr("r", 0);
-            label.selectAll('text').transition().duration(200).attr("transform", `translate(0,${-gridRaid})`);
-            self.svg.select('.grid-d0').selectAll('circle').transition().duration(200).attr("r", 0);
-            //$('.label').hide();
-        }
-        self.initDrag();
-    },
-    checkScatter: function(checked) {
-        this.renderScatterPlot = checked;
-        if (checked) { this.updateScatterPlot(); }
-    },
+
+    // binding data and plotting
     updateLayout: function(facesAdded, facesRemoved) {
         let faceLayout = Layout.getFaceLayout();
         let candLayout = Layout.getCandidateLayout();
@@ -465,6 +459,21 @@ UnTangleMap.prototype = {
         });
     },
     // controller
+    updateCorrMethod: function(method) {
+        this.opt.corrMethod = method;
+        Layout.corrMethod = method;
+        this.initData(this.data);
+    },
+    // updates on hide and show layers
+    checkLabel: function(checked) {
+        this.labelAsCircle = checked;
+        this.adjustZoomLabel(200).initDrag();
+    },
+    checkScatter: function(checked) {
+        this.renderScatterPlot = checked;
+        if (checked) { this.updateScatterPlot(); }
+        else { this.clearScatterPlot(); }
+    },
     initData: function(data) {
         this.data = data;
         // init label layout
@@ -480,11 +489,6 @@ UnTangleMap.prototype = {
         // draw
         this.initLabels(labelLayout).initZoom()
             .updateLayout();
-    },
-    updateCorrMethod: function(method) {
-        this.opt.corrMethod = method;
-        Layout.corrMethod = method;
-        this.initData(this.data);
     }
 };
 
