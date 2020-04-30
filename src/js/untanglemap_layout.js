@@ -228,6 +228,7 @@
                         let triKey = triCord.toString();
                         let vertIndex = triCord.getVertices().map(h=>self.data.labelIndex[self.labelMap.in[h].name])
                         self.labelMap.faces[triKey] = {
+                            'key': triKey,
                             'cord': triCord,
                             'vertIndex': vertIndex
                         }

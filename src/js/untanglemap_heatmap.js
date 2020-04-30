@@ -32,22 +32,26 @@ UTHeatmap.prototype = {
     },
     initGrid: function() {
         var self = this;
-        self.grid = [];
-        for (let i = 0; i < self.maxDepth; i++) {
-            self.grid.push([]);
-        }
+        self.grid = {};
         for (let i = 0; i < self.faceLayout.length; i++) {//face loop
             let face = self.faceLayout[i];
             let ids = face.vertIndex;
             let vpos = ids.map(id=>self.labelPos[id]);
-            self.grid[0].push(vpos);
+            self.grid[face.key] = {
+                key: face.key,
+                data: []
+            };
+            for (let i = 0; i < self.maxDepth; i++) {
+                self.grid[face.key].data.push([]);
+            }
+            self.grid[face.key].data[0].push(vpos);
             let n = 2 << (self.maxDepth - 2);
             let step = vpos.map(p=>[p[0]/n,p[1]/n]);
             for (let k = 1; k < n; k++) {
                 let bin = self.maxDepth - 1 - tailingZeroLookup[(-k & k) % 37];
                 //console.log(k);
                 //console.log(bin);
-                self.grid[bin].push(
+                self.grid[face.key].data[bin].push(
                     [[step[0][0] * k + step[1][0] * (n-k), step[0][1] * k + step[1][1] * (n-k)],
                     [step[0][0] * k + step[2][0] * (n-k), step[0][1] * k + step[2][1] * (n-k)]],
                     [[step[1][0] * k + step[0][0] * (n-k), step[1][1] * k + step[0][1] * (n-k)],
@@ -143,8 +147,8 @@ UTHeatmap.init = function () {
     this.faceLayout = null;
     this.faceIndex = []
     // heatmap
-    this.heatmap = []
-    this.grid = []
+    this.heatmap = [] // key=face.toString()
+    this.grid = {} // key=face.toString()
 }
 
 UTHeatmap.init.prototype = UTHeatmap.prototype;

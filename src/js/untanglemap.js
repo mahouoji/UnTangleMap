@@ -27,11 +27,11 @@ UnTangleMap.prototype = {
         heatmap.append('g').attr('class', 'heatmap-d1');
         heatmap.append('g').attr('class', 'heatmap-d2');
         heatmap.append('g').attr('class', 'heatmap-d3');
-        let tgrid = utgmap.append('g').attr('class', 'ternary-grid');
-        tgrid.append('g').attr('class', 'ternary-grid-d0');
-        tgrid.append('g').attr('class', 'ternary-grid-d1');
-        tgrid.append('g').attr('class', 'ternary-grid-d2');
-        tgrid.append('g').attr('class', 'ternary-grid-d3');
+        utgmap.append('g').attr('class', 'ternary-grid');
+        // tgrid.append('g').attr('class', 'ternary-grid-d0');
+        // tgrid.append('g').attr('class', 'ternary-grid-d1');
+        // tgrid.append('g').attr('class', 'ternary-grid-d2');
+        // tgrid.append('g').attr('class', 'ternary-grid-d3');
         utgmap.append('g').attr('class', 'face');
         utgmap.append('g').attr('class', 'edge');
         utgmap.append('g').attr('class', 'scatter-plot');
@@ -204,7 +204,7 @@ UnTangleMap.prototype = {
         g.exit().remove();
         g.enter().append('g').merge(g)
         .each(function(d) {
-            d3.select(this).selectAll("*").remove();
+            d3.select(this).selectAll("*").remove(); // clear
             //text
             d3.select(this).append('text')
             .text(d => d.name)
@@ -301,6 +301,71 @@ UnTangleMap.prototype = {
         }
         return self;
     },
+    updateHeatmap: function (faceData) {
+        var self = this;
+        Heatmap.initHeatmap(self.labelPos, faceData);
+        for (let k = 0; k < 4; k++) {
+            let maxCnt = d3.max(Heatmap.heatmap[k].map(d=>d.cnt));
+            let logScale = d3.scaleLog().domain([1, maxCnt+1]);
+            let colorScale = d3.scaleSequential(t=>d3.interpolateGreens(logScale(t)));
+            if (k <= 1) {
+                colorScale = d3.scaleSequential(d3.interpolateGreens).domain([1, maxCnt+1]);
+            }
+            let poly = self.svg.select('.utgmap').select(`.heatmap-d${k}`)
+                .selectAll('polygon').data(Heatmap.heatmap[k])
+            poly.exit().remove();
+            poly.enter().append('polygon').merge(poly)
+                .attr('points', d=>`${d.vecPos[0][0]} ${d.vecPos[0][1]},${d.vecPos[1][0]} ${d.vecPos[1][1]},${d.vecPos[2][0]} ${d.vecPos[2][1]}`)
+                .attr('fill', d=>colorScale(d.cnt + 1))
+                .attr('cnt', d=>d.cnt)
+                .attr('cnt-color', d=>colorScale(d.cnt + 1))
+                .attr('stroke', '#ccc')
+                .attr('stroke-width', self.opt.gridStrokeSub)
+                .attr('vector-effect', 'non-scaling-stroke')
+                .attr('shape-rendering', 'crispEdges')
+                .attr('stroke-linejoin', 'round');
+            // update grids
+            // let edge = self.svg.select('.utgmap').select(`.ternary-grid-d${k}`)
+            //     .selectAll('line').data(Heatmap.grid[k])
+            // edge.exit().remove();
+            // edge.enter().append('line').merge(edge)
+            //     .attr('x1', d=>d[0][0])
+            //     .attr('y1', d=>d[0][1])
+            //     .attr('x2', d=>d[1][0])
+            //     .attr('y2', d=>d[1][1])
+            //     .attr('stroke', '#ccc')
+            //     .attr('stroke-width', self.opt.gridStrokeTernary[k])
+            //     .attr('vector-effect', 'non-scaling-stroke')
+            //     .attr('shape-rendering', 'crispEdges')
+            //     .attr('stroke-linejoin', 'round');
+        }
+        let gridData = Object.values(Heatmap.grid);
+        console.log(gridData);
+        let grid = self.svg.select('.utgmap').select('.ternary-grid')
+            .selectAll('g').data(gridData);
+        grid.exit().remove();
+        grid.enter().append('g').merge(grid)
+            .attr('class', d=>`face-${d.key}`)
+            .each(function(data) {
+                d3.select(this).selectAll("*").remove(); // clear
+                for (let k = 0; k < Heatmap.maxDepth; k++) {
+                    let g = d3.select(this).append('g').attr('class', `ternary-grid-d${k}`);
+                    g.selectAll('line').data(data.data[k]).enter().append('line')
+                        .attr('x1', d=>d[0][0])
+                        .attr('y1', d=>d[0][1])
+                        .attr('x2', d=>d[1][0])
+                        .attr('y2', d=>d[1][1])
+                        .attr('stroke', '#ccc')
+                        .attr('stroke-width', self.opt.gridStrokeTernary[k])
+                        .attr('vector-effect', 'non-scaling-stroke')
+                        .attr('shape-rendering', 'crispEdges')
+                        .attr('stroke-linejoin', 'round');
+
+                }
+        });
+
+        return self;
+    },
     // update plots
     updateFaces: function(faceData) {
         var self = this;
@@ -346,45 +411,17 @@ UnTangleMap.prototype = {
             .attr('r', self.opt.itemRaid);
         return self;
     },
-    updateHeatmap: function (faceData) {
-        var self = this;
-        Heatmap.initHeatmap(self.labelPos, faceData);
-        for (let k = 0; k < 4; k++) {
-            let maxCnt = d3.max(Heatmap.heatmap[k].map(d=>d.cnt));
-            let logScale = d3.scaleLog().domain([1, maxCnt+1]);
-            let colorScale = d3.scaleSequential(t=>d3.interpolateGreens(logScale(t)));
-            if (k <= 1) {
-                colorScale = d3.scaleSequential(d3.interpolateGreens).domain([1, maxCnt+1]);
-            }
-            let poly = self.svg.select('.utgmap').select(`.heatmap-d${k}`)
-                .selectAll('polygon').data(Heatmap.heatmap[k])
-            poly.exit().remove();
-            poly.enter().append('polygon').merge(poly)
-                .attr('points', d=>`${d.vecPos[0][0]} ${d.vecPos[0][1]},${d.vecPos[1][0]} ${d.vecPos[1][1]},${d.vecPos[2][0]} ${d.vecPos[2][1]}`)
-                .attr('fill', d=>colorScale(d.cnt + 1))
-                .attr('cnt', d=>d.cnt)
-                .attr('cnt-color', d=>colorScale(d.cnt + 1))
-                .attr('stroke', '#ccc')
-                .attr('stroke-width', self.opt.gridStrokeSub)
-                .attr('vector-effect', 'non-scaling-stroke')
-                .attr('shape-rendering', 'crispEdges')
-                .attr('stroke-linejoin', 'round');
-            // update grids
-            let edge = self.svg.select('.utgmap').select(`.ternary-grid-d${k}`)
-                .selectAll('line').data(Heatmap.grid[k])
-            edge.exit().remove();
-            edge.enter().append('line').merge(edge)
-                .attr('x1', d=>d[0][0])
-                .attr('y1', d=>d[0][1])
-                .attr('x2', d=>d[1][0])
-                .attr('y2', d=>d[1][1])
-                .attr('stroke', '#ccc')
-                .attr('stroke-width', self.opt.gridStrokeTernary[k])
-                .attr('vector-effect', 'non-scaling-stroke')
-                .attr('shape-rendering', 'crispEdges')
-                .attr('stroke-linejoin', 'round'); }
-
-        return self;
+    updateHeatmapAdd(facesAdded) {
+        Heatmap.addFaces(facesRemoved);
+        facesAdded.forEach(key=>{
+            //TODO
+        });
+    },
+    updateHeatmapRemove(facesRemoved) {
+        Heatmap.removeFaces(facesRemoved);
+        facesRemoved.forEach(key=>{
+            d3.selectAll(`face-${key}`).remove;
+        });
     },
     updateEdges: function (faceData) {
         var self = this;
