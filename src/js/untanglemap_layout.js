@@ -198,7 +198,7 @@
 
         addLabel: function(labelName, cord, utility) {
             var self = this;
-            //TODO: check validity
+            let facesAdded = [];
             let key = cord.toString();
             if (key in self.labelMap.in) {
                 console.log('Adding label to used slot');
@@ -225,10 +225,13 @@
                     if (nextNcord.toString() in self.labelMap.in) {
                         // update faces
                         let triCord = faces[i];
-                        self.labelMap.faces[triCord.toString()] = {
+                        let triKey = triCord.toString();
+                        let vertIndex = triCord.getVertices().map(h=>self.data.labelIndex[self.labelMap.in[h].name])
+                        self.labelMap.faces[triKey] = {
                             'cord': triCord,
-                            'vertIndex': triCord.getVertices().map(h=>self.data.labelIndex[self.labelMap.in[h].name])
+                            'vertIndex': vertIndex
                         }
+                        facesAdded.push(triKey);
                     }
                 }
                 // update candidates
@@ -244,10 +247,13 @@
             });
             //console.log(self.labelMap);
             //console.log(self.utility);
+            //console.log(facesAdded);
+            return facesAdded;
         },
     
         removeLabel: function (cord) {
             var self = this;
+            let facesRemoved = [];
             let key = cord.toString();
             if (!(key in self.labelMap.in)) {
                 console.log("removing cord not exist")
@@ -280,11 +286,14 @@
             faces.forEach(fcord => {
                 let fkey = fcord.toString();
                 if (fkey in self.labelMap.faces) {
+                    facesRemoved.push(fkey);
                     delete self.labelMap.faces[fkey];
                 }
             });
             //console.log(self.labelMap);
-            console.log(self.utility);
+            //console.log(self.utility);
+            //console.log(facesRemoved);
+            return facesRemoved;
         },
 
     };

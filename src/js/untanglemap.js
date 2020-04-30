@@ -353,7 +353,7 @@ UnTangleMap.prototype = {
             let maxCnt = d3.max(Heatmap.heatmap[k].map(d=>d.cnt));
             let logScale = d3.scaleLog().domain([1, maxCnt+1]);
             let colorScale = d3.scaleSequential(t=>d3.interpolateGreens(logScale(t)));
-            if (k === 0) {
+            if (k <= 1) {
                 colorScale = d3.scaleSequential(d3.interpolateGreens).domain([1, maxCnt+1]);
             }
             let poly = self.svg.select('.utgmap').select(`.heatmap-d${k}`)
