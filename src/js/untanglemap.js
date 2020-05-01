@@ -271,7 +271,7 @@ UnTangleMap.prototype = {
             self.updateLayout([], removed);
             // get hints
             let hintData = Layout.getTopUtilities([self.activeName]);
-            //console.log(hintData);
+            console.log(hintData);
             self.updateHints(hintData);
             self.svg.select('.hint').style('opacity', 0.5);
             // drag
@@ -433,13 +433,14 @@ UnTangleMap.prototype = {
         var self = this;
         var hints = self.svg.select('.utgmap').select('.hint')
             .selectAll('circle').data(hintData);
-        let colorScale = d3.scaleSequential(t=>d3.interpolateBlues(t*t*t));
+        let colorScale = d3.scaleSequential(t=>d3.interpolateBlues(t))
+            .domain(d3.extent(hintData.map(d=>d.util.utility)));
         hints.exit().remove();
         hints.enter().append('circle').merge(hints)
             .attr('r', self.opt.gridRaid)
             .attr('cx', d=>Hex.hexToX(d.cord))
             .attr('cy', d=>Hex.hexToY(d.cord))
-            .attr('fill', (d,i)=>colorScale(i/hintData.length));
+            .attr('fill', d=>colorScale(d.util.utility));
         return self;
     },
 
