@@ -368,7 +368,7 @@ UnTangleMap.prototype = {
                 .attr('fill', d=>colorScale(d.cnt + 1))
                 .attr('cnt', d=>d.cnt)
                 .attr('cnt-color', d=>colorScale(d.cnt + 1))
-                .attr('stroke', '#ccc')
+                .attr('stroke', '#eee')
                 .attr('stroke-width', self.opt.gridStrokeSub)
                 .attr('vector-effect', 'non-scaling-stroke')
                 .attr('shape-rendering', 'crispEdges')
@@ -563,7 +563,7 @@ UnTangleMap.init = function (selector, userOpt) {
         height: 550,
         side: 30.0,
         gridStrokeTernary: [0.5, 0.8, 0.5, 0.3],
-        gridStrokeSub: 0.3,
+        gridStrokeSub: 0.2,
         gridStroke: 0.5,
         faceStroke: 0.5,
         edgeStroke: 2,
