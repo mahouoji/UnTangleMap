@@ -117,14 +117,17 @@ UnTangleMap.prototype = {
             .attr('vector-effect', 'non-scaling-stroke')
             .attr('shape-rendering', 'crispEdges');
     },
+    disableZoom: function() {
+        this.svg.call(d3.zoom()
+            .on("zoom", null)
+            .on("end", null));
+        return this;
+    },
     initZoom: function () {
         var self = this;
         var w = self.opt.side;
         var h = self.opt.side * Math.sqrt(3) / 2.0;
         // zoom
-        var zoom = d3.zoom().scaleExtent([1, 10])
-            .on("zoom", zoomed)
-            .on("end", zoomEnd);
         function zoomed() {
             // grid
             self.svg.selectAll('.grid-zoom-1').attr("transform",
@@ -141,18 +144,21 @@ UnTangleMap.prototype = {
             self.transform.x = d3.event.transform.x;
             self.transform.y = d3.event.transform.y;
             self.transform.k = d3.event.transform.k;
+            console.log(self.transform.x, self.transform.y);
         }
         function zoomEnd() {
             self.adjustZoom();
         }
-        self.svg.call(zoom);
+        self.svg.call(d3.zoom().scaleExtent([1, 10])
+        .on("zoom", zoomed)
+        .on("end", zoomEnd));
         //self.adjustZoom(); // resize to adjust current zooming when switching datasets
         return self;
     },
     adjustZoomLabel: function(duration) {
         var self = this;
         // label font-size
-        let labelFontSize = self.transform.k < 1.5 ? 8 : self.transform.k < 4 ? 6 : self.transform.k < 8 ? 4 : 3;
+        let labelFontSize = self.transform.k < 1.5 ? 7 : self.transform.k < 4 ? 6 : self.transform.k < 8 ? 4 : 3;
         let gridRaid = self.opt.gridRaid / (self.transform.k * 1.4);
         let label = self.svg.select('.utgmap').select('.label');
         label.selectAll('text').attr('font-size', labelFontSize);
@@ -234,7 +240,7 @@ UnTangleMap.prototype = {
     // set up labels and label dragging
     initLabels: function (labelData) {
         var self = this;
-        let vertex = self.svg.select('.utgmap').select('.label').attr('cursor', 'grab');
+        let vertex = self.svg.select('.utgmap').select('.label');
         let g = vertex.selectAll('g').data(labelData);
         let labelTrans = self.labelAsCircle ? `translate(0,${self.opt.labelFontSize+self.opt.gridRaid})` : 'translate(0,0)';
         let powScale = d3.scalePow().exponent(0.2).domain([0.,1.]);
@@ -269,6 +275,23 @@ UnTangleMap.prototype = {
         self.initDrag();
         return self;
     },
+    disableDrag: function() {
+        let label = this.svg.select('.utgmap').select('.label');
+        label.attr('cursor', 'auto');
+        label.selectAll('circle')
+            .attr('cursor', 'default')
+            .call(d3.drag()
+            .on("start", null)
+            .on("drag", null)
+            .on("end", null));
+        label.selectAll('text')
+            .attr('cursor', 'default')
+            .call(d3.drag()
+            .on("start", null)
+            .on("drag", null)
+            .on("end", null));
+        return this;
+    },
     initDrag: function() {
         var self = this;
         let dragBy = self.labelAsCircle ? 'circle' : 'text',
@@ -276,18 +299,24 @@ UnTangleMap.prototype = {
         let label = self.svg.select('.utgmap').select('.label');
         // disable drag
         label.selectAll(notDragBy)
+            .attr('cursor', 'default')
             .call(d3.drag()
             .on("start", null)
             .on("drag", null)
             .on("end", null));
         // enable drag
         let vertex = label.selectAll(dragBy)
+            .attr('cursor', 'grab')
             .call(d3.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
             .on("end", dragended));
         // drag
         function dragstarted() {
+            // drag
+            d3.select(this.parentNode).raise();
+            vertex.attr("cursor", "grabbing");
+            // store
             let kx = self.labelAsCircle ? 'cx' : 'dx',
                 ky = self.labelAsCircle ? 'cy' : 'dy';
             let x = d3.select(this).attr(kx);
@@ -302,9 +331,6 @@ UnTangleMap.prototype = {
             console.log(hintData);
             self.updateHints(hintData);
             self.svg.select('.hint').style('opacity', 0.5);
-            // drag
-            d3.select(this.parentNode).raise();
-            vertex.attr("cursor", "grabbing");
         }
 
         function dragged(d) {
@@ -523,6 +549,23 @@ UnTangleMap.prototype = {
         this.heatmapDisplayLevel = level;
         this.adjustZoomHeatmap();
     },
+    // tools
+    setInteractionMode: function(mode) {
+        if (this.interactionMode === mode) { return; }
+        // disable
+        if (this.interactionMode === 'zoom') {
+            //this.disableZoom();
+        } else if (this.interactionMode === 'drag') {
+            this.disableDrag();
+        }
+        // enable
+        this.interactionMode = mode;
+        if (mode === 'zoom') {
+            //this.initZoom();
+        } else if (mode === 'drag') {
+            this.initDrag();
+        }
+    },
     initData: function(data) {
         this.data = data;
         // init label layout
@@ -553,6 +596,7 @@ UnTangleMap.init = function (selector, userOpt) {
     self.renderScatterPlot = false; // need to render scatter plot
     self.corrDisplayMethod = 'spearman';
     self.heatmapDisplayLevel = 0; // 0(auto), 1, 2, 3
+    self.interactionMode = 'drag'; // zoom (zoom, pan, drag), info
     // editing
     self.activeCord = HexCord(0, 0);
     self.activeName = '';
@@ -569,7 +613,7 @@ UnTangleMap.init = function (selector, userOpt) {
         edgeStroke: 2,
         gridRaid: 4,
         labelRaid: 3.5,
-        labelFontSize: 8,
+        labelFontSize: 7,
         itemRaid: 1.3,
         corrMethod: 'spearman'
     };

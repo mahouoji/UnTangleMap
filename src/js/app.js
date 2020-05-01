@@ -68,5 +68,10 @@ function main(){
             //console.log($(this).val());
             controller.unTangleMap.setHeatmapDisplayLevel($(this).val());
         });
+        // Tools
+        $('#toolContainer input:radio').click(function() {
+            console.log($(this).val());
+            controller.unTangleMap.setInteractionMode($(this).val());
+        });
     })
 }
