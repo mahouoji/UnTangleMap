@@ -264,10 +264,17 @@ UnTangleMap.prototype = {
                 ky = self.labelAsCircle ? 'cy' : 'dy';
             let x = d3.select(this).attr(kx);
             let y = d3.select(this).attr(ky);
-            //console.log(x, y);
             self.activeCord = Hex.svgToRoundHex([x,y]);
+            self.activeName = d3.select(this).attr('label');
+            // update layout
             let removed = Layout.removeLabel(self.activeCord);
             self.updateLayout([], removed);
+            // get hints
+            let hintData = Layout.getTopUtilities([self.activeName]);
+            //console.log(hintData);
+            self.updateHints(hintData);
+            self.svg.select('.hint').style('opacity', 0.5);
+            // drag
             d3.select(this.parentNode).raise();
             vertex.attr("cursor", "grabbing");
         }
@@ -308,6 +315,8 @@ UnTangleMap.prototype = {
             self.labelPos[self.data.labelIndex[name]] = [x, y];
             //console.log(self.labelPos);
             self.updateLayout(added, []);
+            // hide hints
+            self.svg.select('.hint').transition().duration(100).style('opacity', 0);
         }
         return self;
     },
@@ -424,19 +433,19 @@ UnTangleMap.prototype = {
         var self = this;
         var hints = self.svg.select('.utgmap').select('.hint')
             .selectAll('circle').data(hintData);
+        let colorScale = d3.scaleSequential(t=>d3.interpolateBlues(t*t*t));
         hints.exit().remove();
         hints.enter().append('circle').merge(hints)
             .attr('r', self.opt.gridRaid)
-            .attr('cx', function (d) { return Hex.hexToX(d.cord); })
-            .attr('cy', function (d) { return Hex.hexToY(d.cord); })
-            .attr('opacity', d => d.cnt / 6.0);
+            .attr('cx', d=>Hex.hexToX(d.cord))
+            .attr('cy', d=>Hex.hexToY(d.cord))
+            .attr('fill', (d,i)=>colorScale(i/hintData.length));
         return self;
     },
 
     // binding data and plotting
     updateLayout: function(facesAdded, facesRemoved) {
         let faceLayout = Layout.getFaceLayout();
-        let candLayout = Layout.getCandidateLayout();
         facesAdded = facesAdded || [];
         facesRemoved = facesRemoved || [];
         if (facesAdded.length > 0 || facesRemoved.length > 0) {
@@ -444,8 +453,7 @@ UnTangleMap.prototype = {
         }
         Heatmap.update(facesAdded, facesRemoved);
         this.updateHeatmap().updateScatterPlot();
-        this.updateHints(candLayout)
-            .updateFaces(faceLayout)
+        this.updateFaces(faceLayout)
             .updateEdges(faceLayout)
             .adjustZoom(); // resize to adjust current zooming when switching datasets
         return this;
@@ -502,7 +510,10 @@ UnTangleMap.init = function (selector, userOpt) {
     self.labelAsCircle = true; // show label vertex as (circle or text)
     self.scatterPlotDataChanged = false; // scatter plot data updated but not binded
     self.renderScatterPlot = false; // need to render scatter plot
-    //config
+    // editing
+    self.activeCord = HexCord(0, 0);
+    self.activeName = '';
+    // config
     self.opt = {
         margin: { top: 50, left: 50, bottom: 50, right: 50 },
         width: 1000,
@@ -524,7 +535,6 @@ UnTangleMap.init = function (selector, userOpt) {
     }
     //hexagon algorithms
     Hex.side = self.opt.side;
-    self.activeCord = HexCord(0, 0);
     //canvas
     self.selector = d3.select(selector);
     self.svg = self.selector.append('svg')

@@ -112,7 +112,22 @@
             //console.log("maxLable: " + maxLabel + ' ' + maxRec.utility);
             return [maxLabel, maxCord, maxRec];
         },
-
+        getTopUtilities: function(labels) {
+            var self = this;
+            let utils = [];
+            Object.keys(self.labelMap.cand).forEach(key=>{
+                if (self.isValidSlot(key)) {//valid slots
+                    labels.forEach(name=>{
+                        let cord = self.labelMap.cand[key].cord;
+                        utils.push({
+                            'cord': cord,
+                            'util': self.getUpdatedUtility(name, cord)
+                        });
+                    })
+                }
+            });
+            return utils.sort((a, b)=>a.util.utility - b.util.utility);
+        },
         // compute utility when putting label at cord
         getUpdatedUtility: function(labelName, cord) {
             var self = this;
