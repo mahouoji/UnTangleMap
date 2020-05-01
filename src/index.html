@@ -4,6 +4,7 @@
     <title>VisML - UnTangle Map</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/app.css" type="text/css">
     <link rel="stylesheet" href="css/untangle_style.css" type="text/css">
@@ -68,32 +69,40 @@
           </label>
         </div>
         <hr>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons" id="corrViewOptionContainer">
           <label class="btn btn-secondary active">
-            <input type="radio" name="options" id="option1" checked>S
+            <input type="radio" name="options" id="optionspearman" value="spearman" checked>S
           </label>
           <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option2">K
+            <input type="radio" name="options" id="optionkendall" value="kendall">K
           </label>
           <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option3">P
+            <input type="radio" name="options" id="optionpearson" value="pearson">P
           </label>
         </div>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons" id="heatmapViewOptionContainer">
           <label class="btn btn-secondary active">
-            <input type="radio" name="options" id="option1" checked>A
+            <input type="radio" name="options" id="option0" value=0 checked>A
           </label>
           <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option2">1
+            <input type="radio" name="options" id="option1" value=1>1
           </label>
           <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option2">2
+            <input type="radio" name="options" id="option2" value=2>2
           </label>
           <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option3">3
+            <input type="radio" name="options" id="option3" value=3>3
           </label>
         </div>
         <hr>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons" id="toolContainer">
+          <label class="btn btn-secondary active">
+            <input type="radio" name="options" id="option0" value=0 checked><i class="fa fa-expand"></i>
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option1" value=1><i class="fa fa-mouse-pointer"></i>
+          </label>
+        </div>
       </div>
       <div id="untangle-container" class="plot"></div>
     </div> <!--end untangle contents-->

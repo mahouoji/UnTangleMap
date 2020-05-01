@@ -3,6 +3,7 @@ function main(){
     controller.loadStaticData();
 
     $(document).ready(function() {
+        // Data
         $('#untangleDataSelect').change(function() {
             let dataPath = {
                 'imdb_mg': "data/imdb_movie_genre.json",
@@ -14,10 +15,14 @@ function main(){
             controller.loadStaticData(dataPath[$('#untangleDataSelect').val()]);
         });
         $('#untangleCorrSelect').change(function() {
-            controller.updateCorrMethod($('#untangleCorrSelect').val());
+            let method = $('#untangleCorrSelect').val();
+            controller.updateCorrMethod(method);
+            $(`#corrViewOptionContainer #option${method}`).click();
         });
+        // Tool Bar
+        // Layers
         $('#checkboxLabel').change(function(){
-            controller.checkLabel(this.checked);
+            controller.unTangleMap.checkLabel(this.checked);
         })
         $('#checkboxCorr').change(function(){
             if(this.checked) {
@@ -26,18 +31,6 @@ function main(){
             } else {
                 $('.edge').hide();
                 $('.face').show();
-            }
-        })
-        $('#checkboxScatter').change(function(){
-            controller.checkScatter(this.checked);
-            if(this.checked) {
-                $('.scatter-plot').show();
-                if (!$('#checkboxHeatmap').prop("checked")) {
-                    $('.ternary-grid').show();
-                }
-            } else {
-                $('.scatter-plot').hide();
-                $('.ternary-grid').hide();
             }
         })
         $('#checkboxHeatmap').change(function(){
@@ -54,5 +47,26 @@ function main(){
                 //d3.select('.heatmap').attr('fill', 'none');
             }
         })
+        $('#checkboxScatter').change(function(){
+            controller.unTangleMap.checkScatter(this.checked);
+            if(this.checked) {
+                $('.scatter-plot').show();
+                if (!$('#checkboxHeatmap').prop("checked")) {
+                    $('.ternary-grid').show();
+                }
+            } else {
+                $('.scatter-plot').hide();
+                $('.ternary-grid').hide();
+            }
+        })
+        // Options
+        $('#corrViewOptionContainer input:radio').click(function() {
+            //console.log($(this).val());
+            controller.unTangleMap.setCorrDisplayMethod($(this).val());
+        });
+        $('#heatmapViewOptionContainer input:radio').click(function() {
+            //console.log($(this).val());
+            controller.unTangleMap.setHeatmapDisplayLevel($(this).val());
+        });
     })
 }

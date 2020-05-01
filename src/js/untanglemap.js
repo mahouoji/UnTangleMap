@@ -169,6 +169,58 @@ UnTangleMap.prototype = {
         }
         return self;
     },
+    adjustZoomHeatmap: function() {
+        if (this.heatmapDisplayLevel === 0) {
+            if (this.transform.k < 1.5) {
+                $('.heatmap-d1').show();
+                $('.heatmap-d2').hide();
+                $('.heatmap-d3').hide();
+                $('.ternary-grid-d1').show();
+                $('.ternary-grid-d2').hide();
+                $('.ternary-grid-d3').hide();
+            } else if (this.transform.k < 4) {
+                $('.heatmap-d1').hide();
+                $('.heatmap-d2').show();
+                $('.heatmap-d3').hide();
+                $('.ternary-grid-d1').show();
+                $('.ternary-grid-d2').show();
+                $('.ternary-grid-d3').hide();
+            } else {
+                $('.heatmap-d1').hide();
+                $('.heatmap-d2').hide();
+                $('.heatmap-d3').show();
+                $('.ternary-grid-d1').show();
+                $('.ternary-grid-d2').show();
+                $('.ternary-grid-d3').show();
+            }
+            if (this.transform.k == 1.0) {
+                $('.ternary-grid-d1').hide();
+            }
+        } else if (this.heatmapDisplayLevel === 1) {
+            $('.heatmap-d1').show();
+            $('.heatmap-d2').hide();
+            $('.heatmap-d3').hide();
+            $('.ternary-grid-d1').show();
+            $('.ternary-grid-d2').hide();
+            $('.ternary-grid-d3').hide();
+        } else if (this.heatmapDisplayLevel === 2) {
+            $('.heatmap-d1').hide();
+            $('.heatmap-d2').show();
+            $('.heatmap-d3').hide();
+            $('.ternary-grid-d1').show();
+            $('.ternary-grid-d2').show();
+            $('.ternary-grid-d3').hide();
+        } else if (this.heatmapDisplayLevel === 3) {
+            $('.heatmap-d1').hide();
+            $('.heatmap-d2').hide();
+            $('.heatmap-d3').show();
+            $('.ternary-grid-d1').show();
+            $('.ternary-grid-d2').show();
+            $('.ternary-grid-d3').show();
+        } else {
+            console.log('unknown display level');
+        }
+    },
     adjustZoom: function() {
         var self = this;
         self.adjustZoomLabel(0);
@@ -176,31 +228,7 @@ UnTangleMap.prototype = {
         let constItenSize = self.transform.k < 2 ? 1.0 : (self.transform.k < 5 ? 0.8 : 0.6);
         self.svg.select(".scatter-plot").selectAll("circle").attr('r', Math.max(self.opt.itemRaid / self.transform.k, constItenSize));
         // heatmap
-        if (self.transform.k < 1.5) {
-            $('.heatmap-d1').show();
-            $('.heatmap-d2').hide();
-            $('.heatmap-d3').hide();
-            $('.ternary-grid-d1').show();
-            $('.ternary-grid-d2').hide();
-            $('.ternary-grid-d3').hide();
-        } else if (self.transform.k < 4) {
-            $('.heatmap-d1').hide();
-            $('.heatmap-d2').show();
-            $('.heatmap-d3').hide();
-            $('.ternary-grid-d1').show();
-            $('.ternary-grid-d2').show();
-            $('.ternary-grid-d3').hide();
-        } else {
-            $('.heatmap-d1').hide();
-            $('.heatmap-d2').hide();
-            $('.heatmap-d3').show();
-            $('.ternary-grid-d1').show();
-            $('.ternary-grid-d2').show();
-            $('.ternary-grid-d3').show();
-        }
-        if (self.transform.k == 1.0) {
-            $('.ternary-grid-d1').hide();
-        }
+        self.adjustZoomHeatmap();
         return self;
     },
     // set up labels and label dragging
@@ -410,7 +438,7 @@ UnTangleMap.prototype = {
                     edgeSet[key] = {
                         pos1: vpos[pair[0]],
                         pos2: vpos[pair[1]],
-                        corr: self.data.corr[self.opt.corrMethod][vindex[pair[0]]][vindex[pair[1]]]
+                        corr: self.data.corr[self.corrDisplayMethod][vindex[pair[0]]][vindex[pair[1]]]
                     }
                 }
             });
@@ -483,6 +511,18 @@ UnTangleMap.prototype = {
         if (checked) { this.updateScatterPlot(); }
         else { this.clearScatterPlot(); }
     },
+    // view options
+    setCorrDisplayMethod: function(method) {
+        if (this.corrDisplayMethod === method) { return; }
+        this.corrDisplayMethod = method;
+        this.updateEdges(Layout.getFaceLayout());
+    },
+    setHeatmapDisplayLevel: function(level) {
+        level = parseInt(level);
+        if (this.heatmapDisplayLevel === level) { return; }
+        this.heatmapDisplayLevel = level;
+        this.adjustZoomHeatmap();
+    },
     initData: function(data) {
         this.data = data;
         // init label layout
@@ -511,6 +551,8 @@ UnTangleMap.init = function (selector, userOpt) {
     self.labelAsCircle = true; // show label vertex as (circle or text)
     self.scatterPlotDataChanged = false; // scatter plot data updated but not binded
     self.renderScatterPlot = false; // need to render scatter plot
+    self.corrDisplayMethod = 'spearman';
+    self.heatmapDisplayLevel = 0; // 0(auto), 1, 2, 3
     // editing
     self.activeCord = HexCord(0, 0);
     self.activeName = '';
