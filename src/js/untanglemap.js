@@ -433,7 +433,7 @@ UnTangleMap.prototype = {
         var self = this;
         var hints = self.svg.select('.utgmap').select('.hint')
             .selectAll('circle').data(hintData);
-        let colorScale = d3.scaleSequential(t=>d3.interpolateBlues(t))
+        let colorScale = d3.scaleSequential(t=>d3.interpolateBlues(t*t))
             .domain(d3.extent(hintData.map(d=>d.util.utility)));
         hints.exit().remove();
         hints.enter().append('circle').merge(hints)
