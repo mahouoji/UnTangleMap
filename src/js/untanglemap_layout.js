@@ -112,7 +112,22 @@
             //console.log("maxLable: " + maxLabel + ' ' + maxRec.utility);
             return [maxLabel, maxCord, maxRec];
         },
-
+        getTopUtilities: function(labels) {
+            var self = this;
+            let utils = [];
+            Object.keys(self.labelMap.cand).forEach(key=>{
+                if (self.isValidSlot(key)) {//valid slots
+                    labels.forEach(name=>{
+                        let cord = self.labelMap.cand[key].cord;
+                        utils.push({
+                            'cord': cord,
+                            'util': self.getUpdatedUtility(name, cord)
+                        });
+                    })
+                }
+            });
+            return utils.sort((a, b)=>a.util.utility - b.util.utility);
+        },
         // compute utility when putting label at cord
         getUpdatedUtility: function(labelName, cord) {
             var self = this;
@@ -198,7 +213,7 @@
 
         addLabel: function(labelName, cord, utility) {
             var self = this;
-            //TODO: check validity
+            let facesAdded = [];
             let key = cord.toString();
             if (key in self.labelMap.in) {
                 console.log('Adding label to used slot');
@@ -225,10 +240,18 @@
                     if (nextNcord.toString() in self.labelMap.in) {
                         // update faces
                         let triCord = faces[i];
-                        self.labelMap.faces[triCord.toString()] = {
+                        let triKey = triCord.toString();
+                        let vertIndex = triCord.getVertices().map(h=>self.data.labelIndex[self.labelMap.in[h].name])
+                        self.labelMap.faces[triKey] = {
+                            'key': triKey,
                             'cord': triCord,
-                            'vertIndex': triCord.getVertices().map(h=>self.data.labelIndex[self.labelMap.in[h].name])
+                            'vertIndex': vertIndex
                         }
+                        facesAdded.push({
+                            'key': triKey,
+                            'cord': triCord,
+                            'vertIndex': vertIndex
+                        });
                     }
                 }
                 // update candidates
@@ -244,10 +267,13 @@
             });
             //console.log(self.labelMap);
             //console.log(self.utility);
+            //console.log(facesAdded);
+            return facesAdded;
         },
     
         removeLabel: function (cord) {
             var self = this;
+            let facesRemoved = [];
             let key = cord.toString();
             if (!(key in self.labelMap.in)) {
                 console.log("removing cord not exist")
@@ -280,11 +306,14 @@
             faces.forEach(fcord => {
                 let fkey = fcord.toString();
                 if (fkey in self.labelMap.faces) {
+                    facesRemoved.push(fkey);
                     delete self.labelMap.faces[fkey];
                 }
             });
             //console.log(self.labelMap);
-            console.log(self.utility);
+            //console.log(self.utility);
+            //console.log(facesRemoved);
+            return facesRemoved;
         },
 
     };

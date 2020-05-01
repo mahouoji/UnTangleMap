@@ -31,7 +31,7 @@ Controller.prototype = {
             return total.map((x,i)=>x + item.vec[i] / itemSum[index]);
         }, Array(data.labels.length).fill(0));
         data.labelScore = data.labelScore.map(x=>x/data.items.length);
-        console.log(data.labelScore);
+        //console.log(data.labelScore);
         // data.labelScore = data.items.reduce((total, item)=>{
         //     return total.map((x,i)=>x + item.vec[i]);
         // }, Array(data.labels.length).fill(0));
@@ -61,6 +61,9 @@ Controller.prototype = {
     },
     checkLabel: function(checked) {
         this.unTangleMap.checkLabel(checked);
+    },
+    checkScatter: function(checked) {
+        this.unTangleMap.checkScatter(checked);
     }
 };
 

@@ -20,12 +20,6 @@ svg {
     fill: #333;
 }
 
-.hint {
-    fill: #888;
-    opacity: 0.5;
-    display: none;
-}
-
 .face {
     stroke: #888;
     fill: none;
