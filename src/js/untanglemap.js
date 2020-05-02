@@ -39,6 +39,7 @@ UnTangleMap.prototype = {
         utgmap.append('g').attr('class', 'label');
         // tooltip
         self.selector.append("div").attr("class", "tooltip");
+        self.selector.append("div").attr("class", "utility");
         return self
     },
     addGridLayer: function(gridSelector) {
@@ -144,7 +145,7 @@ UnTangleMap.prototype = {
             self.transform.x = d3.event.transform.x;
             self.transform.y = d3.event.transform.y;
             self.transform.k = d3.event.transform.k;
-            console.log(self.transform.x, self.transform.y);
+            //console.log(self.transform.x, self.transform.y);
         }
         function zoomEnd() {
             self.adjustZoom();
@@ -263,6 +264,19 @@ UnTangleMap.prototype = {
             //.attr('vector-effect', 'non-scaling-stroke')
             .on("mouseover", d=>{
                 console.log(self.data.labels[self.data.labelIndex[d.name]]);
+                let div = self.selector.select('.tooltip');
+                div.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                div.html('hi')
+                    .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY-80) + "px");
+            })
+            .on("mouseout", function(d) {
+                let div = self.selector.select('.tooltip');
+                div.transition()
+                    .duration(500)
+                    .style("opacity", 0);
             });
             // circle
             d3.select(this).append('circle')
@@ -328,7 +342,7 @@ UnTangleMap.prototype = {
             self.updateLayout([], removed);
             // get hints
             let hintData = Layout.getTopUtilities([self.activeName]);
-            console.log(hintData);
+            //console.log(hintData);
             self.updateHints(hintData);
             self.svg.select('.hint').style('opacity', 0.5);
         }
@@ -523,8 +537,22 @@ UnTangleMap.prototype = {
     },
     // controller
     updateCorrMethod: function(method) {
-        this.opt.corrMethod = method;
+        if (this.corrMethod === method) { return; }
+        this.corrMethod = method;
         Layout.corrMethod = method;
+        this.initData(this.data);
+    },
+    updateObjective: function(objective) {
+        if (this.objective === objective) { return; }
+        this.objective = objective;
+        Layout.objective = objective;
+        this.initData(this.data);
+    },
+    updateAlpha: function(alpha) {
+        alpha = parseFloat(alpha);
+        if (this.alpha === alpha) { return; }
+        this.alpha = alpha;
+        Layout.alpha = alpha;
         this.initData(this.data);
     },
     // updates on hide and show layers
@@ -594,7 +622,10 @@ UnTangleMap.init = function (selector, userOpt) {
     self.labelAsCircle = true; // show label vertex as (circle or text)
     self.scatterPlotDataChanged = false; // scatter plot data updated but not binded
     self.renderScatterPlot = false; // need to render scatter plot
+    self.corrMethod = 'spearman';
     self.corrDisplayMethod = 'spearman';
+    self.objective = 'average';
+    self.alpha = 0.0;
     self.heatmapDisplayLevel = 0; // 0(auto), 1, 2, 3
     self.interactionMode = 'drag'; // zoom (zoom, pan, drag), info
     // editing
@@ -603,8 +634,8 @@ UnTangleMap.init = function (selector, userOpt) {
     // config
     self.opt = {
         margin: { top: 50, left: 50, bottom: 50, right: 50 },
-        width: 1000,
-        height: 550,
+        width: 800,
+        height: 600,
         side: 30.0,
         gridStrokeTernary: [0.5, 0.8, 0.5, 0.3],
         gridStrokeSub: 0.2,
@@ -614,8 +645,7 @@ UnTangleMap.init = function (selector, userOpt) {
         gridRaid: 4,
         labelRaid: 3.5,
         labelFontSize: 7,
-        itemRaid: 1.3,
-        corrMethod: 'spearman'
+        itemRaid: 1.3
     };
     for (var o in userOpt) {
         self.opt[o] = userOpt[o];

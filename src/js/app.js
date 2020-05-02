@@ -19,6 +19,13 @@ function main(){
             controller.updateCorrMethod(method);
             $(`#corrViewOptionContainer #option${method}`).click();
         });
+        $('#untangleObjectiveSelect').change(function() {
+            controller.unTangleMap.updateObjective($('#untangleObjectiveSelect').val());
+        });
+        $('#untangleAlphaOption input:radio').click(function() {
+            //console.log($(this).val());
+            controller.unTangleMap.updateAlpha($(this).val());
+        });
         // Tool Bar
         // Layers
         $('#checkboxLabel').change(function(){
@@ -70,7 +77,7 @@ function main(){
         });
         // Tools
         $('#toolContainer input:radio').click(function() {
-            console.log($(this).val());
+            //console.log($(this).val());
             controller.unTangleMap.setInteractionMode($(this).val());
         });
     })

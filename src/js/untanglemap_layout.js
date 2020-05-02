@@ -174,9 +174,14 @@
                     }
                 }
             });
+            let totalEdge = 1.0, totalTri = 1.0;
+            if (self.objective === 'average') {
+                totalEdge = self.utility.edgeCnt + edgeCnt,
+                totalTri = self.utility.triCnt + triCnt;
+            }
             return {
-                'utility': self.utility.alpha * (self.utility.edgeCorr + edgeCorr) / (self.utility.edgeCnt + edgeCnt)
-                + (1 - self.utility.alpha) * (self.utility.triCorr + triCorr) / (self.utility.triCnt + triCnt),
+                'utility': self.alpha * (self.utility.edgeCorr + edgeCorr) / totalEdge
+                + (1 - self.alpha) * (self.utility.triCorr + triCorr) / totalTri,
                 'edgeCorr': edgeCorr,
                 'edgeCnt': edgeCnt,
                 'triCorr': triCorr,
@@ -334,11 +339,11 @@
             edgeCorr: 0.0,
             edgeCnt: 0,
             triCorr: 0.0,
-            triCnt: 0,
-            // settings
-            alpha: 0.0
+            triCnt: 0
         };
         self.corrMethod = 'spearman';
+        self.objective = 'average';
+        self.alpha = 1.0;
     }
     
     UnTangleMap.init.prototype = UnTangleMap.prototype;

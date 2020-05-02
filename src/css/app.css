@@ -12,11 +12,34 @@
     position: fixed; /* Set the navbar to fixed position */
     top: 32px; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.navbar .form-control {
+    font-size: 14px;
+}
+.navbar .btn {
+    font-size: 14px;
+    border: 1px solid #ced4da;
+    background-color: #fff;
 }
 
 .plot {
     position: fixed;
-    top: 80px;
+    top: 75px;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 60px;
+    height: 28px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
 }
 
 #untangle-control-panel {
@@ -36,6 +59,6 @@
 #untangle-control-panel .btn-group {
     margin: 5px auto;
 }
-#untangle-control-panel .btn-secondary {
+#untangle-control-panel .btn {
     font-size: 12px;
 }
