@@ -42,6 +42,14 @@ div.tooltip {
     pointer-events: none;
 }
 
+div.utility {
+    position: absolute;
+    text-align: center;
+    padding: 2px;
+    font-size: 14px;
+    pointer-events: none;
+}
+
 #untangle-control-panel {
     position: fixed;
     top: 80px;

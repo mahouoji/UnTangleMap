@@ -40,7 +40,11 @@ UnTangleMap.prototype = {
         utgmap.append('g').attr('class', 'label');
         // tooltip
         self.selector.append("div").attr("class", "tooltip");
-        self.selector.append("div").attr("class", "utility");
+        self.selector.append("div").attr("class", "utility")
+            .style('width', `${self.opt.utilWidth}px`)
+            .style('height', `${self.opt.utilHeight}px`)
+            .style('left', `${self.opt.width - self.opt.utilWidth}px`)
+            .style('top', `${self.opt.height - self.opt.utilHeight}px`);
         return self
     },
     addGridLayer: function(gridSelector) {
@@ -394,6 +398,7 @@ UnTangleMap.prototype = {
             self.updateLayout(added, []);
             // hide hints
             self.svg.select('.hint').transition().duration(100).style('opacity', 0);
+            self.updateUtility();
         }
         return self;
     },
@@ -520,7 +525,11 @@ UnTangleMap.prototype = {
             .attr('fill', d=>colorScale(d.util.utility));
         return self;
     },
-
+    updateUtility: function() {
+        this.selector.select('.utility')
+            .html(`Utility: ${Layout.utility.utility.toFixed(4)}`);
+        return this;
+    },
     // binding data and plotting
     updateLayout: function(facesAdded, facesRemoved) {
         let faceLayout = Layout.getFaceLayout();
@@ -631,7 +640,8 @@ UnTangleMap.prototype = {
         // draw
         this.initLabels(labelLayout).initZoom()
             .updateLayout()
-            .updateCenter();
+            .updateCenter()
+            .updateUtility();
     }
 };
 
@@ -659,6 +669,8 @@ UnTangleMap.init = function (selector, userOpt) {
         margin: { top: 50, left: 50, bottom: 50, right: 50 },
         width: 800,
         height: 600,
+        utilWidth: 120,
+        utilHeight: 30,
         side: 30.0,
         gridStrokeTernary: [0.5, 0.8, 0.5, 0.3],
         gridStrokeSub: 0.2,
