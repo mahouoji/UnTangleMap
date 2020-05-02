@@ -9,6 +9,7 @@ var UnTangleMap = function (selector, userOpt) {
 var Hex = global.Hex(1.0);
 var Layout = global.UnTangleMapLayout();
 var Heatmap = global.UnTangleMapHeatmap();
+var Zoom = d3.zoom().scaleExtent([1, 10]);
 
 UnTangleMap.prototype = {
     // init plots and interactions
@@ -126,34 +127,39 @@ UnTangleMap.prototype = {
     },
     initZoom: function () {
         var self = this;
-        var w = self.opt.side;
-        var h = self.opt.side * Math.sqrt(3) / 2.0;
         // zoom
         function zoomed() {
-            // grid
-            self.svg.selectAll('.grid-zoom-1').attr("transform",
-                "translate(0,"
-                + d3.event.transform.y % (h * d3.event.transform.k)
-                + ")scale(" + d3.event.transform.k + ")");
-            self.svg.selectAll('.grid-zoom-2').attr("transform",
-                "translate(" + d3.event.transform.x % (w * d3.event.transform.k) + ","
-                + d3.event.transform.y % (2 * h * d3.event.transform.k)
-                + ")scale(" + d3.event.transform.k + ")");
-            // labels and data items
-            self.svg.select('.utgmap').attr("transform", d3.event.transform);
-            // offset
             self.transform.x = d3.event.transform.x;
             self.transform.y = d3.event.transform.y;
             self.transform.k = d3.event.transform.k;
+            self.adjusTransform(0);
             //console.log(self.transform.x, self.transform.y);
         }
         function zoomEnd() {
             self.adjustZoom();
         }
-        self.svg.call(d3.zoom().scaleExtent([1, 10])
-        .on("zoom", zoomed)
-        .on("end", zoomEnd));
+        Zoom.on("zoom", zoomed)
+            .on("end", zoomEnd);
+        self.svg.call(Zoom);
         //self.adjustZoom(); // resize to adjust current zooming when switching datasets
+        return self;
+    },
+    adjusTransform: function(duration) {
+        var self = this;
+        var w = self.opt.side;
+        var h = self.opt.side * Math.sqrt(3) / 2.0;
+        // grid
+        self.svg.selectAll('.grid-zoom-1')
+            .transition().duration(duration).attr("transform",
+            `translate(0,${self.transform.y % (h * self.transform.k)})scale(${self.transform.k})`);
+        self.svg.selectAll('.grid-zoom-2')
+            .transition().duration(duration).attr("transform",
+            `translate(${self.transform.x % (w * self.transform.k)},${self.transform.y
+                % (2 * h * self.transform.k)})scale(${self.transform.k})`);
+        // labels and data items
+        self.svg.select('.utgmap')
+            .transition().duration(duration).attr("transform",
+            `translate(${self.transform.x},${self.transform.y})scale(${self.transform.k})`);
         return self;
     },
     adjustZoomLabel: function(duration) {
@@ -227,16 +233,19 @@ UnTangleMap.prototype = {
         } else {
             console.log('unknown display level');
         }
+        return this;
     },
-    adjustZoom: function() {
+    adjustZoomScatter: function() {
         var self = this;
-        self.adjustZoomLabel(0);
-        // circles
         let constItenSize = self.transform.k < 2 ? 1.0 : (self.transform.k < 5 ? 0.8 : 0.6);
         self.svg.select(".scatter-plot").selectAll("circle").attr('r', Math.max(self.opt.itemRaid / self.transform.k, constItenSize));
-        // heatmap
-        self.adjustZoomHeatmap();
         return self;
+    },
+    adjustZoom: function() {
+        this.adjustZoomLabel(0)
+            .adjustZoomHeatmap()
+            .adjustZoomScatter();
+        return this;
     },
     // set up labels and label dragging
     initLabels: function (labelData) {
@@ -535,6 +544,19 @@ UnTangleMap.prototype = {
             self.labelPos[rec.index] = Hex.hexToSvg(rec.cord);
         });
     },
+    updateCenter: function() {
+        let xs = d3.extent(this.labelPos.map(d=>d[0]));
+        let ys = d3.extent(this.labelPos.map(d=>d[1]));
+        let centerPos = [0.5 * (xs[0] + xs[1]), 0.5 * (ys[0] + ys[1])];
+        this.transform.x = this.opt.width / 2.0 - centerPos[0] * this.transform.k;
+        this.transform.y =  this.opt.height / 2.0 - centerPos[1] * this.transform.k;
+        this.svg.transition()
+            .duration(750)
+            .call(Zoom.transform, d3.zoomIdentity
+                .translate(this.transform.x,this.transform.y).scale(this.transform.k) );
+        //this.adjusTransform(500);
+        return this;
+    },
     // controller
     updateCorrMethod: function(method) {
         if (this.corrMethod === method) { return; }
@@ -562,7 +584,7 @@ UnTangleMap.prototype = {
     },
     checkScatter: function(checked) {
         this.renderScatterPlot = checked;
-        if (checked) { this.updateScatterPlot(); }
+        if (checked) { this.updateScatterPlot().adjustZoomScatter(); }
         else { this.clearScatterPlot(); }
     },
     // view options
@@ -608,7 +630,8 @@ UnTangleMap.prototype = {
         Heatmap.initData(data).initPosLayout(this.labelPos, faceLayout);
         // draw
         this.initLabels(labelLayout).initZoom()
-            .updateLayout();
+            .updateLayout()
+            .updateCenter();
     }
 };
 
