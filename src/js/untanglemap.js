@@ -276,12 +276,10 @@ UnTangleMap.prototype = {
             //.attr('stroke-width', 0.2)
             //.attr('vector-effect', 'non-scaling-stroke')
             .on("mouseover", d=>{
-                console.log(self.data.labels[self.data.labelIndex[d.name]]);
+                //console.log(self.data.labels[self.data.labelIndex[d.name]]);
                 let div = self.selector.select('.tooltip');
-                div.transition()
-                    .duration(200)
-                    .style("opacity", .9);
-                div.html('hi')
+                div.style("opacity", .9);
+                div.html(self.labelHTML[self.data.labelIndex[d.name]])
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY-80) + "px");
             })
@@ -527,7 +525,9 @@ UnTangleMap.prototype = {
     },
     updateUtility: function() {
         this.selector.select('.utility')
-            .html(`Utility: ${Layout.utility.utility.toFixed(4)}`);
+            .html(`Utility: ${Layout.utility.utility.toFixed(4)} \
+            | Edge: ${Layout.utility.edgeCorr.toFixed(2)} / ${Layout.utility.edgeCnt} \
+            | Face: ${Layout.utility.triCorr.toFixed(2)} /  ${Layout.utility.triCnt}`);
         return this;
     },
     // binding data and plotting
@@ -552,6 +552,30 @@ UnTangleMap.prototype = {
         labelData.forEach(rec => {
             self.labelPos[rec.index] = Hex.hexToSvg(rec.cord);
         });
+        return this;
+    },
+    initLabelHTML: function() {
+        var self = this;
+        self.labelHTML = [];
+        self.data.labels.forEach(label => {
+            let text = `<h3>${label.name}</h3>`;
+            for (const key in label) {
+                if (key === 'name') { continue; }
+                text += `<div><b>${key}</b>: `;
+                if (Array.isArray(label[key])) {
+                    text += `<ul>`;
+                    label[key].forEach(v=>{
+                        text += `<li>${v}</li>`;
+                    });
+                    text += `</ul></div>`;
+                } else {
+                    text += `${label[key]}</div>`;
+                }
+            }
+            self.labelHTML.push(text);
+        });
+        console.log(self.labelHTML);
+        return this;
     },
     updateCenter: function() {
         let xs = d3.extent(this.labelPos.map(d=>d[0]));
@@ -633,7 +657,7 @@ UnTangleMap.prototype = {
         let labelLayout = Layout.getLabelLayout();
         let faceLayout = Layout.getFaceLayout();
         // store label pos
-        this.initLabelPos(labelLayout);
+        this.initLabelPos(labelLayout).initLabelHTML();
         // init heatmap and ternary-grid
         this.scatterPlotDataChanged = true;
         Heatmap.initData(data).initPosLayout(this.labelPos, faceLayout);
@@ -650,6 +674,7 @@ UnTangleMap.init = function (selector, userOpt) {
     //data and states
     self.data = {labels: [], items: []};
     self.labelPos = [];// svg coordinates for labels by lableIndex
+    self.labelHTML = []; // HTML formatted label info for tooltip by labelIndex
     self.transform = {x:0, y:0, k:1.0};// records transformation
     // check boxes
     self.labelAsCircle = true; // show label vertex as (circle or text)
@@ -669,7 +694,7 @@ UnTangleMap.init = function (selector, userOpt) {
         margin: { top: 50, left: 50, bottom: 50, right: 50 },
         width: 800,
         height: 600,
-        utilWidth: 120,
+        utilWidth: 400,
         utilHeight: 30,
         side: 30.0,
         gridStrokeTernary: [0.5, 0.8, 0.5, 0.3],
