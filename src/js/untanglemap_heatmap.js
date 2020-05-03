@@ -218,6 +218,7 @@ UTHeatmap.prototype = {
             self.getCountRecursive(key, [a+b-c, -a+b+c, a-b+c],(faceOffset+3) * 4, depth + 1);
         }
     }
+    // Highlight
 };
 
 UTHeatmap.init = function () {

@@ -28,6 +28,14 @@
     position: fixed;
     top: 75px;
 }
+#paracord-container {
+    position: fixed;
+    top: 75px;
+    left: 800px;
+}
+svg {
+    border: 1px dashed;
+}
 
 div.tooltip {
     position: absolute;

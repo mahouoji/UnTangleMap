@@ -48,6 +48,7 @@ Controller.prototype = {
         //console.log(self.data);
         // UnTangle Map
         self.unTangleMap.initData(self.data);
+        self.paraCord.initData(self.data);
     },
     updateCorrMethod: function(method) {
         var self = this;
@@ -66,10 +67,8 @@ Controller.init = function() {
     self.data = {};
     self.corrMethod = "spearman";
 
-    var plot_opts = {
-        margin: {top:70,left:150,bottom:150,right:150},
-    }
-    self.unTangleMap = UnTangleMap("#untangle-container", plot_opts);
+    self.unTangleMap = UnTangleMap("#untangle-container", {});
+    self.paraCord = ParallelCoords("#paracord-container", {});
 }
 
 Controller.init.prototype = Controller.prototype;
