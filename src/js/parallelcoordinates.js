@@ -6,32 +6,58 @@ var ParallelCoords = function(selector, userOpt) {
 }
 
 ParallelCoords.prototype = {
-  initAxis: function() {
-    var self = this;
-    let xScale = d3.scalePoint()
-    .range([0, this.opt.inWidth])
-    .padding(1)
-    .domain(this.dimDisplayed);
-    self.svg.selectAll("g")
-      .data(self.dimDisplayed).enter()
-      .append("g")
-      .attr("transform", function(d) { return "translate(" + xScale(d) + ",0)"; })
-      // And I build the axis with the call function
-      .each(function(d) { d3.select(this).call(d3.axisLeft().scale(self.yScale)); })
-      // Add axis title
-      .append("text")
-        .style("text-anchor", "middle")
-        .attr("y", -9)
-        .text(function(d) { return d; })
-        .style("fill", "black")
-        .style("font-size", "10");
+  initLayers: function() {
+    this.svg.append('g').attr('class', 'path');
+    this.svg.append('g').attr('class', 'axis');
     return this;
   },
+  initAxis: function() {
+    var self = this;
+    // console.log(this.dimDisplayed);
+    this.svg.select('.axis').selectAll("*").remove();
+    this.svg.select('.axis').selectAll("g")
+      .data(self.dimDisplayed).enter()
+      .append("g")
+      .attr("transform", function(d) { return "translate(" + self.xScale(d.name) + ",0)"; })
+      // And I build the axis with the call function
+      .each(function(d) { d3.select(this).selectAll("*").remove(); d3.select(this).call(d3.axisLeft().scale(self.yScale)); })
+      // Add axis title
+      .append("text")
+      .style("text-anchor", "middle")
+      .attr("y", -9)
+      .text(d=>d.name)
+      .style("fill", "black")
+      .style("font-size", "8px");
+    return this;
+  },
+  initPath: function() {
+    var self = this;
+    function path(d) {
+      return d3.line()(self.dimDisplayed.map(p => { return [self.xScale(p.name), self.yScale(d[p.index])]; }));
+    }
+    console.log(this.itemDisplayed);
+    let g = this.svg.select('.path').selectAll("path").data(this.itemDisplayed);
+    g.exit().remove();
+    g.enter().append("path").merge(g)
+      .attr("d",  path)
+      .style("fill", "none")
+      .style("stroke", "#08519c")
+      .style("opacity", 0.3);
+    return this;
+
+  },
   initData: function(data) {
+    var self = this;
     this.data = data;
     this.dimensions = data.labels;
-    this.dimDisplayed = this.dimensions.map(d=>d.name).slice(0,6);
-    this.initAxis();
+    this.dimDisplayed = this.dimensions.map((d, i)=>{ return {name: d.name, index: i}; }).slice(0,7);
+    this.itemDisplayed = data.items.map(item=>{
+      return self.dimDisplayed.map(d=>item.normVec[d.index]); });
+    this.xScale = d3.scalePoint()
+      .range([0, this.opt.inWidth])
+      .padding(1)
+      .domain(this.dimDisplayed.map(d=>d.name));
+    this.initAxis().initPath();
   }
 };
 
@@ -59,63 +85,9 @@ ParallelCoords.init = function(selector, userOpt) {
     .attr('height', this.opt.height)
     .append('g')
     .attr("transform",`translate(${this.opt.margin.left},${this.opt.margin.top})`);
+  this.initLayers();
 }
 
 ParallelCoords.init.prototype = ParallelCoords.prototype;
 global.ParallelCoords = ParallelCoords;
 }(window, d3));
-/*
-// Parse the Data
-d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/iris.csv", function(data) {
-
-  // Extract the list of dimensions we want to keep in the plot. Here I keep all except the column called Species
-  dimensions = d3.keys(data[0]).filter(function(d) { return d != "Species" })
-
-  // For each dimension, I build a linear scale. I store all in a y object
-  var y = {}
-  for (i in dimensions) {
-    name = dimensions[i]
-    y[name] = d3.scaleLinear()
-      .domain( d3.extent(data, function(d) { return +d[name]; }) )
-      .range([height, 0])
-  }
-
-  // Build the X scale -> it find the best position for each Y axis
-  x = d3.scalePoint()
-    .range([0, width])
-    .padding(1)
-    .domain(dimensions);
-
-  // The path function take a row of the csv as input, and return x and y coordinates of the line to draw for this raw.
-  function path(d) {
-      return d3.line()(dimensions.map(function(p) { return [x(p), y[p](d[p])]; }));
-  }
-
-  // Draw the lines
-  svg
-    .selectAll("myPath")
-    .data(data)
-    .enter().append("path")
-    .attr("d",  path)
-    .style("fill", "none")
-    .style("stroke", "#69b3a2")
-    .style("opacity", 0.5)
-
-  // Draw the axis:
-  svg.selectAll("myAxis")
-    // For each dimension of the dataset I add a 'g' element:
-    .data(dimensions).enter()
-    .append("g")
-    // I translate this element to its right position on the x axis
-    .attr("transform", function(d) { return "translate(" + x(d) + ")"; })
-    // And I build the axis with the call function
-    .each(function(d) { d3.select(this).call(d3.axisLeft().scale(y[d])); })
-    // Add axis title
-    .append("text")
-      .style("text-anchor", "middle")
-      .attr("y", -9)
-      .text(function(d) { return d; })
-      .style("fill", "black")
-}
-
-})*/

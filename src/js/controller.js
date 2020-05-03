@@ -31,6 +31,14 @@ Controller.prototype = {
             return total.map((x,i)=>x + item.vec[i] / itemSum[index]);
         }, Array(data.labels.length).fill(0));
         data.labelScore = data.labelScore.map(x=>x/data.items.length);
+        // normalized
+        data.items.forEach((item, i) => {
+            if (itemSum[i] === 0) {
+                data.items[i].normVec = item.vec.map(_=>0);
+            } else {
+                data.items[i].normVec = item.vec.map(d=>d/itemSum[i]);
+            }
+        });
         //console.log(data.labelScore);
         // data.labelScore = data.items.reduce((total, item)=>{
         //     return total.map((x,i)=>x + item.vec[i]);
