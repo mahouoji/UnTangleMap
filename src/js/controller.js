@@ -58,12 +58,6 @@ Controller.prototype = {
         }
         self.corrMethod = method;
         self.unTangleMap.updateCorrMethod(method);
-    },
-    checkLabel: function(checked) {
-        this.unTangleMap.checkLabel(checked);
-    },
-    checkScatter: function(checked) {
-        this.unTangleMap.checkScatter(checked);
     }
 };
 

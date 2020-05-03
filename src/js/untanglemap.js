@@ -9,6 +9,7 @@ var UnTangleMap = function (selector, userOpt) {
 var Hex = global.Hex(1.0);
 var Layout = global.UnTangleMapLayout();
 var Heatmap = global.UnTangleMapHeatmap();
+var Zoom = d3.zoom().scaleExtent([1, 10]);
 
 UnTangleMap.prototype = {
     // init plots and interactions
@@ -39,6 +40,11 @@ UnTangleMap.prototype = {
         utgmap.append('g').attr('class', 'label');
         // tooltip
         self.selector.append("div").attr("class", "tooltip");
+        self.selector.append("div").attr("class", "utility")
+            .style('width', `${self.opt.utilWidth}px`)
+            .style('height', `${self.opt.utilHeight}px`)
+            .style('left', `${self.opt.width - self.opt.utilWidth}px`)
+            .style('top', `${self.opt.height - self.opt.utilHeight}px`);
         return self
     },
     addGridLayer: function(gridSelector) {
@@ -117,42 +123,53 @@ UnTangleMap.prototype = {
             .attr('vector-effect', 'non-scaling-stroke')
             .attr('shape-rendering', 'crispEdges');
     },
+    disableZoom: function() {
+        this.svg.call(d3.zoom()
+            .on("zoom", null)
+            .on("end", null));
+        return this;
+    },
     initZoom: function () {
         var self = this;
-        var w = self.opt.side;
-        var h = self.opt.side * Math.sqrt(3) / 2.0;
         // zoom
-        var zoom = d3.zoom().scaleExtent([1, 10])
-            .on("zoom", zoomed)
-            .on("end", zoomEnd);
         function zoomed() {
-            // grid
-            self.svg.selectAll('.grid-zoom-1').attr("transform",
-                "translate(0,"
-                + d3.event.transform.y % (h * d3.event.transform.k)
-                + ")scale(" + d3.event.transform.k + ")");
-            self.svg.selectAll('.grid-zoom-2').attr("transform",
-                "translate(" + d3.event.transform.x % (w * d3.event.transform.k) + ","
-                + d3.event.transform.y % (2 * h * d3.event.transform.k)
-                + ")scale(" + d3.event.transform.k + ")");
-            // labels and data items
-            self.svg.select('.utgmap').attr("transform", d3.event.transform);
-            // offset
             self.transform.x = d3.event.transform.x;
             self.transform.y = d3.event.transform.y;
             self.transform.k = d3.event.transform.k;
+            self.adjusTransform(0);
+            //console.log(self.transform.x, self.transform.y);
         }
         function zoomEnd() {
             self.adjustZoom();
         }
-        self.svg.call(zoom);
+        Zoom.on("zoom", zoomed)
+            .on("end", zoomEnd);
+        self.svg.call(Zoom);
         //self.adjustZoom(); // resize to adjust current zooming when switching datasets
+        return self;
+    },
+    adjusTransform: function(duration) {
+        var self = this;
+        var w = self.opt.side;
+        var h = self.opt.side * Math.sqrt(3) / 2.0;
+        // grid
+        self.svg.selectAll('.grid-zoom-1')
+            .transition().duration(duration).attr("transform",
+            `translate(0,${self.transform.y % (h * self.transform.k)})scale(${self.transform.k})`);
+        self.svg.selectAll('.grid-zoom-2')
+            .transition().duration(duration).attr("transform",
+            `translate(${self.transform.x % (w * self.transform.k)},${self.transform.y
+                % (2 * h * self.transform.k)})scale(${self.transform.k})`);
+        // labels and data items
+        self.svg.select('.utgmap')
+            .transition().duration(duration).attr("transform",
+            `translate(${self.transform.x},${self.transform.y})scale(${self.transform.k})`);
         return self;
     },
     adjustZoomLabel: function(duration) {
         var self = this;
         // label font-size
-        let labelFontSize = self.transform.k < 1.5 ? 8 : self.transform.k < 4 ? 6 : self.transform.k < 8 ? 4 : 3;
+        let labelFontSize = self.transform.k < 1.5 ? 7 : self.transform.k < 4 ? 6 : self.transform.k < 8 ? 4 : 3;
         let gridRaid = self.opt.gridRaid / (self.transform.k * 1.4);
         let label = self.svg.select('.utgmap').select('.label');
         label.selectAll('text').attr('font-size', labelFontSize);
@@ -169,44 +186,75 @@ UnTangleMap.prototype = {
         }
         return self;
     },
-    adjustZoom: function() {
-        var self = this;
-        self.adjustZoomLabel(0);
-        // circles
-        let constItenSize = self.transform.k < 2 ? 1.0 : (self.transform.k < 5 ? 0.8 : 0.6);
-        self.svg.select(".scatter-plot").selectAll("circle").attr('r', Math.max(self.opt.itemRaid / self.transform.k, constItenSize));
-        // heatmap
-        if (self.transform.k < 1.5) {
+    adjustZoomHeatmap: function() {
+        if (this.heatmapDisplayLevel === 0) {
+            if (this.transform.k < 1.5) {
+                $('.heatmap-d1').show();
+                $('.heatmap-d2').hide();
+                $('.heatmap-d3').hide();
+                $('.ternary-grid-d1').show();
+                $('.ternary-grid-d2').hide();
+                $('.ternary-grid-d3').hide();
+            } else if (this.transform.k < 4) {
+                $('.heatmap-d1').hide();
+                $('.heatmap-d2').show();
+                $('.heatmap-d3').hide();
+                $('.ternary-grid-d1').show();
+                $('.ternary-grid-d2').show();
+                $('.ternary-grid-d3').hide();
+            } else {
+                $('.heatmap-d1').hide();
+                $('.heatmap-d2').hide();
+                $('.heatmap-d3').show();
+                $('.ternary-grid-d1').show();
+                $('.ternary-grid-d2').show();
+                $('.ternary-grid-d3').show();
+            }
+            if (this.transform.k == 1.0) {
+                $('.ternary-grid-d1').hide();
+            }
+        } else if (this.heatmapDisplayLevel === 1) {
             $('.heatmap-d1').show();
             $('.heatmap-d2').hide();
             $('.heatmap-d3').hide();
             $('.ternary-grid-d1').show();
             $('.ternary-grid-d2').hide();
             $('.ternary-grid-d3').hide();
-        } else if (self.transform.k < 4) {
+        } else if (this.heatmapDisplayLevel === 2) {
             $('.heatmap-d1').hide();
             $('.heatmap-d2').show();
             $('.heatmap-d3').hide();
             $('.ternary-grid-d1').show();
             $('.ternary-grid-d2').show();
             $('.ternary-grid-d3').hide();
-        } else {
+        } else if (this.heatmapDisplayLevel === 3) {
             $('.heatmap-d1').hide();
             $('.heatmap-d2').hide();
             $('.heatmap-d3').show();
             $('.ternary-grid-d1').show();
             $('.ternary-grid-d2').show();
             $('.ternary-grid-d3').show();
+        } else {
+            console.log('unknown display level');
         }
-        if (self.transform.k == 1.0) {
-            $('.ternary-grid-d1').hide();
-        }
+        return this;
+    },
+    adjustZoomScatter: function() {
+        var self = this;
+        let constItenSize = self.transform.k < 2 ? 1.0 : (self.transform.k < 5 ? 0.8 : 0.6);
+        self.svg.select(".scatter-plot").selectAll("circle").attr('r', Math.max(self.opt.itemRaid / self.transform.k, constItenSize));
         return self;
+    },
+    adjustZoom: function() {
+        this.adjustZoomLabel(0)
+            .adjustZoomHeatmap()
+            .adjustZoomScatter();
+        return this;
     },
     // set up labels and label dragging
     initLabels: function (labelData) {
         var self = this;
-        let vertex = self.svg.select('.utgmap').select('.label').attr('cursor', 'grab');
+        let vertex = self.svg.select('.utgmap').select('.label');
         let g = vertex.selectAll('g').data(labelData);
         let labelTrans = self.labelAsCircle ? `translate(0,${self.opt.labelFontSize+self.opt.gridRaid})` : 'translate(0,0)';
         let powScale = d3.scalePow().exponent(0.2).domain([0.,1.]);
@@ -229,6 +277,19 @@ UnTangleMap.prototype = {
             //.attr('vector-effect', 'non-scaling-stroke')
             .on("mouseover", d=>{
                 console.log(self.data.labels[self.data.labelIndex[d.name]]);
+                let div = self.selector.select('.tooltip');
+                div.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                div.html('hi')
+                    .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY-80) + "px");
+            })
+            .on("mouseout", function(d) {
+                let div = self.selector.select('.tooltip');
+                div.transition()
+                    .duration(500)
+                    .style("opacity", 0);
             });
             // circle
             d3.select(this).append('circle')
@@ -241,6 +302,23 @@ UnTangleMap.prototype = {
         self.initDrag();
         return self;
     },
+    disableDrag: function() {
+        let label = this.svg.select('.utgmap').select('.label');
+        label.attr('cursor', 'auto');
+        label.selectAll('circle')
+            .attr('cursor', 'default')
+            .call(d3.drag()
+            .on("start", null)
+            .on("drag", null)
+            .on("end", null));
+        label.selectAll('text')
+            .attr('cursor', 'default')
+            .call(d3.drag()
+            .on("start", null)
+            .on("drag", null)
+            .on("end", null));
+        return this;
+    },
     initDrag: function() {
         var self = this;
         let dragBy = self.labelAsCircle ? 'circle' : 'text',
@@ -248,18 +326,24 @@ UnTangleMap.prototype = {
         let label = self.svg.select('.utgmap').select('.label');
         // disable drag
         label.selectAll(notDragBy)
+            .attr('cursor', 'default')
             .call(d3.drag()
             .on("start", null)
             .on("drag", null)
             .on("end", null));
         // enable drag
         let vertex = label.selectAll(dragBy)
+            .attr('cursor', 'grab')
             .call(d3.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
             .on("end", dragended));
         // drag
         function dragstarted() {
+            // drag
+            d3.select(this.parentNode).raise();
+            vertex.attr("cursor", "grabbing");
+            // store
             let kx = self.labelAsCircle ? 'cx' : 'dx',
                 ky = self.labelAsCircle ? 'cy' : 'dy';
             let x = d3.select(this).attr(kx);
@@ -271,12 +355,9 @@ UnTangleMap.prototype = {
             self.updateLayout([], removed);
             // get hints
             let hintData = Layout.getTopUtilities([self.activeName]);
-            console.log(hintData);
+            //console.log(hintData);
             self.updateHints(hintData);
             self.svg.select('.hint').style('opacity', 0.5);
-            // drag
-            d3.select(this.parentNode).raise();
-            vertex.attr("cursor", "grabbing");
         }
 
         function dragged(d) {
@@ -317,6 +398,7 @@ UnTangleMap.prototype = {
             self.updateLayout(added, []);
             // hide hints
             self.svg.select('.hint').transition().duration(100).style('opacity', 0);
+            self.updateUtility();
         }
         return self;
     },
@@ -340,7 +422,7 @@ UnTangleMap.prototype = {
                 .attr('fill', d=>colorScale(d.cnt + 1))
                 .attr('cnt', d=>d.cnt)
                 .attr('cnt-color', d=>colorScale(d.cnt + 1))
-                .attr('stroke', '#ccc')
+                .attr('stroke', '#eee')
                 .attr('stroke-width', self.opt.gridStrokeSub)
                 .attr('vector-effect', 'non-scaling-stroke')
                 .attr('shape-rendering', 'crispEdges')
@@ -410,7 +492,7 @@ UnTangleMap.prototype = {
                     edgeSet[key] = {
                         pos1: vpos[pair[0]],
                         pos2: vpos[pair[1]],
-                        corr: self.data.corr[self.opt.corrMethod][vindex[pair[0]]][vindex[pair[1]]]
+                        corr: self.data.corr[self.corrDisplayMethod][vindex[pair[0]]][vindex[pair[1]]]
                     }
                 }
             });
@@ -433,7 +515,7 @@ UnTangleMap.prototype = {
         var self = this;
         var hints = self.svg.select('.utgmap').select('.hint')
             .selectAll('circle').data(hintData);
-        let colorScale = d3.scaleSequential(t=>d3.interpolateBlues(t))
+        let colorScale = d3.scaleSequential(t=>d3.interpolateBlues(t*t))
             .domain(d3.extent(hintData.map(d=>d.util.utility)));
         hints.exit().remove();
         hints.enter().append('circle').merge(hints)
@@ -443,7 +525,11 @@ UnTangleMap.prototype = {
             .attr('fill', d=>colorScale(d.util.utility));
         return self;
     },
-
+    updateUtility: function() {
+        this.selector.select('.utility')
+            .html(`Utility: ${Layout.utility.utility.toFixed(4)}`);
+        return this;
+    },
     // binding data and plotting
     updateLayout: function(facesAdded, facesRemoved) {
         let faceLayout = Layout.getFaceLayout();
@@ -467,10 +553,37 @@ UnTangleMap.prototype = {
             self.labelPos[rec.index] = Hex.hexToSvg(rec.cord);
         });
     },
+    updateCenter: function() {
+        let xs = d3.extent(this.labelPos.map(d=>d[0]));
+        let ys = d3.extent(this.labelPos.map(d=>d[1]));
+        let centerPos = [0.5 * (xs[0] + xs[1]), 0.5 * (ys[0] + ys[1])];
+        this.transform.x = this.opt.width / 2.0 - centerPos[0] * this.transform.k;
+        this.transform.y =  this.opt.height / 2.0 - centerPos[1] * this.transform.k;
+        this.svg.transition()
+            .duration(750)
+            .call(Zoom.transform, d3.zoomIdentity
+                .translate(this.transform.x,this.transform.y).scale(this.transform.k) );
+        //this.adjusTransform(500);
+        return this;
+    },
     // controller
     updateCorrMethod: function(method) {
-        this.opt.corrMethod = method;
+        if (this.corrMethod === method) { return; }
+        this.corrMethod = method;
         Layout.corrMethod = method;
+        this.initData(this.data);
+    },
+    updateObjective: function(objective) {
+        if (this.objective === objective) { return; }
+        this.objective = objective;
+        Layout.objective = objective;
+        this.initData(this.data);
+    },
+    updateAlpha: function(alpha) {
+        alpha = parseFloat(alpha);
+        if (this.alpha === alpha) { return; }
+        this.alpha = alpha;
+        Layout.alpha = alpha;
         this.initData(this.data);
     },
     // updates on hide and show layers
@@ -480,8 +593,37 @@ UnTangleMap.prototype = {
     },
     checkScatter: function(checked) {
         this.renderScatterPlot = checked;
-        if (checked) { this.updateScatterPlot(); }
+        if (checked) { this.updateScatterPlot().adjustZoomScatter(); }
         else { this.clearScatterPlot(); }
+    },
+    // view options
+    setCorrDisplayMethod: function(method) {
+        if (this.corrDisplayMethod === method) { return; }
+        this.corrDisplayMethod = method;
+        this.updateEdges(Layout.getFaceLayout());
+    },
+    setHeatmapDisplayLevel: function(level) {
+        level = parseInt(level);
+        if (this.heatmapDisplayLevel === level) { return; }
+        this.heatmapDisplayLevel = level;
+        this.adjustZoomHeatmap();
+    },
+    // tools
+    setInteractionMode: function(mode) {
+        if (this.interactionMode === mode) { return; }
+        // disable
+        if (this.interactionMode === 'zoom') {
+            //this.disableZoom();
+        } else if (this.interactionMode === 'drag') {
+            this.disableDrag();
+        }
+        // enable
+        this.interactionMode = mode;
+        if (mode === 'zoom') {
+            //this.initZoom();
+        } else if (mode === 'drag') {
+            this.initDrag();
+        }
     },
     initData: function(data) {
         this.data = data;
@@ -497,7 +639,9 @@ UnTangleMap.prototype = {
         Heatmap.initData(data).initPosLayout(this.labelPos, faceLayout);
         // draw
         this.initLabels(labelLayout).initZoom()
-            .updateLayout();
+            .updateLayout()
+            .updateCenter()
+            .updateUtility();
     }
 };
 
@@ -511,25 +655,32 @@ UnTangleMap.init = function (selector, userOpt) {
     self.labelAsCircle = true; // show label vertex as (circle or text)
     self.scatterPlotDataChanged = false; // scatter plot data updated but not binded
     self.renderScatterPlot = false; // need to render scatter plot
+    self.corrMethod = 'spearman';
+    self.corrDisplayMethod = 'spearman';
+    self.objective = 'average';
+    self.alpha = 0.0;
+    self.heatmapDisplayLevel = 0; // 0(auto), 1, 2, 3
+    self.interactionMode = 'drag'; // zoom (zoom, pan, drag), info
     // editing
     self.activeCord = HexCord(0, 0);
     self.activeName = '';
     // config
     self.opt = {
         margin: { top: 50, left: 50, bottom: 50, right: 50 },
-        width: 1000,
-        height: 550,
+        width: 800,
+        height: 600,
+        utilWidth: 120,
+        utilHeight: 30,
         side: 30.0,
         gridStrokeTernary: [0.5, 0.8, 0.5, 0.3],
-        gridStrokeSub: 0.3,
+        gridStrokeSub: 0.2,
         gridStroke: 0.5,
         faceStroke: 0.5,
         edgeStroke: 2,
         gridRaid: 4,
         labelRaid: 3.5,
-        labelFontSize: 8,
-        itemRaid: 1.3,
-        corrMethod: 'spearman'
+        labelFontSize: 7,
+        itemRaid: 1.3
     };
     for (var o in userOpt) {
         self.opt[o] = userOpt[o];

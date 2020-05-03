@@ -4,6 +4,8 @@
     <title>VisML - UnTangle Map</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/app.css" type="text/css">
     <link rel="stylesheet" href="css/untangle_style.css" type="text/css">
@@ -11,6 +13,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/cf9de35381.js"></script>
 </head>
 <body onload="main();">
   <!--tabs-->
@@ -24,24 +27,42 @@
         <form class="form-inline">
           <!--select dataset-->
           <label for="untangleDataSelect" class="mr-sm-1">Data</label>
-          <select class="form-control mr-sm-4" id="untangleDataSelect">
+          <select class="form-control mr-sm-3" id="untangleDataSelect">
             <option value="imdb_yg">IMDB Year-Genre</option>
             <option value="imdb_mg">IMDB Movie-Genre</option>
             <option value="dblp_ac">DBLP Author-Conf</option>
           </select>
           <!--select correlation-->
-          <label for="untangleCorrSelect" class="mr-sm-1">Corr Method</label>
-          <select class="form-control mr-sm-4" id="untangleCorrSelect">
+          <label for="untangleCorrSelect" class="mr-sm-1">Correlation</label>
+          <select class="form-control mr-sm-3" id="untangleCorrSelect">
             <option value="spearman">Spearman</option>
             <option value="kendall">Kendall</option>
             <option value="pearson">Pearson</option>
           </select>
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <!--select correlation-->
+          <label for="untangleObjectiveSelect" class="mr-sm-1">Objective</label>
+          <select class="form-control mr-sm-1" id="untangleObjectiveSelect">
+            <option value="average">Average</option>
+            <option value="total">Total</option>
+          </select>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons" id="untangleAlphaOption">
+            <label class="btn btn-light">
+              <input type="radio" name="options" id="option0" value=1 checked>Corr
+            </label>
+            <label class="btn btn-light">
+              <input type="radio" name="options" id="option1" value=0.5>Both
+            </label>
+            <label class="btn btn-light">
+              <input type="radio" name="options" id="option2" value=0>Cluster
+            </label>
+          </div>
+          <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
         </form>
       </nav> <!--end untangle header-->
       <div id="untangle-control-panel">
-        <input type="range" name="usrname">
+        <!--<input type="range" name="usrname"> -->
+        <hr>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="checkboxLabel" checked>
           <label class="form-check-label" for="checkboxLabel">
@@ -64,6 +85,44 @@
           <input class="form-check-input" type="checkbox" value="" id="checkboxScatter">
           <label class="form-check-label" for="checkboxScatter">
             Scatter plot
+          </label>
+        </div>
+        <hr>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons" id="corrViewOptionContainer">
+          <label class="btn btn-secondary active">
+            <input type="radio" name="options" id="optionspearman" value="spearman" checked>S
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="optionkendall" value="kendall">K
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="optionpearson" value="pearson">P
+          </label>
+        </div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons" id="heatmapViewOptionContainer">
+          <label class="btn btn-secondary active">
+            <input type="radio" name="options" id="option0" value=0 checked>A
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option1" value=1>1
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option2" value=2>2
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3" value=3>3
+          </label>
+        </div>
+        <hr>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons" id="toolContainer">
+          <label class="btn btn-secondary active">
+            <input type="radio" name="options" id="option0" value="zoom"><i class="fa fa-expand"></i>
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option1" value="drag" checked><i class='fa fa-hand-paper-o'></i>
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option2" value="info"><i class="fa fa-mouse-pointer"></i>
           </label>
         </div>
       </div>
