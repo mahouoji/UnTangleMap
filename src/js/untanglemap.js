@@ -241,7 +241,7 @@ UnTangleMap.prototype = {
     },
     adjustZoomScatter: function() {
         var self = this;
-        let constItenSize = self.transform.k < 2 ? 1.0 : (self.transform.k < 5 ? 0.8 : 0.6);
+        let constItenSize = self.transform.k < 2 ? 1.0 : (self.transform.k < 5 ? 0.8 : self.transform.k < 8 ? 0.6 : 0.4);
         self.svg.select(".scatter-plot").selectAll("circle").attr('r', Math.max(self.opt.itemRaid / self.transform.k, constItenSize));
         return self;
     },
@@ -271,24 +271,7 @@ UnTangleMap.prototype = {
             .attr('dy', function (d) { return Hex.hexToY(d.cord); })
             .attr("transform", labelTrans)
             .attr('text-anchor','middle')
-            .attr('label', d=>d.name)
-            //.attr('stroke', 'white')
-            //.attr('stroke-width', 0.2)
-            //.attr('vector-effect', 'non-scaling-stroke')
-            .on("mouseover", d=>{
-                //console.log(self.data.labels[self.data.labelIndex[d.name]]);
-                let div = self.selector.select('.tooltip');
-                div.style("opacity", .9);
-                div.html(self.labelHTML[self.data.labelIndex[d.name]])
-                    .style("left", (d3.event.pageX) + "px")
-                    .style("top", (d3.event.pageY-80) + "px");
-            })
-            .on("mouseout", function(d) {
-                let div = self.selector.select('.tooltip');
-                div.transition()
-                    .duration(500)
-                    .style("opacity", 0);
-            });
+            .attr('label', d=>d.name);
             // circle
             d3.select(this).append('circle')
             .attr('r', self.opt.labelRaid)
@@ -297,24 +280,57 @@ UnTangleMap.prototype = {
             .attr('label', d=>d.name)
             .attr('fill', d=>colorScale(self.data.labelScore[self.data.labelIndex[d.name]]));
         });
-        self.initDrag();
+        self.updateLabelInteraction();
         return self;
     },
-    disableDrag: function() {
+    updateLabelInteraction() {
+        var self = this;
         let label = this.svg.select('.utgmap').select('.label');
-        label.attr('cursor', 'auto');
-        label.selectAll('circle')
-            .attr('cursor', 'default')
-            .call(d3.drag()
-            .on("start", null)
-            .on("drag", null)
-            .on("end", null));
-        label.selectAll('text')
-            .attr('cursor', 'default')
-            .call(d3.drag()
-            .on("start", null)
-            .on("drag", null)
-            .on("end", null));
+        // drag
+        if (this.dragEnabled) {
+            this.initDrag();
+        } else {
+            label.selectAll('circle')
+                .attr('cursor', 'default')
+                .call(d3.drag()
+                .on("start", null)
+                .on("drag", null)
+                .on("end", null));
+            label.selectAll('text')
+                .attr('cursor', 'default')
+                .call(d3.drag()
+                .on("start", null)
+                .on("drag", null)
+                .on("end", null));
+        }
+        if (this.tooltipEnabled) {
+            function mouseover(d) {
+                let div = self.selector.select('.tooltip');
+                div.style("opacity", .9);
+                div.html(self.labelHTML[self.data.labelIndex[d.name]])
+                    .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY-80) + "px");
+            }
+            function mouseout() {
+                let div = self.selector.select('.tooltip');
+                    div.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+            }
+            label.selectAll('circle')
+                .on("mouseover", d=>mouseover(d))
+                .on("mouseout", d=>mouseout(d));
+            label.selectAll('text')
+                .on("mouseover", d=>mouseover(d))
+                .on("mouseout", d=>mouseout(d));
+        } else {
+            label.selectAll('circle')
+                .on("mouseover", null)
+                .on("mouseout", null);
+            label.selectAll('text')
+                .on("mouseover", null)
+                .on("mouseout", null);
+        }
         return this;
     },
     initDrag: function() {
@@ -574,7 +590,7 @@ UnTangleMap.prototype = {
             }
             self.labelHTML.push(text);
         });
-        console.log(self.labelHTML);
+        //console.log(self.labelHTML);
         return this;
     },
     updateCenter: function() {
@@ -613,7 +629,7 @@ UnTangleMap.prototype = {
     // updates on hide and show layers
     checkLabel: function(checked) {
         this.labelAsCircle = checked;
-        this.adjustZoomLabel(200).initDrag();
+        this.adjustZoomLabel(200).updateLabelInteraction();
     },
     checkScatter: function(checked) {
         this.renderScatterPlot = checked;
@@ -639,15 +655,20 @@ UnTangleMap.prototype = {
         if (this.interactionMode === 'zoom') {
             //this.disableZoom();
         } else if (this.interactionMode === 'drag') {
-            this.disableDrag();
+            this.dragEnabled = false;
+        } else if (this.interactionMode === 'info') {
+            this.tooltipEnabled = false;
         }
         // enable
         this.interactionMode = mode;
         if (mode === 'zoom') {
             //this.initZoom();
         } else if (mode === 'drag') {
-            this.initDrag();
+            this.dragEnabled = true;
+        } else if (mode === 'info') {
+            this.tooltipEnabled = true;
         }
+        this.updateLabelInteraction();
     },
     initData: function(data) {
         this.data = data;
@@ -686,6 +707,8 @@ UnTangleMap.init = function (selector, userOpt) {
     self.alpha = 0.0;
     self.heatmapDisplayLevel = 0; // 0(auto), 1, 2, 3
     self.interactionMode = 'drag'; // zoom (zoom, pan, drag), info
+    self.dragEnabled = true;
+    self.tooltipEnabled = false;
     // editing
     self.activeCord = HexCord(0, 0);
     self.activeName = '';
