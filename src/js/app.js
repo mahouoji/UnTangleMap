@@ -77,12 +77,7 @@ function main(){
         });
         // Tools
         $('#toolContainer input:radio').click(function() {
-            //console.log($(this).val());
-            controller.unTangleMap.setInteractionMode($(this).val());
-        });
-        $('#labelSelectContainer input:radio').click(function() {
-            //console.log($(this).val());
-            $(`#toolContainer #optionZoom`).click();
+            console.log($(this).val());
             controller.unTangleMap.setInteractionMode($(this).val());
         });
     })

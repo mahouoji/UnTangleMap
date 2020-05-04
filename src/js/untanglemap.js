@@ -294,13 +294,11 @@ UnTangleMap.prototype = {
             this.initDrag();
         } else {
             label.selectAll('circle')
-                .attr('cursor', 'default')
                 .call(d3.drag()
                 .on("start", null)
                 .on("drag", null)
                 .on("end", null));
             label.selectAll('text')
-                .attr('cursor', 'default')
                 .call(d3.drag()
                 .on("start", null)
                 .on("drag", null)
@@ -354,8 +352,10 @@ UnTangleMap.prototype = {
                 self.scatterMat.updateLabelSelected(Object.values(self.labelSelected));
             }
             label.selectAll('circle')
+                .attr('cursor', 'pointer')
                 .on("click", clicked);
             label.selectAll('text')
+                .attr('cursor', 'pointer')
                 .on("click", clicked);
         } else if (this.itemSelectEnabled){
         } else {
@@ -363,6 +363,11 @@ UnTangleMap.prototype = {
                 .on("click", null);
             label.selectAll('text')
                 .on("click", null);
+        }
+        // cursor
+        if (!this.dragEnabled && !this.labelSelectEnabled) {
+            label.selectAll('circle').attr('cursor', 'default');
+            label.selectAll('text').attr('cursor', 'default');
         }
         return this;
     },
@@ -405,6 +410,8 @@ UnTangleMap.prototype = {
             //console.log(hintData);
             self.updateHints(hintData);
             self.svg.select('.hint').style('opacity', 0.5);
+            self.svg.select('.label-selected')
+                .transition().duration(200).style('opacity', 0);
         }
 
         function dragged(d) {
@@ -446,6 +453,12 @@ UnTangleMap.prototype = {
             // hide hints
             self.svg.select('.hint').transition().duration(100).style('opacity', 0);
             self.updateUtility();
+            // update selected
+            if (name in self.labelSelected) {
+                self.labelSelected[name].pos = [x, y];
+            }
+            self.updateLabelSelected();
+            self.svg.select('.label-selected').style('opacity', 1);
         }
         return self;
     },
@@ -767,7 +780,7 @@ UnTangleMap.init = function (selector, userOpt) {
     self.corrMethod = 'spearman';
     self.corrDisplayMethod = 'spearman';
     self.objective = 'average';
-    self.alpha = 0.0;
+    self.alpha = 1.0;
     self.heatmapDisplayLevel = 0; // 0(auto), 1, 2, 3
     self.interactionMode = 'drag'; // zoom, drag, info, label, scatter
     self.dragEnabled = true;

@@ -40,8 +40,8 @@ ScatterMatrix.prototype = {
           .domain(yExtent).nice()
           .range([this.opt.scatterSize - 2 * this.opt.scatterMargin, 0]);
         // Add a 'g' at the right position
-        console.log(xLabel.name, yLabel.name);
-        console.log(this.posScale(xLabel.name), this.posScale(yLabel.name));
+        //console.log(xLabel.name, yLabel.name);
+        //console.log(this.posScale(xLabel.name), this.posScale(yLabel.name));
         let tmp = this.svg
           .append('g')
           .attr("transform", `translate(${
@@ -71,7 +71,7 @@ ScatterMatrix.prototype = {
     this.dimDisplayed = Object.values(labelsSelected);
     if (this.dimDisplayed.length === 0) { this.svg.selectAll("*").remove(); return; }
     this.opt.scatterSize = this.opt.inWidth / this.dimDisplayed.length;
-    console.log(this.opt.scatterSize);
+    //console.log(this.opt.scatterSize);
     this.posScale = d3.scalePoint()
       .domain(this.dimDisplayed.map(d=>d.name))
       .range([0, this.opt.inWidth - this.opt.scatterSize]);
