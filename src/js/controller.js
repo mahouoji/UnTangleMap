@@ -51,12 +51,11 @@ Controller.prototype = {
     },
 
     updateData: function(data) {
-        var self = this;
-        self.data = self.preprocessData(data);
-        //console.log(self.data);
+        this.data = this.preprocessData(data);
         // UnTangle Map
-        self.unTangleMap.initData(self.data);
-        self.paraCord.initData(self.data);
+        this.unTangleMap.initData(this.data);
+        this.paraCord.initData(this.data);
+        this.scatterMat.initData(this.data);
     },
     updateCorrMethod: function(method) {
         var self = this;
@@ -76,7 +75,7 @@ Controller.init = function() {
     self.corrMethod = "spearman";
     self.unTangleMap = UnTangleMap("#untangle-container", {});
     self.paraCord = self.unTangleMap.paraCord = ParallelCoords("#paracord-container", {});
-    
+    self.scatterMat = self.unTangleMap.scatterMat = ScatterMatrix("#scattermat-container", {});
 }
 
 Controller.init.prototype = Controller.prototype;

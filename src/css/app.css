@@ -33,6 +33,11 @@
     top: 75px;
     left: 800px;
 }
+#scattermat-container {
+    position: fixed;
+    top: 275px;
+    left: 800px;
+}
 svg {
     border: 1px dashed;
 }

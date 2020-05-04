@@ -33,9 +33,9 @@ ParallelCoords.prototype = {
   initPath: function() {
     var self = this;
     function path(d) {
-      return d3.line()(self.dimDisplayed.map(p => { console.log(d, p.index); return [self.xScale(p.name), self.yScale(d[p.index])]; }));
+      return d3.line()(self.dimDisplayed.map(p => {return [self.xScale(p.name), self.yScale(d[p.index])]; }));
     }
-    console.log(this.itemDisplayed);
+    //console.log(this.itemDisplayed);
     let g = this.svg.select('.path').selectAll("path").data(this.itemDisplayed);
     g.exit().remove();
     g.enter().append("path").merge(g)
@@ -47,7 +47,7 @@ ParallelCoords.prototype = {
 
   },
   updateLabelSelected: function(labelsSelected) {
-    this.dimDisplayed = Object.values(labelsSelected);
+    this.dimDisplayed = labelsSelected;
     this.xScale = d3.scalePoint()
       .range([0, this.opt.inWidth])
       .padding(1)
@@ -58,7 +58,7 @@ ParallelCoords.prototype = {
   initData: function(data) {
     this.data = data;
     this.dimensions = data.labels;
-    this.dimDisplayed = this.dimensions.map((d, i)=>{ return {name: d.name, index: i}; }).slice(0,7);
+    this.dimDisplayed = [];
     this.itemDisplayed = data.items.map(item=>item.normVec);
     this.xScale = d3.scalePoint()
       .range([0, this.opt.inWidth])
@@ -73,7 +73,7 @@ ParallelCoords.init = function(selector, userOpt) {
   this.opt = {
     margin: {top: 30, right: 10, bottom: 20, left: 0},
     width: 400,
-    height: 300
+    height: 200
   }
   for (var o in userOpt) {
     this.opt[o] = userOpt[o];

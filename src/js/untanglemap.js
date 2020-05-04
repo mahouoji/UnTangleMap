@@ -350,7 +350,8 @@ UnTangleMap.prototype = {
                     }
                 }
                 self.updateLabelSelected();
-                self.paraCord.updateLabelSelected(self.labelSelected);
+                self.paraCord.updateLabelSelected(Object.values(self.labelSelected));
+                self.scatterMat.updateLabelSelected(Object.values(self.labelSelected));
             }
             label.selectAll('circle')
                 .on("click", clicked);
@@ -584,7 +585,6 @@ UnTangleMap.prototype = {
         var selected = this.svg.select('.utgmap').select('.label-selected')
             .selectAll('circle').data(data, d=>d.name);
         let colorScale = d3.scaleSequential(t=>d3.interpolatePlasma(t*0.8));
-        console.log(colorScale(0.5));
         selected.exit().remove();
         selected.enter().append('circle').merge(selected)
             .attr('r', self.opt.gridRaid)
@@ -759,6 +759,7 @@ UnTangleMap.init = function (selector, userOpt) {
     self.labelSelected = {};
     self.transform = {x:0, y:0, k:1.0};// records transformation
     self.paraCord = null;
+    self.scatterMat= null;
     // check boxes
     self.labelAsCircle = true; // show label vertex as (circle or text)
     self.scatterPlotDataChanged = false; // scatter plot data updated but not binded
