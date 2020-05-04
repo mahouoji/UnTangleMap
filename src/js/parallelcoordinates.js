@@ -33,7 +33,7 @@ ParallelCoords.prototype = {
   initPath: function() {
     var self = this;
     function path(d) {
-      return d3.line()(self.dimDisplayed.map(p => { return [self.xScale(p.name), self.yScale(d[p.index])]; }));
+      return d3.line()(self.dimDisplayed.map(p => { console.log(d, p.index); return [self.xScale(p.name), self.yScale(d[p.index])]; }));
     }
     console.log(this.itemDisplayed);
     let g = this.svg.select('.path').selectAll("path").data(this.itemDisplayed);
@@ -46,13 +46,20 @@ ParallelCoords.prototype = {
     return this;
 
   },
+  updateLabelSelected: function(labelsSelected) {
+    this.dimDisplayed = Object.values(labelsSelected);
+    this.xScale = d3.scalePoint()
+      .range([0, this.opt.inWidth])
+      .padding(1)
+      .domain(this.dimDisplayed.map(d=>d.name));
+    this.initAxis().initPath();
+    return this;
+  },
   initData: function(data) {
-    var self = this;
     this.data = data;
     this.dimensions = data.labels;
     this.dimDisplayed = this.dimensions.map((d, i)=>{ return {name: d.name, index: i}; }).slice(0,7);
-    this.itemDisplayed = data.items.map(item=>{
-      return self.dimDisplayed.map(d=>item.normVec[d.index]); });
+    this.itemDisplayed = data.items.map(item=>item.normVec);
     this.xScale = d3.scalePoint()
       .range([0, this.opt.inWidth])
       .padding(1)

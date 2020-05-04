@@ -74,9 +74,9 @@ Controller.init = function() {
     var self = this;
     self.data = {};
     self.corrMethod = "spearman";
-
     self.unTangleMap = UnTangleMap("#untangle-container", {});
-    self.paraCord = ParallelCoords("#paracord-container", {});
+    self.paraCord = self.unTangleMap.paraCord = ParallelCoords("#paracord-container", {});
+    
 }
 
 Controller.init.prototype = Controller.prototype;

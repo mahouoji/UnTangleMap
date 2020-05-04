@@ -37,6 +37,7 @@ UnTangleMap.prototype = {
         utgmap.append('g').attr('class', 'edge');
         utgmap.append('g').attr('class', 'scatter-plot');
         utgmap.append('g').attr('class', 'hint');
+        utgmap.append('g').attr('class', 'label-selected');
         utgmap.append('g').attr('class', 'label');
         // tooltip
         self.selector.append("div").attr("class", "tooltip");
@@ -81,7 +82,9 @@ UnTangleMap.prototype = {
         // style
         grid.selectAll('circle')
             .attr('stroke', self.opt.gridStroke)
-            .attr('vector-effect', 'non-scaling-stroke');
+            .attr('vector-effect', 'non-scaling-stroke')
+            .style('stroke', '#ccc')
+            .style('stroke-width', '1px');
     },
     drawGridLines: function(gridSelector, width, height, w, h, stroke) {
         //axis
@@ -303,6 +306,7 @@ UnTangleMap.prototype = {
                 .on("drag", null)
                 .on("end", null));
         }
+        // mouseover
         if (this.tooltipEnabled) {
             function mouseover(d) {
                 let div = self.selector.select('.tooltip');
@@ -318,11 +322,11 @@ UnTangleMap.prototype = {
                         .style("opacity", 0);
             }
             label.selectAll('circle')
-                .on("mouseover", d=>mouseover(d))
-                .on("mouseout", d=>mouseout(d));
+                .on("mouseover", mouseover)
+                .on("mouseout", mouseout);
             label.selectAll('text')
-                .on("mouseover", d=>mouseover(d))
-                .on("mouseout", d=>mouseout(d));
+                .on("mouseover", mouseover)
+                .on("mouseout", mouseout);
         } else {
             label.selectAll('circle')
                 .on("mouseover", null)
@@ -330,6 +334,34 @@ UnTangleMap.prototype = {
             label.selectAll('text')
                 .on("mouseover", null)
                 .on("mouseout", null);
+        }
+        // click
+        if (this.labelSelectEnabled) {
+            function clicked(d) {
+                if (d.name in self.labelSelected) {
+                    delete self.labelSelected[d.name];
+                } else {
+                    let kx = self.labelAsCircle ? 'cx' : 'dx',
+                        ky = self.labelAsCircle ? 'cy' : 'dy';
+                    self.labelSelected[d.name] = {
+                        name: d.name,
+                        index: self.data.labelIndex[d.name],
+                        pos: [d3.select(this).attr(kx), d3.select(this).attr(ky)]
+                    }
+                }
+                self.updateLabelSelected();
+                self.paraCord.updateLabelSelected(self.labelSelected);
+            }
+            label.selectAll('circle')
+                .on("click", clicked);
+            label.selectAll('text')
+                .on("click", clicked);
+        } else if (this.itemSelectEnabled){
+        } else {
+            label.selectAll('circle')
+                .on("click", null);
+            label.selectAll('text')
+                .on("click", null);
         }
         return this;
     },
@@ -546,6 +578,24 @@ UnTangleMap.prototype = {
             | Face: ${Layout.utility.triCorr.toFixed(2)} /  ${Layout.utility.triCnt}`);
         return this;
     },
+    updateLabelSelected: function() {
+        var self = this;
+        let data = Object.values(this.labelSelected);
+        var selected = this.svg.select('.utgmap').select('.label-selected')
+            .selectAll('circle').data(data, d=>d.name);
+        let colorScale = d3.scaleSequential(t=>d3.interpolatePlasma(t*0.8));
+        console.log(colorScale(0.5));
+        selected.exit().remove();
+        selected.enter().append('circle').merge(selected)
+            .attr('r', self.opt.gridRaid)
+            .attr('cx', d=>d.pos[0])
+            .attr('cy', d=>d.pos[1])
+            //.attr('vector-effect', 'non-scaling-stroke')
+            .style('stroke', (_,i)=>colorScale((i+1)/data.length))
+            .style('stroke-width', self.opt.gridStroke * 3)
+            .style('fill-opacity', 0)
+            .style('opacity', 0.8);
+    },
     // binding data and plotting
     updateLayout: function(facesAdded, facesRemoved) {
         let faceLayout = Layout.getFaceLayout();
@@ -658,6 +708,10 @@ UnTangleMap.prototype = {
             this.dragEnabled = false;
         } else if (this.interactionMode === 'info') {
             this.tooltipEnabled = false;
+        } else if (this.interactionMode === 'label') {
+            this.labelSelectEnabled = false;
+        } else if (this.interactionMode === 'item') {
+            this.itemSelectEnabled = false;
         }
         // enable
         this.interactionMode = mode;
@@ -667,6 +721,10 @@ UnTangleMap.prototype = {
             this.dragEnabled = true;
         } else if (mode === 'info') {
             this.tooltipEnabled = true;
+        } else if (mode === 'label') {
+            this.labelSelectEnabled = true;
+        } else if (mode === 'item') {
+            this.itemSelectEnabled = true;
         }
         this.updateLabelInteraction();
     },
@@ -679,6 +737,8 @@ UnTangleMap.prototype = {
         let faceLayout = Layout.getFaceLayout();
         // store label pos
         this.initLabelPos(labelLayout).initLabelHTML();
+        this.labelSelected = {};
+        this.updateLabelSelected();
         // init heatmap and ternary-grid
         this.scatterPlotDataChanged = true;
         Heatmap.initData(data).initPosLayout(this.labelPos, faceLayout);
@@ -696,7 +756,9 @@ UnTangleMap.init = function (selector, userOpt) {
     self.data = {labels: [], items: []};
     self.labelPos = [];// svg coordinates for labels by lableIndex
     self.labelHTML = []; // HTML formatted label info for tooltip by labelIndex
+    self.labelSelected = {};
     self.transform = {x:0, y:0, k:1.0};// records transformation
+    self.paraCord = null;
     // check boxes
     self.labelAsCircle = true; // show label vertex as (circle or text)
     self.scatterPlotDataChanged = false; // scatter plot data updated but not binded
@@ -706,9 +768,11 @@ UnTangleMap.init = function (selector, userOpt) {
     self.objective = 'average';
     self.alpha = 0.0;
     self.heatmapDisplayLevel = 0; // 0(auto), 1, 2, 3
-    self.interactionMode = 'drag'; // zoom (zoom, pan, drag), info
+    self.interactionMode = 'drag'; // zoom, drag, info, label, scatter
     self.dragEnabled = true;
     self.tooltipEnabled = false;
+    self.labelSelectEnabled = false;
+    self.itemSelectEnabled = false;
     // editing
     self.activeCord = HexCord(0, 0);
     self.activeName = '';
