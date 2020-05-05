@@ -28,6 +28,7 @@ UnTangleMap.prototype = {
         heatmap.append('g').attr('class', 'heatmap-d1');
         heatmap.append('g').attr('class', 'heatmap-d2');
         heatmap.append('g').attr('class', 'heatmap-d3');
+        utgmap.append('g').attr('class', 'label-selected');
         let tgrid = utgmap.append('g').attr('class', 'ternary-grid');
         tgrid.append('g').attr('class', 'ternary-grid-d0');
         tgrid.append('g').attr('class', 'ternary-grid-d1');
@@ -37,7 +38,6 @@ UnTangleMap.prototype = {
         utgmap.append('g').attr('class', 'edge');
         utgmap.append('g').attr('class', 'scatter-plot');
         utgmap.append('g').attr('class', 'hint');
-        utgmap.append('g').attr('class', 'label-selected');
         utgmap.append('g').attr('class', 'label');
         // tooltip
         self.selector.append("div").attr("class", "tooltip");
@@ -374,12 +374,23 @@ UnTangleMap.prototype = {
                 //console.log(items);
                 self.paraCord.updateItemSelected(items);
                 self.scatterMat.updateItemSelected(items);
+                d3.select(this)
+                    .attr('stroke', "#ff007f")
+                    .attr('stroke-width', self.opt.gridStrokeSub * 3);
+                d3.select(this).raise();
+            }
+            function mouseout() {
+                d3.select(this)
+                    .attr('stroke', '#eee')
+                    .attr('stroke-width', self.opt.gridStrokeSub);
             }
             this.svg.select('.heatmap').selectAll('polygon')
-                .on("mouseenter", mouseenter);
+                .on("mouseenter", mouseenter)
+                .on("mouseout", mouseout);
         } else {
             this.svg.select('.heatmap').selectAll('polygon')
-                .on("mouseover", null);
+                .on("mouseenter", null)
+                .on("mouseout", null);
         }
         // cursor
         if (!this.dragEnabled && !this.labelSelectEnabled) {
@@ -619,7 +630,7 @@ UnTangleMap.prototype = {
         let colorScale = d3.scaleSequential(t=>d3.interpolateCool(t));
         selected.exit().remove();
         selected.enter().append('circle').merge(selected)
-            .attr('r', self.opt.gridRaid)
+            .attr('r', self.opt.gridRaid * 0.3)
             .attr('cx', d=>d.pos[0])
             .attr('cy', d=>d.pos[1])
             //.attr('vector-effect', 'non-scaling-stroke')
