@@ -29,6 +29,5 @@
     display: none;
 }
 .scatter-plot circle {
-    fill: #08519c;
     opacity: 0.3;
 }

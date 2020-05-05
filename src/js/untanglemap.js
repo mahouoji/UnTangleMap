@@ -28,7 +28,6 @@ UnTangleMap.prototype = {
         heatmap.append('g').attr('class', 'heatmap-d1');
         heatmap.append('g').attr('class', 'heatmap-d2');
         heatmap.append('g').attr('class', 'heatmap-d3');
-        utgmap.append('g').attr('class', 'label-selected');
         let tgrid = utgmap.append('g').attr('class', 'ternary-grid');
         tgrid.append('g').attr('class', 'ternary-grid-d0');
         tgrid.append('g').attr('class', 'ternary-grid-d1');
@@ -36,7 +35,9 @@ UnTangleMap.prototype = {
         tgrid.append('g').attr('class', 'ternary-grid-d3');
         utgmap.append('g').attr('class', 'face');
         utgmap.append('g').attr('class', 'edge');
+        utgmap.append('g').attr('class', 'label-selected');
         utgmap.append('g').attr('class', 'scatter-plot');
+        utgmap.append('g').attr('class', 'scatter-plot-selected');
         utgmap.append('g').attr('class', 'hint');
         utgmap.append('g').attr('class', 'label');
         // tooltip
@@ -246,6 +247,7 @@ UnTangleMap.prototype = {
         var self = this;
         let constItenSize = self.transform.k < 2 ? 1.0 : (self.transform.k < 5 ? 0.8 : self.transform.k < 8 ? 0.6 : 0.4);
         self.svg.select(".scatter-plot").selectAll("circle").attr('r', Math.max(self.opt.itemRaid / self.transform.k, constItenSize));
+        self.svg.select(".scatter-plot-selected").selectAll("circle").attr('r', Math.max(self.opt.itemRaid / self.transform.k, constItenSize));
         return self;
     },
     adjustZoom: function() {
@@ -372,6 +374,9 @@ UnTangleMap.prototype = {
             function mouseenter(d) {
                 let items = Heatmap.getItemsIn(d.faceKey, d.offset, d.depth);
                 //console.log(items);
+                self.itemSelected = new Set(items);
+                self.updateScatterPlotColor().adjustZoomScatter();
+                // update other
                 self.paraCord.updateItemSelected(items);
                 self.scatterMat.updateItemSelected(items);
                 d3.select(this)
@@ -387,10 +392,19 @@ UnTangleMap.prototype = {
             this.svg.select('.heatmap').selectAll('polygon')
                 .on("mouseenter", mouseenter)
                 .on("mouseout", mouseout);
+            label.selectAll('circle')
+                .style('pointer-events', 'none');
+            label.selectAll('text')
+                .style('pointer-events', 'none');
+
         } else {
             this.svg.select('.heatmap').selectAll('polygon')
                 .on("mouseenter", null)
                 .on("mouseout", null);
+            label.selectAll('circle')
+                .style('pointer-events', null);
+            label.selectAll('text')
+                .style('pointer-events', null);
         }
         // cursor
         if (!this.dragEnabled && !this.labelSelectEnabled) {
@@ -440,6 +454,8 @@ UnTangleMap.prototype = {
             self.svg.select('.hint').style('opacity', 0.5);
             self.svg.select('.label-selected')
                 .transition().duration(200).style('opacity', 0);
+            self.svg.select('.scatter-plot-selected')
+                .transition().duration(200).style('opacity', 0);
         }
 
         function dragged(d) {
@@ -487,6 +503,8 @@ UnTangleMap.prototype = {
             }
             self.updateLabelSelected();
             self.svg.select('.label-selected').style('opacity', 1);
+            self.updateScatterPlotColor();
+            self.svg.select('.scatter-plot-selected').style('opacity', 1);
         }
         return self;
     },
@@ -537,8 +555,30 @@ UnTangleMap.prototype = {
         var self = this;
         if (!self.renderScatterPlot || !self.scatterPlotDataChanged) { return self; } // lazy updating
         console.log('updating scatter map');
-        let data = Heatmap.getScatterData();
+        self.scatterData = Heatmap.getScatterData();
         let scatter = self.svg.select('.utgmap').select('.scatter-plot');
+        let circle = scatter.selectAll('circle')
+            .data(self.scatterData);
+        circle.exit().remove();
+        circle.enter().append('circle').merge(circle)
+            .attr('cx', d=>d.pos[0])
+            .attr('cy', d=>d.pos[1])
+            .attr('class', d=>`item-${d.itemIndex}`)
+            .attr('r', self.opt.itemRaid)
+            .style('fill', "#08519c")
+            .style('pointer-events', 'none');
+        self.scatterPlotDataChanged = false; // up-to-date
+        return self;
+    },
+    updateScatterPlotColor: function() {
+        var self = this;
+        let itemSelected = new Set(self.itemSelected);
+        if (self.scatterPlotDataChanged) {
+            self.scatterData = Heatmap.getScatterData();
+        }
+        let data = self.scatterData.filter(d=>itemSelected.has(d.itemIndex));
+        //console.log(itemSelected, data);
+        let scatter = self.svg.select('.utgmap').select('.scatter-plot-selected');
         let circle = scatter.selectAll('circle')
             .data(data);
         circle.exit().remove();
@@ -546,9 +586,11 @@ UnTangleMap.prototype = {
             .attr('cx', d=>d.pos[0])
             .attr('cy', d=>d.pos[1])
             .attr('class', d=>`item-${d.itemIndex}`)
-            .attr('r', self.opt.itemRaid);
-        self.scatterPlotDataChanged = false; // up-to-date
-        return self;
+            .attr('r', self.opt.itemRaid)
+            .style('fill', "#ff007f")
+            .style('opacity', 0.5)
+            .style('pointer-events', 'none');
+        return this;
     },
     clearScatterPlot: function () {
         this.svg.select('.utgmap').select('.scatter-plot').selectAll('circle').remove();
@@ -630,14 +672,15 @@ UnTangleMap.prototype = {
         let colorScale = d3.scaleSequential(t=>d3.interpolateCool(t));
         selected.exit().remove();
         selected.enter().append('circle').merge(selected)
-            .attr('r', self.opt.gridRaid * 0.3)
+            .attr('r', self.opt.gridRaid)
             .attr('cx', d=>d.pos[0])
             .attr('cy', d=>d.pos[1])
             //.attr('vector-effect', 'non-scaling-stroke')
             .style('stroke', (_,i)=>colorScale((i+1)/data.length))
             .style('stroke-width', self.opt.gridStroke * 3)
             .style('fill-opacity', 0)
-            .style('opacity', 0.8);
+            .style('opacity', 0.8)
+            .style('pointer-events', 'none');
     },
     // binding data and plotting
     updateLayout: function(facesAdded, facesRemoved) {
@@ -766,6 +809,8 @@ UnTangleMap.prototype = {
         this.interactionMode = mode;
         if (mode === 'zoom') {
             //this.initZoom();
+            this.itemSelected = new Set();
+            this.updateScatterPlotColor();
             this.labelSelected = {};
             this.updateLabelSelected();
             this.paraCord.updateLabelSelected([]);
@@ -792,6 +837,8 @@ UnTangleMap.prototype = {
         this.initLabelPos(labelLayout).initLabelHTML();
         if (dataUpdated) {
             this.labelSelected = {};
+            this.itemSelected = new Set();
+            this.updateScatterPlotColor();
         } else {
             this.initLabelSelectedPos();
         }
@@ -813,13 +860,15 @@ UnTangleMap.init = function (selector, userOpt) {
     self.data = {labels: [], items: []};
     self.labelPos = [];// svg coordinates for labels by lableIndex
     self.labelHTML = []; // HTML formatted label info for tooltip by labelIndex
+    self.scatterData = []; // scatter plot data
     self.labelSelected = {};
+    self.itemSelected = {};
     self.transform = {x:0, y:0, k:1.0};// records transformation
     self.paraCord = null;
     self.scatterMat= null;
     // check boxes
     self.labelAsCircle = true; // show label vertex as (circle or text)
-    self.scatterPlotDataChanged = false; // scatter plot data updated but not binded
+    self.scatterPlotDataChanged = true; // scatter plot data updated but not binded
     self.renderScatterPlot = false; // need to render scatter plot
     self.corrMethod = 'spearman';
     self.corrDisplayMethod = 'spearman';
