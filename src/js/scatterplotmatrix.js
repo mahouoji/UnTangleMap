@@ -44,6 +44,7 @@ ScatterMatrix.prototype = {
         //console.log(this.posScale(xLabel.name), this.posScale(yLabel.name));
         let tmp = this.svg
           .append('g')
+          .attr('class', 'scatter')
           .attr("transform", `translate(${
             this.posScale(xLabel.name) + this.opt.scatterMargin},${
             this.posScale(yLabel.name) + this.opt.scatterMargin})`);
@@ -67,6 +68,17 @@ ScatterMatrix.prototype = {
     }
     return this;
   },
+  updateScatterSelected: function() {
+    var self = this;
+    this.svg.selectAll('.scatter').selectAll('circle')
+      .attr('fill', (_,i)=>self.itemSelected.has(i) ? "#ff007f": "#08519c")
+      .each(function(_,i) {
+        if(self.itemSelected.has(i)) {
+          this.parentNode.appendChild(this);
+        }
+      });
+    return this;
+  },
   updateLabelSelected: function(labelsSelected) {
     this.dimDisplayed = Object.values(labelsSelected);
     if (this.dimDisplayed.length === 0) { this.svg.selectAll("*").remove(); return; }
@@ -78,10 +90,16 @@ ScatterMatrix.prototype = {
     this.initScatter();
     return this;
   },
+  updateItemSelected: function(itemSelected) {
+    this.itemSelected = new Set(itemSelected);
+    this.updateScatterSelected();
+    return this;
+  },
   initData: function(data) {
     this.data = data;
     this.dimensions = data.labels;
     this.dimDisplayed = [];//this.dimensions.map((d, i)=>{return {name: d.name, index: i};}).slice(0, 3);
+    this.itemSelected = new Set();
     this.itemDisplayed = data.items.map(item=>item.normVec);
     this.updateLabelSelected(this.dimDisplayed);
   }

@@ -44,7 +44,19 @@ ParallelCoords.prototype = {
       .style("stroke", "#08519c")
       .style("opacity", 0.3);
     return this;
-
+  },
+  updatePathSelected: function() {
+    var self = this;
+    //console.log(self.itemSelected);
+    this.svg.select('.path').selectAll('path')
+      .style("stroke", (_,i)=>self.itemSelected.has(i) ? "#ff007f": "#08519c")
+      .style("opacity", (_,i)=>self.itemSelected.has(i) ? 0.6: 0.3)
+      // .each(function(_,i) {
+      //   if(self.itemSelected.has(i)) {
+      //     this.parentNode.appendChild(this);
+      //   }
+      // });
+    return this;
   },
   updateLabelSelected: function(labelsSelected) {
     this.dimDisplayed = labelsSelected;
@@ -55,10 +67,16 @@ ParallelCoords.prototype = {
     this.initAxis().initPath();
     return this;
   },
+  updateItemSelected: function(itemSelected) {
+    this.itemSelected = new Set(itemSelected);
+    this.updatePathSelected();
+    return this;
+  },
   initData: function(data) {
     this.data = data;
     this.dimensions = data.labels;
     this.dimDisplayed = [];
+    this.itemSelected = new Set();
     this.itemDisplayed = data.items.map(item=>item.normVec);
     this.xScale = d3.scalePoint()
       .range([0, this.opt.inWidth])

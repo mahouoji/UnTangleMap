@@ -369,13 +369,14 @@ UnTangleMap.prototype = {
         }
         // heatmap Interaction
         if (this.itemSelectEnabled){
-            function clicked(d) {
-                console.log(`${d.faceKey}-${d.offset}-${d.depth}`);
-                let labels = Heatmap.getItemsIn(d.faceKey, d.offset, d.depth);
-                console.log(labels);
+            function mouseenter(d) {
+                let items = Heatmap.getItemsIn(d.faceKey, d.offset, d.depth);
+                //console.log(items);
+                self.paraCord.updateItemSelected(items);
+                self.scatterMat.updateItemSelected(items);
             }
             this.svg.select('.heatmap').selectAll('polygon')
-                .on("mouseenter", clicked);
+                .on("mouseenter", mouseenter);
         } else {
             this.svg.select('.heatmap').selectAll('polygon')
                 .on("mouseover", null);
