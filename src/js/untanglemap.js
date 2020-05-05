@@ -252,6 +252,10 @@ UnTangleMap.prototype = {
         this.adjustZoomLabel(0)
             .adjustZoomHeatmap()
             .adjustZoomScatter();
+        let strokeWidth = this.transform.k < 1.5 ? this.opt.edgeStroke :
+            this.transform.k < 5 ? this.opt.edgeStroke * 0.7 : this.opt.edgeStroke * 0.4;
+        this.svg.select('.edge').selectAll('line')
+            .attr('stroke-width', strokeWidth);
         return this;
     },
     // set up labels and label dragging
@@ -357,12 +361,24 @@ UnTangleMap.prototype = {
             label.selectAll('text')
                 .attr('cursor', 'pointer')
                 .on("click", clicked);
-        } else if (this.itemSelectEnabled){
         } else {
             label.selectAll('circle')
                 .on("click", null);
             label.selectAll('text')
                 .on("click", null);
+        }
+        // heatmap Interaction
+        if (this.itemSelectEnabled){
+            function clicked(d) {
+                console.log(`${d.faceKey}-${d.offset}-${d.depth}`);
+                let labels = Heatmap.getItemsIn(d.faceKey, d.offset, d.depth);
+                console.log(labels);
+            }
+            this.svg.select('.heatmap').selectAll('polygon')
+                .on("mouseenter", clicked);
+        } else {
+            this.svg.select('.heatmap').selectAll('polygon')
+                .on("mouseover", null);
         }
         // cursor
         if (!this.dragEnabled && !this.labelSelectEnabled) {
@@ -486,7 +502,8 @@ UnTangleMap.prototype = {
                 .attr('stroke-width', self.opt.gridStrokeSub)
                 .attr('vector-effect', 'non-scaling-stroke')
                 .attr('shape-rendering', 'crispEdges')
-                .attr('stroke-linejoin', 'round');
+                .attr('stroke-linejoin', 'round')
+                .attr('class', d=>`${d.faceKey}-${d.offset}-${d.depth}`);
             // update grids
             let edge = self.svg.select('.utgmap').select(`.ternary-grid-d${k}`)
                 .selectAll('line').data(gridData[k])//, d=>`${d[0][0]}_${d[0][1]}_${d[1][0]}_${d[1][1]}`)
@@ -516,6 +533,7 @@ UnTangleMap.prototype = {
         circle.enter().append('circle').merge(circle)
             .attr('cx', d=>d.pos[0])
             .attr('cy', d=>d.pos[1])
+            .attr('class', d=>`item-${d.itemIndex}`)
             .attr('r', self.opt.itemRaid);
         self.scatterPlotDataChanged = false; // up-to-date
         return self;

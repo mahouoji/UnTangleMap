@@ -125,6 +125,8 @@ UTHeatmap.prototype = {
         for (let i = 0; i < this.faceLayout.length; i++) {//face loop
             this.addFaceHeatmap(this.faceLayout[i]);
         }
+        //console.log(this.heatmap);
+        //console.log(this.getItemsIn('8,11,-20',0,0));
     },
     updateHeatmap: function(facesAdded, facesRemoved) {
         var self = this;
@@ -150,7 +152,8 @@ UTHeatmap.prototype = {
         let vpos = ids.map(id=>this.labelPos[id]);
         self.heatmap[face.key] = {
             key: face.key,
-            data: []
+            data: [],
+            items: []
         }
         self.scatter[face.key] = []; //scatter
         // init slots
@@ -159,7 +162,10 @@ UTHeatmap.prototype = {
         }
         self.heatmap[face.key].data[0].push({
             vecPos: vpos,
-            cnt: 0
+            cnt: 0,
+            faceKey: face.key,
+            depth: 0,
+            offest: 0
         });
         self.getHeatmapSlotsRecursive(face.key, vpos, 1);
         //console.log(self.heatmap[face.key]);
@@ -177,7 +183,7 @@ UTHeatmap.prototype = {
                 itemIndex: j
             });
             self.heatmap[face.key].data[0][0].cnt += 1;
-            self.getCountRecursive(face.key, tercord, 0, 1);
+            self.getCountRecursive(face.key, j, tercord, 0, 1);
         }
     },
     getHeatmapSlotsRecursive: function(key, vpos, depth) {
@@ -189,35 +195,60 @@ UTHeatmap.prototype = {
             [midpos[2], midpos[1], vpos[2]],
             [midpos[0], midpos[1], midpos[2]]
         ];
+        let offset = self.heatmap[key].data[depth].length;
         self.heatmap[key].data[depth].push(
-            {vecPos: newpos[0], cnt: 0},
-            {vecPos: newpos[1], cnt: 0},
-            {vecPos: newpos[2], cnt: 0},
-            {vecPos: newpos[3], cnt: 0}
+            {vecPos: newpos[0], cnt: 0, faceKey: key, depth: depth, offset: offset},
+            {vecPos: newpos[1], cnt: 0, faceKey: key, depth: depth, offset: offset+1},
+            {vecPos: newpos[2], cnt: 0, faceKey: key, depth: depth, offset: offset+2},
+            {vecPos: newpos[3], cnt: 0, faceKey: key, depth: depth, offset: offset+3}
         );
         depth += 1;
-        if (depth >= self.maxDepth) { return; }
-        for (let i = 0; i < 4; i++) {
-            self.getHeatmapSlotsRecursive(key, newpos[i], depth);
+        if (depth >= self.maxDepth) {
+            self.heatmap[key].items.push([],[],[],[]);// items in smallest slots
+        } else {
+            for (let i = 0; i < 4; i++) {
+                self.getHeatmapSlotsRecursive(key, newpos[i], depth);
+            }
         }
     },
-    getCountRecursive: function(key, tercord, faceOffset, depth) {
+    getCountRecursive: function(key, itemIndex, tercord, faceOffset, depth) {
         var self = this;
         if (depth >= self.maxDepth) { return; }
         let a = tercord[0], b = tercord[1], c = tercord[2];
+        let offset = 0;
         if (a > 0.5) {
             self.heatmap[key].data[depth][faceOffset].cnt += 1;
-            self.getCountRecursive(key, [a-b-c, 2*b, 2*c],faceOffset * 4, depth + 1);
+            self.getCountRecursive(key, itemIndex, [a-b-c, 2*b, 2*c],faceOffset * 4, depth + 1);
+            offset = 0;
         } else if (b > 0.5) {
             self.heatmap[key].data[depth][faceOffset + 1].cnt += 1;
-            self.getCountRecursive(key, [2*a, b-a-c, 2*c], (faceOffset+1) * 4, depth + 1);
+            self.getCountRecursive(key, itemIndex, [2*a, b-a-c, 2*c], (faceOffset+1) * 4, depth + 1);
+            offset = 1;
         } else if (c > 0.5) {
             self.heatmap[key].data[depth][faceOffset + 2].cnt += 1;
-            self.getCountRecursive(key, [2*a, 2*b, c-a-b], (faceOffset+2) * 4, depth + 1);
+            self.getCountRecursive(key, itemIndex, [2*a, 2*b, c-a-b], (faceOffset+2) * 4, depth + 1);
+            offset = 2;
         } else {
             self.heatmap[key].data[depth][faceOffset + 3].cnt += 1;
-            self.getCountRecursive(key, [a+b-c, -a+b+c, a-b+c],(faceOffset+3) * 4, depth + 1);
+            self.getCountRecursive(key, itemIndex, [a+b-c, -a+b+c, a-b+c],(faceOffset+3) * 4, depth + 1);
+            offset = 3;
         }
+        if (depth + 1 === self.maxDepth) {
+            self.heatmap[key].items[faceOffset + offset].push(itemIndex);
+        }
+    },
+    getItemsIn: function(key, faceOffset, depth) {
+        //console.log(faceOffset,depth);
+        if (depth + 1 === this.maxDepth) {
+            //console.log(this.heatmap[key].items[faceOffset]);
+            return this.heatmap[key].items[faceOffset];
+        }
+        //console.log(faceOffset,depth);
+        return this.getItemsIn(key, faceOffset*4, depth+1).concat(
+            this.getItemsIn(key, faceOffset*4+1, depth+1),
+            this.getItemsIn(key, faceOffset*4+2, depth+1),
+            this.getItemsIn(key, faceOffset*4+3, depth+1)
+        );
     }
     // Highlight
 };
