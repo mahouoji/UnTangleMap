@@ -77,7 +77,7 @@ function main(){
         });
         // Tools
         $('#toolContainer input:radio').click(function() {
-            console.log($(this).val());
+            //console.log($(this).val());
             controller.unTangleMap.setInteractionMode($(this).val());
         });
     })

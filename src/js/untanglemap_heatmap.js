@@ -171,10 +171,11 @@ UTHeatmap.prototype = {
             let sum = tercord[0] + tercord[1] + tercord[2];
             tercord = tercord.map(cord=>cord/sum);
             // update scatter
-            self.scatter[face.key].push(
-                [tercord[0] * vpos[0][0] + tercord[1] * vpos[1][0] + tercord[2] * vpos[2][0],
-                tercord[0] * vpos[0][1] + tercord[1] * vpos[1][1] + tercord[2] * vpos[2][1]]
-            );
+            self.scatter[face.key].push({
+                pos: [tercord[0] * vpos[0][0] + tercord[1] * vpos[1][0] + tercord[2] * vpos[2][0],
+                      tercord[0] * vpos[0][1] + tercord[1] * vpos[1][1] + tercord[2] * vpos[2][1]],
+                itemIndex: j
+            });
             self.heatmap[face.key].data[0][0].cnt += 1;
             self.getCountRecursive(face.key, tercord, 0, 1);
         }
@@ -193,7 +194,7 @@ UTHeatmap.prototype = {
             {vecPos: newpos[1], cnt: 0},
             {vecPos: newpos[2], cnt: 0},
             {vecPos: newpos[3], cnt: 0}
-        )
+        );
         depth += 1;
         if (depth >= self.maxDepth) { return; }
         for (let i = 0; i < 4; i++) {
@@ -233,6 +234,7 @@ UTHeatmap.init = function () {
     this.heatmap = {} // key=face.toString()
     this.grid = {} // key=face.toString()
     this.scatter = {} // key=face.toString()
+    this.itemSelected = {};
 }
 
 UTHeatmap.init.prototype = UTHeatmap.prototype;

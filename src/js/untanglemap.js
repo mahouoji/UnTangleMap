@@ -339,12 +339,12 @@ UnTangleMap.prototype = {
                 if (d.name in self.labelSelected) {
                     delete self.labelSelected[d.name];
                 } else {
-                    let kx = self.labelAsCircle ? 'cx' : 'dx',
-                        ky = self.labelAsCircle ? 'cy' : 'dy';
+                    let x = d3.select(this.parentNode).select('circle').attr('cx'),
+                        y = d3.select(this.parentNode).select('circle').attr('cy');
                     self.labelSelected[d.name] = {
                         name: d.name,
                         index: self.data.labelIndex[d.name],
-                        pos: [d3.select(this).attr(kx), d3.select(this).attr(ky)]
+                        pos: [x, y]
                     }
                 }
                 self.updateLabelSelected();
@@ -514,8 +514,8 @@ UnTangleMap.prototype = {
             .data(data);
         circle.exit().remove();
         circle.enter().append('circle').merge(circle)
-            .attr('cx', d=>d[0])
-            .attr('cy', d=>d[1])
+            .attr('cx', d=>d.pos[0])
+            .attr('cy', d=>d.pos[1])
             .attr('r', self.opt.itemRaid);
         self.scatterPlotDataChanged = false; // up-to-date
         return self;
@@ -595,9 +595,9 @@ UnTangleMap.prototype = {
     updateLabelSelected: function() {
         var self = this;
         let data = Object.values(this.labelSelected);
-        var selected = this.svg.select('.utgmap').select('.label-selected')
+        let selected = this.svg.select('.utgmap').select('.label-selected')
             .selectAll('circle').data(data, d=>d.name);
-        let colorScale = d3.scaleSequential(t=>d3.interpolatePlasma(t*0.8));
+        let colorScale = d3.scaleSequential(t=>d3.interpolateCool(t));
         selected.exit().remove();
         selected.enter().append('circle').merge(selected)
             .attr('r', self.opt.gridRaid)
@@ -631,6 +631,12 @@ UnTangleMap.prototype = {
         labelData.forEach(rec => {
             self.labelPos[rec.index] = Hex.hexToSvg(rec.cord);
         });
+        return this;
+    },
+    initLabelSelectedPos: function() {
+        for (const key in this.labelSelected) {
+            this.labelSelected[key].pos = this.labelPos[this.labelSelected[key].index];
+        }
         return this;
     },
     initLabelHTML: function() {
@@ -730,6 +736,10 @@ UnTangleMap.prototype = {
         this.interactionMode = mode;
         if (mode === 'zoom') {
             //this.initZoom();
+            this.labelSelected = {};
+            this.updateLabelSelected();
+            this.paraCord.updateLabelSelected([]);
+            this.scatterMat.updateLabelSelected([]);
         } else if (mode === 'drag') {
             this.dragEnabled = true;
         } else if (mode === 'info') {
@@ -741,7 +751,7 @@ UnTangleMap.prototype = {
         }
         this.updateLabelInteraction();
     },
-    initData: function(data) {
+    initData: function(data, dataUpdated) {
         this.data = data;
         // init label layout
         let center = Hex.svgToRoundHex([this.opt.width / 2.0, this.opt.height / 2.0]);
@@ -750,7 +760,11 @@ UnTangleMap.prototype = {
         let faceLayout = Layout.getFaceLayout();
         // store label pos
         this.initLabelPos(labelLayout).initLabelHTML();
-        this.labelSelected = {};
+        if (dataUpdated) {
+            this.labelSelected = {};
+        } else {
+            this.initLabelSelectedPos();
+        }
         this.updateLabelSelected();
         // init heatmap and ternary-grid
         this.scatterPlotDataChanged = true;

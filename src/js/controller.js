@@ -53,13 +53,13 @@ Controller.prototype = {
     updateData: function(data) {
         this.data = this.preprocessData(data);
         // UnTangle Map
-        this.unTangleMap.initData(this.data);
+        this.unTangleMap.initData(this.data, true);//data changed
         this.paraCord.initData(this.data);
         this.scatterMat.initData(this.data);
     },
     updateCorrMethod: function(method) {
         var self = this;
-        console.log(self.data);
+        //console.log(self.data);
         if (!(method in self.data.corr)) {
             console.log('Correlation method ' + method +' not implemented');
             return;
