@@ -835,17 +835,18 @@ UnTangleMap.prototype = {
         let faceLayout = Layout.getFaceLayout();
         // store label pos
         this.initLabelPos(labelLayout).initLabelHTML();
+        // init heatmap and ternary-grid
+        this.scatterPlotDataChanged = true;
+        Heatmap.initData(data).initPosLayout(this.labelPos, faceLayout);
         if (dataUpdated) {
             this.labelSelected = {};
             this.itemSelected = new Set();
             this.updateScatterPlotColor();
         } else {
             this.initLabelSelectedPos();
+            this.updateScatterPlotColor();
         }
         this.updateLabelSelected();
-        // init heatmap and ternary-grid
-        this.scatterPlotDataChanged = true;
-        Heatmap.initData(data).initPosLayout(this.labelPos, faceLayout);
         // draw
         this.initLabels(labelLayout).initZoom()
             .updateLayout()
