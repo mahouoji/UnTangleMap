@@ -24,37 +24,55 @@
     background-color: #fff;
 }
 
-.plot {
+#untangle-container {
     position: fixed;
     top: 75px;
+}
+#paracord-container {
+    position: fixed;
+    top: 75px;
+    left: 800px;
+}
+#scattermat-container {
+    position: fixed;
+    top: 275px;
+    left: 800px;
+}
+svg {
+    border: 1px dashed;
 }
 
 div.tooltip {
     position: absolute;
-    text-align: center;
-    width: 60px;
-    height: 28px;
-    padding: 2px;
-    font: 12px sans-serif;
-    background: lightsteelblue;
-    border: 0px;
-    border-radius: 8px;
+    text-align: left;
+    /* width: 400px; */
+    /* height: 200px; */
+    padding: 10px;
+    font-size: 12px;
+    color: #333;
+    background-color: rgba(255,255,255,0.8);
+    border: 1px solid #333;
     pointer-events: none;
+    display: inline-block;
+}
+div.tooltip h3 {
+    font-size: 16px;
 }
 
 div.utility {
     position: absolute;
-    text-align: center;
+    text-align: right;
     padding: 2px;
+    padding-right: 10px;
     font-size: 14px;
     pointer-events: none;
 }
 
 #untangle-control-panel {
     position: fixed;
-    top: 80px;
+    top: 75px;
     width: 160px;
-    height: 300px;
+    height: 330px;
     background-color: rgba(0,0,0,0.7);
     z-index: 1;
     padding: 10px;
