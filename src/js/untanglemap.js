@@ -272,6 +272,13 @@ UnTangleMap.prototype = {
         g.enter().append('g').merge(g)
         .each(function(d) {
             d3.select(this).selectAll("*").remove(); // clear
+            // circle
+            d3.select(this).append('circle')
+            .attr('r', self.opt.labelRaid)
+            .attr('cx', function (d) { return Hex.hexToX(d.cord); })
+            .attr('cy', function (d) { return Hex.hexToY(d.cord); })
+            .attr('label', d=>d.name)
+            .attr('fill', d=>colorScale(self.data.labelScore[self.data.labelIndex[d.name]]));
             //text
             d3.select(this).append('text')
             .text(d => d.name)
@@ -281,14 +288,7 @@ UnTangleMap.prototype = {
             .attr("transform", labelTrans)
             .attr('text-anchor','middle')
             .attr('label', d=>d.name);
-            // circle
-            d3.select(this).append('circle')
-            .attr('r', self.opt.labelRaid)
-            .attr('cx', function (d) { return Hex.hexToX(d.cord); })
-            .attr('cy', function (d) { return Hex.hexToY(d.cord); })
-            .attr('label', d=>d.name)
-            .attr('fill', d=>colorScale(self.data.labelScore[self.data.labelIndex[d.name]]));
-        });
+            });
         self.updateLabelInteraction();
         return self;
     },
@@ -312,7 +312,7 @@ UnTangleMap.prototype = {
         }
         // mouseover
         if (this.tooltipEnabled) {
-            function mouseover(d) {
+            function mouseenter(d) {
                 let div = self.selector.select('.tooltip');
                 div.style("opacity", .9);
                 div.html(self.labelHTML[self.data.labelIndex[d.name]])
@@ -325,18 +325,13 @@ UnTangleMap.prototype = {
                         .duration(500)
                         .style("opacity", 0);
             }
-            label.selectAll('circle')
-                .on("mouseover", mouseover)
-                .on("mouseout", mouseout);
             label.selectAll('text')
-                .on("mouseover", mouseover)
+                .style('pointer-events', null)
+                .on("mouseenter", mouseenter)
                 .on("mouseout", mouseout);
         } else {
-            label.selectAll('circle')
-                .on("mouseover", null)
-                .on("mouseout", null);
             label.selectAll('text')
-                .on("mouseover", null)
+                .on("mouseenter", null)
                 .on("mouseout", null);
         }
         // click
@@ -401,9 +396,8 @@ UnTangleMap.prototype = {
             this.svg.select('.heatmap').selectAll('polygon')
                 .on("mouseenter", null)
                 .on("mouseout", null);
-            label.selectAll('circle')
-                .style('pointer-events', null);
-            label.selectAll('text')
+            let dragBy = self.labelAsCircle ? 'circle' : 'text';
+            label.selectAll(dragBy)
                 .style('pointer-events', null);
         }
         // cursor
@@ -421,6 +415,7 @@ UnTangleMap.prototype = {
         // disable drag
         label.selectAll(notDragBy)
             .attr('cursor', 'default')
+            .style('pointer-events', 'none')
             .call(d3.drag()
             .on("start", null)
             .on("drag", null)
@@ -428,6 +423,7 @@ UnTangleMap.prototype = {
         // enable drag
         let vertex = label.selectAll(dragBy)
             .attr('cursor', 'grab')
+            .style('pointer-events', null)
             .call(d3.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
@@ -442,11 +438,12 @@ UnTangleMap.prototype = {
                 ky = self.labelAsCircle ? 'cy' : 'dy';
             let x = d3.select(this).attr(kx);
             let y = d3.select(this).attr(ky);
-            self.activeCord = Hex.svgToRoundHex([x,y]);
+            self.hoverCord = self.activeCord = Hex.svgToRoundHex([x,y]);
             self.activeName = d3.select(this).attr('label');
             // update layout
             let removed = Layout.removeLabel(self.activeCord);
             self.updateLayout([], removed);
+            self.updateUtility();
             // get hints
             let hintData = Layout.getTopUtilities([self.activeName]);
             //console.log(hintData);
@@ -459,7 +456,23 @@ UnTangleMap.prototype = {
         }
 
         function dragged(d) {
-            //var hcord = Hex.round2hex([d3.event.x, d3.event.y]);
+            let hcord = Hex.svgToRoundHex([d3.event.x, d3.event.y]);
+            if (!hcord.equals(self.hoverCord)) {
+                self.svg.select('.hint').selectAll('circle')
+                    .attr('r', self.opt.gridRaid);
+                self.hoverCord = hcord;
+                if (Layout.isValidSlot(hcord)) {
+                    let name = d3.select(this).attr('label');
+                    let utility = Layout.getUpdatedUtility(name, hcord);
+                    self.updateUtility(utility);
+                    self.svg.select('.hint')
+                        .select(`.cord-${self.hoverCord.toString()}`)
+                        .transition().duration(100)
+                        .attr('r', self.opt.gridRaid*2);
+                } else {
+                    self.updateUtility();
+                }
+            }
             // find label item with
             //console.log([d3.event.x, d3.event.y]);
             //console.log([hcord[0], hcord[1]]);
@@ -494,9 +507,9 @@ UnTangleMap.prototype = {
             self.labelPos[self.data.labelIndex[name]] = [x, y];
             //console.log(self.labelPos);
             self.updateLayout(added, []);
+            self.updateUtility();
             // hide hints
             self.svg.select('.hint').transition().duration(100).style('opacity', 0);
-            self.updateUtility();
             // update selected
             if (name in self.labelSelected) {
                 self.labelSelected[name].pos = [x, y];
@@ -647,21 +660,29 @@ UnTangleMap.prototype = {
         var self = this;
         var hints = self.svg.select('.utgmap').select('.hint')
             .selectAll('circle').data(hintData);
-        let colorScale = d3.scaleSequential(t=>d3.interpolateBlues(t*t))
+        let colorScale = d3.scaleSequential(t=>d3.interpolateBlues((t*t)*0.8+0.2))
             .domain(d3.extent(hintData.map(d=>d.util.utility)));
         hints.exit().remove();
         hints.enter().append('circle').merge(hints)
+            .attr('class', d=>`cord-${d.cord.toString()}`)
             .attr('r', self.opt.gridRaid)
             .attr('cx', d=>Hex.hexToX(d.cord))
             .attr('cy', d=>Hex.hexToY(d.cord))
             .attr('fill', d=>colorScale(d.util.utility));
         return self;
     },
-    updateUtility: function() {
+    updateUtility: function(utility) {
+        if (utility) {
+            utility.edgeCorr += Layout.utility.edgeCorr;
+            utility.edgeCnt+= Layout.utility.edgeCnt;
+            utility.triCorr += Layout.utility.triCorr;
+            utility.triCnt += Layout.utility.triCnt;
+        }
+        utility = utility || Layout.utility;
         this.selector.select('.utility')
-            .html(`Utility: ${Layout.utility.utility.toFixed(4)} \
-            | Edge: ${Layout.utility.edgeCorr.toFixed(2)} / ${Layout.utility.edgeCnt} \
-            | Face: ${Layout.utility.triCorr.toFixed(2)} /  ${Layout.utility.triCnt}`);
+            .html(`Utility: ${utility.utility.toFixed(4)} \
+            | Edge: ${utility.edgeCorr.toFixed(2)} / ${utility.edgeCnt} \
+            | Face: ${utility.triCorr.toFixed(2)} /  ${utility.triCnt}`);
         return this;
     },
     updateLabelSelected: function() {
@@ -883,6 +904,7 @@ UnTangleMap.init = function (selector, userOpt) {
     self.itemSelectEnabled = false;
     // editing
     self.activeCord = HexCord(0, 0);
+    self.hoverCord = HexCord(0, 0);
     self.activeName = '';
     // config
     self.opt = {

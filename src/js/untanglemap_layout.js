@@ -137,6 +137,7 @@
             let triCorr = 0.0;
             let triCnt = 0;
             let neighbors = cord.getNeighbors();
+            let shared = cord.getShareEdges();
 
             let numLabels = Object.keys(self.labelMap.in).length;
             if (numLabels === 0) { return self.makeUtility(0.0,0.0,0,0.0,0); }
@@ -165,8 +166,13 @@
                         edgeCnt += 1;
                     }
                     if (nnkey in self.labelMap.in) {
-                        // update face corr
                         let nnid = self.labelMap.in[nnkey].index;
+                        // another edge
+                        if (!(shared[i] in self.labelMap.in)) {
+                            edgeCorr += self.data.corr[self.corrMethod][nid][nnid];
+                            edgeCnt += 1;
+                        }
+                        // update face corr
                         triCorr += (self.data.corr[self.corrMethod][nid][id]
                                 + self.data.corr[self.corrMethod][nid][nnid]
                                 + self.data.corr[self.corrMethod][nnid][id]) / 3.0;
