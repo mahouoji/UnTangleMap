@@ -22,6 +22,11 @@
   <nav class="nav nav-tabs fixed-top">
       <a class="nav-item nav-link active" href="#">UnTangle</a>
   </nav>
+  <div class="git-source-btn">
+    <a href="https://github.com/mahouoji/UnTangleMap">
+      <img class="git-source-btn__icon" alt="Veiew code on GitHub" src="./asset/GitHub-Mark-64px.png">
+    </a>
+  </div>
   <!--contents-->
   <div class="tab-contents">
     <div id="untangle"> <!--untangle contents-->
@@ -139,12 +144,15 @@
           </div>
         </div>
       </div>
-      <div id="untangle-container"></div>
-      <div id="paracord-container"></div>
-      <div id="scattermat-container"></div>
+      <div class="untangle-plots">
+        <div id="untangle-container"></div>
+        <div class="untangle-subplots">
+          <div id="paracord-container"></div>
+          <div id="scattermat-container"></div>
+        </div>
+      </div>
     </div> <!--end untangle contents-->
   </div> <!--end tab contents-->
-
 </body>
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="https://d3js.org/d3-array.v2.min.js"></script>

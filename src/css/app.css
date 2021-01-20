@@ -1,3 +1,18 @@
+* {
+margin: 0;
+padding: 0;
+}
+
+*,
+*::before,
+*::after {
+box-sizing: inherit;
+}
+
+html {
+box-sizing: border-box;
+}  
+
 .nav-tabs {
     font-size: 16px;
     background-color: white;
@@ -24,19 +39,28 @@
     background-color: #fff;
 }
 
+.untangle-plots {
+    display: flex;
+    padding-top: 75px;
+    /* width: 100vw;
+    height: 100vh; */
+}
+
+.untangle-subplots {
+    width: 30%;
+    height: 100%;
+}
+
 #untangle-container {
-    position: fixed;
-    top: 75px;
+    width: 70%;
 }
 #paracord-container {
-    position: fixed;
-    top: 75px;
-    left: 800px;
+    width: 100%;
+    height: 30%;
 }
 #scattermat-container {
-    position: fixed;
-    top: 275px;
-    left: 800px;
+    width: 100%;
+    height: 70%;
 }
 svg {
     border: 1px dashed;
@@ -87,4 +111,19 @@ div.utility {
 }
 #untangle-control-panel .btn {
     font-size: 12px;
+}
+
+.git-source-btn {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    left: 50px;
+    bottom: 50px;
+}
+
+.git-source-btn__icon {
+    width: 64px;
+    height: 64px;
 }

@@ -70,6 +70,9 @@ Controller.prototype = {
 };
 
 Controller.init = function() {
+    $('.untangle-plots')
+        .css("width", `${$(window).width()}px`)
+        .css("height", `${$(window).height()}px`);
     var self = this;
     self.data = {};
     self.corrMethod = "spearman";

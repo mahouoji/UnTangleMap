@@ -907,12 +907,13 @@ UnTangleMap.init = function (selector, userOpt) {
     self.hoverCord = HexCord(0, 0);
     self.activeName = '';
     // config
+    self.selector = d3.select(selector);
     self.opt = {
         margin: { top: 0, left: 0, bottom: 0, right: 0 },
-        width: 800,
-        height: 600,
+        width: this.selector.node().getBoundingClientRect().width,
+        height:  this.selector.node().getBoundingClientRect().height,
         utilWidth: 400,
-        utilHeight: 30,
+        utilHeight: 10,
         side: 30.0,
         gridStrokeTernary: [0.5, 0.8, 0.5, 0.3],
         gridStrokeSub: 0.2,
@@ -930,7 +931,6 @@ UnTangleMap.init = function (selector, userOpt) {
     //hexagon algorithms
     Hex.side = self.opt.side;
     //canvas
-    self.selector = d3.select(selector);
     self.svg = self.selector.append('svg')
         .attr('width', self.opt.width)
         .attr('height', self.opt.height);

@@ -107,10 +107,11 @@ ScatterMatrix.prototype = {
 
 ScatterMatrix.init = function(selector, userOpt) {
   // plotting options
+  this.selector = d3.select(selector);
   this.opt = {
     margin: {top: 10, right: 10, bottom: 10, left: 10},
-    width: 400,
-    height: 400,
+    width: this.selector.node().getBoundingClientRect().width,
+    height:  this.selector.node().getBoundingClientRect().height,
     scatterMargin : 15
   }
   for (var o in userOpt) {
@@ -124,7 +125,6 @@ ScatterMatrix.init = function(selector, userOpt) {
   this.yScale = d3.scaleLinear().domain([0., 1.]).range([this.opt.inHeight, 0]);
 
   // init canvas
-  this.selector = d3.select(selector);
   this.svg = this.selector.append('svg')
     .attr('width', this.opt.width)
     .attr('height', this.opt.height)
